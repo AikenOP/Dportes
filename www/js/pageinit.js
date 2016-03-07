@@ -5,18 +5,6 @@
             document.addEventListener("deviceready", onDeviceReady, false);
 
             function onDeviceReady(){
-                Chart.defaults.global.responsive = false;
-                setTimeout(function(){ 
-                    if(localStorage.getItem('login')){
-                        $.mobile.navigate("#home", {transition: "fade"});
-                    } else {
-                        $.mobile.navigate("#login", {transition: "fade"});
-                    }
-                }, 4000);
-            }
-        }
-
-        if(activePage === 'home'){
                 try{
                     var push = PushNotification.init({
                         android: {
@@ -28,6 +16,7 @@
                             sound: "true"
                         },
                         windows: {}
+                        alert('working');
                     });
 
                     push.on('registration', function(data) {
@@ -49,6 +38,18 @@
                 } catch(err){
                     alert(err);
                 }
+                Chart.defaults.global.responsive = false;
+                setTimeout(function(){ 
+                    if(localStorage.getItem('login')){
+                        $.mobile.navigate("#home", {transition: "fade"});
+                    } else {
+                        $.mobile.navigate("#login", {transition: "fade"});
+                    }
+                }, 4000);
+            }
+        }
+
+        if(activePage === 'home'){
             if(localStorage.getItem("rol_equipo") != 1){
                 $('#home-jg').addClass('ui-state-disabled');
             } else {
