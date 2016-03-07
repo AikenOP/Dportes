@@ -11,6 +11,7 @@ function registro(){
     this.equipo
     this.dporte
     this.condiciones
+    this.key
     this.mensaje = [
                 	"Ingrese el nombre",
                 	"Ingrese el apellido",
@@ -25,6 +26,17 @@ function registro(){
                     "Debe aceptar las condiciones y terminos de uso"
                     ]
 
+
+    this.setKeyByUsuario = function(){
+        var xhr = new XMLHttpRequest();
+        var registro = new FormData();
+        registro.append('id',localStorage.getItem('id'));
+        registro.append('key',this.key);
+        xhr.open('POST', path + 'app/setKey');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send(registro);
+    }
 
     this.registrar = function(){
     	if(this.validar()){
