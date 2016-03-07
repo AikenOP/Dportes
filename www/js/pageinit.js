@@ -5,6 +5,40 @@
             document.addEventListener("deviceready", onDeviceReady, false);
 
             function onDeviceReady(){
+                try{
+                    var push = PushNotification.init({
+                        android: {
+                            senderID: "12345679"
+                        },
+                        ios: {
+                            alert: "true",
+                            badge: "true",
+                            sound: "true"
+                        },
+                        windows: {}
+                    });
+
+                    alert('working');
+
+                    push.on('registration', function(data) {
+                        // data.registrationId
+                    });
+
+                    push.on('notification', function(data) {
+                        // data.message,
+                        // data.title,
+                        // data.count,
+                        // data.sound,
+                        // data.image,
+                        // data.additionalData
+                    });
+
+                    push.on('error', function(e) {
+                        // e.message
+                    });
+                } catch(err){
+                    alert(err);
+                }
                 Chart.defaults.global.responsive = false;
                 setTimeout(function(){ 
                     if(localStorage.getItem('login')){
