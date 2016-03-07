@@ -36,6 +36,9 @@ function registro(){
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(registro);
+        xhr.onload = function(e){
+            alert(this.response);
+        }
     }
 
     this.registrar = function(){
