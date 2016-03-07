@@ -29,7 +29,7 @@
                         },
                         windows: {}
                     });
-
+                    alert('working');
                     push.on('registration', function(data) {
                         // data.registrationId
                     });
