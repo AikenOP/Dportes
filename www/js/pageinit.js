@@ -8,7 +8,7 @@
                 try{
                     var push = PushNotification.init({
                         android: {
-                            senderID: "12345679"
+                            senderID: "941293805259"
                         },
                         ios: {
                             alert: "true",
@@ -18,10 +18,8 @@
                         windows: {}
                     });
 
-                    alert('working');
-
                     push.on('registration', function(data) {
-                        // data.registrationId
+                        alert(data.registrationId);
                     });
 
                     push.on('notification', function(data) {
