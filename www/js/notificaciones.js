@@ -79,15 +79,15 @@ function notificaciones(){
 		                inc += "<div class='vs-notificacion'>VS</div>";
 		                inc += "<div class='block-notificacion'><img src='jquerymobile/img-dportes/logo-encuentro.png'><p class='nombre-equipo'>"+json[i].evt_nombre+"</p></div>";
 		                inc += "<div class='block-notificacion'><p class='nombre-equipo-notificacion'>"+fecha+" - "+hora+"hrs</p></div>";
-		                inc += "<div class='block-notificacion'><p id='notifica-con"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-con' style='display:"+asistir+"'>Asistencia confirmada</p></div>";
-		                inc += "<div class='block-notificacion'><p id='notifica-no"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-in' style='display:"+no_asistir+"'>Inasistencia confirmada</p></div>";
-                        inc += "<div class='block-notificacion'><p id='notifica-no"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-in' style='display:"+no_confirma+"'>No Respondido</p></div>";
+		                inc += "<div class='block-notificacion'><p id='notifica-con"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-con' style='display:"+asistir+"'>Voy</p></div>";
+		                inc += "<div class='block-notificacion'><p id='notifica-no"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-in' style='display:"+no_asistir+"'>No Voy</p></div>";
+                        inc += "<div class='block-notificacion'><p id='notifica-no"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-in' style='display:"+no_confirma+"'>No Respondi</p></div>";
 		                inc += "</div>";
 		                inc += "</div>";
 		                inc += "</a>";
                         if(json[i].bool_fecha != 1){
-		                  inc += "<div class='boton-participar'><a onclick='setAsistencia(1,"+json[i].id_notificacion+","+localStorage.getItem('id')+")' href='#ventana-asistira' data-rel='popup' data-position-to='window' class='ui-btn color-boton-notificacion' id='boton-asistere' data-transition='pop'>Asistiré</a></div>";
-		                  inc += "<div class='boton-participar'><a onclick='setAsistencia(2,"+json[i].id_notificacion+","+localStorage.getItem('id')+")' href='#ventana-no-asistira' data-rel='popup' data-position-to='window' class='ui-btn color-boton-notificacion-2' id='boton-no-asistere' data-transition='pop'>No Asistiré</a></div>";
+		                  inc += "<div class='boton-participar'><a onclick='setAsistencia(1,"+json[i].id_notificacion+","+localStorage.getItem('id')+")' href='#ventana-asistira' data-rel='popup' data-position-to='window' class='ui-btn color-boton-notificacion' id='boton-asistere' data-transition='pop'>Voy</a></div>";
+		                  inc += "<div class='boton-participar'><a onclick='setAsistencia(2,"+json[i].id_notificacion+","+localStorage.getItem('id')+")' href='#ventana-no-asistira' data-rel='popup' data-position-to='window' class='ui-btn color-boton-notificacion-2' id='boton-no-asistere' data-transition='pop'>No Voy</a></div>";
 		                }
                         inc += "</div>";
                     }
