@@ -31,40 +31,40 @@
             delete notifica;
             document.getElementById('tyc-back').href = '#'+activePage;
             document.getElementById('jg-rel-back').href = "#home";
-                try{
-                    var push = PushNotification.init({
-                        android: {
-                            senderID: "941293805259"
-                        },
-                        ios: {
-                            alert: "true",
-                            badge: "true",
-                            sound: "true"
-                        },
-                        windows: {}
-                    });
+            try{
+                var push = PushNotification.init({
+                    android: {
+                        senderID: "941293805259"
+                    },
+                    ios: {
+                        alert: "true",
+                        badge: "true",
+                        sound: "true"
+                    },
+                    windows: {}
+                });
 
-                    push.on('registration', function(data) {
-                        var reg = new registro();
-                        reg.key = data.registrationId;
-                        reg.setKeyByUsuario();
-                    });
+                push.on('registration', function(data) {
+                    var reg = new registro();
+                    reg.key = data.registrationId;
+                    reg.setKeyByUsuario();
+                });
 
-                    push.on('notification', function(data) {
+                push.on('notification', function(data) {
                         // data.message,
                         // data.title,
                         // data.count,
                         // data.sound,
                         // data.image,
                         // data.additionalData
-                    });
+                });
 
-                    push.on('error', function(e) {
-                        // e.message
-                    });
-                } catch(err){
-                    alert(err);
-                }
+                push.on('error', function(e) {
+                    // e.message
+                });
+            } catch(err){
+                alert(err);
+            }
         }
 
         if(activePage === 'mi-perfil'){
