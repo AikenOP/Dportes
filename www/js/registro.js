@@ -30,7 +30,7 @@ function registro(){
     this.setKeyByUsuario = function(){
         var xhr = new XMLHttpRequest();
         var registro = new FormData();
-        registro.append('id',localStorage.getItem('equipo'));
+        registro.append('id',localStorage.getItem('id'));
         registro.append('key',this.key);
         xhr.open('POST', path + 'app/setKey');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
