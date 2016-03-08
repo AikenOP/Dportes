@@ -30,14 +30,14 @@ function registro(){
     this.setKeyByUsuario = function(){
         var xhr = new XMLHttpRequest();
         var registro = new FormData();
-        registro.append('id',localStorage.getItem('id'));
+        registro.append('id',localStorage.getItem('equipo'));
         registro.append('key',this.key);
         xhr.open('POST', path + 'app/setKey');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(registro);
         xhr.onload = function(e){
-            alert(this.response);
+            //alert(this.response);
         }
     }
 
