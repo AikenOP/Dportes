@@ -451,7 +451,7 @@ document.getElementById('pg-registro-next').addEventListener('click',function(){
         delete pg;     
     } else {
         navigator.notification.confirm(
-            '¿Desea notificar a sus jugadores?',
+            '¿Desea notificar a sus jugadores vía correo electrónico?',
                 function(button){
                     if(button == 1){
                         var pg = new eventos();
