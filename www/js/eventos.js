@@ -25,6 +25,7 @@ function eventos(){
             add.append('tipo_evento',this.tipo);
             add.append('periodo',this.periodo);
             add.append('id_equipo',localStorage.getItem('equipo'));
+            add.append('id_usuario',localStorage.getItem('id'));
             add.append('notification',this.bool)
             if(sessionStorage.getItem('evento')){
                 add.append('id',sessionStorage.getItem('evento'));
