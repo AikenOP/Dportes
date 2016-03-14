@@ -789,6 +789,7 @@ document.getElementById('edit-jg-save').addEventListener('click',function(){
     jg.id_jugador = sessionStorage.getItem('jg_session');
     jg.nombre = document.getElementById('edit-jg-nombre').value;
     jg.email = document.getElementById('edit-jg-correo').value;
+    alert($('input[name=jg-radio-posicion]:checked', '#jg-edit-form').val());
     jg.rol_usuario = sessionStorage.getItem('rol_session');
     jg.setJugador();
     delete jg;
