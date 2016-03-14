@@ -169,7 +169,7 @@ function jugadores(){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var fullname = checkName(json.nombre,json.apellido_paterno);
-                    document.getElementById('jg-rad-'+json.id_posicion).checked = true;
+                    $("input[name=jg-radio-posicion][value=" + json.id_posicion + "]").prop('checked', true);
                     document.getElementById('edit-jg').innerHTML = fullname;
                     document.getElementById('edit-jg-posicion').innerHTML = 'Posición: ' + json.nombre_p;
                     document.getElementById('edit-jg-nombre').value = fullname;
