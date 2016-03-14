@@ -7,6 +7,7 @@ function jugadores(){
     this.id_equipo
     this.nombre
     this.email
+    this.posicion = 1
     this.rol_usuario
 
     this.addJugador = function(){
@@ -182,8 +183,10 @@ function jugadores(){
         var xhr = new XMLHttpRequest();
         var send = new FormData();
         send.append('id_jugador',this.id_jugador);
+        send.append('id_equipo',localStorage.getItem('equipo'));
         send.append('nombre',this.nombre); 
         send.append('correo',this.email);
+        send.append('posicion',this.posicion)
         send.append('rol',this.rol_usuario);
         xhr.open('POST', path + 'app/setJugador');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
@@ -789,7 +792,7 @@ document.getElementById('edit-jg-save').addEventListener('click',function(){
     jg.id_jugador = sessionStorage.getItem('jg_session');
     jg.nombre = document.getElementById('edit-jg-nombre').value;
     jg.email = document.getElementById('edit-jg-correo').value;
-    alert($('input[name=jg-radio-posicion]:checked').val());
+    jg.posicion = $('input[name=jg-radio-posicion]:checked').val();
     jg.rol_usuario = sessionStorage.getItem('rol_session');
     jg.setJugador();
     delete jg;
