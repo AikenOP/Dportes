@@ -160,7 +160,7 @@ function equipos(){
 	                    inc += "<div class='centra_texto'>Salir</div>";
 	                    inc += "</span>";
 	                    inc += "<span class='flag "+disabled+"'>";
-	                    inc += "<div class='centra_texto'>Actual</div>";
+	                    inc += "<div class='centra_texto'>Seleccionar</div>";
 	                    inc += "</span>";
 	                    inc += "<a href='#' draggable='false'><img src='jquerymobile/img-dportes/logo-encuentro.png'>";
 	                    inc += "<h2>"+json[i].nombre+"</h2>";
