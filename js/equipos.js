@@ -47,7 +47,7 @@ function equipos(){
             navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
         }
         xhr.onload = function(e){
-        	alert(this.response);
+        	//alert(this.response);
         	$.mobile.loading('hide');
         	if(this.status == 200){
 	    		if(this.response && JSON.parse(this.response)){

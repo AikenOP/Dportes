@@ -79,7 +79,8 @@ function jugadores(){
                                     xhr.onload = function(e){
                                         $.mobile.loading('hide');
                                         if(this.status == 200){
-                                            navigator.notification.alert('El jugador se reintegro correctamente',function(){},'Atención','OK');
+                                             $.mobile.navigate("#jugadores-equipo", {transition: "fade"});  
+                                            //navigator.notification.alert('El jugador se reintegro correctamente',function(){},'Atención','OK');
                                         }
                                     }
                                 }
@@ -208,7 +209,8 @@ function jugadores(){
         xhr.onload = function(e){
             if(this.status == 200){
                 if(this.response){
-                    navigator.notification.alert('Se actualizo correctamente el jugador',function(){},'Atención','Ok');
+                    //navigator.notification.alert('Se actualizo correctamente el jugador',function(){},'Atención','Ok');
+                    $.mobile.navigate("#jugadores-equipo", {transition: "fade"});  
                     $.mobile.loading('hide');
                 }
             }
