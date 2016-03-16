@@ -7,6 +7,7 @@ function jugadores(){
     this.id_equipo
     this.nombre
     this.email
+    this.posicion = 1
     this.rol_usuario
 
     this.addJugador = function(){
@@ -78,7 +79,8 @@ function jugadores(){
                                     xhr.onload = function(e){
                                         $.mobile.loading('hide');
                                         if(this.status == 200){
-                                            navigator.notification.alert('El jugador se reintegro correctamente',function(){},'Atención','OK');
+                                             $.mobile.navigate("#jugadores-equipo", {transition: "fade"});  
+                                            //navigator.notification.alert('El jugador se reintegro correctamente',function(){},'Atención','OK');
                                         }
                                     }
                                 }
@@ -168,6 +170,12 @@ function jugadores(){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var fullname = checkName(json.nombre,json.apellido_paterno);
+                    try{
+                        document.getElementById("jg-radio-"+json.id_posicion).checked = true;
+                    } catch(e){
+                        alert(e);
+                    }
+                    $("input[name=jg-radio-posicion][value=" + json.id_posicion + "]").prop('checked', true);
                     document.getElementById('edit-jg').innerHTML = fullname;
                     document.getElementById('edit-jg-posicion').innerHTML = 'Posición: ' + json.nombre_p;
                     document.getElementById('edit-jg-nombre').value = fullname;
@@ -182,8 +190,10 @@ function jugadores(){
         var xhr = new XMLHttpRequest();
         var send = new FormData();
         send.append('id_jugador',this.id_jugador);
+        send.append('id_equipo',localStorage.getItem('equipo'));
         send.append('nombre',this.nombre); 
         send.append('correo',this.email);
+        send.append('posicion',this.posicion)
         send.append('rol',this.rol_usuario);
         xhr.open('POST', path + 'app/setJugador');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
@@ -199,7 +209,8 @@ function jugadores(){
         xhr.onload = function(e){
             if(this.status == 200){
                 if(this.response){
-                    navigator.notification.alert('Se actualizo correctamente el jugador',function(){},'Atención','Ok');
+                    //navigator.notification.alert('Se actualizo correctamente el jugador',function(){},'Atención','Ok');
+                    $.mobile.navigate("#jugadores-equipo", {transition: "fade"});  
                     $.mobile.loading('hide');
                 }
             }
@@ -789,6 +800,7 @@ document.getElementById('edit-jg-save').addEventListener('click',function(){
     jg.id_jugador = sessionStorage.getItem('jg_session');
     jg.nombre = document.getElementById('edit-jg-nombre').value;
     jg.email = document.getElementById('edit-jg-correo').value;
+    jg.posicion = $('input[name=jg-radio-posicion]:checked').val();
     jg.rol_usuario = sessionStorage.getItem('rol_session');
     jg.setJugador();
     delete jg;

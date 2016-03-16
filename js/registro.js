@@ -37,7 +37,7 @@ function registro(){
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(registro);
         xhr.onload = function(e){
-            alert(this.response);
+            //alert(this.response);
         }
     }
 
