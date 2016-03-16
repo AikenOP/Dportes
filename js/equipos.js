@@ -157,7 +157,7 @@ function equipos(){
 	                    inc += "<li value='"+json[i].id_equipo+"' class='li-padding' "+click+">";
 	                    inc += "<input id='eq_r"+json[i].id_equipo+"' type='hidden' value='"+json[i].rol+"'>";
 	                    inc += "<span class='delete "+deleteDisabled+"'>";
-	                    inc += "<div class='centra_texto'>Salir</div>";
+	                    inc += "<div class='centra_texto'>Eliminar</div>";
 	                    inc += "</span>";
 	                    inc += "<span class='flag "+disabled+"'>";
 	                    inc += "<div class='centra_texto'>Seleccionar</div>";
