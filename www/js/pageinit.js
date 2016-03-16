@@ -18,11 +18,11 @@
 
         if(activePage === 'home'){
             if(localStorage.getItem("rol_equipo") != 1){
-                $('#home-jg').addClass('ui-state-disabled');
+                $('#home-pg').addClass('ui-state-disabled');
             } else {
-                $('#home-pg').removeClass('ui-state-disabled');
-                $('#home-jg').removeClass('ui-state-disabled');            
+                $('#home-pg').removeClass('ui-state-disabled');           
             }
+            $('#home-jg').removeClass('ui-state-disabled');
             swipe('#home','#menu_perfil','right');
             clearGame();
             closeSessionEvents();
