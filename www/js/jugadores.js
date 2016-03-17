@@ -632,8 +632,6 @@ function jugadores(){
                 }
             }
         }
-
-
     }
 
     this.getPosicionesJugador = function(){
@@ -679,6 +677,46 @@ function jugadores(){
                         inc += "<label for='jg-rad-"+json[i].id_posicion+"' >"+json[i].nombre+"</label>";
                     }
                     $('#jg-posiciones').html(inc).trigger('create');
+                }
+            }
+        }
+    }
+
+    this.getTitularesPosiciones = function(){
+        var xhr = new XMLHttpRequest();
+        var send = new FormData();
+        send.append('id_evento',sessionStorage.getItem('evento'));
+        send.append('id_equipo',localStorage.getItem('equipo'));
+        xhr.open('POST', path + 'app/getTitulares');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send(send);
+        xhr.onprogress = function(e){
+            $.mobile.loading('show');
+        }
+        xhr.ontimeout = function(e){
+            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
+        }
+        xhr.onload = function(e){
+            if(this.status == 200){
+                if(this.response && JSON.parse(this.response)){
+                    var inc = '';
+                    var ape = '';
+                    var json = JSON.parse(this.response);
+                    for(var i = 0; i < json.length; i++ ){
+                        if(json[i].apellido_paterno == null){
+                            ape = '';
+                        } else {
+                            ape = json[i].apellido_paterno;
+                        }
+                        inc += "<div class='draggable'>";
+                        inc += "<img src='jquerymobile/img-dportes/foto.png'>";
+                        inc += "<p>"+json[i].nombre + " " + ape +"</p>";
+                        inc += '</div>';
+                    }
+                    $('#dd-drag').html(inc).trigger("create");
+                    $.mobile.loading('hide');
+                    $( ".draggable" ).draggable();
                 }
             }
         }

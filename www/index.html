@@ -398,6 +398,7 @@
         <div data-role="main" class="content">
             <ul id="set-titulares" data-role="listview" data-inset="false"></ul>
         </div>
+        <a href="#drag-drop"><div class="orden_cancha"></div></a>
     </div>
 
     <!-- ———— SELECCIONAR EL TIEMPO DEL JUEGO ————— -->
@@ -888,7 +889,7 @@
                     </ul>
                 </div>
                 <div id="historial-content" class="ui-body-d ui-content">
-
+                    
                 </div>
                 <div id="dos" class="ui-body-d ui-content">
                     <ul id="stat-jg-ac" data-role="listview" data-inset="false">
@@ -2226,55 +2227,11 @@
     <!-- Drag&Drop de prueba -->
     <div data-role="page" id="drag-drop" class="jqm-demos" data-title="Dportes" data-theme="a" style="background: url(jquerymobile/img-dportes/cancha-ft.jpg); background-size: cover;">
         <div data-role="header" data-position="fixed" class="color-encabezado">
-            <a href="#" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
-            <h1>Prueba de Drag&Drop</h1>
+            <a href="#" data-rel="back" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Posiciones</h1>
             <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a>
         </div>
-        <div data-role="main">
-            <div class="draggable">
-                <img src="jquerymobile/img-dportes/foto.png">
-                <p>Juan Gonzales</p>
-            </div>
-            <div class="draggable">
-                <img src="jquerymobile/img-dportes/foto.png">
-                <p>Juan Gonzales</p>
-            </div>
-            <div class="draggable">
-                <img src="jquerymobile/img-dportes/foto.png">
-                <p>Juan Gonzales</p>
-            </div>
-            <div class="draggable">
-                <img src="jquerymobile/img-dportes/foto.png">
-                <p>Juan Gonzales</p>
-            </div>
-            <div class="draggable">
-                <img src="jquerymobile/img-dportes/foto.png">
-                <p>Juan Gonzales</p>
-            </div>
-            <div class="draggable">
-                <img src="jquerymobile/img-dportes/foto.png">
-                <p>Juan Gonzales</p>
-            </div>
-            <div class="draggable">
-                <img src="jquerymobile/img-dportes/foto.png">
-                <p>Juan Gonzales</p>
-            </div>
-            <div class="draggable">
-                <img src="jquerymobile/img-dportes/foto.png">
-                <p>Juan Gonzales</p>
-            </div>
-            <div class="draggable">
-                <img src="jquerymobile/img-dportes/foto.png">
-                <p>Juan Gonzales</p>
-            </div>
-            <div class="draggable">
-                <img src="jquerymobile/img-dportes/foto.png">
-                <p>Juan Gonzales</p>
-            </div>
-            <div class="draggable">
-                <img src="jquerymobile/img-dportes/foto.png">
-                <p>Juan Gonzales</p>
-            </div>
+        <div id="dd-drag" data-role="main">
         </div>
     </div>
     

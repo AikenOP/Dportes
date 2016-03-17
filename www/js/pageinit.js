@@ -510,7 +510,9 @@
         }
 
         if(activePage === 'drag-drop'){
-            $( ".draggable" ).draggable();
+            var jg = new jugadores();
+            jg.getTitularesPosiciones();
+            delete jg;
         }
 
     });
