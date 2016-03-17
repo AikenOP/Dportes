@@ -25,6 +25,7 @@ function eventos(){
             add.append('tipo_evento',this.tipo);
             add.append('periodo',this.periodo);
             add.append('id_equipo',localStorage.getItem('equipo'));
+            add.append('id_usuario',localStorage.getItem('id'));
             add.append('notification',this.bool)
             if(sessionStorage.getItem('evento')){
                 add.append('id',sessionStorage.getItem('evento'));
@@ -46,7 +47,7 @@ function eventos(){
                 navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
             };
             xhr.onload = function(e){
-                
+                //alert(this.response);
                 $.mobile.loading('hide');
                 //alert(this.response);
                 //alert('asdasd' + this.status);
@@ -450,7 +451,7 @@ document.getElementById('pg-registro-next').addEventListener('click',function(){
         delete pg;     
     } else {
         navigator.notification.confirm(
-            '¿Desea notificar a sus jugadores?',
+            '¿Desea notificar a sus jugadores vía correo electrónico?',
                 function(button){
                     if(button == 1){
                         var pg = new eventos();
