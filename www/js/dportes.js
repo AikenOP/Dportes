@@ -25,7 +25,8 @@ function dportes(){
                         }
                         inc += "<label for='reg-dp-"+json[i].id_deporte+"'>"+json[i].nombre+"</label>";
  					}
- 					document.getElementById('reg-dportes').innerHTML = inc;
+ 					$('#reg-dportes').html(inc).trigger('create');
+ 					//document.getElementById('reg-dportes').innerHTML = inc;
  				}
 	        }
 	    }

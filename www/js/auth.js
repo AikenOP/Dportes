@@ -5,6 +5,7 @@ function authentication(){
 
     this.email
     this.password
+    this.bool
     this.mensaje = [
                 	"Ingrese el nombre",
                 	"Ingrese el apellido",
@@ -42,10 +43,13 @@ function authentication(){
                         localStorage.setItem("equipo", json.equipo);
                         localStorage.setItem("nombre_equipo", json.nombre_equipo);
                         localStorage.setItem("login", json.login);
-                        $.mobile.navigate("#home", {transition: "fade"});
+                        if(json.rol_usuario==3){
+                            $.mobile.navigate("#cambiar-contrasena", {transition: "fade"});
+                        } else {
+                            $.mobile.navigate("#home", {transition: "fade"});
+                        }
                         document.getElementById('log-error').style.display = 'none';
                     } else {
-                        alert('error');
                         document.getElementById('log-error').style.display = 'block';
                     }
                 } else {
@@ -83,6 +87,39 @@ function authentication(){
         }
     }
 
+    this.cambioPassword = function(){
+        var xhr = new XMLHttpRequest();
+        var pass = new FormData();
+        var bool = this.bool;
+        pass.append('password_usuario',this.password);
+        pass.append('id',localStorage.getItem('id'));
+        xhr.open('POST', path + 'auth/changePass');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.timeout = 5000;
+        xhr.send(pass);
+        $.mobile.loading('show');
+        xhr.ontimeout = function(e) {
+            $.mobile.loading('hide');
+            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+        }
+        xhr.onprogress = function(e){
+            $.mobile.loading('show');
+        }
+        xhr.onload = function(e){
+            if(this.status == 200){
+                if(bool == 1){
+                    $.mobile.navigate("#mi-perfil", {transition: "fade"});
+                } else {
+                    $.mobile.navigate("#home", {transition: "fade"});
+                }
+            } else {
+                navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+            }
+            $.mobile.loading('hide');
+        }
+    }
+
 }
 
 
@@ -107,6 +144,14 @@ document.getElementById('logout').addEventListener('click', function(){
     sessionStorage.removeItem('periodosJugados');
     $.mobile.navigate("#login", {transition: "fade"});
 });
+
+function changePass(id){
+    var auth = new authentication();
+    auth.password = document.getElementById('cambio-match').value;
+    auth.bool = id;
+    auth.cambioPassword();
+    delete auth;
+}
 
 function logout(){
     localStorage.removeItem('login');

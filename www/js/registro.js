@@ -11,6 +11,8 @@ function registro(){
     this.equipo
     this.dporte
     this.condiciones
+    this.comuna
+    this.tipo
     this.key
     this.mensaje = [
                 	"Ingrese el nombre",
@@ -73,6 +75,8 @@ function registro(){
             registro.append('password_usuario',document.getElementById('reg-password').value);
             registro.append('nombre_equipo',document.getElementById('reg-nequipo').value);
             registro.append('dporte_equipo',document.querySelector('input[name="reg-dporte"]:checked').value);
+            registro.append('comuna',this.comuna);
+            registro.append('tipo',this.tipo);
 
             xhr.open('POST', path + 'auth/registrar');
             xhr.setRequestHeader('Cache-Control', 'no-cache');
@@ -212,6 +216,8 @@ document.getElementById('registrar-equipo').addEventListener('click',function(){
     var reg = new registro();
     reg.equipo      = document.getElementById('reg-nequipo').value;
     reg.dporte      = document.querySelector('input[name="reg-dporte"]:checked').value;
+    reg.tipo        = document.getElementById('reg-tipo-equipo').value;
+    reg.comuna      = document.getElementById('reg-eq-comuna').value;
     reg.condiciones = document.getElementById('reg-condiciones').checked;
     reg.registrarEquipo();
 

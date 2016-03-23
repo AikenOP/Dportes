@@ -184,6 +184,8 @@
             tabl.getEfectividadGrupalesByJugada();
             delete tabl;
 
+            lvl1(sessionStorage.getItem('lvl1'));
+            alert(sessionStorage.getItem('lvl1'));
             document.getElementById('grup-nombre-equipo').innerHTML = localStorage.getItem('nombre_equipo');
             document.getElementById('botones-estadisticos').style.display = "none";
             document.getElementById('stat-back-rel').style.display = "block";

@@ -1,5 +1,34 @@
 //var path = 'http://localhost/dportes/';
 var path = 'http://desarrollo.ilia.cl/dportes/';
+function checkMatches(){
+	var pass = document.getElementById('cambio-pass').value;
+	var match = document.getElementById('cambio-match').value;
+	if(match.length > 4 && pass.length > 4){
+		$("#mensaje-caracteres").css('display','none');
+		if(pass === match){
+			$("#mensaje-match").css('display','none');
+			$('#cambio-guardar-perfil').removeClass('ui-state-disabled');
+			$('#cambio-guardar-home').removeClass('ui-state-disabled');
+		} else {
+			$("#mensaje-match").css('display','block');
+			$('#cambio-guardar-perfil').addClass('ui-state-disabled');
+			$('#cambio-guardar-home').addClass('ui-state-disabled');
+		}
+	} else {
+			$("#mensaje-caracteres").css('display','block');
+			$('#cambio-guardar-perfil').addClass('ui-state-disabled');
+			$('#cambio-guardar-home').addClass('ui-state-disabled');		
+	}
+}
+
+function lvl1(id){
+	for (var i = 1; i <= 3; i++) {
+		if(i == id){
+			$('lvl1_'+id).show();
+			sessionStorage.lvl1 = id;
+		}
+	};
+}
 
 function swipe(id,nav,position){
     var startLoc = null; 

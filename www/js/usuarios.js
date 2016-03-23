@@ -32,8 +32,10 @@ function usuarios(){
                     document.getElementById('perfil-nombre').value = json.nombre + ' ' + json.apellido_paterno;
                     document.getElementById('perfil-correo').value = json.email;
                     document.getElementById('perfil-fecha').value = json.fecha_nacimiento;
-                    $('#perfil-sexo').val(json.sexo).prop('selected', true);
-                    $('#perfil-sexo').selectmenu('refresh');
+                    if(json.sexo != null){
+                        $('#perfil-sexo').val(json.sexo).prop('selected', true);
+                        $('#perfil-sexo').selectmenu('refresh');
+                    }
                 }
             }
         };

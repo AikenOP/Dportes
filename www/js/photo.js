@@ -8,9 +8,9 @@ document.getElementById('takePhoto').addEventListener('click',function(){
         'Seleccione el origen de la imagen',
             function(button){
                 if(button == 1){
-                    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, destinationType: navigator.camera.DestinationType.DATA_URL });
+                    navigator.camera.getPicture(onCapturePhoto, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, destinationType: navigator.camera.DestinationType.DATA_URL });
                 } else {
-                    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, sourceType: 0, destinationType: navigator.camera.DestinationType.DATA_URL });
+                    navigator.camera.getPicture(onCapturePhoto, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, sourceType: 0, destinationType: navigator.camera.DestinationType.DATA_URL });
                 }
             },
         'Insertar Imagen',
@@ -44,34 +44,12 @@ document.getElementById('takePhoto2').addEventListener('click',function(){
     //navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, 
     // allowEdit: true, destinationType: navigator.camera.DestinationType.DATA_URL });
 //}
-function onPhotoDataSuccess(imageData) {
+function onCapturePhoto(imageData) {
     var photo = document.getElementById('photo');
     photo.style.display = 'block';
     photo.src = "data:image/jpeg;base64," + imageData;
-    var xhr = new XMLHttpRequest();
-    var send = new FormData();
-    send.append('img',photo);
-    xhr.open('POST', path + 'app/addEvento');
-    xhr.setRequestHeader('Cache-Control', 'no-cache');
-    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-    xhr.send(send);
-    $.mobile.loading('show');
-    xhr.timeout = 10000;
-    xhr.ontimeout = function () {
-        $.mobile.loading('hide');
-        navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
-    };
-
-    xhr.onerror = function(e){
-        navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
-    };
-
-    xhr.onload = function(e){
-        alert(this.response);
-    }
-    //var sendPhoto = document.getElementById('sendPhoto');
-    //sendPhoto.style.display = 'block';  
 }
+
 function onPhotoDataSuccess2(imageData) {
     var photo = document.getElementById('photo2');
     photo.style.display = 'block';

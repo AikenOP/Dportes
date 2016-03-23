@@ -140,6 +140,24 @@
                 <fieldset id="reg-dportes" data-role="controlgroup">
                 </fieldset>
                 <a id="reg-dporte-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none;">Seleccione algún deporte</a>
+                <label>Región:</label>
+                <select id="reg-eq-region">
+                    <option>Seleccione una region</option>
+                </select>
+                <label>Ciudad:</label>
+                <select id="reg-eq-ciudad">
+                    <option>Seleccione una ciudad</option>
+                </select>
+                <label>Comuna:</label>
+                <select id="reg-eq-comuna">
+                    <option>Seleccione una comuna</option>
+                </select>
+                <legend>Seleccione un tipo de equipo:</legend>
+                <select id="reg-tipo-equipo" name="tipo">
+                    <option value="1">Hombre</option>
+                    <option value="2">Mujer</option>
+                    <option value="3">Mixto</option>
+                </select>
                 <!--<<input id="reg-ubicacion" name="ubicacion" placeholder="Locación" type="text">
                 a id="reg-ubicacion-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none;">Ingrese una ubicación</a>-->
                 <a href="#terminosycondiciones" class="ui-btn ui-mini">Ver Términos y Condiciones</a>
@@ -151,6 +169,29 @@
                     <input id="registrar-equipo" data-enhanced="true" type="submit">
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- ———— CAMBIAR CONTRASEÑA PRIMER LOGIN ————— -->
+    <div data-role="page" id="cambiar-contrasena" class="jqm-demos" data-title="Dportes" data-theme="a" style="background:#FFF;">
+    
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#" data-transition="fade" class="saca-estilo-boton"></a>
+            <h1><img src="jquerymobile/img-dportes/logo-dportes.svg" style="width:80px" ></h1>
+            <a href="#" data-transition="fade" class="saca-estilo-boton"></a><!--ABRE MENU-->
+        </div>
+        
+        <div class="content" style="margin:10px;">
+            <form action="" method="post">
+                <p style="text-align:center; font-size:16px; color:#666; text-shadow:none;">Hola, Bienvenido a Dportes, por favor actualiza la contraseña para activar tu cuenta como usuario. La clave necesita un minimo de 5 caracteres para cambiarla.</p>
+                    <input name="clave" id="cambio-pass" value="" placeholder="Nueva Contraseña" data-theme="a" type="password" onchange="checkMatches();">
+                    <input name="confirmacion clave" id="cambio-match" value="" placeholder="Confirma Contraseña" data-theme="a" type="password" onchange="checkMatches();">
+                    <a id="cambio-guardar-perfil" href="#" class="ui-state-disabled ui-btn ui-icon-check ui-btn-icon-left ui-shadow-icon boton-partido" onclick="changePass(1)">GUARDAR E IR AL PERFIL</a>
+                    <a id="cambio-guardar-home" href="#" class="ui-state-disabled ui-btn ui-icon-check ui-btn-icon-left ui-shadow-icon color-boton" style="margin-top:8px;" onclick="changePass(2)">GUARDAR E IR A LA HOME</a>
+                    <p id="mensaje-caracteres" style="text-align:center; color:#900; font-size:14px; display:none;">La clave necesita un minimo 5 de caracteres.</p>
+                    <p id="mensaje-match" style="text-align:center; color:#900; font-size:14px; display:none;">Las claves no coinciden</p>
+            </form>
+
         </div>
     </div>
 
@@ -207,13 +248,13 @@
                 </li>
                 <div style="margin:20px">
                     <form action="" method="post">
-                        <label id="2"><strong>Tu Nombre:</strong></label>
+                        <label><strong>Tu Nombre:</strong></label>
                         <input name="nombre" id="perfil-nombre" value="" type="text">
-                        <label id="3"><strong>Tu Correo:</strong></label>
+                        <label><strong>Tu Correo:</strong></label>
                         <input name="correo" id="perfil-correo" value="" type="text">
-                        <label id="3"><strong>Fecha de Nacimiento:</strong></label>
+                        <label><strong>Fecha de Nacimiento:</strong></label>
                         <input name="fecha" id="perfil-fecha" value="" type="date">
-                        <label id="3"><strong>Sexo:</strong></label>
+                        <label><strong>Sexo:</strong></label>
                         <select name="sexo" id="perfil-sexo" >
                             <option value="0">Seleccione sexo</option>
                             <option value="1">Femenino</option>
@@ -751,7 +792,9 @@
                         </select>
                         <label><strong>Tipo de equipo:</strong></label>
                         <select id="mi-eq-tipo">
-                            <option>No disponible</option>
+                            <option value="1">Hombre</option>
+                            <option value="2">Mujer</option>
+                            <option value="3">Mixto</option>
                         </select>
                         <a onclick="setEquipo()" data-rel="popup" data-position-to="window" data-transition="pop" class="color-boton"><button class="ui-btn btn-input" type="submit">Guardar</button></a>
                     </form>
@@ -883,9 +926,9 @@
             <div data-role="tabs" id="tabs">
                 <div data-role="navbar">
                     <ul>
-                        <li><a href="#historial-content" data-ajax="false" class="ui-btn-active" data-transition="slide">Por partido</a></li>
-                        <li><a href="#dos" data-ajax="false" data-transition="slide">Individuales</a></li>
-                        <li><a href="#tres" data-ajax="false" data-transition="slide">Grupales</a></li>
+                        <li><a id="lvl1_1" href="#historial-content" data-ajax="false" data-transition="slide" onclick="lvl1(1)">Por partido</a></li>
+                        <li><a id="lvl1_2" href="#dos" data-ajax="false" data-transition="slide" onclick="lvl1(2)">Individuales</a></li>
+                        <li><a id="lvl1_3" href="#tres" data-ajax="false" data-transition="slide" onclick="lvl1(3)">Grupales</a></li>
                     </ul>
                 </div>
                 <div id="historial-content" class="ui-body-d ui-content">
