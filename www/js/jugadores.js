@@ -15,9 +15,10 @@ function jugadores(){
     		var xhr = new XMLHttpRequest();
 	        var add = new FormData();
 	        add.append('nombre_usuario',this.nombre);
+            add.append('nombre_invita',localStorage.getItem('nombre_usuario'));
 	        add.append('email_usuario',this.email);
 	        add.append('equipo',localStorage.getItem('equipo'));
-            add.append('nombre_equipo',localStorage.getItem('nombre_equipo'))
+            add.append('nombre_equipo',localStorage.getItem('nombre_equipo'));
             if(document.querySelector('input[name="jg-radio-posicion"]:checked') !== null){
                 add.append('posicion',document.querySelector('input[name="jg-radio-posicion"]:checked').value);
             } else {
@@ -35,7 +36,7 @@ function jugadores(){
                 navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
             }
 	        xhr.onload = function(e){
-                alert(this.response);
+                //alert(this.response);
                 //$('#add-jg').removeClass('ui-disabled');
                 $.mobile.loading('hide');
 	            if(this.status == 200){
@@ -61,6 +62,7 @@ function jugadores(){
                                     send.append('email_usuario',document.getElementById('jg-email').value);
                                     send.append('equipo',localStorage.getItem('equipo'));
                                     send.append('nombre_usuario',document.getElementById('jg-nombre').value);
+                                    send.append('nombre_equipo',localStorage.getItem('nombre_equipo'));
                                     if(document.querySelector('input[name="jg-radio-posicion"]:checked') !== null){
                                         send.append('posicion',document.querySelector('input[name="jg-radio-posicion"]:checked').value);
                                     } else {
@@ -171,10 +173,10 @@ function jugadores(){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var fullname = checkName(json.nombre,json.apellido_paterno);
+                    //alert(json.id_posicion);
                     try{
                         document.getElementById("jg-radio-"+json.id_posicion).checked = true;
                     } catch(e){
-                        alert(e);
                     }
                     $("input[name=jg-radio-posicion][value=" + json.id_posicion + "]").prop('checked', true);
                     document.getElementById('edit-jg').innerHTML = fullname;
