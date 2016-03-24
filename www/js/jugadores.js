@@ -27,13 +27,9 @@ function jugadores(){
 	        xhr.open('POST', path + 'app/addJugador');
 	        xhr.setRequestHeader('Cache-Control', 'no-cache');
 	        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-	        xhr.timeout = 10000;
             xhr.send(add);
             xhr.onprogress = function(e){
                 $.mobile.loading('show');
-            }
-            xhr.ontimeout = function(e){
-                navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
             }
 	        xhr.onload = function(e){
                 //alert(this.response);

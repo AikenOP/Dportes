@@ -78,10 +78,10 @@ function notificaciones(){
 		                inc += "<div class='block-notificacion'><img src='jquerymobile/img-dportes/logo-encuentro.png'><p class='nombre-equipo'>"+json[i].nombre+"</p></div>";
 		                inc += "<div class='vs-notificacion'>VS</div>";
 		                inc += "<div class='block-notificacion'><img src='jquerymobile/img-dportes/logo-encuentro.png'><p class='nombre-equipo'>"+json[i].evt_nombre+"</p></div>";
-		                inc += "<div class='block-notificacion'><p class='nombre-equipo-notificacion'>"+fecha+" - "+hora+"hrs</p></div>";
-		                inc += "<div class='block-notificacion'><p id='notifica-con"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-con' style='display:"+asistir+"'>Voy</p></div>";
-		                inc += "<div class='block-notificacion'><p id='notifica-no"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-in' style='display:"+no_asistir+"'>No Voy</p></div>";
-                        inc += "<div class='block-notificacion'><p id='notifica-no"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-in' style='display:"+no_confirma+"'>No Respondi</p></div>";
+		                inc += "<div class='block-notificacion-respuesta'><p class='nombre-equipo-notificacion'>"+fecha+" - "+hora+"hrs</p></div>";
+		                inc += "<div class='block-notificacion-respuesta'><p id='notifica-con"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-con' style='display:"+asistir+"'>Voy</p></div>";
+		                inc += "<div class='block-notificacion-respuesta'><p id='notifica-no"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-in' style='display:"+no_asistir+"'>No Voy</p></div>";
+                        inc += "<div class='block-notificacion-respuesta'><p id='notifica-no"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-in' style='display:"+no_confirma+"'>No Respondi</p></div>";
 		                inc += "</div>";
 		                inc += "</div>";
 		                inc += "</a>";
@@ -94,7 +94,7 @@ function notificaciones(){
                 }
             }
 
-        	$('#notificaciones-evt').append(inc);
+        	$('#notificaciones-evt').append(inc).trigger('create');
             if(json.length >= 5){
                 document.getElementById('not-more').style.display = "block";
             } else {
