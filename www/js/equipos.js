@@ -154,15 +154,15 @@ function equipos(){
 	    					click = '';
 	    					deleteDisabled = '';
 	    				}
-	                    inc += "<li value='"+json[i].id_equipo+"' class='li-padding' "+click+">";
+	                    inc += "<li value='"+json[i].id_equipo+"' class='li-padding'>";
 	                    inc += "<input id='eq_r"+json[i].id_equipo+"' type='hidden' value='"+json[i].rol+"'>";
 	                    inc += "<span class='delete "+deleteDisabled+"'>";
-	                    inc += "<div class='centra_texto'>Eliminar</div>";
+	                    inc += "<div class='centra_texto' onclick='deleteEquipo("+json[i].id_equipo+");'>Salir</div>";
 	                    inc += "</span>";
 	                    inc += "<span class='flag "+disabled+"'>";
-	                    inc += "<div class='centra_texto'>Seleccionar</div>";
+	                    inc += "<div class='centra_texto'>Elegir</div>";
 	                    inc += "</span>";
-	                    inc += "<a href='#' draggable='false'><img src='jquerymobile/img-dportes/logo-encuentro.png'>";
+	                    inc += "<a href='#' "+click+" draggable='false'><img src='jquerymobile/img-dportes/logo-encuentro.png'>";
 	                    inc += "<h2>"+json[i].nombre+"</h2>";
 	                    inc += "<span class='flagged "+flagged+"'>";
 	                    inc += "</span>";
@@ -205,9 +205,71 @@ function equipos(){
 		        localStorage.setItem('nombre_equipo',$(this).parent().find("h2").html());
 		        //text.text("");
 		    }
+	}).on("click", "ul li span.delete", function () {
+		var xhr = new XMLHttpRequest();
+		var send = new FormData();
+		var span = $(this);
+		send.append('id',localStorage.getItem('id'));
+		send.append('id_equipo',$(this).parent().val());
+		xhr.open('POST', path + 'app/removeMisEquipos');
+		xhr.setRequestHeader('Cache-Control', 'no-cache');
+		xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+		xhr.send(send);
+	    xhr.timeout = 10000;
+	    xhr.onprogress = function(e){
+	        $.mobile.loading('show');
+	    }
+	    xhr.ontimeout = function(e){
+	        navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
+	    }
+	    xhr.onload = function(e){
+			if(this.status == 200){
+                    var listview = span.closest("ul");
+                    $(".ui-content").css({
+                        overflow: "hidden"
+                    });
+                    span.parent().css({
+                        display: "block"
+                    }).animate({
+                        opacity: 0
+                    }, {
+                        duration: 250,
+                        queue: false
+                    }).animate({
+                        height: 0
+                    }, 300, function () {
+                        $(this).remove();
+                        listview.listview("refresh");
+                        $(".ui-content").removeAttr("style");
+                    });
+			}
+		}
 	});
 	}
 
+}
+
+function deleteEquipo(eq){
+	/*var xhr = new XMLHttpRequest();
+	var send = new FormData();
+	send.append('id',localStorage.getItem('id'));
+	send.append('id_equipo',eq);
+	xhr.open('POST', path + 'app/removeMisEquipos');
+	xhr.setRequestHeader('Cache-Control', 'no-cache');
+	xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+	xhr.send(send);
+    xhr.timeout = 10000;
+    xhr.onprogress = function(e){
+        $.mobile.loading('show');
+    }
+    xhr.ontimeout = function(e){
+        navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
+    }
+    xhr.onload = function(e){
+		if(this.status == 200){
+
+		}
+	}*/
 }
 
 function setEquipo(){
