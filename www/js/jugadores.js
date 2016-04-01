@@ -68,7 +68,7 @@ function jugadores(){
                                     xhr.setRequestHeader('Cache-Control', 'no-cache');
                                     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
                                     xhr.timeout = 10000;
-                                    xhr.send(add);
+                                    xhr.send(send);
                                     xhr.onprogress = function(e){
                                         $.mobile.loading('show');
                                     }

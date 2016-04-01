@@ -1,5 +1,5 @@
 //var path = 'http://localhost/dportes/';
-var path = 'http://desarrollo.ilia.cl/dportes/';
+var path = 'http://dportes.cl/';
 function checkMatches(){
 	var pass = document.getElementById('cambio-pass').value;
 	var match = document.getElementById('cambio-match').value;
