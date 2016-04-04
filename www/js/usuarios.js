@@ -28,6 +28,13 @@ function usuarios(){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var inc = '';
+                    var photo = document.getElementById('photo');
+                    photo.style.display = 'block';
+                    if(json.foto != null){
+                        photo.src =  path + 'perfiles/' + json.id_usuario + '/' + json.foto;
+                    } else {
+                        photo.src = "jquerymobile/img-dportes/foto2.png";
+                    }
                     document.getElementById('perfil-usuario').innerHTML = ucwords(json.nombre) + ' ' + ucwords(json.apellido_paterno);
                     document.getElementById('perfil-nombre').value = json.nombre + ' ' + json.apellido_paterno;
                     document.getElementById('perfil-correo').value = json.email;

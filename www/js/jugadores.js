@@ -174,6 +174,13 @@ function jugadores(){
                         document.getElementById("jg-radio-"+json.id_posicion).checked = true;
                     } catch(e){
                     }
+                    var photo = document.getElementById('edit-jg-foto');
+                    photo.style.display = 'block';
+                    if(json.foto != null){
+                        photo.src =  path + 'perfiles/' + json.id_usuario + '/' + json.foto;
+                    } else {
+                        photo.src = "jquerymobile/img-dportes/foto.png";
+                    }
                     $("input[name=jg-radio-posicion][value=" + json.id_posicion + "]").prop('checked', true);
                     document.getElementById('edit-jg').innerHTML = fullname;
                     document.getElementById('edit-jg-posicion').innerHTML = 'Posición: ' + json.nombre_p;
@@ -316,6 +323,7 @@ function jugadores(){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var inc = '';
+                    var foto = '';
                     var disabled = '';
                     for(var i = 0; i < json.length; i++ ){
                         if(localStorage.getItem('rol_equipo') == 1){
@@ -326,6 +334,11 @@ function jugadores(){
                             click = '';
                         }
                         
+                    if(json[i].foto != null){
+                        foto = path + "perfiles/"+json[i].id_usuario+"/"+json[i].foto;
+                    } else {
+                        foto = "jquerymobile/img-dportes/foto.png";
+                    }
                     inc += "<li value='"+json[i].id_usuario+"' class='li-padding'>";
                     inc += "<span class='delete "+disabled+"'>";
                     inc += "<div class='centra_texto'>Borrar</div>";
@@ -335,7 +348,7 @@ function jugadores(){
                     inc += "More"
                     inc += "</p>";
                     inc += "</span>";*/
-                    inc += "<a href='#' "+click+" draggable='false'><img src='jquerymobile/img-dportes/foto.png'>";
+                    inc += "<a href='#' "+click+" draggable='false'><img src='"+foto+"'>";
                     inc += "<h2>"+json[i].nombre+"</h2>";
                     inc += "<p>"+json[i].posicion+"</p>";
                     inc += "<span class='flagged ui-screen-hidden'>";

@@ -8,9 +8,9 @@ document.getElementById('takePhoto').addEventListener('click',function(){
         'Seleccione el origen de la imagen',
             function(button){
                 if(button == 1){
-                    navigator.camera.getPicture(onCapturePhoto, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, destinationType: navigator.camera.DestinationType.DATA_URL });
+                    navigator.camera.getPicture(onCapturePhoto, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, destinationType: navigator.camera.DestinationType.FILE_URI });
                 } else {
-                    navigator.camera.getPicture(onCapturePhoto, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, sourceType: 0, destinationType: navigator.camera.DestinationType.DATA_URL });
+                    navigator.camera.getPicture(onCapturePhoto, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, sourceType: 0, destinationType: navigator.camera.DestinationType.FILE_URI });
                 }
             },
         'Insertar Imagen',
@@ -23,9 +23,9 @@ document.getElementById('takePhoto2').addEventListener('click',function(){
         'Seleccione el origen de la imagen',
             function(button){
                 if(button == 1){
-                    navigator.camera.getPicture(onPhotoDataSuccess2, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, destinationType: navigator.camera.DestinationType.DATA_URL });
+                    navigator.camera.getPicture(onPhotoDataSuccess2, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, destinationType: navigator.camera.DestinationType.FILE_URI });
                 } else {
-                    navigator.camera.getPicture(onPhotoDataSuccess2, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, sourceType: 0, destinationType: navigator.camera.DestinationType.DATA_URL });
+                    navigator.camera.getPicture(onPhotoDataSuccess2, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, sourceType: 0, destinationType: navigator.camera.DestinationType.FILE_URI });
                 }
             },
         'Insertar Imagen',
@@ -45,15 +45,66 @@ document.getElementById('takePhoto2').addEventListener('click',function(){
     // allowEdit: true, destinationType: navigator.camera.DestinationType.DATA_URL });
 //}
 function onCapturePhoto(imageData) {
-    var photo = document.getElementById('photo');
-    photo.style.display = 'block';
-    photo.src = "data:image/jpeg;base64," + imageData;
+    var win = function (r) {
+        /*console.log("Code = " + r.responseCode);
+        console.log("Response = " + r.response);
+        console.log("Sent = " + r.bytesSent);*/
+        //alert("Image uploaded Perfil!");
+        var photo = document.getElementById('photo');
+        photo.style.display = 'block';
+        photo.src =  imageData;
+    }
+
+    var fail = function (error) {
+        alert("An error has occurred: Code = " + error.code);
+        /*console.log("upload error source " + error.source);
+        console.log("upload error target " + error.target);*/
+    }
+
+    var options = new FileUploadOptions();
+    options.fileKey = "file";
+    options.fileName = imageData.substr(imageData.lastIndexOf('/') + 1);
+    options.mimeType = "image/jpeg";
+
+    var params = {};
+    params.id_usuario = localStorage.getItem('id');
+
+    options.params = params;
+
+    var ft = new FileTransfer();
+    ft.upload(imageData, encodeURI(path + "app/sendPerfilImg"), win, fail, options);
 }
 
 function onPhotoDataSuccess2(imageData) {
-    var photo = document.getElementById('photo2');
-    photo.style.display = 'block';
-    photo.src = "data:image/jpeg;base64," + imageData;
+    var win = function (r) {
+        /*console.log("Code = " + r.responseCode);
+        console.log("Response = " + r.response);
+        console.log("Sent = " + r.bytesSent);*/
+        //alert("Image uploaded Perfil!");
+        var photo = document.getElementById('photo2');
+        photo.style.display = 'block';
+        photo.src =  imageData;
+    }
+
+    var fail = function (error) {
+        alert("An error has occurred: Code = " + error.code);
+        /*console.log("upload error source " + error.source);
+        console.log("upload error target " + error.target);*/
+    }
+
+    var options = new FileUploadOptions();
+    options.fileKey = "file";
+    options.fileName = imageData.substr(imageData.lastIndexOf('/') + 1);
+    options.mimeType = "image/jpeg";
+
+    var params = {};
+    params.id_equipo = sessionStorage.getItem('eq_session');
+
+    options.params = params;
+
+    var ft = new FileTransfer();
+    ft.upload(imageData, encodeURI(path + "app/sendEquipoImg"), win, fail, options);   
+
     //var sendPhoto = document.getElementById('sendPhoto');
     //sendPhoto.style.display = 'block';  
 }

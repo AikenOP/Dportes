@@ -21,15 +21,6 @@ function checkMatches(){
 	}
 }
 
-function lvl1(id){
-	for (var i = 1; i <= 3; i++) {
-		if(i == id){
-			$('lvl1_'+id).show();
-			sessionStorage.lvl1 = id;
-		}
-	};
-}
-
 function swipe(id,nav,position){
     var startLoc = null; 
     $(id).on( "touchstart", function(e){ 

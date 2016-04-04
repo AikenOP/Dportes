@@ -52,6 +52,13 @@ function equipos(){
         	if(this.status == 200){
 	    		if(this.response && JSON.parse(this.response)){
 	    			var json = JSON.parse(this.response);
+	    			var photo = document.getElementById('photo2');
+                    photo.style.display = 'block';
+    				if(json.logo != null){
+                    	photo.src =  path + 'equipos/' + json.id_equipo + '/logos/' + json.logo;
+                	} else {
+                		photo.src = "jquerymobile/img-dportes/logo-encuentro.png";
+                	}
 	    			document.getElementById('edit-equipo').innerHTML = json.nombre;
 	    			document.getElementById('edit-eq-nombre').value = json.nombre;
 	    			document.getElementById('edir-eq-region').value = 'No Disponible';
@@ -134,6 +141,7 @@ function equipos(){
 	    	if(this.status == 200){
 	    		if(this.response){
 	    			var json = JSON.parse(this.response);
+	    			var logo = '';
 	    			var inc = '';
 	    			var flagged = '';
 	    			var disabled = '';
@@ -154,6 +162,12 @@ function equipos(){
 	    					click = '';
 	    					deleteDisabled = '';
 	    				}
+	    				if(json[i].logo != null){
+	    					logo = path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo;
+	    				} else {
+	    					logo = 'jquerymobile/img-dportes/logo-encuentro.png';
+	    				}
+
 	                    inc += "<li value='"+json[i].id_equipo+"' class='li-padding'>";
 	                    inc += "<input id='eq_r"+json[i].id_equipo+"' type='hidden' value='"+json[i].rol+"'>";
 	                    inc += "<span class='delete "+deleteDisabled+"'>";
@@ -162,7 +176,7 @@ function equipos(){
 	                    inc += "<span class='flag "+disabled+"'>";
 	                    inc += "<div class='centra_texto'>Elegir</div>";
 	                    inc += "</span>";
-	                    inc += "<a href='#' "+click+" draggable='false'><img src='jquerymobile/img-dportes/logo-encuentro.png'>";
+	                    inc += "<a href='#' "+click+" draggable='false'><img src='"+logo+"'>";
 	                    inc += "<h2>"+json[i].nombre+"</h2>";
 	                    inc += "<span class='flagged "+flagged+"'>";
 	                    inc += "</span>";
