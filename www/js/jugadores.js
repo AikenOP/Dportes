@@ -389,11 +389,17 @@ function jugadores(){
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
+                    var foto = '';
                     var inc = '';
                     if(json.length != 0){
                         for(var i = 0; i < json.length; i++ ){
+                            if(json[i].foto != null){
+                                foto =  path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto;
+                            } else {
+                                foto = "jquerymobile/img-dportes/foto.png";
+                            }
                             inc += "<li>";
-                            inc += "<a onclick='setHistorialJG("+json[i].id_usuario+",\""+json[i].nombre+"\",\""+json[i].posicion+"\")' href='#' class='color-boton-equipo'><img src='jquerymobile/img-dportes/foto.png'>";
+                            inc += "<a onclick='setHistorialJG("+json[i].id_usuario+",\""+json[i].nombre+"\",\""+json[i].posicion+"\")' href='#' class='color-boton-equipo'><img src='"+foto+"'>";
                             inc += "<h2>"+json[i].nombre+"</h2>";
                             inc += "<p>"+json[i].posicion+"</p>";
                             inc += "</a>";
@@ -425,10 +431,16 @@ function jugadores(){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var inc = '';
+                    var foto = '';
                     if(json.length != 0){
                         for(var i = 0; i < json.length; i++ ){
+                            if(json[i].foto != null){
+                                foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto;
+                            } else {
+                                foto = "jquerymobile/img-dportes/foto.png";
+                            }
                             inc += "<li>";
-                            inc += "<a onclick='setParamIndividuales("+json[i].id_usuario+",\""+json[i].nombre+"\",\""+json[i].posicion+"\")' href='#' class='color-boton-equipo'><img src='jquerymobile/img-dportes/foto.png'>";
+                            inc += "<a onclick='setParamIndividuales("+json[i].id_usuario+",\""+json[i].nombre+"\",\""+json[i].posicion+"\")' href='#' class='color-boton-equipo'><img src='"+foto+"'>";
                             inc += "<h2>"+json[i].nombre+"</h2>";
                             inc += "<p>"+json[i].posicion+"</p>";
                             inc += "</a>";

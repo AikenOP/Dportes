@@ -20,7 +20,13 @@ function tablas(){
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
-
+                    var photo = document.getElementById('ind-foto');
+                    photo.style.display = 'block';
+                    if(json.foto != null){
+                        photo.src = path + 'perfiles/' + sessionStorage.getItem('pi_jugador') + '/' + json.foto;
+                    } else {
+                        photo.src = "jquerymobile/img-dportes/foto.png";
+                    }
                     document.getElementById('ind-gol-f').innerHTML = json.goles;
                     document.getElementById('ind-gol-c').innerHTML = json.goles_c;
                     document.getElementById('ind-gol-efec').innerHTML = json.efectividad_gol + '%';

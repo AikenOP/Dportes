@@ -86,7 +86,6 @@ function estadisticas(){
         xhr.onload = function(e){
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
-                    //alert(this.response);
                     var json = JSON.parse(this.response);
                     var inc = '';
                     var goles = json.goles;
@@ -106,6 +105,13 @@ function estadisticas(){
                     var faltas_c = json.faltas_c;
                     var asistencias = json.asistencias;
                     var asistencias_c = json.asistencias_c;
+                    var photo = document.getElementById('dt-foto');
+
+                    if(json.foto != null){
+                        photo.src = path + 'perfiles/' + sessionStorage.getItem('jugador') + '/' + json.foto;
+                    } else {
+                        photo.src = "jquerymobile/img-dportes/foto.png";
+                    }
 
                     document.getElementById('dt-goles').innerHTML = goles
                     document.getElementById('dt-goles-c').innerHTML = goles_c;
@@ -142,6 +148,15 @@ function estadisticas(){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var inc = '';
+                    var photo = document.getElementById('stat-logo');
+                    //photo.style.display = 'block';
+                    if(json.logo != null){
+                        //photo.src = "jquerymobile/img-dportes/logo-encuentro.png";
+                        photo.src = path + 'equipos/' + localStorage.getItem('equipo') + '/logos/' + json.logo;
+                    } else {
+                        photo.src = "jquerymobile/img-dportes/logo-encuentro.png";
+                    }
+                    
                     $("#stat-goles").html(inc).trigger('create');
                     var goles = json.goles;
                     var penales = json.penales;

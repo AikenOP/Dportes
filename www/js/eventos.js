@@ -184,14 +184,20 @@ function eventos(){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var inc = '';
+                    var logo = '';
 
                     if(json.length != 0){
                         for(var i = 0; i < json.length; i++ ){
+                            if(json[i].logo != null){
+                                logo = path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo;
+                            } else {
+                                logo = 'jquerymobile/img-dportes/logo-encuentro.png';
+                            }
                             inc += '<li data-icon="false">';
                             inc += '<a onclick="setParametrosEstadisticos('+json[i].id_evento+','+json[i].equipos_id_equipo+')" data-transition="fade" class="fechas" id="contenedor-fechas">';
                             inc += '<div class="contenedor-fechas">';
                             inc += '<div class="centrado-fechas">';
-                            inc += '<div class="block"><img src="jquerymobile/img-dportes/logo-encuentro.png"><p class="nombre-equipo">'+localStorage.getItem('nombre_equipo')+'</p></div>';
+                            inc += '<div class="block"><img src="'+logo+'"><p class="nombre-equipo">'+localStorage.getItem('nombre_equipo')+'</p></div>';
                             inc += '<div class="vs">VS</div>';
                             inc += '<div class="block"><img src="jquerymobile/img-dportes/logo-encuentro.png"><p class="nombre-equipo">'+json[i].nombre+'</p></div>';
                             inc += '<div class="fecha-partido">Jugado el: '+getFecha(json[i].fecha_evento)+'</div>';
@@ -200,6 +206,8 @@ function eventos(){
                             inc += '</a>';
                             inc += '</li>';
                         }
+                        var photo = document.getElementById('gp-logo');
+                        photo.src = logo;
                         $('#custom-format-listview').append(inc).listview('refresh');
                     } else {
                         $('#historial-content').html('<h2>No se han detectado partidos</h2>');
