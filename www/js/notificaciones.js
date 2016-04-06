@@ -45,6 +45,7 @@ function notificaciones(){
                     var no_asistir = 'none;';
                     var no_confirma = 'none;';
                     var clase = '';
+                    var logo = '';
                     for(var i = 0; i < json.length; i++ ){ 
                     	fecha = getFecha(json[i].fecha_evento);
                         hora = getHora(json[i].fecha_evento);
@@ -70,12 +71,18 @@ function notificaciones(){
                             clase = 'leido';
                         }
 
+                        if(json[i].logo != null){
+                            logo =  path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo;
+                        } else {
+                            logo = "jquerymobile/img-dportes/logo-encuentro.png";
+                        }
+
                     	inc += "<div class='contenedor-general-notificaciones' id='contenedor-notificacion'>";    
 		                inc += "<div id='notificacion_"+json[i].id_notificacion+"' class='fecha-notificacion "+clase+"'>Aviso de Encuentro</div>";
 		                inc += "<a onclick='redirectAsistencia("+json[i].id_notificacion+")' class='link-color'>";
 		                inc += "<div class='contenedor-fechas-notificacion'>";
 		                inc += "<div class='centrado-fechas-notificacion'>";
-		                inc += "<div class='block-notificacion'><img src='jquerymobile/img-dportes/logo-encuentro.png'><p class='nombre-equipo'>"+json[i].nombre+"</p></div>";
+		                inc += "<div class='block-notificacion'><img src='"+logo+"'><p class='nombre-equipo'>"+json[i].nombre+"</p></div>";
 		                inc += "<div class='vs-notificacion'>VS</div>";
 		                inc += "<div class='block-notificacion'><img src='jquerymobile/img-dportes/logo-encuentro.png'><p class='nombre-equipo'>"+json[i].evt_nombre+"</p></div>";
 		                inc += "<div class='block-notificacion-respuesta'><p class='nombre-equipo-notificacion'>"+fecha+" - "+hora+"hrs</p></div>";
@@ -169,6 +176,7 @@ function notificaciones(){
                     var json = JSON.parse(this.response);
                     var inc = '';
                     var tipo = '';
+                    var foto = '';
                     for(var i = 0; i < json.length; i++ ){
                         if(json[i].id_tipo_asistencia == 1){
                             tipo = "asistencia-asistira";
@@ -177,8 +185,15 @@ function notificaciones(){
                         } else {
                             tipo = "asistencia-sin-responder";
                         }
+
+                        if(json[i].foto != null){
+                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto;
+                        } else {
+                            foto = "jquerymobile/img-dportes/foto.png";
+                        }
+
                         inc += "<li data-icon='false'>";                        
-                        inc +=  "<a href='#' class='color-boton-equipo'><img src='jquerymobile/img-dportes/foto.png'>";
+                        inc +=  "<a href='#' class='color-boton-equipo'><img src='"+foto+"'>";
                         inc +=  "<h2>"+ json[i].nombre + "</h2>";
                         inc +=  "<p></p>";
                         inc +=  "<span class='ui-li-count "+tipo+"'>"+ json[i].nombre_asistencia +"</span>";

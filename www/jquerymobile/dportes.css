@@ -508,7 +508,8 @@ div.boton-participar a {margin-top:0px; margin-bottom:0px;}
 .contenedor-fechas-notificacion { padding-top:15px; padding-bottom:10px; text-align:center;width:100%;}
 .centrado-fechas-notificacion {display:inline-block;width:278px;}
 .block-notificacion { display:inline-block; vertical-align:top;}
-.block-notificacion-respuesta { display:block; width:100%; text-align:center;}
+.block-notificacion img { display: :inline-block; max-width: 74px;}
+.block-notificacion-respuesta { display:block; width: 100% text-align:center;}
 .block-notificacion2 { display:block; width:100%; text-align:center;}
 .vs-notificacion { font-size:18px; margin-left:15px; margin-right:15px; font-weight:bold; display:inline-block; vertical-align: top; margin-top:35px;  }
 .nombre-equipo-notificacion {margin: 5px 0 5px 0;font-size:12px; font-weight:bold; text-align:center;}
