@@ -271,12 +271,18 @@ function eventos(){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var inc = '';
+                    var logo = '';
                     for(var i = 0; i < json.length; i++ ){
+                        if(json[i].logo != null){
+                            logo = path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo;
+                        } else {
+                            logo = "jquerymobile/img-dportes/logo-encuentro.png";
+                        }
                         inc += '<li data-icon="false">';
                         inc += '<a href="#" data-transition="fade" class="fechas" onclick="setParametrosProgramados('+json[i].id_evento+')" id="contenedor-fechas">';
                         inc += '<div class="contenedor-fechas">';
                         inc += '<div class="centrado-fechas">';
-                        inc += '<div class="block"><img src="jquerymobile/img-dportes/logo-encuentro.png"><p class="nombre-equipo">'+localStorage.getItem('nombre_equipo')+'</p></div>';
+                        inc += '<div class="block"><img src="'+logo+'"><p class="nombre-equipo">'+localStorage.getItem('nombre_equipo')+'</p></div>';
                         inc += '<div class="vs">VS</div>';
                         inc += '<div class="block"><img src="jquerymobile/img-dportes/logo-encuentro.png"><p class="nombre-equipo">'+json[i].nombre+'</p></div>';
                         inc += '<div class="fecha-partido">Programado: '+getFecha(json[i].fecha_evento)+'</div>';

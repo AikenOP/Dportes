@@ -114,6 +114,7 @@ function jugadores(){
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
+                    var foto = '';
                     if(localStorage.getItem('rol') == 1){
                         var inc = '<a href="#add-jugadores"><div class="agregar_jugador"></div></a>';
                     } else {
@@ -124,11 +125,16 @@ function jugadores(){
                     for(var i = 0; i < json.length; i++ ){
                         //if(json[i].titular != ''){
                             checked = (json[i].titular) ? 'checked':'';
-                        //}       
+                        //}
+                        if(json[i].foto != null){
+                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto;
+                        } else {
+                            foto = "jquerymobile/img-dportes/foto.png";
+                        }   
                         inc = "<li data-icon='false' class='li-padding'>";
                         inc += "<input name='jg-titular[]' id='st"+json[i].id_usuario+"' type='checkbox' "+checked+" onclick='setTitular("+json[i].id_usuario+")'>";
                         inc += "<label for='st"+json[i].id_usuario+"'>";
-                        inc += "<div class='imagen_jugador'><img src='jquerymobile/img-dportes/foto.png'></div>";
+                        inc += "<div class='imagen_jugador'><img src='"+foto+"'></div>";
                         inc += "<h2>"+json[i].nombre+"</h2>";
                         inc += "<p>"+json[i].posicion+"</p></label></li>";
                         $("#set-titulares").append(inc).trigger('create');
@@ -496,6 +502,7 @@ function jugadores(){
                     var doubleAmarilla = '';
                     var cambio = '';
                     var goles = '';
+                    var foto = '';
 
                     document.getElementById('acc-jugadores').innerHTML = inc;
                     for(var i = 0; i < json.length; i++ ){
@@ -565,10 +572,16 @@ function jugadores(){
                             goles = 'display:none';
                         }
 
+                        if(json[i].foto != null){
+                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto;
+                        } else {
+                            foto = "jquerymobile/img-dportes/foto.png";
+                        }
+
                         inc = "<div id='jgActivo"+json[i].id_usuario+"' class='ui-block-"+clase+" centrar_jugador "+disabled+"'>";
                         inc += "<div style='position:relative;'>";
                         inc += "<a onclick='setIDTitular("+json[i].id_usuario+")' href='#' class='ancho_grilla'>";
-                        inc += "<img src='jquerymobile/img-dportes/foto.png'>";
+                        inc += "<img src='"+foto+"'>";
                         inc += "<div class='contenedor_iconos_jugadas'>";
                         //inc += "<img id='jugImg"+json[i].id_usuario+"' src='jquerymobile/img-dportes/iconos/icono_gol.png' style='"+goles+"'>";
                         inc += "<div id='jugGoles"+json[i].id_usuario+"' class='marcador-personal-goles-2' style='"+goles+"'>"+json[i].goles+"</div>";
@@ -642,10 +655,16 @@ function jugadores(){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var inc = '';
-                    for(var i = 0; i < json.length; i++ ){  
+                    var foto = '';
+                    for(var i = 0; i < json.length; i++ ){
+                        if(json[i].foto != null){
+                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto;
+                        } else {
+                            foto = "jquerymobile/img-dportes/foto.png";
+                        }  
                         inc += "<li data-icon='false' class='li-padding' >";
                         inc += "<a href='#' onclick='backAcciones("+json[i].id_usuario+")'>";
-                        inc += "<img src='jquerymobile/img-dportes/foto.png'>";
+                        inc += "<img src='"+foto+"'>";
                         inc += "<h2>"+json[i].nombre+"</h2>";
                         inc += "<p>"+json[i].posicion+"</p></a></li>";
                     };
@@ -726,6 +745,7 @@ function jugadores(){
                 if(this.response && JSON.parse(this.response)){
                     var inc = '';
                     var ape = '';
+                    var foto = '';
                     var json = JSON.parse(this.response);
                     for(var i = 0; i < json.length; i++ ){
                         if(json[i].apellido_paterno == null){
@@ -733,8 +753,13 @@ function jugadores(){
                         } else {
                             ape = json[i].apellido_paterno;
                         }
+                        if(json[i].foto != null){
+                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto;
+                        } else {
+                            foto = "jquerymobile/img-dportes/foto.png";
+                        }
                         inc += "<div class='draggable'>";
-                        inc += "<img src='jquerymobile/img-dportes/foto.png'>";
+                        inc += "<img src='"+foto+"'>";
                         inc += "<p>"+json[i].nombre + " " + ape +"</p>";
                         inc += '</div>';
                     }
