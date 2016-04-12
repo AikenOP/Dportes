@@ -61,6 +61,8 @@ function equipos(){
                 	}
 	    			document.getElementById('edit-equipo').innerHTML = json.nombre;
 	    			document.getElementById('edit-eq-nombre').value = json.nombre;
+	    			$("#mi-eq-region").val(json.id_region);
+	    			$('#mi-eq-region').selectmenu('refresh');
 	    			document.getElementById('edir-eq-region').value = 'No Disponible';
 	    			document.getElementById('edit-eq-comuna').value = 'No Disponible';
 	    		}

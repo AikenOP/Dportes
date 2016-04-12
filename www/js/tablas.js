@@ -275,9 +275,9 @@ function tablas(){
                     var inc = '';
                     var json = JSON.parse(this.response);
                     for(var i = 0; i < json.length; i++ ){
-                        inc += "<tr>";
+                        inc += "<tr class='ui-bar-d'>";
                         inc += "<td>"+json[i].nombre+"</td>";
-                        inc += "<td>"+json[i].efectividad+"%</td>";
+                        inc += "<td class='texto-a-la-derecha'>"+json[i].efectividad+"%</td>";
                         inc += "</tr>";
                     }
                     $('#efec-stat-table').html(inc);
@@ -312,7 +312,7 @@ function tablas(){
                     var delantero = json.delantero;
 
                     for(var i = 0; i < nd.length; i++ ){
-                        inc += "<tr>";
+                        inc += "<tr class='ui-bar-d'>";
                         inc += "<td>"+nd[i].nombre+"</td>";
                         inc += "<td>"+nd[i].efectividad+"%</td>";
                         inc += "</tr>";           
@@ -326,11 +326,11 @@ function tablas(){
                         inc += "<td>"+portero[i].efectividad+"%</td>";
                         inc += "</tr>";           
                     }
-                    $('#efec-stat-portero').html(inc);
+                    $('#efec-stat-portero').html(inc).trigger('create');
                     
                     inc = '';
                     for(var i = 0; i < defensa.length; i++ ){
-                        inc += "<tr>";
+                        inc += "<tr class='ui-bar-d'>";
                         inc += "<td>"+defensa[i].nombre+"</td>";
                         inc += "<td>"+defensa[i].efectividad+"%</td>";
                         inc += "</tr>";           
@@ -339,7 +339,7 @@ function tablas(){
                     
                     inc = '';
                     for(var i = 0; i < volante.length; i++ ){
-                        inc += "<tr>";
+                        inc += "<tr class='ui-bar-d'>";
                         inc += "<td>"+volante[i].nombre+"</td>";
                         inc += "<td>"+volante[i].efectividad+"%</td>";
                         inc += "</tr>";           
@@ -348,7 +348,7 @@ function tablas(){
                     
                     inc = '';
                     for(var i = 0; i < delantero.length; i++ ){
-                        inc += "<tr>";
+                        inc += "<tr class='ui-bar-d'>";
                         inc += "<td>"+delantero[i].nombre+"</td>";
                         inc += "<td>"+delantero[i].efectividad+"%</td>";
                         inc += "</tr>";           
@@ -387,12 +387,12 @@ function tablas(){
                     var quite = json.quite;
                     var asistencia = json.asistencia;
                     for(var i = 0; i < goles.length; i++ ){
-                        inc += "<tr>";
+                        inc += "<tr class='ui-bar-d'>";
                         inc += "<td>"+goles[i].nombre+"</td>";
                         inc += "<td>"+goles[i].efectividad+"%</td>";
                         inc += "</tr>";           
                     }
-                    $('#efec-stat-gol').html(inc);
+                    $('#efec-stat-gol').html(inc).trigger('create');
                     inc = '';
                     for(var i = 0; i < tiro_arco.length; i++ ){
                         inc += "<tr>";
@@ -403,7 +403,7 @@ function tablas(){
                     $('#efec-stat-tiro-arco').html(inc);
                     inc = '';
                     for(var i = 0; i < tiro_libre.length; i++ ){
-                        inc += "<tr>";
+                        inc += "<tr class='ui-bar-d'>";
                         inc += "<td>"+tiro_libre[i].nombre+"</td>";
                         inc += "<td>"+tiro_libre[i].efectividad+"%</td>";
                         inc += "</tr>";           

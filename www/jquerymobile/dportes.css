@@ -126,9 +126,14 @@ a.olvidemiclave, a.olvidemiclave:hover, a.olvidemiclave:visited {
 }*/
 /*---- BLOQUE DE ENCUENTROS O EL VERSUS AFECTA A: FECHAS_JUGADAS.HTML ----*/
 
+.color-encabezado-posicion {background: #9BE674; text-shadow:none;}
+.color-encabezado-tipos-goles {background: #9BE674; text-shadow:none;}
+.texto-a-la-derecha { text-align:right !important;}
+.margen-inferior-tabla { margin-bottom:15px;}
+
 /* ESTE ES UNA ALTERNANCIA DE COLORES APLICADO A LA TABLA ODD = IMPAR, EVEN = PAR, AFECTA A FECHAS_JUGADAS.HTML Y LAS TABLAS DE LAS ESTADISTICAS DE LOS PARTIDOS */
-table tr:nth-child(odd) {background-color:#EFEFEF;}
-table tr:nth-child(even) {background:#FFF;}
+/*table tr:nth-child(odd) {background-color:#EFEFEF;}
+table tr:nth-child(even) {background:#FFF;}*/
 /* Caja contenedora de encuentros */
 .contenedor-fechas {padding-top:15px;text-align:center;width:100%;}
 /* Caja con un ancho fijo */

@@ -1,8 +1,3 @@
-$(document).on("pagecreate","#home", function( event, ui ) {
-    sessionStorage.lvl1 = 1;
-    sessionStorage.lvl2 = 1;
-});
-
 $(document).on("pagecreate","#editar-equipo", function( event, ui ) {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', path + 'app/getRegiones');
