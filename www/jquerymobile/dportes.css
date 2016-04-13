@@ -156,7 +156,7 @@ a.fechas, a.fechas:hover, a.fechas:visited {
 	overflow:inherit !important;
     text-overflow: string!important;
 	white-space:normal !important;
-	/*max-width: 107px;*/ }
+	max-width: 107px; }
 /* Goles */
 .marcador {
 	font-size:28px !important;
