@@ -210,7 +210,7 @@ function eventos(){
                         photo.src = logo;
                         $('#custom-format-listview').append(inc).listview('refresh');
                     } else {
-                        $('#historial-content').html('<h2>No se han detectado partidos</h2>');
+                        $('#historial-content').html('<h2 align="center">No se han detectado partidos</h2>');
                     }
                 }
             } else {

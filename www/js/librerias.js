@@ -93,7 +93,7 @@ function checkName(nm,ap){
 	if(ap == null){
 		ap = '';
 	}
-	return nm + ' ' + ap;
+	return ucwords(nm) + ' ' + ucwords(ap);
 }
 
 function validaEmail(email){

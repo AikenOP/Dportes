@@ -148,12 +148,14 @@ function jugadores(){
     }
 
     this.getJugador = function(){
-        if(this.rol_usuario == 3){
-            $('#edit-jg-nombre').addClass('ui-state-disabled');
-            $('#edit-jg-correo').addClass('ui-state-disabled');
-        } else {
+        if((this.rol_usuario == 3 && localStorage.getItem('rol_equipo') == 1) || localStorage.getItem('id') == this.id_jugador){
             $('#edit-jg-nombre').removeClass('ui-state-disabled');
             $('#edit-jg-correo').removeClass('ui-state-disabled');
+            $('#edit-jg-save').removeClass('ui-state-disabled');
+        } else {
+            $('#edit-jg-nombre').addClass('ui-state-disabled');
+            $('#edit-jg-correo').addClass('ui-state-disabled');
+            $('#edit-jg-save').addClass('ui-state-disabled');
         }
         var xhr = new XMLHttpRequest();
         var send = new FormData();
@@ -332,13 +334,15 @@ function jugadores(){
                     var foto = '';
                     var disabled = '';
                     for(var i = 0; i < json.length; i++ ){
-                        if(localStorage.getItem('rol_equipo') == 1){
+                        disabled =  '';
+                        click = "onclick='redirectJugadores("+json[i].id_usuario+","+json[i].rol_usuario+")'";
+                        /*if(localStorage.getItem('rol_equipo') == 1){
                             disabled = (json[i].rol == 1) ? 'ui-state-disabled' : '';
                             click = "onclick='redirectJugadores("+json[i].id_usuario+","+json[i].rol_usuario+")'"; 
                         } else {
                             disabled = 'ui-state-disabled';
                             click = '';
-                        }
+                        }*/
                         
                     if(json[i].foto != null){
                         foto = path + "perfiles/"+json[i].id_usuario+"/"+json[i].foto;

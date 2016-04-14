@@ -495,6 +495,7 @@ li.li-padding div.ui-radio label { border-top:hidden; border-left:hidden; border
 .campos { width:45%/*width:57%*/; text-align:center; font-size:16px; color:#000; display:inline-block; margin-bottom:10px; color:#666; margin-left:5px;}
 .estadisticas-equipo-contrario { width:20%; text-align:center; font-size:14px; color:#000; display:inline-block; margin-bottom:16px; color:#666;}
 /* Iconos personalizados para botones con iconos */
+.ui-icon-camapana:after {background-image:url(img-dportes/iconos/campana-icon.svg);}
 .ui-icon-gol-encontra:after {background-image:url(img-dportes/iconos/gol-encontra.png);}
 .ui-icon-fin-tiempo:after {background-image:url(img-dportes/iconos/tiempo.png);}
 .ui-icon-borrar:after {background-image:url(img-dportes/iconos/mala.png);}

@@ -46,68 +46,75 @@ function notificaciones(){
                     var no_confirma = 'none;';
                     var clase = '';
                     var logo = '';
-                    for(var i = 0; i < json.length; i++ ){ 
-                    	fecha = getFecha(json[i].fecha_evento);
-                        hora = getHora(json[i].fecha_evento);
-                        if(json[i].tipos_asistencias_id_tipo_asistencia == 1){
-                            asistir = 'block;';
-                            no_asistir = 'none;';
-                            no_confirma = 'none;';
-                        } else if(json[i].tipos_asistencias_id_tipo_asistencia == 2){
-                            no_asistir = 'block;';
-                            asistir = 'none;';
-                            no_confirma = 'none;';
-                        } else if(json[i].tipos_asistencias_id_tipo_asistencia == 3 && json[i].bool_fecha == 1){
-                            no_asistir = 'none;';
-                            asistir = 'none;';
-                            no_confirma = 'block;';
-                        } else {
-                            no_asistir = 'none;';
-                            asistir = 'none;';
-                        }
-                        if(json[i].visto == 0){
-                            clase = 'no-leido';
-                        } else {
-                            clase = 'leido';
-                        }
+                    if(json.length == 0){
+                        for(var i = 0; i < json.length; i++ ){
+                        	fecha = getFecha(json[i].fecha_evento);
+                            hora = getHora(json[i].fecha_evento);
+                            if(json[i].tipos_asistencias_id_tipo_asistencia == 1){
+                                asistir = 'block;';
+                                no_asistir = 'none;';
+                                no_confirma = 'none;';
+                            } else if(json[i].tipos_asistencias_id_tipo_asistencia == 2){
+                                no_asistir = 'block;';
+                                asistir = 'none;';
+                                no_confirma = 'none;';
+                            } else if(json[i].tipos_asistencias_id_tipo_asistencia == 3 && json[i].bool_fecha == 1){
+                                no_asistir = 'none;';
+                                asistir = 'none;';
+                                no_confirma = 'block;';
+                            } else {
+                                no_asistir = 'none;';
+                                asistir = 'none;';
+                            }
+                            if(json[i].visto == 0){
+                                clase = 'no-leido';
+                            } else {
+                                clase = 'leido';
+                            }
 
-                        if(json[i].logo != null){
-                            logo =  path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo;
-                        } else {
-                            logo = "jquerymobile/img-dportes/logo-encuentro.png";
-                        }
+                            if(json[i].logo != null){
+                                logo =  path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo;
+                            } else {
+                                logo = "jquerymobile/img-dportes/logo-encuentro.png";
+                            }
 
-                    	inc += "<div class='contenedor-general-notificaciones' id='contenedor-notificacion'>";    
-		                inc += "<div id='notificacion_"+json[i].id_notificacion+"' class='fecha-notificacion "+clase+"'>Aviso de Encuentro</div>";
-		                inc += "<a onclick='redirectAsistencia("+json[i].id_notificacion+")' class='link-color'>";
-		                inc += "<div class='contenedor-fechas-notificacion'>";
-		                inc += "<div class='centrado-fechas-notificacion'>";
-		                inc += "<div class='block-notificacion'><img src='"+logo+"'><p class='nombre-equipo'>"+json[i].nombre+"</p></div>";
-		                inc += "<div class='vs-notificacion'>VS</div>";
-		                inc += "<div class='block-notificacion'><img src='jquerymobile/img-dportes/logo-encuentro.png'><p class='nombre-equipo'>"+json[i].evt_nombre+"</p></div>";
-		                inc += "<div class='block-notificacion-respuesta'><p class='nombre-equipo-notificacion'>"+fecha+" - "+hora+"hrs</p></div>";
-		                inc += "<div class='block-notificacion-respuesta'><p id='notifica-con"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-con' style='display:"+asistir+"'>Voy</p></div>";
-		                inc += "<div class='block-notificacion-respuesta'><p id='notifica-no"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-in' style='display:"+no_asistir+"'>No Voy</p></div>";
-                        inc += "<div class='block-notificacion-respuesta'><p id='notifica-no"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-in' style='display:"+no_confirma+"'>No Respondi</p></div>";
-		                inc += "</div>";
-		                inc += "</div>";
-		                inc += "</a>";
-                        if(json[i].bool_fecha != 1){
-		                  inc += "<div class='boton-participar'><a onclick='setAsistencia(1,"+json[i].id_notificacion+","+localStorage.getItem('id')+")' href='#ventana-asistira' data-rel='popup' data-position-to='window' class='ui-btn color-boton-notificacion' id='boton-asistere' data-transition='pop'>Voy</a></div>";
-		                  inc += "<div class='boton-participar'><a onclick='setAsistencia(2,"+json[i].id_notificacion+","+localStorage.getItem('id')+")' href='#ventana-no-asistira' data-rel='popup' data-position-to='window' class='ui-btn color-boton-notificacion-2' id='boton-no-asistere' data-transition='pop'>No Voy</a></div>";
-		                }
+                        	inc += "<div class='contenedor-general-notificaciones' id='contenedor-notificacion'>";    
+    		                inc += "<div id='notificacion_"+json[i].id_notificacion+"' class='fecha-notificacion "+clase+"'>Aviso de Encuentro</div>";
+    		                inc += "<a onclick='redirectAsistencia("+json[i].id_notificacion+")' class='link-color'>";
+    		                inc += "<div class='contenedor-fechas-notificacion'>";
+    		                inc += "<div class='centrado-fechas-notificacion'>";
+    		                inc += "<div class='block-notificacion'><img src='"+logo+"'><p class='nombre-equipo'>"+json[i].nombre+"</p></div>";
+    		                inc += "<div class='vs-notificacion'>VS</div>";
+    		                inc += "<div class='block-notificacion'><img src='jquerymobile/img-dportes/logo-encuentro.png'><p class='nombre-equipo'>"+json[i].evt_nombre+"</p></div>";
+    		                inc += "<div class='block-notificacion-respuesta'><p class='nombre-equipo-notificacion'>"+fecha+" - "+hora+"hrs</p></div>";
+    		                inc += "<div class='block-notificacion-respuesta'><p id='notifica-con"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-con' style='display:"+asistir+"'>Voy</p></div>";
+    		                inc += "<div class='block-notificacion-respuesta'><p id='notifica-no"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-in' style='display:"+no_asistir+"'>No Voy</p></div>";
+                            inc += "<div class='block-notificacion-respuesta'><p id='notifica-no"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-in' style='display:"+no_confirma+"'>No Respondi</p></div>";
+    		                inc += "</div>";
+    		                inc += "</div>";
+    		                inc += "</a>";
+                            if(json[i].bool_fecha != 1){
+    		                  inc += "<div class='boton-participar'><a onclick='setAsistencia(1,"+json[i].id_notificacion+","+localStorage.getItem('id')+")' href='#ventana-asistira' data-rel='popup' data-position-to='window' class='ui-btn color-boton-notificacion' id='boton-asistere' data-transition='pop'>Voy</a></div>";
+    		                  inc += "<div class='boton-participar'><a onclick='setAsistencia(2,"+json[i].id_notificacion+","+localStorage.getItem('id')+")' href='#ventana-no-asistira' data-rel='popup' data-position-to='window' class='ui-btn color-boton-notificacion-2' id='boton-no-asistere' data-transition='pop'>No Voy</a></div>";
+    		                }
+                            inc += "</div>";
+                        }
+                        $('#notificaciones-evt').html(inc).trigger('create');
+                        if(json.length >= 5){
+                            document.getElementById('not-more').style.display = "block";
+                        } else {
+                            document.getElementById('not-more').style.display = "none";
+                        }
+                        $.mobile.loading('hide');
+                    } else {
+                        inc = "<div style='text-align:center;'>";
+                        inc += "<img src='jquerymobile/img-dportes/imagen-sin-datos.png' width='138'>";
                         inc += "</div>";
+                        inc += "<p style='text-align:center; color:#FFF; font-size:17px; text-shadow:none;'>Encuentra aquí todas las notificaciones, la programación de partidos, participación de jugadores y más datos que siempre quisiste tener a la mano.</p>";
+                        $('#notificaciones-evt').html(inc).trigger("create");
                     }
                 }
             }
-
-        	$('#notificaciones-evt').append(inc).trigger('create');
-            if(json.length >= 5){
-                document.getElementById('not-more').style.display = "block";
-            } else {
-                document.getElementById('not-more').style.display = "none";
-            }
-            $.mobile.loading('hide');
         }
 	}
 
