@@ -46,7 +46,7 @@ function notificaciones(){
                     var no_confirma = 'none;';
                     var clase = '';
                     var logo = '';
-                    if(json.length == 0){
+                    if(json.length != 0){
                         for(var i = 0; i < json.length; i++ ){
                         	fecha = getFecha(json[i].fecha_evento);
                             hora = getHora(json[i].fecha_evento);

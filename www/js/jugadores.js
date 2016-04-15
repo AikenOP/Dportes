@@ -40,14 +40,18 @@ function jugadores(){
                     	document.getElementById('jg-nombre').value = '';
     					document.getElementById('jg-email').value = '';
                         navigator.notification.alert('Se agrego y notifico correctamente el jugador',function(){},'Atención','OK');
+                        $.mobile.navigate("#jugadores-equipo", {transition: "fade"});  
                     } else if(this.response == 2){
                         document.getElementById('jg-nombre').value = '';
                         document.getElementById('jg-email').value = '';
                         navigator.notification.alert('Se agrego e invito correctamente el jugador',function(){},'Atención','OK');
+                        $.mobile.navigate("#jugadores-equipo", {transition: "fade"});  
                     } else if(this.response == 3){
                         navigator.notification.alert('Lo sentimos pero este usuario fue eliminado en dportes.\n No se pudo agregar',function(){},'Atención','OK');
+                        $.mobile.navigate("#jugadores-equipo", {transition: "fade"});  
                     } else if(this.response == 4){
                         navigator.notification.alert('Este jugador ya es parte del equipo',function(){},'Atención','OK');
+                        $.mobile.navigate("#jugadores-equipo", {transition: "fade"});  
                     } else if(this.response == 5){
                         navigator.notification.confirm(
                             'Hemos detectado que este jugador ya formaba parte del equipo.\n ¿Desea reintegrarlo?',
@@ -333,47 +337,60 @@ function jugadores(){
                     var inc = '';
                     var foto = '';
                     var disabled = '';
-                    for(var i = 0; i < json.length; i++ ){
-                        disabled =  '';
-                        click = "onclick='redirectJugadores("+json[i].id_usuario+","+json[i].rol_usuario+")'";
-                        /*if(localStorage.getItem('rol_equipo') == 1){
-                            disabled = (json[i].rol == 1) ? 'ui-state-disabled' : '';
-                            click = "onclick='redirectJugadores("+json[i].id_usuario+","+json[i].rol_usuario+")'"; 
+
+                    if(json.length != 0){
+                        inc = "<ul id='jug-list' class='touch' data-role='listview' data-icon='false' data-split-icon='delete' data-inset='false' style='margin-bottom:70px;'>";
+                        inc +=  "</ul>";
+                        $('#content-jug-list').html(inc).trigger('create');
+                        inc = '';
+                        for(var i = 0; i < json.length; i++ ){
+                            disabled =  '';
+                            click = "onclick='redirectJugadores("+json[i].id_usuario+","+json[i].rol_usuario+")'";
+                            if(localStorage.getItem('rol_equipo') == 1){
+                                disabled = (json[i].rol == 1) ? 'ui-state-disabled' : '';
+                                click = "onclick='redirectJugadores("+json[i].id_usuario+","+json[i].rol_usuario+")'"; 
+                            } else {
+                                disabled = 'ui-state-disabled';
+                                click = '';
+                            }
+                            
+                        if(json[i].foto != null){
+                            foto = path + "perfiles/"+json[i].id_usuario+"/"+json[i].foto;
                         } else {
-                            disabled = 'ui-state-disabled';
-                            click = '';
-                        }*/
-                        
-                    if(json[i].foto != null){
-                        foto = path + "perfiles/"+json[i].id_usuario+"/"+json[i].foto;
-                    } else {
-                        foto = "jquerymobile/img-dportes/foto.png";
-                    }
-                    inc += "<li value='"+json[i].id_usuario+"' class='li-padding'>";
-                    inc += "<span class='delete "+disabled+"'>";
-                    inc += "<div class='centra_texto'>Borrar</div>";
-                    inc += "</span>";
-                    /*inc += "<span class='more'>";
-                    inc += "<p class='btn'>";
-                    inc += "More"
-                    inc += "</p>";
-                    inc += "</span>";*/
-                    inc += "<a href='#' "+click+" draggable='false'><img src='"+foto+"'>";
-                    inc += "<h2>"+json[i].nombre+"</h2>";
-                    inc += "<p>"+json[i].posicion+"</p>";
-                    inc += "<span class='flagged ui-screen-hidden'>";
-                    inc += "</span>";
-                    inc += "</a>";
-                    inc += "</li>";
-                    /*    inc += "<li>";
-                        inc += "<a href='#'><img src='jquerymobile/img-dportes/foto.png'>";
+                            foto = "jquerymobile/img-dportes/foto.png";
+                        }
+                        inc += "<li value='"+json[i].id_usuario+"' class='li-padding'>";
+                        inc += "<span class='delete "+disabled+"'>";
+                        inc += "<div class='centra_texto'>Borrar</div>";
+                        inc += "</span>";
+                        /*inc += "<span class='more'>";
+                        inc += "<p class='btn'>";
+                        inc += "More"
+                        inc += "</p>";
+                        inc += "</span>";*/
+                        inc += "<a href='#' "+click+" draggable='false'><img src='"+foto+"'>";
                         inc += "<h2>"+json[i].nombre+"</h2>";
                         inc += "<p>"+json[i].posicion+"</p>";
+                        inc += "<span class='flagged ui-screen-hidden'>";
+                        inc += "</span>";
                         inc += "</a>";
-                        inc += "<a href='#' class='ui-icon-borrar'>Delete</a>";
-                        inc += "</li>";*/
-                    };
-                    $("#jug-list").html(inc).listview('refresh');
+                        inc += "</li>";
+                        /*    inc += "<li>";
+                            inc += "<a href='#'><img src='jquerymobile/img-dportes/foto.png'>";
+                            inc += "<h2>"+json[i].nombre+"</h2>";
+                            inc += "<p>"+json[i].posicion+"</p>";
+                            inc += "</a>";
+                            inc += "<a href='#' class='ui-icon-borrar'>Delete</a>";
+                            inc += "</li>";*/
+                        };
+                        $("#jug-list").html(inc).listview('refresh');
+                    } else {
+                        inc = "<div style='text-align:center;'>";
+                        inc += "<img src='jquerymobile/img-dportes/imagen-sin-datos.png' width='138'>";
+                        inc += "</div>";
+                        inc += "<p style='text-align:center; color:#868686; font-size:17px; text-shadow:none;'>No tienes jugadores en tu equipo</p>";
+                        $('#content-jug-list').html(inc).trigger('create');
+                    }
                     $.mobile.loading('hide');
                 } else {
                     navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');

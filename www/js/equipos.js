@@ -149,44 +149,59 @@ function equipos(){
 	    			var disabled = '';
 	    			var deleteDisabled = '';
 	    			var click = '';
-	    			for(var i = 0; i < json.length; i++ ){
-	    				if(json[i].id_equipo == localStorage.getItem('equipo')){
-	    					flagged = '';
-	    					disabled = 'ui-state-disabled';
-	    				} else {
-	    					flagged = 'ui-screen-hidden';
-	    					disabled = '';
-	    				}
-	    				if(json[i].rol == 1){
-	    					deleteDisabled = 'ui-state-disabled';
-	    					click = "onclick='redirectEquipo("+json[i].id_equipo+")'";
-	    				} else {
-	    					click = '';
-	    					deleteDisabled = '';
-	    				}
-	    				if(json[i].logo != null){
-	    					logo = path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo;
-	    				} else {
-	    					logo = 'jquerymobile/img-dportes/logo-encuentro.png';
-	    				}
 
-	                    inc += "<li value='"+json[i].id_equipo+"' class='li-padding'>";
-	                    inc += "<input id='eq_r"+json[i].id_equipo+"' type='hidden' value='"+json[i].rol+"'>";
-	                    inc += "<span class='delete "+deleteDisabled+"'>";
-	                    inc += "<div class='centra_texto' onclick='deleteEquipo("+json[i].id_equipo+");'>Salir</div>";
-	                    inc += "</span>";
-	                    inc += "<span class='flag "+disabled+"'>";
-	                    inc += "<div class='centra_texto'>Elegir</div>";
-	                    inc += "</span>";
-	                    inc += "<a href='#' "+click+" draggable='false'><img src='"+logo+"'>";
-	                    inc += "<h2>"+json[i].nombre+"</h2>";
-	                    inc += "<span class='flagged "+flagged+"'>";
-	                    inc += "</span>";
-	                    inc += "</a>";
-	                    inc += "</li>";
-	    			}
-	    			$("#eq-list").html(inc).listview('refresh');
-                    $.mobile.loading('hide');
+	    			if(json.length != 0){
+            			inc = "<ul id='eq-list' class='touch' data-role='listview' data-icon='false' data-split-icon='delete' data-inset='false'>";
+            			inc += "</ul>";
+            			inc += "<a href='#reg-equipo'><div class='agregar_nuevo_equipo'></div></a>";
+            			$('#content-eq-list').html(inc).trigger('create');
+            			inc = '';
+	    				
+		    			for(var i = 0; i < json.length; i++ ){
+		    				if(json[i].id_equipo == localStorage.getItem('equipo')){
+		    					flagged = '';
+		    					disabled = 'ui-state-disabled';
+		    				} else {
+		    					flagged = 'ui-screen-hidden';
+		    					disabled = '';
+		    				}
+		    				if(json[i].rol == 1){
+		    					deleteDisabled = 'ui-state-disabled';
+		    					click = "onclick='redirectEquipo("+json[i].id_equipo+")'";
+		    				} else {
+		    					click = '';
+		    					deleteDisabled = '';
+		    				}
+		    				if(json[i].logo != null){
+		    					logo = path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo;
+		    				} else {
+		    					logo = 'jquerymobile/img-dportes/logo-encuentro.png';
+		    				}
+
+		                    inc += "<li value='"+json[i].id_equipo+"' class='li-padding'>";
+		                    inc += "<input id='eq_r"+json[i].id_equipo+"' type='hidden' value='"+json[i].rol+"'>";
+		                    inc += "<span class='delete "+deleteDisabled+"'>";
+		                    inc += "<div class='centra_texto' onclick='deleteEquipo("+json[i].id_equipo+");'>Salir</div>";
+		                    inc += "</span>";
+		                    inc += "<span class='flag "+disabled+"'>";
+		                    inc += "<div class='centra_texto'>Elegir</div>";
+		                    inc += "</span>";
+		                    inc += "<a href='#' "+click+" draggable='false'><img src='"+logo+"'>";
+		                    inc += "<h2>"+json[i].nombre+"</h2>";
+		                    inc += "<span class='flagged "+flagged+"'>";
+		                    inc += "</span>";
+		                    inc += "</a>";
+		                    inc += "</li>";
+		    			}
+		    			$("#eq-list").html(inc).listview('refresh');
+                	} else {
+                        inc = "<div style='text-align:center;'>";
+                        inc += "<img src='jquerymobile/img-dportes/imagen-sin-datos.png' width='138'>";
+                        inc += "</div>";
+                        inc += "<p style='text-align:center; color:#868686; font-size:17px; text-shadow:none;'>No tienes equipos asignados</p>";
+                		$('#content-eq-list').html(inc).trigger('create');
+                	}
+               		$.mobile.loading('hide');
 	    		}
 	    	}
         }
@@ -225,6 +240,8 @@ function equipos(){
 		var xhr = new XMLHttpRequest();
 		var send = new FormData();
 		var span = $(this);
+		var id = $(this).parent().val();
+		//alert(localStorage.getItem('equipo'));
 		send.append('id',localStorage.getItem('id'));
 		send.append('id_equipo',$(this).parent().val());
 		xhr.open('POST', path + 'app/removeMisEquipos');
