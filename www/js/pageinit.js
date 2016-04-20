@@ -1,6 +1,11 @@
     $(document).on('pagecontainerbeforeshow', function (e, ui) {
 
         var activePage = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
+
+        if(activePage === 'login'){
+            //alert(localStorage.getItem('equipo'));
+        }
+
         if(activePage === 'index') {
             document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -23,6 +28,18 @@
                 $('#home-pg').addClass('ui-state-disabled');
             } else {
                 $('#home-pg').removeClass('ui-state-disabled');           
+            }
+
+            if(localStorage.getItem('equipo')){
+                $('#home-add-jg').removeClass('ui-state-disabled');
+                $('#nav-jg').removeClass('ui-state-disabled');
+                $('#home-stat').removeClass('ui-state-disabled');
+                $('#nav-stat').removeClass('ui-state-disabled');
+            } else {
+                $('#home-add-jg').addClass('ui-state-disabled');
+                $('#nav-jg').addClass('ui-state-disabled');
+                $('#home-stat').addClass('ui-state-disabled');
+                $('#nav-stat').addClass('ui-state-disabled');
             }
             $('#home-jg').removeClass('ui-state-disabled');
             swipe('#home','#menu_perfil','right');
@@ -65,7 +82,7 @@
                     // e.message
                 });
             } catch(err){
-                alert(err);
+                //alert(err);
             }
         }
 
@@ -205,6 +222,11 @@
         }
 
         if(activePage === 'jugadores-equipo'){
+            if(localStorage.getItem('equipo')){
+                $('#add-jg-eq').removeClass('ui-state-disabled');
+            } else {
+                $('#add-jg-eq').addClass('ui-state-disabled');
+            }
             var jg = new jugadores();
             jg.id_equipo = localStorage.getItem('equipo');
             jg.getJugadoresEquipo();

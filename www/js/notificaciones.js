@@ -7,7 +7,8 @@ function notificaciones(){
 	this.getNotificaciones = function(){
 		var xhr = new XMLHttpRequest();
         var send = new FormData();
-        var offset = 0; 
+        var offset = 0;
+        var bool = this.bool;
 
         if($("div.contenedor-general-notificaciones").size() > 0 && this.bool == false){
             offset = $("div.contenedor-general-notificaciones").size();
@@ -46,6 +47,8 @@ function notificaciones(){
                     var no_confirma = 'none;';
                     var clase = '';
                     var logo = '';
+                    //alert(offset);
+                    //alert(json.length);
                     if(json.length != 0){
                         for(var i = 0; i < json.length; i++ ){
                         	fecha = getFecha(json[i].fecha_evento);
@@ -107,11 +110,16 @@ function notificaciones(){
                         }
                         $.mobile.loading('hide');
                     } else {
-                        inc = "<div style='text-align:center;'>";
-                        inc += "<img src='jquerymobile/img-dportes/imagen-sin-datos.png' width='138'>";
-                        inc += "</div>";
-                        inc += "<p style='text-align:center; color:#FFF; font-size:17px; text-shadow:none;'>Encuentra aquí todas las notificaciones, la programación de partidos, participación de jugadores y más datos que siempre quisiste tener a la mano.</p>";
-                        $('#notificaciones-evt').html(inc).trigger("create");
+                        if(bool){
+                            inc = "<div style='text-align:center;'>";
+                            inc += "<img src='jquerymobile/img-dportes/imagen-sin-datos.png' width='138'>";
+                            inc += "</div>";
+                            inc += "<p style='text-align:center; color:#FFF; font-size:17px; text-shadow:none;'>Encuentra aquí todas las notificaciones, la programación de partidos, participación de jugadores y más datos que siempre quisiste tener a la mano.</p>";
+                            $('#notificaciones-evt').html(inc).trigger("create");
+                        } else {
+                            document.getElementById('not-more').style.display = "none";
+                        }
+                        $.mobile.loading('hide');
                     }
                 }
             }

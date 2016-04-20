@@ -199,6 +199,7 @@ function equipos(){
                         inc += "<img src='jquerymobile/img-dportes/imagen-sin-datos.png' width='138'>";
                         inc += "</div>";
                         inc += "<p style='text-align:center; color:#868686; font-size:17px; text-shadow:none;'>No tienes equipos asignados</p>";
+                		inc += "<a href='#reg-equipo'><div class='agregar_nuevo_equipo'></div></a>";
                 		$('#content-eq-list').html(inc).trigger('create');
                 	}
                		$.mobile.loading('hide');
@@ -241,7 +242,6 @@ function equipos(){
 		var send = new FormData();
 		var span = $(this);
 		var id = $(this).parent().val();
-		//alert(localStorage.getItem('equipo'));
 		send.append('id',localStorage.getItem('id'));
 		send.append('id_equipo',$(this).parent().val());
 		xhr.open('POST', path + 'app/removeMisEquipos');
@@ -257,6 +257,9 @@ function equipos(){
 	    }
 	    xhr.onload = function(e){
 			if(this.status == 200){
+					if(localStorage.getItem('equipo') == id){
+						localStorage.removeItem('equipo');
+					}
                     var listview = span.closest("ul");
                     $(".ui-content").css({
                         overflow: "hidden"

@@ -40,9 +40,11 @@ function authentication(){
                         var json =  JSON.parse(this.response);
                         localStorage.setItem("nombre_usuario",json.nombre_usuario);
                         localStorage.setItem("id", json.usuario);
-                        localStorage.setItem("rol_equipo",json.rol);
-                        localStorage.setItem("equipo", json.equipo);
-                        localStorage.setItem("nombre_equipo", json.nombre_equipo);
+                        if(json.equipo){
+                            localStorage.setItem("equipo", json.equipo);
+                            localStorage.setItem("nombre_equipo", json.nombre_equipo);
+                            localStorage.setItem("rol_equipo",json.rol);
+                        }
                         localStorage.setItem("login", json.login);
                         if(json.rol_usuario==3){
                             $.mobile.navigate("#cambiar-contrasena", {transition: "fade"});
