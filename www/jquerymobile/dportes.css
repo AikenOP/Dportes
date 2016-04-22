@@ -1,5 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
+
 /* BOTON DE COLOR VERDE OSCURO */
 a.color-boton, a.color-boton:hover {
 	background:#008000 !important;
@@ -11,6 +12,7 @@ a.color-boton, a.color-boton:hover {
 	text-decoration:none; }
 a.color-boton:hover { background:#94E100 !important;}
 a.color-boton:focus { box-shadow:none !important;}
+
 /* BOTON AZUL DE COMENZAR PARTIDO, PERFIL.HTML */
 a.boton-partido, a.boton-partido:hover {
 	background:#06F !important;
@@ -22,25 +24,7 @@ a.boton-partido, a.boton-partido:hover {
 	border-color: }
 a.boton-partido:hover { background:#09F !important;}
 a.boton-partido:focus { box-shadow:none !important;}
-/* BOTONES PARA FACEBOOK Y TWITTER, DE MOMENTO NO SE ESTAN UTILIZANDO */
-/*a.color-boton-facebook, a.color-boton-facebook:hover {
-	background:#3A5795 !important;
-	font-size:14px;
-	color:#FFF !important;
-	font-family:Arial, Helvetica, sans-serif !important;
-	text-shadow:none !important;
-	border:hidden !important;
-	text-shadow:none !important; }
-a.color-boton-facebook:hover {background:#3A5795 !important;}
-a.color-boton-twitter, a.color-boton-twitter:hover {
-	background:#659FCB !important;
-	font-size:14px;
-	color:#FFF !important;
-	font-family:Arial, Helvetica, sans-serif !important;
-	text-shadow:none !important;
-	border:hidden !important;
-	text-shadow:none !important; }
-a.color-boton-twitter:hover {background:#659FCB !important;}*/
+
 /* BOTÓN DE ERROR, BOTON DE COLOR ROJO QUE MARCA ERRORES POR ALGUNA VALIDACION */
 a.color-boton-error-validacion, a.color-boton-error-validacion:hover {
 	background:#900 !important;
@@ -50,12 +34,14 @@ a.color-boton-error-validacion, a.color-boton-error-validacion:hover {
 	text-shadow:none !important;
 	border:hidden !important;
 	text-shadow:none !important; }
+
 /* CLASE PARA BOTONES SUBMIT */
 .btn-input { 
 	background: #008000 !important;
 	color: white !important;
 	text-shadow: none !important;
 	border-color:transparent !important; }
+
 /* INICIO DE LOGO ANTES DE QUE SE HABRA LA APLICACION */
 .centrado-inicio-logo  {
 	width:100%;
@@ -64,21 +50,8 @@ a.color-boton-error-validacion, a.color-boton-error-validacion:hover {
 	top: 50%;
 	transform: translate(-50%, -50%);
 	-webkit-transform: translate(-50%, -50%); }
-.contenedor-inicio-logo {
-	text-align:center;
-	width:100%; }
-/* ES PARA CUANDO SE UTLICE EL FOOTER EN LA PLANTILLA DE DPORTES, DE MOMENTO NO SE ESTA UTILIZANDO EL FOOTER */
-/*a.enlace_footer {
-	color:#666 !important;
-	font-family:Arial, Helvetica, sans-serif !important;
-	text-shadow:none !important;
-	text-decoration:none !important; }
-a.enlace_footer:hover {
-	color:#666 !important;
-	font-family:Arial, Helvetica, sans-serif !important;
-	text-shadow:none !important;
-	text-decoration:none !important; }
-.footer-background { background-color:transparent !important; border-color:transparent !important; }*/
+.contenedor-inicio-logo {text-align:center; width:100%; }
+
 /* ALINEACIÓN CENTRADO DE FORMA VERTICAL PARA BOTONES Y CAMPOS DEL LOGIN INDEX.HTML, COMENZAR_PARTIDA.HTML, DETALLE_ESTADISTICAS.HTML */
 .alineacion-centro-vertical {
     position: absolute;
@@ -114,16 +87,7 @@ a.olvidemiclave, a.olvidemiclave:hover, a.olvidemiclave:visited {
 /* PUBLICIDAD */
 .contenedor_publicidad { width:100%; text-align:center; bottom: 0px; position: fixed; height:auto; margin-bottom:0px !important}
 .contenedor_publicidad a img {width: 100%; max-width: 334px; max-height:100px; margin-bottom:-5px !important}
-/* lista de numero de jugador, aplica ESTADISTICAS_JUGADORES.HTML*/
-/*.numero-jugador {font-size:30px; float:left;}*/
-/* Separador o raya vertical que separa el número y el nombre del jugador, de momento no se esta utilizando*/
-/*.separador-numero-jugador {height:30px; background:#FFF; width:1px; float:left; margin:10px 10px 0 10px;}*/
-/* Alineación de textos checkbox en partido en juego: PENDIENTE */
-/*.leyenda-checkbox{
-	font-size:14px;
-	font-weight:bold;
-	text-align:left;
-}*/
+
 /*---- BLOQUE DE ENCUENTROS O EL VERSUS AFECTA A: FECHAS_JUGADAS.HTML ----*/
 
 .color-encabezado-posicion {background: #9BE674; text-shadow:none;}
@@ -150,6 +114,16 @@ a.fechas, a.fechas:hover, a.fechas:visited {
 	text-shadow:none !important; }
 /* Nombre del equipo que esta debajo de la imagen del equipo o en el versus */
 .nombre-equipo {
+	margin: 5px 0 5px 0;
+	font-size:12px;
+	text-align:center;
+	overflow:inherit !important;
+    text-overflow: string!important;
+	white-space:normal !important;
+	color:#595959;
+	font-weight:bold !important; }
+/*este es para el nombre del equipo en notificaciones*/
+.nombre-equipo-notificaciones {
 	margin: 5px 0 5px 0;
 	font-size:12px;
 	text-align:center;
@@ -453,9 +427,6 @@ li.li-padding div.ui-checkbox label { border-top:hidden; border-left:hidden; bor
 /* Afecta a SELECCIONAR_RESERVAS.HTML */
 li.li-padding div.ui-radio { margin:0 !important;}
 li.li-padding div.ui-radio label { border-top:hidden; border-left:hidden; border-right:hidden;}
-/*.espaciado_marcador{margin:0 12px 0 12px;}
-.logo-equipos {width:100%; max-width:180px;}
-.alinea-centro-checkbox {text-align:inherit;}*/
 /* Saca los estilos a boton predeterminado, para poner icono de flecha avanzar o retroceder e icono menu */
 .saca-estilo-boton {
 	padding: 0 !important;
@@ -505,15 +476,557 @@ li.li-padding div.ui-radio label { border-top:hidden; border-left:hidden; border
 .icono-fallado {background-image:url(img-dportes/iconos/fallado.png); width:22px; height:22px; display:inline-block;}
 .jugador {display: inline-block; vertical-align: top; margin-left: 4px;}
 .detalle { margin:10px auto;}
+
+/*Este aplica para todos que sigan esta estructura para dejar imagenes en circulo*/
 li a img {
-width: 80px;
-height: 80px;
-border-radius: 40px !important;
--moz-border-radius: 40px !important;
--webkit-border-radius: 40px !important;
--khtml-border-radius: 40px !important;
-overflow: hidden;
+	width: 70px;
+	height: 70px;
+	border-radius: 40px !important;
+	-moz-border-radius: 40px !important;
+	-webkit-border-radius: 40px !important;
+	-khtml-border-radius: 40px !important;
+	overflow: hidden;
+	margin-top:5px;
 }
+/*cierre*/
+
+/*este es para la lista de jugadores y jugadas que aparecen en la seccion de estadisticas grupales para el tema de mascara circular */
+.lista-jugador {
+	width: 40px;
+	height: 40px;
+	border-radius: 40px !important;
+	-moz-border-radius: 40px !important;
+	-webkit-border-radius: 40px !important;
+	-khtml-border-radius: 40px !important;
+	overflow: hidden;
+	vertical-align: middle;
+	margin-right: 10px;
+	background:#D5D5D5;
+}
+/*cierre*/
+
+/*BOTONES EN ESTADISTICAS > GRUPALES*/
+.btn-cilindro {
+	-webkit-border-radius: 28;
+	-moz-border-radius: 28;
+	border-radius: 28px;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 15px;
+	background: #3db32b;
+	padding: 6px 12px 6px 12px;
+	text-shadow:none;}
+.btn-cilindro:hover {background: #D89204;}
+/*cierre*/
+
+/*-- ESTADISTICAS > TARJETAS AMARILLAS Y ROJAS --*/
+.celda-tarjetas {
+	margin-top:12px;
+	width: 100%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	height:30px;
+	position:relative;}
+.celda-grafico-total-tarjeta {
+	width: 60%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: left;
+	position: absolute;
+	margin-top: 8px;
+	padding-left:7px;}
+a.color-enlace-grafico {color:#090; text-decoration:none;}
+.tarjeta-amarilla-estadistica {
+	width:18px; 
+	height:26px; 
+	background:#FF0; 
+	border: 1px #FFCF00 solid; 
+	position:absolute; 
+	right:0;}
+.tarjeta-roja-estadistica {
+	width:18px; 
+	height:26px; 
+	background:#900; 
+	border: 1px #600 solid; 
+	position:absolute; 
+	right:50px;}
+.contenedor-celda-tarjetas {
+	display:block; 
+	border-top: 1px solid; 
+	border-color: #D1D1D1; 
+	padding-top:10px; 
+	padding-bottom:10px; 
+	position:relative;}
+.celda-total-tarjetas {
+	width:53%; 
+	font-size:12px; 
+	color:#333; 
+	display:inline-block; 
+	text-align:left; 
+	padding-left:7px; 
+	font-weight:bold;}
+.celda-total-tarjeta-amarilla {
+	width: 10%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:0;
+	font-weight:bold;}
+.celda-total-tarjeta-roja {
+	width: 10%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:50px;
+	font-weight:bold;}
+.celda-1 {
+	width: 10%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:50px;
+	margin-top:13px;}
+.celda-2 {
+	width: 10%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:0;
+	margin-top:13px;}
+/*-- CIERRE DE ESTADISTICAS > TARJETAS AMARILLAS Y ROJAS --*/
+
+/*-- ESTADISTICAS > TIPOS DE GOLES --*/
+.fila-contenedor-afavor-encontra {
+	margin-top:12px;
+	width: 100%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	height:30px;
+	position:relative;}
+.celda-afavor {
+	width: 20%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:66px;
+	margin-top:8px;
+	font-weight:bold;}
+.celda-encontra {
+	width: 21%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:0;
+	margin-top:8px;
+	font-weight:bold;}
+.fila-contenedor-tipos-goles {
+	display:block; 
+	border-top: 1px solid; 
+	border-color: #D1D1D1; 
+	padding-top:10px; 
+	padding-bottom:10px; 
+	position:relative;}
+.celda-goles-acumulados {
+	width:53%; 
+	font-size:12px; 
+	color:#333; 
+	display:inline-block; 
+	text-align:left; 
+	padding-left:7px; 
+	font-weight:bold;}
+.celda-total-afavor {
+	width: 21%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:66px;
+	font-weight:bold;}
+.celda-total-encontra {
+	width: 21%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:0;
+	font-weight:bold;}
+.celda-tipo-de-gol {
+	width:53%; 
+	font-size:12px; 
+	color:#333; 
+	display:inline-block;}
+.celda-datos-afavor {
+	width: 10%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:68px;
+	margin-top:13px;}
+.celda-datos-encontra {
+	width: 10%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:0px;
+	margin-top:13px;}
+/*-- CIERRE DE ESTADISTICAS > TIPOS DE GOLES --*/
+
+/*-- ESTADISTICAS > CAMBIOS --*/
+.fila-titulos-cambios {
+	margin-top:12px;
+	width: 100%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	height:30px;
+	position:relative;}
+.celda-titulo-jugador {
+	width: 38%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: left;
+	position: absolute;
+	margin-top: 8px;
+	padding-left:7px;
+	font-weight:bold;}
+.celda-titular {
+	width: 20%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:105px;
+	margin-top:8px;
+	font-weight:bold;}
+.celda-reserva {
+	width: 21%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:50px;
+	margin-top:8px;
+	font-weight:bold;}
+.celda-cambio {
+	width: 21%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:0;
+	margin-top:8px;
+	font-weight:bold;}
+.contenedor-fila-cambios {
+	display:block; 
+	border-top: 1px solid; 
+	border-color: #D1D1D1; 
+	padding-top:10px; 
+	padding-bottom:10px; 
+	position:relative;}
+.celda-nombre-cambios {
+	width:53%; 
+	font-size:12px; 
+	color:#333; 
+	display:inline-block; 
+	padding-left:5px;}
+.celda-total-titular {
+	width: 15%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:110px;
+	font-weight:bold;}
+.celda-total-reserva {
+	width: 15%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:52px;
+	font-weight:bold;}
+.celda-total-cambios {
+	width: 15%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:0;
+	font-weight:bold;}
+.celda-datos-titular {
+	width: 15%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:110px;
+	margin-top:4px;}
+.celda-datos-reserva {
+	width: 15%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:52px;
+	margin-top:4px;}
+.celda-datos-cambios {
+	width: 15%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:0;
+	margin-top:4px;}
+/*-- CIERRE DE ESTADISTICAS > CAMBIOS --*/
+
+/*-- ESTADISTICAS > GOLES POR JUGADOR --*/
+.fila-contenedor-titulos-goles {
+	margin-top:12px;
+	width: 100%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	height:30px;
+	position:relative;}
+.celda-grafico-total-goles {
+	width: 60%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: left;
+	position: absolute;
+	margin-top: 8px;
+	padding-left:7px;}
+a.color-enlace-goles {color:#090; text-decoration:none;}
+.celda-afavor-goles {
+	width: 20%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:66px;
+	margin-top:8px;
+	font-weight:bold;}
+.celda-encontra-goles {
+	width: 21%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:0;
+	margin-top:8px;
+	font-weight:bold;}
+.fila-contenedor-goles {
+	display:block; 
+	border-top: 1px solid; 
+	border-color: #D1D1D1; 
+	padding-top:10px; 
+	padding-bottom:10px; 
+	position:relative;}
+.celda-goles-acumulados-jugador {
+	width:53%; 
+	font-size:12px; 
+	color:#333; 
+	display:inline-block; 
+	text-align:left; 
+	padding-left:7px; 
+	font-weight:bold;}
+.celda-total-afavor-goles {
+	width: 21%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:66px;
+	font-weight:bold;}
+.celda-total-encontra-goles {
+	width: 21%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:0;
+	font-weight:bold;}
+.celda-nombre-goles-jugador {
+	width:53%; 
+	font-size:12px; 
+	color:#333; 
+	display:inline-block;}
+.celda-datos-afavor-goles {
+	width: 10%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:68px;
+	margin-top:13px;}
+.celda-datos-encontra-goles {
+	width: 10%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:0px;
+	margin-top:13px;}
+/*-- CIERRE DE ESTADISTICAS > GOLES POR JUGADOR --*/
+
+
+/*-- ESTADISTICAS > EFECTIVIDAD > JUGADOR --*/
+.celda-efectividad {
+	width: 100%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	margin: 20px 0 6px 0;}
+.fila-efectividad {
+	display:block; 
+	border-top: 1px solid; 
+	border-color: #D1D1D1; 
+	padding-top:10px; 
+	padding-bottom:10px; 
+	position:relative;}
+.celda-nombre-efectividad {
+	width:53%; 
+	font-size:12px; 
+	color:#333; 
+	display:inline-block;}
+.celda-porcentaje-efectividad {
+	width: 26%;
+	font-size: 12px;
+	color: #333;
+	position: absolute;
+	display: inline-block;
+	text-align: right;
+	right: 0px;
+	margin-top:13px}
+.celda-datos-afavor-jugador {
+	width: 10%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:68px;
+	margin-top:13px;}
+.celda-datos-encontra-jugador {
+	width: 10%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;
+	position:absolute;
+	right:0px;
+	margin-top:13px;}
+/*-- CIERRE DE ESTADISTICAS > EFECTIVIDAD > JUGADOR --*/
+
+/*-- ESTADISTICAS > EFECTIVIDAD > POSICION --*/
+.fila-posicion {
+	display:block; 
+	background:#AEBCA4; 
+	margin-top:20px; 
+	text-shadow:none;}
+.celda-nombre-efectividad-2 {
+	width:100%; 
+	font-size:12px; 
+	color:#333; 
+	display:inline-block; 
+	padding:7px; 
+	font-weight:bold;}
+.celda-efectividad-posicion {
+	width: 100%;
+	font-size: 12px;
+	color: #333;
+	display: inline-block;
+	text-align: right;}
+.padding-tabla {
+	padding:10px 0 10px 0; 
+	border-bottom: 1px solid; 
+	border-color: #D1D1D1;}
+.fila-efectividad-2 {display:block;}
+.celda-nombre-posicion {
+	width:53%; 
+	font-size:12px; 
+	color:#333; 
+	display:inline-block;}
+.celda-porcentaje-posicion {
+	width: 26%;
+	font-size: 12px;
+	color: #333;
+	position: absolute;
+	display: inline-block;
+	text-align: right;
+	right: 0px;
+	margin-top:13px}
+/*-- CIERRE DE ESTADISTICAS > EFECTIVIDAD > POSICION --*/
+
+/*-- ESTADISTICAS > EFECTIVIDAD > JUGADA --*/
+.fila-posicion-jugada {display:block; background:#B6D8B9; margin-top:20px; text-shadow:none;}
+.celda-nombre-jugada {
+	width:100%; 
+	font-size:12px; 
+	color:#333; 
+	display:inline-block; 
+	padding:7px; 
+	font-weight:bold;}
+.contenedor-fila-jugada {
+	padding:10px 0 10px 0; 
+	border-bottom: 1px solid; 
+	border-color: #D1D1D1;}
+.bloque-jugada {display:block;}
+.celda-nombre-jugada {
+	width:53%; 
+	font-size:12px; 
+	color:#333; 
+	display:inline-block;}
+.celda-porcentaje-jugada {
+	width: 26%;
+	font-size: 12px;
+	color: #333;
+	position: absolute;
+	display: inline-block;
+	text-align: right;
+	right: 0px;
+	margin-top:13px}
+/*-- CIERRE DE ESTADISTICAS > EFECTIVIDAD > JUGADA --*/
+
 /* Notificaciones, afecta NOTIFICACIONES.HTML */
 .boton-participar {width:50%; float:left;}
 .contenedor-general-notificaciones {overflow:auto; margin-bottom:15px; background:#FFF;}
@@ -1023,11 +1536,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbc01', end
 
 }
 
-    canvas{
-        width: 100% !important;
-        max-width: 800px;
-        height: auto !important;
-    }
+canvas{
+	width: 100% !important;
+	max-width: 800px;
+	height: auto !important;
+}
 
 @media (max-width: 480px) {
 
@@ -1060,11 +1573,6 @@ background: linear-gradient(to bottom, rgba(255,188,1,1) 0%, rgba(246,168,0,1) 1
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbc01', endColorstr='#f6a800', GradientType=0 );
 }
 .seccion-derecha {display:inline-block;float:right; width:50%}
-
-/*.ui-mobile .ui-page-active {
-    display: block;
-	overflow:hidden !important;
-}*/
 
 }
 canvas { width: 100% !important; max-width: 800px; height: auto !important;}

@@ -132,17 +132,23 @@ function tablas(){
                     var json = JSON.parse(this.response);
                     var tarjetas = json.tabla;
                     var total = json.total;
-                    inc = "<tr>";
-                    inc += "<td><a href='#amarillas'>Total</a></td>";
-                    inc += "<td>"+total.amarillas+"</td>";
-                    inc += "<td>"+total.rojas+"</td>";
-                    inc += "</tr>";
+                    inc = "<div class='celda-tarjetas'>";
+                    inc += "<div class='celda-grafico-total-tarjeta'><a href='#' class='color-enlace-grafico'>Ver Gráfico total de tarjetas</a></div>";
+                    inc += "<div class='tarjeta-amarilla-estadistica'></div>";
+                    inc += "<div class='tarjeta-roja-estadistica'></div>";
+                    inc += "</div>";
+                    inc += "<div class='contenedor-celda-tarjetas'>";
+                    inc += "<div class='celda-total-tarjetas'>Tarjetas Acumuladas</div>";
+                    inc += "<div class='celda-total-tarjeta-amarilla'>"+total.amarillas+"</div>";
+                    inc += "<div class='celda-total-tarjeta-roja'>"+total.rojas+"</div>";
+                    inc += "</div>";
                     for(var i = 0; i < tarjetas.length; i++ ){
-                        inc += "<tr>";
-                        inc += "<td>"+tarjetas[i].nombre+"</td>";
-                        inc += "<td>"+tarjetas[i].amarillas+"</td>";
-                        inc += "<td>"+tarjetas[i].rojas+"</td>";
-                        inc += "</tr>";
+                        inc += "<div class='contenedor-celda-tarjetas'>";
+                        inc += "<img src='jquerymobile/img-dportes/jugador1.jpg' class='lista-jugador'>";
+                        inc += "<div class='celda-nombre-efectividad'>"+tarjetas[i].nombre+"</div>";
+                        inc += "<div class='celda-1'>"+tarjetas[i].amarillas+"</div>";
+                        inc += "<div class='celda-2'>"+tarjetas[i].rojas+"</div>";
+                        inc += "</div>";
                     }
                     $('#tabla-tarjeta-grupal').html(inc);
                     $.mobile.loading('hide');
@@ -162,8 +168,8 @@ function tablas(){
 
         xhr.onprogress = function(e){
             $.mobile.loading('show');
-        }
-        
+        }                     
+
         xhr.onload = function(){
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
@@ -171,19 +177,25 @@ function tablas(){
                     var json = JSON.parse(this.response);
                     var goles = json.tabla;
                     var total = json.total;
-                    inc = "<tr>";
-                    inc += "<td><a href='#amarillas'>Total</a></td>";
-                    inc += "<td>"+total.favor+"</td>";
-                    inc += "<td>"+total.contra+"</td>";
-                    inc += "</tr>";
+                    inc += "<div class='fila-contenedor-titulos-goles'>";
+                    inc += "<div class='celda-grafico-total-goles'><a href='#' class='color-enlace-goles'>Gráfico total de Goles</a></div>";
+                    inc += "<div class='celda-afavor-goles'>A Favor</div>";
+                    inc += "<div class='celda-encontra-goles'>En Contra</div>";
+                    inc += "</div>";
+                    inc += "<div class='fila-contenedor-goles'>";
+                    inc += "<div class='celda-goles-acumulados-jugador'>Goles Acumulados</div>";
+                    inc += "<div class='celda-total-afavor-goles'>"+total.favor+"</div>";
+                    inc += "<div class='celda-total-encontra-goles'>"+total.contra+"</div>";
+                    inc += "</div>";
                     for(var i = 0; i < goles.length; i++ ){
-                        inc += "<tr>";
-                        inc += "<td>"+goles[i].nombre+"</td>";
-                        inc += "<td>"+goles[i].favor+"</td>";
-                        inc += "<td>"+goles[i].contra+"</td>";
-                        inc += "</tr>";
+                        inc += "<div class='fila-contenedor-goles'>";
+                        inc += "<img src='jquerymobile/img-dportes/jugador1.jpg' class='lista-jugador'>";
+                        inc += "<div class='celda-nombre-goles-jugador'>"+goles[i].nombre+"</div>";
+                        inc += "<div class='celda-datos-afavor-jugador'>"+goles[i].favor+"</div>";
+                        inc += "<div class='celda-datos-encontra-jugador'>"+goles[i].contra+"</div>";
+                        inc += "</div>";
                     }
-                    $('#tabla-goles-grupal').html(inc);
+                    $('#tabla-grupal-gol').html(inc);
                     $.mobile.loading('hide');
                 }
             }
@@ -202,21 +214,32 @@ function tablas(){
         xhr.onprogress = function(e){
             $.mobile.loading('show');
         }
-        
+                                
         xhr.onload = function(){
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
                     var inc = '';
                     var json = JSON.parse(this.response);
                     var tipos = json.tabla;
+                    inc  = "<div class='fila-contenedor-afavor-encontra'>";
+                    inc += "<div class='celda-afavor'>A Favor</div>";
+                    inc += "<div class='celda-encontra'>En Contra</div>";
+                    inc += "</div>";
+                    inc += "<div class='fila-contenedor-tipos-goles'>";
+                    inc += "<div class='celda-goles-acumulados'>Goles Acumulados</div>";
+                    inc += "<div class='celda-total-afavor'>-</div>";
+                    inc += "<div class='celda-total-encontra'>-</div>";
+                    inc += "</div>";
                     for(var i = 0; i < tipos.length; i++ ){
-                        inc += "<tr>";
-                        inc += "<td>"+tipos[i].nombre+"</td>";
-                        inc += "<td>"+tipos[i].favor+"</td>";
-                        inc += "<td>"+tipos[i].contra+"</td>";
-                        inc += "</tr>";
+
+                        inc += "<div class='fila-contenedor-tipos-goles'>";
+                        inc += "<img src='jquerymobile/img-dportes/posiciones/dentro-del-area.png' class='lista-jugador'>";
+                        inc += "<div class='celda-tipo-de-gol'>"+tipos[i].nombre+"</div>";
+                        inc += "<div class='celda-datos-afavor'>"+tipos[i].favor+"</div>";
+                        inc += "<div class='celda-datos-encontra'>"+tipos[i].contra+"</div>";
+                        inc += "</div>";
                     }
-                    $('#tabla-tipos-goles-grupal').html(inc);
+                    $('#tabla-grupal-tipo-gol').html(inc);
                     $.mobile.loading('hide');
                 }
             }
@@ -234,22 +257,28 @@ function tablas(){
 
         xhr.onprogress = function(e){
             $.mobile.loading('show');
-        }
-
+        }                         
+                                 
         xhr.onload = function(){
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
                     var inc = '';
                     var json = JSON.parse(this.response);
-                    for(var i = 0; i < json.length; i++ ){
-                        inc += "<tr>";
-                        inc += "<td>"+json[i].nombre+"</td>";
-                        inc += "<td>"+json[i].titular+"</td>";
-                        inc += "<td>"+json[i].reserva+"</td>";
-                        inc += "<td>"+json[i].cambio+"</td>";
-                        inc += "</tr>";
+                    inc += "<div class='fila-titulos-cambios'>";
+                    inc += "<div class='celda-titulo-jugador'>Jugador</div>";
+                    inc += "<div class='celda-titular'>Titular</div>";
+                    inc += "<div class='celda-reserva'>Reserva</div>";
+                    inc += "<div class='celda-cambio'>Cambio</div>";
+                    inc += "</div>";
+                    for(var i = 0; i < json.length; i++ ){                       
+                        inc += "<div class='contenedor-fila-cambios'>";
+                        inc += "<div class='celda-nombre-cambios'>"+json[i].nombre+"</div>";
+                        inc += "<div class='celda-total-titular'>"+json[i].titular+"</div>";
+                        inc += "<div class='celda-total-reserva'>"+json[i].reserva+"</div>";
+                        inc += "<div class='celda-total-cambios'>"+json[i].cambio+"</div>";
+                        inc += "</div>";
                     }
-                    $('#tabla-stat-cambios').html(inc);
+                    $('#tabla-grupal-cambios').html(inc);
                     $.mobile.loading('hide');
                 }
             }
@@ -274,13 +303,16 @@ function tablas(){
                 if(this.response && JSON.parse(this.response)){
                     var inc = '';
                     var json = JSON.parse(this.response);
-                    for(var i = 0; i < json.length; i++ ){
-                        inc += "<tr class='ui-bar-d'>";
-                        inc += "<td>"+json[i].nombre+"</td>";
-                        inc += "<td class='texto-a-la-derecha'>"+json[i].efectividad+"%</td>";
-                        inc += "</tr>";
+                    inc += "<div class='celda-efectividad'>% de efectividad</div>";
+
+                    for(var i = 0; i < json.length; i++ ){             
+                        inc += "<div class='fila-efectividad'>";
+                        inc += "<img src='jquerymobile/img-dportes/jugador1.jpg' class='lista-jugador'>";
+                        inc += "<div class='celda-nombre-efectividad'>"+json[i].nombre+"</div>";
+                        inc += "<div class='celda-porcentaje-efectividad'>"+json[i].efectividad+"%<</div>";
+                        inc += "</div>";
                     }
-                    $('#efec-stat-table').html(inc);
+                    $('#efec-jugador').html(inc);
                     $.mobile.loading('hide');
                 }
             }
@@ -311,13 +343,16 @@ function tablas(){
                     var volante = json.volante;
                     var delantero = json.delantero;
 
-                    for(var i = 0; i < nd.length; i++ ){
+                    if(portero.length != 0){
+
+                    }
+                    /*for(var i = 0; i < nd.length; i++ ){
                         inc += "<tr class='ui-bar-d'>";
                         inc += "<td>"+nd[i].nombre+"</td>";
                         inc += "<td>"+nd[i].efectividad+"%</td>";
                         inc += "</tr>";           
                     }
-                    $('#efec-stat-nd').html(inc);
+                    $('#efec-stat-nd').html(inc);*/
 
                     inc = '';
                     for(var i = 0; i < portero.length; i++ ){
@@ -386,6 +421,9 @@ function tablas(){
                     var tiro_penal = json.tiro_penal;
                     var quite = json.quite;
                     var asistencia = json.asistencia;
+                    if(goles.length != 0){
+
+                    }
                     for(var i = 0; i < goles.length; i++ ){
                         inc += "<tr class='ui-bar-d'>";
                         inc += "<td>"+goles[i].nombre+"</td>";
@@ -461,6 +499,46 @@ function cambioTabla(num){
         document.getElementById('tabla-jugador-stat').style.display = "none";
         document.getElementById('tabla-jugada-stat').style.display = "block";
         document.getElementById('tabla-posiciones-stat').style.display = "none";
+    } 
+}
+
+function setTablaStatGrupal(num){
+    if(num == 1){
+        document.getElementById('tabla-grupal-gol').style.display = "none";
+        document.getElementById('tabla-grupal-tipo-gol').style.display = "none";
+        document.getElementById('tabla-grupal-cambios').style.display = "none";
+        document.getElementById('efectividad-grupal').style.display = "none";
+        document.getElementById('tabla-tarjeta-grupal').style.display = "block";
+    } else if(num == 2){
+        document.getElementById('tabla-grupal-gol').style.display = "block";
+        document.getElementById('tabla-grupal-tipo-gol').style.display = "none";
+        document.getElementById('tabla-grupal-cambios').style.display = "none";
+        document.getElementById('efectividad-grupal').style.display = "none";
+        document.getElementById('tabla-tarjeta-grupal').style.display = "none";
+    } else if(num == 3){
+        document.getElementById('tabla-grupal-gol').style.display = "none";
+        document.getElementById('tabla-grupal-tipo-gol').style.display = "block";
+        document.getElementById('tabla-grupal-cambios').style.display = "none";
+        document.getElementById('efectividad-grupal').style.display = "none";
+        document.getElementById('tabla-tarjeta-grupal').style.display = "none";
+    } else if(num == 4){
+        document.getElementById('tabla-grupal-gol').style.display = "none";
+        document.getElementById('tabla-grupal-tipo-gol').style.display = "none";
+        document.getElementById('tabla-grupal-cambios').style.display = "block";
+        document.getElementById('efectividad-grupal').style.display = "none";
+        document.getElementById('tabla-tarjeta-grupal').style.display = "none";
+    } else if(num == 5){
+        document.getElementById('tabla-grupal-gol').style.display = "none";
+        document.getElementById('tabla-grupal-tipo-gol').style.display = "none";
+        document.getElementById('tabla-grupal-cambios').style.display = "none";
+        document.getElementById('efectividad-grupal').style.display = "block";
+        document.getElementById('tabla-tarjeta-grupal').style.display = "none";
+    } else {
+        document.getElementById('tabla-grupal-gol').style.display = "none";
+        document.getElementById('tabla-grupal-tipo-gol').style.display = "none";
+        document.getElementById('tabla-grupal-cambios').style.display = "none";
+        document.getElementById('efectividad-grupal').style.display = "none";
+        document.getElementById('tabla-tarjeta-grupal').style.display = "none";        
     } 
 }
 

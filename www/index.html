@@ -860,22 +860,41 @@
                     <p>Dependiendo si elegiste un tiempo o dos, al presionar <img src="jquerymobile/img-dportes/iconos/tiempo.png" width="35px">, obtendrás las estadísticas detalladas del tiempo que acabas de cerrar. Si el partido es de dos tiempos, se bloqueará el primero y mantendrá habilitado el segundo tiempo para que ingreses el registro.</p>
                 </div>
                 <div data-role="collapsible">
-                    <h3>Administra tus jugadores</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h3>Administrar jugadores</h3>
+                    <h5>Agregar Jugadores</h5>
+                    <p>Ingresa todos los jugadores de tu equipo e identifica sus puestos de juego.</p>
+                    <p>Al seleccionar el icono (poner icono de la persona con el signo más)
+                    Aparecerá en pantalla un pequeño formulario en donde deberás incluir el nombre del jugador, su correo electrónico y la posición en que juega.</p>
+                    <p>Al Guardar la información, la APP de Dportes enviará un correo electrónico al jugador que acabas de inscribir con sus datos de acceso al equipo.</p>
+                    <h5>Eliminar Jugadores</h5>
+                    <p>Ingresas a la sección de Jugadores, una vez que veas la lista, busca al jugador que quieres eliminar.
+                    Desliza hacia tu izquierda el nombre del jugador a eliminar
+                    Aparecerá un recuadro en rojo con la opción “Borrar”
+                    Presiona la sección y el jugador será borrado de la nómina de jugadores.</p>
+                    <h5>Modificar Jugadores</h5>
+                    <p>Ingresas a la sección de Jugadores, una vez que veas la lista, busca al jugador que quieres modificar.
+                    Haz clic sobre el jugador que quieres modificar,
+                    Aparecerá el formulario con la información que se ingresó en el registro.</p>
+                    <p>Importante: Si el jugador ya confirmó su email, éste no lo podrás modificar, sólo podrás cambiar el resto de la información.</p>
                 </div>
                 <div data-role="collapsible">
-                    <h3>Administra tus equipos</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h3>Administrar equipos</h3>
+                    <h5>Agregar Equipos</h5>
+                    <p>Puedes crear y administrar tantos equipos como participes, por ejemplo, los lunes juegas en el equipo A de fútbol, los miércoles en el equipo B de futbolito y los domingos en el equipo C de baby futbol. Los puedes registrar todos, no importa si son ligas o tipos de juego diferentes, los puedes conectar a todos.</p>
+                    <p>Al seleccionar el icono (poner icono del grupo de personas con el signo más)
+                    Aparecerá en pantalla un pequeño formulario en donde deberás incluir el nombre del equipo su ubicación territorial y el tipo de equipo que corresponda.</p>
+                    <p>Al Registrar la información, la APP de Dportes te permitirá asignar al nuevo equipo, tantos jugadores como participen de él.</p>
+                    <h5>Modificar Equipos</h5>
+                    <p>Ingresas a la sección Mis Equipos, una vez que veas la lista, busca el equipo que quieres modificar.</p>
+                    <p>Haz clic sobre el equipo que quieres modificar,
+                    Aparecerá el formulario con la información que se ingresó en el registro.</p>
+                    <p>Modifica ahora lo que necesites.</p>
+                    <h5>Cambiar Equipos</h5>
+                    <p>Para ver la información de equipos, de los jugadores de dicho equipo, y/o programar actividades, puedes cambiarte de un equipo a otro sin dificultades.</p>
+                    <p>Ingresas a la sección Mis Equipos, una vez que veas la lista, busca el equipo con el que quieres trabajar.</p>
+                    <p>Desliza hacia tu izquierda el nombre del equipo que quieres 
+                    Aparecerán dos recuadros, “Elegir” y “Salir” (Poner imagen que se muestra)
+                    Si deseas trabajar con él, presiona “Elegir”, y se marcará con un balón (mostrar icono) el equipo seleccionado. De ahí en adelante toda la información, jugadores, programación y todo lo demás, será lo relacionado a dicho equipo.</p>
                 </div>
 
             </div>
@@ -926,7 +945,7 @@
                     </ul>
                 </div>
                 <div id="tres" class="ui-body-d ui-content">
-                    <ul data-role="listview" data-inset="false">
+                    <ul data-role="listview" data-inset="false" style="margin-bottom:10px;">
                         <li data-icon="false">
                             <a href="#" class="color-boton-equipo-dark">
                                 <img id="gp-logo" src="jquerymobile/img-dportes/logo-encuentro.png">
@@ -934,254 +953,157 @@
                                 <p>RM - Santiago - San Joaquin</p>
                             </a>
                         </li>
-                    
-                        <h4 align="center">Datos Estadísticos:</h4>
-                        <select id="select-grupal" name="select-choice-a" id="select-choice-a" data-native-menu="true">
-                            <option value="0" selected>Seleccione estadistica</option>
-                            <option value="1">Tarjetas</option>
-                            <option value="2">Goles</option>
-                            <option value="3">Tipos de Goles</option>
-                            <option value="4">Cambios</option>
-                            <option value="5">Efectividad</option>
-                        </select>
-                        <div id="tabla-grupal-rivales" style="display:none;">
-                            <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                                <thead>
-                                    <tr class="ui-bar-d">
-                                        <th width="100">Equipo</th>
-                                        <th data-priority="critical">PG</th>
-                                        <th data-priority="critical">PE</th>
-                                        <th data-priority="critical">PP</th>
-                                        <th data-priority="critical">GF</th>
-                                        <th data-priority="critical">GC</th>
-                                        <th data-priority="critical">Dif</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><a href="#seguimiento-equipo-rival-prueba">Club Deportivo Alto de Bajos</a></td>
-                                        <td>10</td>
-                                        <td>5</td>
-                                        <td>6</td>
-                                        <td>8</td>
-                                        <td>5</td>
-                                        <td>3</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div id="tabla-grupal-gol" style="display:none;">
-                            <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                                <thead>
-                                    <tr class="ui-bar-d">
-                                        <th width="100">Jugador</th>
-                                        <th data-priority="critical">A Favor</th>
-                                        <th data-priority="critical">En Contra</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tabla-goles-grupal">
-                                </tbody>
-                            </table>
-                        </div>
-                        <div id="tabla-grupal-tipo-gol" style="display:none;">
-                            <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                                <thead>
-                                    <tr class="ui-bar-d">
-                                        <th width="100">Tipo</th>
-                                        <th data-priority="critical">A Favor</th>
-                                        <th data-priority="critical">En Contra</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tabla-tipos-goles-grupal">
-                                </tbody>
-                            </table>
-                        </div>
-                        <div id="tabla-grupal-cambios" style="display:none;">
-                            <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                                <thead>
-                                    <tr class="ui-bar-d">
-                                        <th width="100">Jugador</th>
-                                        <th data-priority="critical">Titular</th>
-                                        <th data-priority="critical">Reserva</th>
-                                        <th data-priority="critical">Cambio</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tabla-stat-cambios">
-                                </tbody>
-                            </table>
-                        </div>
-                        <div id="tarjetas-grupal" style="display:none;">
-                        <h4 align="center"></h4><!-- titulo momentaneo, borrar al programar -->
-                        <!-- ejemplo de tabla para tarjetas amarillas-->
-                        <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                            <thead>
-                                <tr class="ui-bar-d">
-                                    <th width=""></th>
-                                    <th data-priority="critical"><img src="jquerymobile/img-dportes/iconos/icono_amarilla.png"></th>
-                                    <th data-priority="critical"><img src="jquerymobile/img-dportes/iconos/icono_roja.png"></th>
-                                </tr>
-                            </thead>
-                            <tbody id="tabla-tarjeta-grupal">
-                            </tbody>
-                        </table>
-                        </div>
-                        <div id="efectividad-grupal" style="display:none;">
-                            <h4 align="center">Efectividad</h4><!-- titulo momentaneo, borrar al programar -->
-                            <!-- ejemplo de tabla para efectividad-->
-                            <!-- seleccionar efectividad a mostrar -->
-                            <fieldset data-role="controlgroup" data-type="horizontal" data-mini="false">
-                                <legend>Seleccione el indice de efectividad a mostrar:</legend>
-                                <input onclick="cambioTabla(1)" type="radio" name="radio-choice-b" id="radio-choice-c" value="list" checked="checked">
-                                <label for="radio-choice-c">Jugador</label>
-                                <input onclick="cambioTabla(2)" type="radio" name="radio-choice-b" id="radio-choice-d" value="grid">
-                                <label for="radio-choice-d">Posición</label>
-                                <input onclick="cambioTabla(3)" type="radio" name="radio-choice-b" id="radio-choice-e" value="gallery">
-                                <label for="radio-choice-e">Jugada</label>
-                            </fieldset>
-                            <!-- ejemplo de efectividad general-->
-                            <div id="tabla-jugador-stat">
-                                <table data-role="table" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive margen-inferior-tabla" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                                    <thead>
-                                        <tr class="ui-bar-d">
-                                            <th></th>
-                                            <th data-priority="critical" class='texto-a-la-derecha'>Efectividad</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="efec-stat-table">
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div id="tabla-posiciones-stat" style="display:none;">
-                                <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive margen-inferior-tabla" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                                    <tbody id="efec-stat-nd">
-                                    </tbody>
-                                </table>
-
-                                <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive margen-inferior-tabla" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                                    <thead>
-                                        <tr class="ui-bar-d color-encabezado-posicion">
-                                            <th>Portero</th>
-                                            <th class="texto-a-la-derecha" data-priority="critical">Efectividad</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="efec-stat-portero">
-                                    </tbody>
-                                </table>
-
-                                <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive margen-inferior-tabla" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                                    <thead>
-                                        <tr class="ui-bar-d color-encabezado-posicion">
-                                            <th>Defensa</th>
-                                            <th class="texto-a-la-derecha" data-priority="critical">Efectividad</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="efec-stat-defensa">
-                                    </tbody>
-                                </table>
-
-                                <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive margen-inferior-tabla" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                                    <thead>
-                                        <tr class="ui-bar-d color-encabezado-posicion">
-                                            <th>Volante</th>
-                                            <th class="texto-a-la-derecha" data-priority="critical">Efectividad</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="efec-stat-volante">
-                                    </tbody>
-                                </table>
-
-                                <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive margen-inferior-tabla" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                                    <thead>
-                                        <tr class="ui-bar-d color-encabezado-posicion">
-                                            <th>Delantero</th>
-                                            <th class="texto-a-la-derecha" data-priority="critical">Efectividad</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="efec-stat-delantero">
-                                    </tbody>
-                                </table>
-
-                            </div>                            
-                            <div id="tabla-jugada-stat" style="display:none;">
-                                <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive margen-inferior-tabla" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                                    <thead>
-                                        <tr class="ui-bar-d color-encabezado-posicion">
-                                            <th>Goles</th>
-                                            <th class="texto-a-la-derecha" data-priority="critical">Efectividad</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="efec-stat-gol">
-                                    </tbody>
-                                </table>
-
-                                <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive margen-inferior-tabla" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                                    <thead>
-                                        <tr class="ui-bar-d color-encabezado-posicion">
-                                            <th>Tiro Al Arco</th>
-                                            <th class="texto-a-la-derecha" data-priority="critical">Efectividad</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="efec-stat-tiro-arco">
-                                    </tbody>
-                                </table>
-
-                                <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive margen-inferior-tabla" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                                    <thead>
-                                        <tr class="ui-bar-d color-encabezado-posicion">
-                                            <th>Tiro Libre</th>
-                                            <th class="texto-a-la-derecha" data-priority="critical">Efectividad</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="efec-stat-tiro-libre">
-                                    </tbody>
-                                </table>
-                                
-                                <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive margen-inferior-tabla" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                                    <thead>
-                                        <tr class="ui-bar-d color-encabezado-posicion">
-                                            <th>Tiro de Esquina</th>
-                                            <th class="texto-a-la-derecha" data-priority="critical">Efectividad</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="efec-stat-tiro-esquina">
-                                    </tbody>
-                                </table>
-
-                                <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive margen-inferior-tabla" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                                    <thead>
-                                        <tr class="ui-bar-d color-encabezado-posicion">
-                                            <th>Tiro Penal</th>
-                                            <th class="texto-a-la-derecha" data-priority="critical">Efectividad</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="efec-stat-tiro-penal">
-                                    </tbody>
-                                </table>
-
-                                <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive margen-inferior-tabla" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                                    <thead>
-                                        <tr class="ui-bar-d color-encabezado-posicion">
-                                            <th>Quite</th>
-                                            <th class="texto-a-la-derecha" data-priority="critical">Efectividad</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="efec-stat-quite">
-                                    </tbody>
-                                </table>
-
-                                <table data-role="table" id="" data-mode="" class="ui-body-d ui-shadow table-stripe ui-responsive margen-inferior-tabla" data-column-btn-theme="b" data-column-btn-text="Detalle Estadístico" data-column-popup-theme="a">
-                                    <thead>
-                                        <tr class="ui-bar-d color-encabezado-posicion">
-                                            <th>Asistencia</th>
-                                            <th class="texto-a-la-derecha" data-priority="critical">Efectividad</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="efec-stat-asistencia">
-                                    </tbody>
-                                </table>
-                            </div>
-                        <div>
                     </ul>
+
+
+                        <!--BOTONES CILINDRICOS-->
+
+                        <div style="display:block; text-align:center; margin-bottom:10px; margin-top:10px;">
+                            <div style="display: inline-block;">
+                                <a onclick="setTablaStatGrupal(1);" class="saca-enlace ui-btn-active ui-state-persist"><div class="btn-cilindro">Tarjetas</div></a>
+                            </div>
+                            <div style="display: inline-block;"><a onclick="setTablaStatGrupal(2);" class="saca-enlace">
+                                <div class="btn-cilindro">Goles</div></a>
+                             </div>
+                            <div style="display: inline-block;">
+                                <a onclick="setTablaStatGrupal(3);"  class="saca-enlace"><div class="btn-cilindro">Tipos de Goles</div></a>
+                            </div>
+                        </div>
+                        
+                        <div style="display:block; text-align:center; margin-bottom:10px;">
+                            <div style="display: inline-block;"><a onclick="setTablaStatGrupal(4);" class="saca-enlace"><div class="btn-cilindro">Cambios</div></a></div>
+                            <div style="display: inline-block;"><a onclick="setTablaStatGrupal(5);" class="saca-enlace"><div class="btn-cilindro">Efectividad</div></a></div>
+                        </div>
+                        <!--CIERRE BOTONES CILINDRICOS-->
+
+                        <div id="tabla-tarjeta-grupal" style="display:none;">                             
+                        </div>
+
+                        <div id="tabla-grupal-gol" style="display:none;">                            
+                        </div>  
+
+                        <div id="tabla-grupal-tipo-gol" style="display:none;">
+                        </div>
+
+                        <div id="tabla-grupal-cambios" style="display:none;">
+                        
+                                <div class="fila-titulos-cambios">
+                                    <div class="celda-titulo-jugador">Jugador</div>
+                                    <div class="celda-titular">Titular</div>
+                                    <div class="celda-reserva">Reserva</div>
+                                    <div class="celda-cambio">Cambio</div>
+                                 </div>
+                                 
+                                <div class="contenedor-fila-cambios">
+                                    <div class="celda-nombre-cambios">Francisco Gonzales</div>
+                                    <div class="celda-total-titular">30</div>
+                                    <div class="celda-total-reserva">10</div>
+                                    <div class="celda-total-cambios">10</div>
+                                </div>
+                                            
+                                <div class="contenedor-fila-cambios">
+                                    <div class="celda-nombre-cambios">Francisco Gonzales</div>
+                                    <div class="celda-datos-titular">50</div>
+                                    <div class="celda-datos-reserva">90</div>
+                                    <div class="celda-datos-cambios">90</div>
+                                </div>
+                                
+                                <div class="contenedor-fila-cambios">
+                                    <div class="celda-nombre-cambios">Francisco Gonzales</div>
+                                    <div class="celda-datos-titular">50</div>
+                                    <div class="celda-datos-reserva">90</div>
+                                    <div class="celda-datos-cambios">90</div>
+                                </div>
+                                
+                                <div class="contenedor-fila-cambios">
+                                    <div class="celda-nombre-cambios">Francisco Gonzales</div>
+                                    <div class="celda-datos-titular">50</div>
+                                    <div class="celda-datos-reserva">90</div>
+                                    <div class="celda-datos-cambios">90</div>
+                                </div>
+                                
+                                <div class="contenedor-fila-cambios">
+                                    <div class="celda-nombre-cambios">Francisco Gonzales</div>
+                                    <div class="celda-datos-titular">50</div>
+                                    <div class="celda-datos-reserva">90</div>
+                                    <div class="celda-datos-cambios">90</div>
+                                </div>
+                                
+                                <div class="contenedor-fila-cambios">
+                                    <div class="celda-nombre-cambios">Francisco Gonzales</div>
+                                    <div class="celda-datos-titular">50</div>
+                                    <div class="celda-datos-reserva">90</div>
+                                    <div class="celda-datos-cambios">90</div>
+                                </div>
+                                
+                                <div class="contenedor-fila-cambios">
+                                    <div class="celda-nombre-cambios">Francisco Gonzales</div>
+                                    <div class="celda-datos-titular">50</div>
+                                    <div class="celda-datos-reserva">90</div>
+                                    <div class="celda-datos-cambios">90</div>
+                                </div>
+                                
+                                <div class="contenedor-fila-cambios">
+                                    <div class="celda-nombre-cambios">Francisco Gonzales</div>
+                                    <div class="celda-datos-titular">50</div>
+                                    <div class="celda-datos-reserva">90</div>
+                                    <div class="celda-datos-cambios">90</div>
+                                </div>
+                                
+                                <div class="contenedor-fila-cambios">
+                                    <div class="celda-nombre-cambios">Francisco Gonzales</div>
+                                    <div class="celda-datos-titular">50</div>
+                                    <div class="celda-datos-reserva">90</div>
+                                    <div class="celda-datos-cambios">90</div>
+                                </div>
+                                
+                                <div class="contenedor-fila-cambios">
+                                    <div class="celda-nombre-cambios">Francisco Gonzales</div>
+                                    <div class="celda-datos-titular">50</div>
+                                    <div class="celda-datos-reserva">90</div>
+                                    <div class="celda-datos-cambios">90</div>
+                                </div>
+                                
+                                <div class="contenedor-fila-cambios">
+                                    <div class="celda-nombre-cambios">Francisco Gonzales</div>
+                                    <div class="celda-datos-titular">50</div>
+                                    <div class="celda-datos-reserva">90</div>
+                                    <div class="celda-datos-cambios">90</div>
+                                </div>
+                                
+                                <div class="contenedor-fila-cambios">
+                                    <div class="celda-nombre-cambios">Francisco Gonzales</div>
+                                    <div class="celda-datos-titular">50</div>
+                                    <div class="celda-datos-reserva">90</div>
+                                    <div class="celda-datos-cambios">90</div>
+                                </div>
+                                <!--<tbody id="tabla-stat-cambios">
+                                </tbody>-->
+                        </div>
+
+                        <div id="efectividad-grupal" style="display:none;">
+                            <div data-role="tabs">
+                                <div data-role="navbar">
+                                    <ul>
+                                      <li><a href="#efec-jugador" data-theme="a" class="btn-cilindro" data-ajax="false">Jugador</a></li>
+                                      <li><a href="#efec-posicion" data-theme="a" class="btn-cilindro" data-ajax="false">Posición</a></li>
+                                      <li><a href="#efec-jugada" data-theme="a" class="btn-cilindro" data-ajax="false">Jugada</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div id="efec-jugador">
+                                </div>
+                                
+                                <div id="efec-posicion">
+                                </div>
+                                
+                                <div id="efec-jugada">
+                                </div>
+                            </div>                         
+                        </div>
+
+
+                        
                 </div>
             </div>
         </div>
