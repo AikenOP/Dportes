@@ -203,6 +203,9 @@
             tabl.getEfectividadGrupalesByJugada();
             delete tabl;
 
+                        $('#stat-tab').tabs();
+            $('#efect-tab').tabs();
+
             document.getElementById('grup-nombre-equipo').innerHTML = localStorage.getItem('nombre_equipo');
             document.getElementById('botones-estadisticos').style.display = "none";
             document.getElementById('stat-back-rel').style.display = "block";

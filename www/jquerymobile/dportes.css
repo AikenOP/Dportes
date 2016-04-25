@@ -517,6 +517,7 @@ li a img {
 	padding: 6px 12px 6px 12px;
 	text-shadow:none;}
 .btn-cilindro:hover {background: #D89204;}
+.btn-cilindro:active {background: #D89204;}
 /*cierre*/
 
 /*-- ESTADISTICAS > TARJETAS AMARILLAS Y ROJAS --*/
