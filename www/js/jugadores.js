@@ -169,11 +169,13 @@ function jugadores(){
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
+        $.mobile.loading('show');
         xhr.timeout = 10000;
         xhr.onprogress = function(e){
             $.mobile.loading('show');
         }
         xhr.ontimeout = function(e){
+            $.mobile.loading('hide');
             navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
         }
         xhr.onload = function(e){
@@ -183,6 +185,9 @@ function jugadores(){
                     var fullname = checkName(json.nombre,json.apellido_paterno);
                     //alert(json.id_posicion);
                     try{
+                        var jg = new jugadores();
+                        jg.id_posicion = json.id_posicion;
+                        jg.getPosicionesJugador();
                         document.getElementById("jg-radio-"+json.id_posicion).checked = true;
                     } catch(e){
                     }
@@ -346,13 +351,13 @@ function jugadores(){
                         for(var i = 0; i < json.length; i++ ){
                             disabled =  '';
                             click = "onclick='redirectJugadores("+json[i].id_usuario+","+json[i].rol_usuario+")'";
-                            if(localStorage.getItem('rol_equipo') == 1){
+                            /*if(localStorage.getItem('rol_equipo') == 1){
                                 disabled = (json[i].rol == 1) ? 'ui-state-disabled' : '';
                                 click = "onclick='redirectJugadores("+json[i].id_usuario+","+json[i].rol_usuario+")'"; 
                             } else {
                                 disabled = 'ui-state-disabled';
                                 click = '';
-                            }
+                            }*/
                             
                         if(json[i].foto != null){
                             foto = path + "perfiles/"+json[i].id_usuario+"/"+json[i].foto;
@@ -700,6 +705,7 @@ function jugadores(){
 
     this.getPosicionesJugador = function(){
         var dporte = 1;
+        var posicion = (this.id_posicion) ? this.id_posicion : 1;
         var xhr = new XMLHttpRequest();
         var send = new FormData();
         send.append('id_dporte',dporte);
@@ -712,8 +718,10 @@ function jugadores(){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var inc = "";
+                    var check = "";
                     for(var i = 0; i < json.length; i++ ){
-                        inc += "<input name='jg-radio-posicion' value="+json[i].id_posicion+" id='jg-radio-"+json[i].id_posicion+"' type='radio'>";
+                        check = (posicion == json[i].id_posicion) ? 'checked' : '';
+                        inc += "<input name='jg-radio-posicion' value="+json[i].id_posicion+" id='jg-radio-"+json[i].id_posicion+"' type='radio' "+check+">";
                         inc += "<label for='jg-radio-"+json[i].id_posicion+"' >"+json[i].nombre+"</label>";
                     }
                     $('#edit-jg-posiciones').html(inc).trigger('create');
