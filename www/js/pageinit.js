@@ -136,6 +136,7 @@
                     $('#stat-tiempo-penales').addClass('ui-state-disabled');
                 }
             }
+            swipe('#estadisticas','#menu_perfil','right'); 
         }
 
         if(activePage === 'p-pro'){
@@ -148,16 +149,20 @@
 
         if(activePage === 'add-partido'){
             $("select#pg-periodo").selectmenu("refresh");
-            if(sessionStorage.getItem('evento')){ 
+            if(sessionStorage.getItem('evento')){
+
                 document.getElementById('pg-fecha').type = "text";
                 var ev = new eventos();
                 ev.id_evento = sessionStorage.getItem('evento');
                 ev.getEvento();
                 delete ev;
+                
+                document.getElementById('suspender-partido').style.display = "block";
                 document.getElementById('pg-registro-next').style.display = "block";
                 document.getElementById('pg-boton-continuar').style.display = "none";
             } else {
                 clearGame();
+                document.getElementById('suspender-partido').style.display = "none";
                 document.getElementById('pg-registro-next').style.display = "none";
                 document.getElementById('pg-boton-continuar').style.display = "block";
             }
@@ -183,6 +188,7 @@
 
         if(activePage === 'historial-stat'){
             $.mobile.loading('show');
+
             var partidos = new eventos();
             partidos.equipo = localStorage.getItem('equipo');
             partidos.bool = true;
@@ -203,8 +209,8 @@
             tabl.getEfectividadGrupalesByJugada();
             delete tabl;
 
-                        $('#stat-tab').tabs();
-            $('#efect-tab').tabs();
+
+            //$("#custom-navbar").navbar();
 
             document.getElementById('grup-nombre-equipo').innerHTML = localStorage.getItem('nombre_equipo');
             document.getElementById('botones-estadisticos').style.display = "none";

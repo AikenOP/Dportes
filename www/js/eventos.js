@@ -151,16 +151,13 @@ function eventos(){
         $.mobile.loading('show');
         var inc = '';
         var offset = 0;
+        var bool = this.bool;
         if ( $('#custom-format-listview li').length > 0 && this.bool == false) {
             offset = $('#custom-format-listview li').length;
         } else {
+            //$("#historial-content").html('');
             inc = '<ul id="custom-format-listview" data-role="listview" data-filter="false" data-filter-placeholder="Buscar Fechas Anteriores..." data-inset="false" ></ul>';
             $("#historial-content").html(inc).trigger('create');
-            inc = '<div class="detalle">';
-            inc += '<a href="#" onclick="setMore();" class="ui-btn ui-icon-plus ui-btn-icon-left ui-shadow-icon color-boton">Mostrar más</a>';
-            inc += '</div>';
-            $("#historial-content").append(inc).trigger('create');
-            $('#custom-format-listview').html('').listview('refresh');
         }
 
         var xhr = new XMLHttpRequest();
@@ -209,8 +206,23 @@ function eventos(){
                         var photo = document.getElementById('gp-logo');
                         photo.src = logo;
                         $('#custom-format-listview').append(inc).listview('refresh');
+                        if(json.length >= 5){
+                            document.getElementById('stat-more').style.display = "block";
+                        } else {
+                            document.getElementById('stat-more').style.display = "none";
+                        }
                     } else {
-                        $('#historial-content').html('<h2 align="center">No se han detectado partidos</h2>');
+                        if(bool){
+                            inc = "<div style='text-align:center;'>";
+                            inc += "<img src='jquerymobile/img-dportes/imagen-sin-datos.png' width='138'>";
+                            inc += "</div>";
+                            inc += "<p style='text-align:center; color:#868686; font-size:17px; text-shadow:none;'>No se encontraron estadisticas</p>";
+                            $("#historial-content").html(inc).trigger('create');
+                            document.getElementById('stat-more').style.display = "none";
+                        } else {
+                            document.getElementById('stat-more').style.display = "none";
+                        }
+                        //$('#historial-content').html('<h2 align="center">No se han detectado partidos</h2>');
                     }
                 }
             } else {
@@ -282,6 +294,11 @@ function eventos(){
                         inc += '<a href="#" data-transition="fade" class="fechas" onclick="setParametrosProgramados('+json[i].id_evento+')" id="contenedor-fechas">';
                         inc += '<div class="contenedor-fechas">';
                         inc += '<div class="centrado-fechas">';
+                        if(json[i].tipo_evento == 4){
+                            inc += "<div style='position: relative;'>";
+                            inc += "<div class='suspension'></div>";
+                            inc += "</div>";
+                        }
                         inc += '<div class="block"><img src="'+logo+'"><p class="nombre-equipo">'+localStorage.getItem('nombre_equipo')+'</p></div>';
                         inc += '<div class="vs">VS</div>';
                         inc += '<div class="block"><img src="jquerymobile/img-dportes/logo-encuentro.png"><p class="nombre-equipo">'+json[i].nombre+'</p></div>';
@@ -448,6 +465,25 @@ $(document).on("pagebeforeshow","#panel-juego",function(){
     var pg = new eventos();
     pg.getPeriodos();
     delete pg;
+});
+
+document.getElementById('suspender-partido').addEventListener('click',function(){
+    navigator.notification.confirm(
+        '¿Desea suspender este partido?',
+        function(button){
+            if(button == 1){
+                var pg = new eventos();
+                pg.id_evento = sessionStorage.getItem('evento');
+                pg.tipo = 4;
+                pg.cambiaTipo();
+                delete pg;
+                //FALTA NOTIFICACION PUSH
+                $.mobile.navigate("#p-pro", {transition: "fade"});
+            }
+        },
+        'Advertencia',
+        'Si,No'
+    )
 });
 
 document.getElementById('pg-registro-next').addEventListener('click',function(){

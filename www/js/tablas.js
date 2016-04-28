@@ -668,6 +668,61 @@ function tablas(){
     }
 }
 
+function navStat(num){
+    if(num == 1){
+        $('#stat-grupal').removeClass('ui-state-persist');
+        $('#stat-individual').removeClass('ui-state-persist');
+        $('#stat-partido').addClass('ui-state-persist');
+    } else if (num == 2) {
+        $('#stat-grupal').removeClass('ui-state-persist');
+        $('#stat-partido').removeClass('ui-state-persist');
+        $('#stat-individual').addClass('ui-state-persist');
+    } else {
+        $('#stat-individual').removeClass('ui-state-persist');
+        $('#stat-partido').removeClass('ui-state-persist');
+        $('#stat-grupal').addClass('ui-state-persist');
+    }
+}
+
+function statNav(num){
+    if(num == 1){
+        $('#stat-detalle').removeClass('ui-state-persist');
+        $('#stat-resumen').addClass('ui-state-persist');
+    } else {
+        $('#stat-resumen').removeClass('ui-state-persist');
+        $('#stat-detalle').addClass('ui-state-persist');    
+    }
+}
+
+function efect(num){
+    if(num == 1){
+        document.getElementById('efec-jugada').style.display = "none";
+        document.getElementById('efec-posicion').style.display = "none";
+        $('#nav-efect-jugada').removeClass('ui-state-persist');
+        $('#nav-efect-posicion').removeClass('ui-state-persist');
+        document.getElementById('efec-jugador').style.display = "block";
+        $('#nav-efect-jugador').addClass('ui-state-persist');
+    } else if (num == 2) {
+        document.getElementById('efec-jugada').style.display = "none";
+        document.getElementById('efec-jugador').style.display = "none";
+        $('#nav-efect-jugada').removeClass('ui-state-persist');
+        $('#nav-efect-jugador').removeClass('ui-state-persist');
+        document.getElementById('efec-posicion').style.display = "block";
+        $('#nav-efect-posicion').addClass('ui-state-persist');
+    } else {
+        document.getElementById('efec-posicion').style.display = "none";
+        document.getElementById('efec-jugador').style.display = "none";
+        $('#nav-efect-posicion').removeClass('ui-state-persist');
+        $('#nav-efect-jugador').removeClass('ui-state-persist');
+        document.getElementById('efec-jugada').style.display = "block";
+        $('#nav-efect-jugada').addClass('ui-state-persist');
+    }
+      /*      var classList = document.getElementById('nav-efect-jugador').className.split(/\s+/);
+            for (var i = 0; i < classList.length; i++) {
+                alert(classList[i]);
+            } */
+}
+
 function cambioTabla(num){
     if(num == 1){
         document.getElementById('tabla-jugador-stat').style.display = "block";
@@ -690,37 +745,67 @@ function setTablaStatGrupal(num){
         document.getElementById('tabla-grupal-tipo-gol').style.display = "none";
         document.getElementById('tabla-grupal-cambios').style.display = "none";
         document.getElementById('efectividad-grupal').style.display = "none";
+        $('#stat-goles-tabla').removeClass('btn-active-stat');
+        $('#stat-tipos-tabla').removeClass('btn-active-stat');
+        $('#stat-cambios-tabla').removeClass('btn-active-stat');
+        $('#stat-efectividad-tabla').removeClass('btn-active-stat');
         document.getElementById('tabla-tarjeta-grupal').style.display = "block";
+        $('#stat-tarjeta-tabla').addClass('btn-active-stat');
     } else if(num == 2){
-        document.getElementById('tabla-grupal-gol').style.display = "block";
         document.getElementById('tabla-grupal-tipo-gol').style.display = "none";
         document.getElementById('tabla-grupal-cambios').style.display = "none";
         document.getElementById('efectividad-grupal').style.display = "none";
         document.getElementById('tabla-tarjeta-grupal').style.display = "none";
+        $('#stat-tarjeta-tabla').removeClass('btn-active-stat');
+        $('#stat-tipos-tabla').removeClass('btn-active-stat');
+        $('#stat-cambios-tabla').removeClass('btn-active-stat');
+        $('#stat-efectividad-tabla').removeClass('btn-active-stat');
+        document.getElementById('tabla-grupal-gol').style.display = "block";
+        $('#stat-goles-tabla').addClass('btn-active-stat');
     } else if(num == 3){
         document.getElementById('tabla-grupal-gol').style.display = "none";
-        document.getElementById('tabla-grupal-tipo-gol').style.display = "block";
         document.getElementById('tabla-grupal-cambios').style.display = "none";
         document.getElementById('efectividad-grupal').style.display = "none";
         document.getElementById('tabla-tarjeta-grupal').style.display = "none";
+        $('#stat-tarjeta-tabla').removeClass('btn-active-stat');
+        $('#stat-goles-tabla').removeClass('btn-active-stat');
+        $('#stat-cambios-tabla').removeClass('btn-active-stat');
+        $('#stat-efectividad-tabla').removeClass('btn-active-stat');
+        document.getElementById('tabla-grupal-tipo-gol').style.display = "block";
+        $('#stat-tipos-tabla').addClass('btn-active-stat');
     } else if(num == 4){
         document.getElementById('tabla-grupal-gol').style.display = "none";
         document.getElementById('tabla-grupal-tipo-gol').style.display = "none";
-        document.getElementById('tabla-grupal-cambios').style.display = "block";
         document.getElementById('efectividad-grupal').style.display = "none";
         document.getElementById('tabla-tarjeta-grupal').style.display = "none";
+        $('#stat-tarjeta-tabla').removeClass('btn-active-stat');
+        $('#stat-goles-tabla').removeClass('btn-active-stat');
+        $('#stat-tipos-tabla').removeClass('btn-active-stat');
+        $('#stat-efectividad-tabla').removeClass('btn-active-stat');
+        document.getElementById('tabla-grupal-cambios').style.display = "block";
+        $('#stat-cambios-tabla').addClass('btn-active-stat');
     } else if(num == 5){
         document.getElementById('tabla-grupal-gol').style.display = "none";
         document.getElementById('tabla-grupal-tipo-gol').style.display = "none";
         document.getElementById('tabla-grupal-cambios').style.display = "none";
-        document.getElementById('efectividad-grupal').style.display = "block";
         document.getElementById('tabla-tarjeta-grupal').style.display = "none";
+        $('#stat-tarjeta-tabla').removeClass('btn-active-stat');
+        $('#stat-goles-tabla').removeClass('btn-active-stat');
+        $('#stat-tipos-tabla').removeClass('btn-active-stat');
+        $('#stat-cambios-tabla').removeClass('btn-active-stat');
+        document.getElementById('efectividad-grupal').style.display = "block";
+        $('#stat-efectividad-tabla').addClass('btn-active-stat');
     } else {
         document.getElementById('tabla-grupal-gol').style.display = "none";
         document.getElementById('tabla-grupal-tipo-gol').style.display = "none";
         document.getElementById('tabla-grupal-cambios').style.display = "none";
         document.getElementById('efectividad-grupal').style.display = "none";
-        document.getElementById('tabla-tarjeta-grupal').style.display = "none";        
+        document.getElementById('tabla-tarjeta-grupal').style.display = "none";
+        $('#stat-tarjeta-tabla').removeClass('btn-active-stat');
+        $('#stat-goles-tabla').removeClass('btn-active-stat');
+        $('#stat-tipos-tabla').removeClass('btn-active-stat');
+        $('#stat-cambios-tabla').removeClass('btn-active-stat');
+        $('#stat-efectividad-tabla').removeClass('btn-active-stat');
     } 
 }
 

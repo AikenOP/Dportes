@@ -488,6 +488,17 @@ li a img {
 	overflow: hidden;
 	margin-top:5px;
 }
+
+.suspension {
+    background: url(img-dportes/suspendido.png) no-repeat;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 169px;
+    background-position: 50%;
+                top:-15px;
+}
 /*cierre*/
 
 /*este es para la lista de jugadores y jugadas que aparecen en la seccion de estadisticas grupales para el tema de mascara circular */
@@ -516,8 +527,9 @@ li a img {
 	background: #3db32b;
 	padding: 6px 12px 6px 12px;
 	text-shadow:none;}
-.btn-cilindro:hover {background: #D89204;}
-.btn-cilindro:active {background: #D89204;}
+/*.btn-cilindro:hover {background: #D89204;}*/
+/*.btn-cilindro:active {background: #D89204;}*/
+.btn-active-stat {background: #D89204 !important;}
 /*cierre*/
 
 /*-- ESTADISTICAS > TARJETAS AMARILLAS Y ROJAS --*/
@@ -985,7 +997,13 @@ a.color-enlace-goles {color:#090; text-decoration:none;}
 	padding:10px 0 10px 0; 
 	border-bottom: 1px solid; 
 	border-color: #D1D1D1;}
-.fila-efectividad-2 {display:block;}
+.fila-efectividad-2 {
+	display:block;
+	border-color: #D1D1D1; 
+	padding-top:10px; 
+	padding-bottom:10px; 
+	position:relative;
+}
 .celda-nombre-posicion {
 	width:53%; 
 	font-size:12px; 
@@ -1015,7 +1033,13 @@ a.color-enlace-goles {color:#090; text-decoration:none;}
 	padding:10px 0 10px 0; 
 	border-bottom: 1px solid; 
 	border-color: #D1D1D1;}
-.bloque-jugada {display:block;}
+.bloque-jugada {
+	display:block; 
+	border-color: #D1D1D1; 
+	padding-top:10px; 
+	padding-bottom:10px; 
+	position:relative;	
+}
 .celda-nombre-jugada {
 	width:53%; 
 	font-size:12px; 
@@ -1548,6 +1572,18 @@ canvas{
 }
 
 @media (max-width: 480px) {
+
+.suspension {
+    background: url(img-dportes/suspendido.png) no-repeat;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background-position: 50%;
+    top:-15px;
+    background-size:contain;
+}
 
 .seccion-general {display:block; width:100%;margin-bottom: 0px;margin-bottom: -200px;float: left;}
 

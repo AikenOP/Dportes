@@ -403,6 +403,7 @@
                     Continuar
                     <input id="pg-registro" data-enhanced="true" type="submit">
                 </div>
+                <a id="suspender-partido" class="ui-btn  color-boton-error-validacion" style="display:none;">Suspender Partido</a>
 
             </form>
 
@@ -524,8 +525,8 @@
             <div data-role="tabs" id="tabs">
                 <div data-role="navbar">
                     <ul>
-                        <li><a href="#uno" data-ajax="false" class="ui-btn-active" data-transition="slide">Resumen partido</a></li>
-                        <li><a href="#dos" data-ajax="false" data-transition="slide">Detalles Jugadores</a></li>
+                        <li><a id="stat-resumen" onclick="statNav(1);" href="#uno" data-ajax="false" class="ui-btn-active" data-transition="slide">Resumen partido</a></li>
+                        <li><a id="stat-detalle" onclick="statNav(2);" href="#dos" data-ajax="false" data-transition="slide">Detalles Jugadores</a></li>
                     </ul>
                 </div>
                 <div id="uno" class="ui-body-d ui-content">
@@ -956,13 +957,17 @@
             <div id="stat-tab" data-role="tabs">
                 <div data-role="navbar">
                     <ul>
-                        <li><a href="#historial-content" class="ui-btn-active ">Por partido</a></li>
-                        <li><a href="#dos" class="">Individuales</a></li>
-                        <li><a href="#tres"  class="">Grupales</a></li>
+                        <li><a id="stat-partido" onclick="navStat(1);" href="#uno" class="ui-btn-active ">Por partido</a></li>
+                        <li><a id="stat-individual" onclick="navStat(2);" href="#dos" class="">Individuales</a></li>
+                        <li><a id="stat-grupal" onclick="navStat(3);" href="#tres"  class="">Grupales</a></li>
                     </ul>
                 </div>
-                <div id="historial-content" class="ui-body-d ui-content">
-                    
+                <div id="uno" class="ui-body-d ui-content">
+                    <div id="historial-content">  
+                    </div>
+                    <div class="detalle" style="margin:20px 0 0 0;">
+                        <a id="stat-more" onclick="setMore();" class="ui-btn ui-icon-plus ui-btn-icon-left ui-shadow-icon color-boton" style="display:none;">Mostrar más</a>
+                    </div>
                 </div>
                 <div id="dos" class="ui-body-d ui-content">
                     <ul id="stat-jg-ac" data-role="listview" data-inset="false">
@@ -984,19 +989,19 @@
 
                         <div style="display:block; text-align:center; margin-bottom:10px; margin-top:10px;">
                             <div style="display: inline-block;">
-                                <a onclick="setTablaStatGrupal(1);" class="saca-enlace ui-btn-active ui-state-persist"><div class="btn-cilindro">Tarjetas</div></a>
+                                <a onclick="setTablaStatGrupal(1);" class="saca-enlace"><div id="stat-tarjeta-tabla" class="btn-cilindro">Tarjetas</div></a>
                             </div>
                             <div style="display: inline-block;"><a onclick="setTablaStatGrupal(2);" class="saca-enlace">
-                                <div class="btn-cilindro">Goles</div></a>
+                                <div id="stat-goles-tabla" class="btn-cilindro">Goles</div></a>
                              </div>
                             <div style="display: inline-block;">
-                                <a onclick="setTablaStatGrupal(3);"  class="saca-enlace"><div class="btn-cilindro">Tipos de Goles</div></a>
+                                <a onclick="setTablaStatGrupal(3);" class="saca-enlace"><div id="stat-tipos-tabla" class="btn-cilindro">Tipos de Goles</div></a>
                             </div>
                         </div>
                         
                         <div style="display:block; text-align:center; margin-bottom:10px;">
-                            <div style="display: inline-block;"><a onclick="setTablaStatGrupal(4);" class="saca-enlace"><div class="btn-cilindro">Cambios</div></a></div>
-                            <div style="display: inline-block;"><a onclick="setTablaStatGrupal(5);" class="saca-enlace"><div class="btn-cilindro">Efectividad</div></a></div>
+                            <div style="display: inline-block;"><a onclick="setTablaStatGrupal(4);" class="saca-enlace"><div id="stat-cambios-tabla" class="btn-cilindro">Cambios</div></a></div>
+                            <div style="display: inline-block;"><a onclick="setTablaStatGrupal(5);" class="saca-enlace"><div id="stat-efectividad-tabla" class="btn-cilindro">Efectividad</div></a></div>
                         </div>
                         <!--CIERRE BOTONES CILINDRICOS-->
 
@@ -1013,24 +1018,24 @@
                         </div>
 
                         <div id="efectividad-grupal" style="display:none;">
-                            <div id="efect-tab" data-role="tabs">
-                                <div  data-role="navbar">
+                            <!--<div id="efect-tab" data-role="tabs">-->
+                                <div id="custom-navbar" data-role="navbar">
                                     <ul>
-                                      <li><a href="#efec-jugador" data-theme="a" class="btn-cilindro" data-ajax="false">Jugador</a></li>
-                                      <li><a href="#efec-posicion" data-theme="a" class="btn-cilindro" data-ajax="false">Posición</a></li>
-                                      <li><a href="#efec-jugada" data-theme="a" class="btn-cilindro" data-ajax="false">Jugada</a></li>
+                                      <li><a id="nav-efect-jugador" onclick="efect(1);" data-theme="a" class="btn-cilindro" data-ajax="false">Jugador</a></li>
+                                      <li><a id="nav-efect-posicion" onclick="efect(2);"  data-theme="a" class="btn-cilindro" data-ajax="false">Posición</a></li>
+                                      <li><a id="nav-efect-jugada" onclick="efect(3);"  data-theme="a" class="btn-cilindro" data-ajax="false">Jugada</a></li>
                                     </ul>
                                 </div>
                                 
-                                <div id="efec-jugador">
+                                <div id="efec-jugador" style="display:none;">
                                 </div> 
                                 
-                                <div id="efec-posicion">
+                                <div id="efec-posicion" style="display:none;">
                                 </div>
                                 
-                                <div id="efec-jugada">
+                                <div id="efec-jugada" style="display:none;">
                                 </div>
-                            </div>                      
+                            <!--</div>-->                      
                         </div>                     
                 </div>
             </div>

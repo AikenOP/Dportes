@@ -86,23 +86,30 @@ function notificaciones(){
     		                inc += "<a onclick='redirectAsistencia("+json[i].id_notificacion+")' class='link-color'>";
     		                inc += "<div class='contenedor-fechas-notificacion'>";
     		                inc += "<div class='centrado-fechas-notificacion'>";
+                            if(json[i].tipo_evento == 4){
+                                inc += "<div style='position: relative;'>";
+                                inc += "<div class='suspension'></div>";
+                                inc += "</div>";
+                            }    
     		                inc += "<div class='block-notificacion'><img src='"+logo+"'><p class='nombre-equipo-notificaciones'>"+json[i].nombre+"</p></div>";
     		                inc += "<div class='vs-notificacion'>VS</div>";
     		                inc += "<div class='block-notificacion'><img src='jquerymobile/img-dportes/logo-encuentro.png'><p class='nombre-equipo-notificaciones'>"+json[i].evt_nombre+"</p></div>";
     		                inc += "<div class='block-notificacion-respuesta'><p class='nombre-equipo-notificacion'>"+fecha+" - "+hora+"hrs</p></div>";
-    		                inc += "<div class='block-notificacion-respuesta'><p id='notifica-con"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-con' style='display:"+asistir+"'>Voy</p></div>";
-    		                inc += "<div class='block-notificacion-respuesta'><p id='notifica-no"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-in' style='display:"+no_asistir+"'>No Voy</p></div>";
-                            inc += "<div class='block-notificacion-respuesta'><p id='notifica-no"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-in' style='display:"+no_confirma+"'>No Respondi</p></div>";
-    		                inc += "</div>";
+                            if(json[i].tipo_evento != 4){
+    		                    inc += "<div class='block-notificacion-respuesta'><p id='notifica-con"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-con' style='display:"+asistir+"'>Voy</p></div>";
+    		                    inc += "<div class='block-notificacion-respuesta'><p id='notifica-no"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-in' style='display:"+no_asistir+"'>No Voy</p></div>";
+                                inc += "<div class='block-notificacion-respuesta'><p id='notifica-no"+json[i].id_notificacion+"' class='nombre-equipo-notificacion-in' style='display:"+no_confirma+"'>No Respondi</p></div>";
+    		                }
+                            inc += "</div>";
     		                inc += "</div>";
     		                inc += "</a>";
-                            if(json[i].bool_fecha != 1){
+                            if(json[i].bool_fecha != 1 && json[i].tipo_evento != 4){
     		                  inc += "<div class='boton-participar'><a onclick='setAsistencia(1,"+json[i].id_notificacion+","+localStorage.getItem('id')+")' href='#ventana-asistira' data-rel='popup' data-position-to='window' class='ui-btn color-boton-notificacion' id='boton-asistere' data-transition='pop'>Voy</a></div>";
     		                  inc += "<div class='boton-participar'><a onclick='setAsistencia(2,"+json[i].id_notificacion+","+localStorage.getItem('id')+")' href='#ventana-no-asistira' data-rel='popup' data-position-to='window' class='ui-btn color-boton-notificacion-2' id='boton-no-asistere' data-transition='pop'>No Voy</a></div>";
     		                }
                             inc += "</div>";
                         }
-                        $('#notificaciones-evt').html(inc).trigger('create');
+                        $('#notificaciones-evt').append(inc).trigger('create');
                         if(json.length >= 5){
                             document.getElementById('not-more').style.display = "block";
                         } else {
