@@ -151,8 +151,8 @@ function tablas(){
                         inc += "<div class='contenedor-celda-tarjetas'>";
                         inc += "<img src='"+foto+"' class='lista-jugador'>";
                         inc += "<div class='celda-nombre-efectividad'>"+tarjetas[i].nombre+"</div>";
-                        inc += "<div class='celda-1'>"+tarjetas[i].amarillas+"</div>";
-                        inc += "<div class='celda-2'>"+tarjetas[i].rojas+"</div>";
+                        inc += "<div class='celda-2'>"+tarjetas[i].amarillas+"</div>";
+                        inc += "<div class='celda-1'>"+tarjetas[i].rojas+"</div>";
                         inc += "</div>";
                     }
                     $('#tabla-tarjeta-grupal').html(inc);

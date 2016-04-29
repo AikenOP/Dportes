@@ -59,6 +59,8 @@ function equipos(){
                 	} else {
                 		photo.src = "jquerymobile/img-dportes/logo-encuentro.png";
                 	}
+                	setCiudades(json.id_region,json.id_ciudad);
+                	setComunas(json.id_ciudad,json.id_comuna);
 	    			document.getElementById('edit-equipo').innerHTML = json.nombre;
 	    			document.getElementById('edit-eq-nombre').value = json.nombre;
 	    			$("#mi-eq-region").val(json.id_region);

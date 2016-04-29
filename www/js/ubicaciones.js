@@ -226,3 +226,82 @@ document.getElementById("reg-eq-ciudad").addEventListener('change', function(){
     }
 
 });
+
+
+function setCiudades(region,ciudad){
+    var xhr = new XMLHttpRequest();
+    var send = new FormData();
+    send.append('id_region',region);
+    xhr.open('POST', path + 'app/getCiudades');
+    xhr.setRequestHeader('Cache-Control', 'no-cache');
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.send(send);
+    $.mobile.loading('show');
+    xhr.timeout = 10000;
+
+    xhr.ontimeout = function () {
+        $.mobile.loading('hide');
+        navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+    };
+
+    xhr.onerror = function(e){
+        $.mobile.loading('hide');
+        navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+    };
+    
+    xhr.onload = function(e){
+        if(this.status == 200){
+            if(this.response && JSON.parse(this.response)){
+                var json = JSON.parse(this.response);
+                var inc = '<option value="0">Seleccione una ciudad</option>';
+                var select = '';
+                for(var i = 0; i < json.length; i++ ){
+                    select = (json[i].id_ciudad == ciudad)? 'selected':'';
+                    inc += "<option value='"+json[i].id_ciudad+"' "+select+">"+json[i].nombre+"</option>";
+                }
+                document.getElementById('mi-eq-ciudad').innerHTML = inc;
+                $('#mi-eq-ciudad').selectmenu('refresh');
+                $.mobile.loading('hide');
+            }
+        }
+    }
+}
+
+function setComunas(ciudad,comuna){
+    var xhr = new XMLHttpRequest();
+    var send = new FormData();
+    send.append('id_ciudad',ciudad);
+    xhr.open('POST', path + 'app/getComunas');
+    xhr.setRequestHeader('Cache-Control', 'no-cache');
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.send(send);
+    $.mobile.loading('show');
+    xhr.timeout = 10000;
+
+    xhr.ontimeout = function () {
+        $.mobile.loading('hide');
+        navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+    };
+
+    xhr.onerror = function(e){
+        $.mobile.loading('hide');
+        navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+    };
+
+    xhr.onload = function(e){
+        if(this.status == 200){
+            if(this.response && JSON.parse(this.response)){
+                var json = JSON.parse(this.response);
+                var inc = '<option value="0">Seleccione una comuna</option>';
+                var select = '';
+                for(var i = 0; i < json.length; i++ ){
+                    select = (json[i].id_comuna == comuna)? 'selected':'';
+                    inc += "<option value='"+json[i].id_comuna+"' "+select+">"+json[i].nombre+"</option>";
+                }
+                document.getElementById('mi-eq-comuna').innerHTML = inc;
+                $('#mi-eq-comuna').selectmenu('refresh');
+                $.mobile.loading('hide');
+            }
+        }
+    }
+}
