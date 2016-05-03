@@ -11,7 +11,9 @@ function registro(){
     this.equipo
     this.dporte
     this.condiciones
-    this.comuna
+    this.region = 0
+    this.ciudad = 0
+    this.comuna = 0
     this.tipo
     this.key
     this.mensaje = [
@@ -151,6 +153,9 @@ function registro(){
         var bEquipo         = false;
         var bDporte         = false;
         var bCondiciones    = false;
+        var bRegion         = false;
+        var bCiudad         = false;
+        var bComuna         = false;
 
         if(this.equipo.trim().length <= 0){
             document.getElementById('reg-no-disponible').style.display = "block";
@@ -167,6 +172,27 @@ function registro(){
             bDporte = true;
         }
 
+        if(this.region == 0){
+            document.getElementById('reg-eq-region-error').style.display = "block";
+        } else {
+            document.getElementById('reg-eq-region-error').style.display = "none";
+            bRegion = true;
+        }
+
+        if(this.ciudad == 0){
+            document.getElementById('reg-eq-ciudad-error').style.display = "block";
+        } else {
+            document.getElementById('reg-eq-ciudad-error').style.display = "none";
+            bCiudad = true;
+        }
+
+        if(this.comuna == 0){
+            document.getElementById('reg-eq-comuna-error').style.display = "block";
+        } else {
+            document.getElementById('reg-eq-comuna-error').style.display = "none";
+            bComuna = true;
+        }
+
         if(!this.condiciones){
             document.getElementById('reg-condiciones-error').style.display = "block";
         } else {
@@ -174,7 +200,7 @@ function registro(){
             bCondiciones = true;
         }
 
-        if(bEquipo && bDporte && bCondiciones){
+        if(bEquipo && bDporte && bCondiciones && bRegion && bCiudad && bComuna){
             return true;
         } else {
             return false;
@@ -217,6 +243,8 @@ document.getElementById('registrar-equipo').addEventListener('click',function(){
     reg.equipo      = document.getElementById('reg-nequipo').value;
     reg.dporte      = document.querySelector('input[name="reg-dporte"]:checked').value;
     reg.tipo        = document.getElementById('reg-tipo-equipo').value;
+    reg.region      = document.getElementById('reg-eq-region').value;
+    reg.ciudad      = document.getElementById('reg-eq-ciudad').value;
     reg.comuna      = document.getElementById('reg-eq-comuna').value;
     reg.condiciones = document.getElementById('reg-condiciones').checked;
     reg.registrarEquipo();

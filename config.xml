@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.phonegap.skull" version="1.0.3">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.phonegap.skull" version="2.0.1">
   <name>Dportes</name>
   <description>Dportes Version: Release</description>
   <author href="http://phonegap.com" email="support@phonegap.com">PhoneGap Team</author>

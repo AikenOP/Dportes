@@ -142,16 +142,19 @@
                 <a id="reg-dporte-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none;">Seleccione algún deporte</a>
                 <label>Región:</label>
                 <select id="reg-eq-region">
-                    <option>Seleccione una region</option>
+                    <option value="0">Seleccione una region</option>
                 </select>
+                <a id="reg-eq-region-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none;">Seleccione una región</a>
                 <label>Ciudad:</label>
                 <select id="reg-eq-ciudad">
-                    <option>Seleccione una ciudad</option>
+                    <option value="0">Seleccione una ciudad</option>
                 </select>
+                <a id="reg-eq-ciudad-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none;">Seleccione una ciudad</a>
                 <label>Comuna:</label>
                 <select id="reg-eq-comuna">
-                    <option>Seleccione una comuna</option>
+                    <option value ="0">Seleccione una comuna</option>
                 </select>
+                <a id="reg-eq-comuna-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none;">Seleccione una comuna</a>
                 <legend>Seleccione un tipo de equipo:</legend>
                 <select id="reg-tipo-equipo" name="tipo">
                     <option value="1">Hombre</option>
@@ -304,24 +307,26 @@
         <div data-role="main" class="content" style="margin:20px">
             <form method="post">
                 <input id="reg-nom-equipo" name="equipo" placeholder="Nombre de tu equipo" type="text">
+                <a id="eq-nombre-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none;"></a>
                 <select id="eq-region">
                     <option value="0">Seleccione una region</option>
                 </select>
+                <a id="eq-region-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none;">Seleccione una región</a>
                 <select id="eq-ciudad">
                     <option value="0">Seleccione una ciudad</option>
                 </select>
+                <a id="eq-ciudad-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none;">Seleccione una ciudad</a>
                 <select id="eq-comuna">
                     <option value="0">Seleccione una comuna</option>
                 </select>
-                <select id="eq-comuna">
+                <a id="eq-comuna-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none;">Seleccione una comuna</a>
+                <select id="eq-tipo">
                     <option value="0">Seleccione tipo de equipo</option>
-                    <option value="0">Masculino</option>
-                    <option value="0">Femenino</option>
-                    <option value="0">Mixto</option>
+                    <option value="1">Masculino</option>
+                    <option value="2">Femenino</option>
+                    <option value="3">Mixto</option>
                 </select>
-                <fieldset id="reg-dportes" data-role="controlgroup">
-                </fieldset>
-                <a id="reg-dporte-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none;">Seleccione deporte</a>
+                <a id="eq-tipo-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none;">Seleccione un tipo de equipo</a>
                 <!--<<input id="reg-ubicacion" name="ubicacion" placeholder="Locación" type="text">
                 a id="reg-ubicacion-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none;">Ingrese una ubicación</a>-->
                 <div class="ui-input-btn ui-btn btn-input">

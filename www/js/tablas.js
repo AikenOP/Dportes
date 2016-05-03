@@ -233,23 +233,29 @@ function tablas(){
                     var json = JSON.parse(this.response);
                     var tipos = json.tabla;
                     var total = json.total;
-
-                    inc  = "<div class='fila-contenedor-afavor-encontra'>";
-                    inc += "<div class='celda-afavor'>A Favor</div>";
-                    inc += "<div class='celda-encontra'>En Contra</div>";
-                    inc += "</div>";
-                    inc += "<div class='fila-contenedor-tipos-goles'>";
-                    inc += "<div class='celda-goles-acumulados'>Goles Acumulados</div>";
-                    inc += "<div class='celda-total-afavor'>"+total.favor+"</div>";
-                    inc += "<div class='celda-total-encontra'>"+total.contra+"</div>";
-                    inc += "</div>";
-                    for(var i = 0; i < tipos.length; i++ ){
-                        inc += "<div class='fila-contenedor-tipos-goles'>";
-                        inc += "<img src='jquerymobile/img-dportes/posiciones/"+tipos[i].icono_estadistica+"' class='lista-jugador'>";  
-                        inc += "<div class='celda-tipo-de-gol'>"+tipos[i].nombre+"</div>";
-                        inc += "<div class='celda-datos-afavor'>"+tipos[i].favor+"</div>";
-                        inc += "<div class='celda-datos-encontra'>"+tipos[i].contra+"</div>";
+                    if(tipos.length != 0){
+                        inc  = "<div class='fila-contenedor-afavor-encontra'>";
+                        inc += "<div class='celda-afavor'>A Favor</div>";
+                        inc += "<div class='celda-encontra'>En Contra</div>";
                         inc += "</div>";
+                        inc += "<div class='fila-contenedor-tipos-goles'>";
+                        inc += "<div class='celda-goles-acumulados'>Goles Acumulados</div>";
+                        inc += "<div class='celda-total-afavor'>"+total.favor+"</div>";
+                        inc += "<div class='celda-total-encontra'>"+total.contra+"</div>";
+                        inc += "</div>";
+                        for(var i = 0; i < tipos.length; i++ ){
+                            inc += "<div class='fila-contenedor-tipos-goles'>";
+                            inc += "<img src='jquerymobile/img-dportes/posiciones/"+tipos[i].icono_estadistica+"' class='lista-jugador'>";  
+                            inc += "<div class='celda-tipo-de-gol'>"+tipos[i].nombre+"</div>";
+                            inc += "<div class='celda-datos-afavor'>"+tipos[i].favor+"</div>";
+                            inc += "<div class='celda-datos-encontra'>"+tipos[i].contra+"</div>";
+                            inc += "</div>";
+                        }
+                    } else {
+                        inc = "<div style='text-align:center;'>";
+                        inc += "<img src='jquerymobile/img-dportes/imagen-sin-datos.png' width='138'>";
+                        inc += "</div>";
+                        inc += "<p style='text-align:center; color:#868686; font-size:17px; text-shadow:none;'>No se encontraron estadisticas</p>";
                     }
                     $('#tabla-grupal-tipo-gol').html(inc);
                     $.mobile.loading('hide');
@@ -276,25 +282,32 @@ function tablas(){
                 if(this.response && JSON.parse(this.response)){
                     var inc = '';
                     var json = JSON.parse(this.response);
-                    inc += "<div class='fila-titulos-cambios'>";
-                    inc += "<div class='celda-titulo-jugador'>Jugador</div>";
-                    inc += "<div class='celda-titular'>Titular</div>";
-                    inc += "<div class='celda-reserva'>Reserva</div>";
-                    inc += "<div class='celda-cambio'>Cambio</div>";
-                    inc += "</div>";
-                    for(var i = 0; i < json.length; i++ ){
-                        if(json[i].foto != null){
-                            foto = path + 'perfiles/' + json[i].usuarios_id_usuario + '/' + json[i].foto;
-                        } else {
-                            foto = "jquerymobile/img-dportes/foto.png";
-                        }                    
-                        inc += "<div class='contenedor-fila-cambios'>";
-                        inc += "<img src='"+foto+"' class='lista-jugador'>";
-                        inc += "<div class='celda-nombre-cambios'>"+json[i].nombre+"</div>";
-                        inc += "<div class='celda-total-titular'>"+json[i].titular+"</div>";
-                        inc += "<div class='celda-total-reserva'>"+json[i].reserva+"</div>";
-                        inc += "<div class='celda-total-cambios'>"+json[i].cambio+"</div>";
+                    if(json.length != 0){
+                        inc += "<div class='fila-titulos-cambios'>";
+                        inc += "<div class='celda-titulo-jugador'>Jugador</div>";
+                        inc += "<div class='celda-titular'>Titular</div>";
+                        inc += "<div class='celda-reserva'>Reserva</div>";
+                        inc += "<div class='celda-cambio'>Cambio</div>";
                         inc += "</div>";
+                        for(var i = 0; i < json.length; i++ ){
+                            if(json[i].foto != null){
+                                foto = path + 'perfiles/' + json[i].usuarios_id_usuario + '/' + json[i].foto;
+                            } else {
+                                foto = "jquerymobile/img-dportes/foto.png";
+                            }                    
+                            inc += "<div class='contenedor-fila-cambios'>";
+                            inc += "<img src='"+foto+"' class='lista-jugador'>";
+                            inc += "<div class='celda-nombre-cambios'>"+json[i].nombre+"</div>";
+                            inc += "<div class='celda-total-titular'>"+json[i].titular+"</div>";
+                            inc += "<div class='celda-total-reserva'>"+json[i].reserva+"</div>";
+                            inc += "<div class='celda-total-cambios'>"+json[i].cambio+"</div>";
+                            inc += "</div>";
+                        }
+                    } else {
+                        inc = "<div style='text-align:center;'>";
+                        inc += "<img src='jquerymobile/img-dportes/imagen-sin-datos.png' width='138'>";
+                        inc += "</div>";
+                        inc += "<p style='text-align:center; color:#868686; font-size:17px; text-shadow:none;'>No se encontraron estadisticas</p>";                        
                     }
                     $('#tabla-grupal-cambios').html(inc);
                     $.mobile.loading('hide');
@@ -321,19 +334,25 @@ function tablas(){
                 if(this.response && JSON.parse(this.response)){
                     var inc = '';
                     var json = JSON.parse(this.response);
-                    inc += "<div class='celda-efectividad'>% de efectividad</div>";
-
-                    for(var i = 0; i < json.length; i++ ){
-                        if(json[i].foto != null){
-                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto;
-                        } else {
-                            foto = "jquerymobile/img-dportes/foto.png";
-                        }            
-                        inc += "<div class='fila-efectividad'>";
-                        inc += "<img src='"+foto+"' class='lista-jugador'>";
-                        inc += "<div class='celda-nombre-efectividad'>"+json[i].nombre+"</div>";
-                        inc += "<div class='celda-porcentaje-efectividad'>"+json[i].efectividad+"%</div>";
+                    if(json.length != 0){
+                        inc += "<div class='celda-efectividad'>% de efectividad</div>";
+                        for(var i = 0; i < json.length; i++ ){
+                            if(json[i].foto != null){
+                                foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto;
+                            } else {
+                                foto = "jquerymobile/img-dportes/foto.png";
+                            }            
+                            inc += "<div class='fila-efectividad'>";
+                            inc += "<img src='"+foto+"' class='lista-jugador'>";
+                            inc += "<div class='celda-nombre-efectividad'>"+json[i].nombre+"</div>";
+                            inc += "<div class='celda-porcentaje-efectividad'>"+json[i].efectividad+"%</div>";
+                            inc += "</div>";
+                        }
+                    } else {
+                        inc = "<div style='text-align:center;'>";
+                        inc += "<img src='jquerymobile/img-dportes/imagen-sin-datos.png' width='138'>";
                         inc += "</div>";
+                        inc += "<p style='text-align:center; color:#868686; font-size:17px; text-shadow:none;'>No se encontraron estadisticas</p>";
                     }
                     $('#efec-jugador').html(inc);
                     $.mobile.loading('hide');
@@ -365,14 +384,6 @@ function tablas(){
                     var defensa = json.defensa;
                     var volante = json.volante;
                     var delantero = json.delantero;
-
-                    /*for(var i = 0; i < nd.length; i++ ){
-                        inc += "<tr class='ui-bar-d'>";
-                        inc += "<td>"+nd[i].nombre+"</td>";
-                        inc += "<td>"+nd[i].efectividad+"%</td>";
-                        inc += "</tr>";           
-                    }
-                    $('#efec-stat-nd').html(inc);*/
                     $('#efec-posicion').html('').trigger('create');
 
                     if(portero.length != 0){
@@ -465,6 +476,14 @@ function tablas(){
                             inc += "</div>";         
                         }
                         $('#efec-posicion').append(inc).trigger('create');
+                    }
+
+                    if(portero.length == 0 && defensa.length == 0 && volante.length == 0 && delantero.length == 0){
+                        inc = "<div style='text-align:center;'>";
+                        inc += "<img src='jquerymobile/img-dportes/imagen-sin-datos.png' width='138'>";
+                        inc += "</div>";
+                        inc += "<p style='text-align:center; color:#868686; font-size:17px; text-shadow:none;'>No se encontraron estadisticas</p>";
+                        $('#efec-posicion').html(inc).trigger('create');
                     }
                     
                     $.mobile.loading('hide');
@@ -660,6 +679,13 @@ function tablas(){
                             inc += "</div>";         
                         }
                         $('#efec-jugada').append(inc).trigger('create');
+                    }
+                    if(goles.length == 0 && tiro_arco.length == 0 && tiro_libre.length == 0 && tiro_esquina.length == 0 && tiro_penal.length == 0 && quite.length == 0 && asistencia.length == 0){
+                        inc = "<div style='text-align:center;'>";
+                        inc += "<img src='jquerymobile/img-dportes/imagen-sin-datos.png' width='138'>";
+                        inc += "</div>";
+                        inc += "<p style='text-align:center; color:#868686; font-size:17px; text-shadow:none;'>No se encontraron estadisticas</p>";
+                        $('#efec-jugada').html(inc).trigger('create');
                     }
                     $.mobile.loading('hide');
                 }
