@@ -13,6 +13,7 @@ function eventos(){
     this.tipo
     this.periodo
     this.bool = true;
+    this.reg = false;
 
     this.addEvento = function(){
     	if(this.validaEvento()){
@@ -26,7 +27,8 @@ function eventos(){
             add.append('periodo',this.periodo);
             add.append('id_equipo',localStorage.getItem('equipo'));
             add.append('id_usuario',localStorage.getItem('id'));
-            add.append('notification',this.bool)
+            add.append('notification',this.bool);
+            add.append('notification_reg',this.reg);
             if(sessionStorage.getItem('evento')){
                 add.append('id',sessionStorage.getItem('evento'));
             }
@@ -497,6 +499,7 @@ document.getElementById('pg-registro-next').addEventListener('click',function(){
         pg.periodo      = document.getElementById('pg-periodo').value;
         pg.tipo         = 1;
         pg.bool         = false;
+        pg.reg          = false;
         pg.addEvento();
         delete pg;     
     } else {
@@ -512,6 +515,7 @@ document.getElementById('pg-registro-next').addEventListener('click',function(){
                         pg.periodo      = document.getElementById('pg-periodo').value;
                         pg.tipo         = 1;
                         pg.bool         = true;
+                        pg.reg          = true;
                         pg.addEvento();
                         delete pg;
                     } else {
@@ -523,6 +527,7 @@ document.getElementById('pg-registro-next').addEventListener('click',function(){
                         pg.periodo      = document.getElementById('pg-periodo').value;
                         pg.tipo         = 1;
                         pg.bool         = false;
+                        pg.reg          = true;
                         pg.addEvento();
                         delete pg;
                     }
@@ -544,6 +549,7 @@ document.getElementById('pg-registro').addEventListener('click',function(){
         pg.periodo      = document.getElementById('pg-periodo').value;
         pg.tipo         = 1;
         pg.bool         = false;
+        pg.reg          = false;
         pg.addEvento();
         delete pg;     
     } else {
@@ -559,6 +565,7 @@ document.getElementById('pg-registro').addEventListener('click',function(){
                         pg.periodo      = document.getElementById('pg-periodo').value;
                         pg.tipo         = 1;
                         pg.bool         = true;
+                        pg.reg          = true;
                         pg.addEvento();
                         delete pg;
                     } else {
@@ -570,6 +577,7 @@ document.getElementById('pg-registro').addEventListener('click',function(){
                         pg.periodo      = document.getElementById('pg-periodo').value;
                         pg.tipo         = 1;
                         pg.bool         = false;
+                        pg.reg          = true;
                         pg.addEvento();
                         delete pg;
                     }

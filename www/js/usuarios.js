@@ -28,11 +28,12 @@ function usuarios(){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var inc = '';
+                    var now = +(new Date);
                     var photo = document.getElementById('photo');
                     var fullname = checkName(json.nombre,json.apellido_paterno);
                     photo.style.display = 'block';
                     if(json.foto != null){
-                        photo.src =  path + 'perfiles/' + json.id_usuario + '/' + json.foto;
+                        photo.src =  path + 'perfiles/' + json.id_usuario + '/' + json.foto + '?timestamp=' + now;
                     } else {
                         photo.src = "jquerymobile/img-dportes/foto2.png";
                     }

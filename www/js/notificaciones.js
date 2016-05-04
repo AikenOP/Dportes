@@ -47,6 +47,7 @@ function notificaciones(){
                     var no_confirma = 'none;';
                     var clase = '';
                     var logo = '';
+                    var now = +(new Date);
                     //alert(offset);
                     //alert(json.length);
                     if(json.length != 0){
@@ -76,7 +77,7 @@ function notificaciones(){
                             }
 
                             if(json[i].logo != null){
-                                logo =  path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo;
+                                logo =  path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo + '?timestamp=' + now;
                             } else {
                                 logo = "jquerymobile/img-dportes/logo-encuentro.png";
                             }
@@ -199,6 +200,7 @@ function notificaciones(){
                     var inc = '';
                     var tipo = '';
                     var foto = '';
+                    var now = +(new Date);
                     for(var i = 0; i < json.length; i++ ){
                         if(json[i].id_tipo_asistencia == 1){
                             tipo = "asistencia-asistira";
@@ -209,7 +211,7 @@ function notificaciones(){
                         }
 
                         if(json[i].foto != null){
-                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto;
+                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto + '?timestamp=' + now;
                         } else {
                             foto = "jquerymobile/img-dportes/foto.png";
                         }

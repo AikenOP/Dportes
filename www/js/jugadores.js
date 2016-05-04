@@ -119,6 +119,7 @@ function jugadores(){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var foto = '';
+                    var now = +(new Date);
                     if(localStorage.getItem('rol') == 1){
                         var inc = '<a href="#add-jugadores"><div class="agregar_jugador"></div></a>';
                     } else {
@@ -131,7 +132,7 @@ function jugadores(){
                             checked = (json[i].titular) ? 'checked':'';
                         //}
                         if(json[i].foto != null){
-                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto;
+                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto + '?timestamp=' + now;
                         } else {
                             foto = "jquerymobile/img-dportes/foto.png";
                         }   
@@ -183,6 +184,7 @@ function jugadores(){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var fullname = checkName(json.nombre,json.apellido_paterno);
+                    var now = +(new Date);
                     //alert(json.id_posicion);
                     try{
                         var jg = new jugadores();
@@ -194,7 +196,7 @@ function jugadores(){
                     var photo = document.getElementById('edit-jg-foto');
                     photo.style.display = 'block';
                     if(json.foto != null){
-                        photo.src =  path + 'perfiles/' + json.id_usuario + '/' + json.foto;
+                        photo.src =  path + 'perfiles/' + json.id_usuario + '/' + json.foto + '?timestamp=' + now;
                     } else {
                         photo.src = "jquerymobile/img-dportes/foto.png";
                     }
@@ -342,6 +344,7 @@ function jugadores(){
                     var inc = '';
                     var foto = '';
                     var disabled = '';
+                    var now = +(new Date);
 
                     if(json.length != 0){
                         inc = "<ul id='jug-list' class='touch' data-role='listview' data-icon='false' data-split-icon='delete' data-inset='false' style='margin-bottom:70px;'>";
@@ -360,7 +363,8 @@ function jugadores(){
                             }*/
                             
                         if(json[i].foto != null){
-                            foto = path + "perfiles/"+json[i].id_usuario+"/"+json[i].foto;
+
+                            foto = path + "perfiles/"+json[i].id_usuario+"/"+json[i].foto + '?timestamp=' + now;
                         } else {
                             foto = "jquerymobile/img-dportes/foto.png";
                         }
@@ -423,10 +427,11 @@ function jugadores(){
                     var json = JSON.parse(this.response);
                     var foto = '';
                     var inc = '';
+                    var now = +(new Date);
                     if(json.length != 0){
                         for(var i = 0; i < json.length; i++ ){
                             if(json[i].foto != null){
-                                foto =  path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto;
+                                foto =  path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto + '?timestamp=' + now;
                             } else {
                                 foto = "jquerymobile/img-dportes/foto.png";
                             }
@@ -464,10 +469,11 @@ function jugadores(){
                     var json = JSON.parse(this.response);
                     var inc = '';
                     var foto = '';
+                    var now = +(new Date);
                     if(json.length != 0){
                         for(var i = 0; i < json.length; i++ ){
                             if(json[i].foto != null){
-                                foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto;
+                                foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto + '?timestamp=' + now;
                             } else {
                                 foto = "jquerymobile/img-dportes/foto.png";
                             }
@@ -529,6 +535,7 @@ function jugadores(){
                     var cambio = '';
                     var goles = '';
                     var foto = '';
+                    var now = +(new Date);
 
                     document.getElementById('acc-jugadores').innerHTML = inc;
                     for(var i = 0; i < json.length; i++ ){
@@ -599,7 +606,7 @@ function jugadores(){
                         }
 
                         if(json[i].foto != null){
-                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto;
+                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto + '?timestamp=' + now;
                         } else {
                             foto = "jquerymobile/img-dportes/foto.png";
                         }
@@ -682,9 +689,10 @@ function jugadores(){
                     var json = JSON.parse(this.response);
                     var inc = '';
                     var foto = '';
+                    var now = +(new Date);
                     for(var i = 0; i < json.length; i++ ){
                         if(json[i].foto != null){
-                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto;
+                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto + '?timestamp=' + now;
                         } else {
                             foto = "jquerymobile/img-dportes/foto.png";
                         }  
@@ -775,6 +783,7 @@ function jugadores(){
                     var inc = '';
                     var ape = '';
                     var foto = '';
+                    var now = +(new Date);
                     var json = JSON.parse(this.response);
                     for(var i = 0; i < json.length; i++ ){
                         if(json[i].apellido_paterno == null){
@@ -783,7 +792,7 @@ function jugadores(){
                             ape = json[i].apellido_paterno;
                         }
                         if(json[i].foto != null){
-                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto;
+                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto + '?timestamp=' + now;
                         } else {
                             foto = "jquerymobile/img-dportes/foto.png";
                         }

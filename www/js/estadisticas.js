@@ -105,10 +105,11 @@ function estadisticas(){
                     var faltas_c = json.faltas_c;
                     var asistencias = json.asistencias;
                     var asistencias_c = json.asistencias_c;
+                    var now = +(new Date);
                     var photo = document.getElementById('dt-foto');
 
                     if(json.foto != null){
-                        photo.src = path + 'perfiles/' + sessionStorage.getItem('jugador') + '/' + json.foto;
+                        photo.src = path + 'perfiles/' + sessionStorage.getItem('jugador') + '/' + json.foto + '?timestamp=' + now;
                     } else {
                         photo.src = "jquerymobile/img-dportes/foto.png";
                     }
