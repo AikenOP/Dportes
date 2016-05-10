@@ -22,6 +22,7 @@
                 StatusBar.overlaysWebView(false);
                 StatusBar.backgroundColorByHexString("#000000");
                 StatusBar.styleLightContent();
+                StatusBar.show();
             }
         }
 
