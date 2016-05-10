@@ -20,12 +20,11 @@
   <preference name="android-build-tool" value="gradle" />
   <platform name="ios" >
     <preference name="StatusBarOverlaysWebView" value="false"/>
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarStyle" value="lightcontent" />
   </platform>
 
-
-
   <plugin name="phonegap-plugin-push" source="npm" spec="~1.5.0" />
-
   <plugin name="org.apache.cordova.battery-status" source="pgb" spec="0.2.12" />
   <plugin name="org.apache.cordova.camera" source="pgb" spec="0.3.6" />
   <plugin name="org.apache.cordova.console" source="pgb" spec="0.2.13" />
