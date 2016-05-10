@@ -20,7 +20,7 @@
   <preference name="android-build-tool" value="gradle" />
   <platform name="ios" >
     <preference name="StatusBarOverlaysWebView" value="false"/>
-    <preference name="StatusBarBackgroundColor" value="#D00000"/>
+    <preference name="StatusBarBackgroundColor" value="#000000"/>
     <preference name="StatusBarStyle" value="lightcontent" />
   </platform>
 

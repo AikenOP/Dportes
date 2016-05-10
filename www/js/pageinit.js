@@ -10,6 +10,12 @@
             document.addEventListener("deviceready", onDeviceReady, false);
 
             function onDeviceReady(){
+                try{
+                    StatusBar.overlaysWebView(false);
+                    StatusBar.styleLightContent();
+                }catch(e){
+                    alert(e);
+                }
                 Chart.defaults.global.responsive = false;
                 setTimeout(function(){ 
                     if(localStorage.getItem('login')){
