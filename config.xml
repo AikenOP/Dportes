@@ -19,11 +19,9 @@
   <preference name="android-minSdkVersion" value="14"/>
   <preference name="android-installLocation" value="auto"/>
   <preference name="android-build-tool" value="gradle" />
-  <preference name="StatusBarOverlaysWebView" value="true"/>
-
-<preference name="StatusBarBackgroundColor" value="#000000"/>
-
-<preference name="StatusBarStyle" value="lightcontent" />
+  <preference name="StatusBarOverlaysWebView" value="false"/>
+  <preference name="StatusBarBackgroundColor" value="#000000"/>
+  <preference name="StatusBarStyle" value="blackopaque" />
 
   <plugin name="phonegap-plugin-push" source="npm" spec="~1.5.0" />
 
