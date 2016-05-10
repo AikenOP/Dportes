@@ -20,7 +20,8 @@
   <preference name="android-build-tool" value="gradle" />
   <platform name="ios">
     <preference name="StatusBarOverlaysWebView" value="false"/>
-    <preference name="StatusBarBackgroundColor" value="#006600"/>
+    <preference name="StatusBarBackgroundColor" value="#A7A7A7"/>
+    <preference name="StatusBarStyle" value="lightcontent" />
   </platform>
 
   <plugin name="phonegap-plugin-push" source="npm" spec="~1.5.0" />
