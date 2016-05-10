@@ -18,11 +18,6 @@
                         $.mobile.navigate("#login", {transition: "fade"});
                     }
                 }, 4000);
-
-               // StatusBar.overlaysWebView(false);
-                //StatusBar.backgroundColorByHexString("#000000");
-                //StatusBar.styleLightContent();
-                //StatusBar.show();
             }
         }
 
