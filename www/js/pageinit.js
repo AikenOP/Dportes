@@ -12,8 +12,6 @@
             function onDeviceReady(){
                 try{
                     StatusBar.overlaysWebView(false);
-                    StatusBar.backgroundColorByName("black");
-                    StatusBar.styleLightContent();
                 }catch(e){
                     alert(e);
                 }
