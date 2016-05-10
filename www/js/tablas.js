@@ -103,9 +103,8 @@ function tablas(){
                         
                     var newChart = new Chart(ctx).Radar(radarChartData);
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    newChart.clear();
-                    newChart.destroy();
-                    //newChart = new Chart(ctx).Radar(radarChartData);  
+                    //newChart.clear();
+                    //newChart.destroy();
 
                     $.mobile.loading('hide');
                 }
