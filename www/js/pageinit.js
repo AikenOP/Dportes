@@ -64,6 +64,7 @@
                 });
 
                 push.on('registration', function(data) {
+                    alert(data);
                     var reg = new registro();
                     reg.key = data.registrationId;
                     reg.setKeyByUsuario();
