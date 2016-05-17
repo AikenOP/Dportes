@@ -10,6 +10,7 @@
             document.addEventListener("deviceready", onDeviceReady, false);
 
             function onDeviceReady(){
+                navigator.splashscreen.hide();
                 Chart.defaults.global.responsive = false;
                 setTimeout(function(){ 
                     if(localStorage.getItem('login')){
