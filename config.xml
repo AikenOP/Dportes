@@ -44,6 +44,13 @@
   <plugin name="org.apache.cordova.splashscreen" source="pgb" spec="1.0.0" />
   <plugin name="org.apache.cordova.statusbar" spec="0.1.4" source="pgb" />
   <plugin name="org.apache.cordova.vibration" source="pgb" spec="0.3.13" />
+
+  <platform name="android">
+    <splash src="res/screen/android/screen-ldpi-portrait.png" platform="android" density="port-ldpi"/>
+    <splash src="res/screen/android/screen-mdpi-portrait.png" platform="android" density="port-mdpi"/>
+    <splash src="res/screen/android/screen-hdpi-portrait.png" platform="android" density="port-hdpi"/>
+    <splash src="res/screen/android/screen-xhdpi-portrait.png" platform="android" density="port-xhdpi"/>
+  </platform>
   
   <icon src="icon.png" />
   <icon src="res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
@@ -58,10 +65,6 @@
   <icon src="res/icon/ios/icon-72-2x.png" gap:platform="ios" width="144" height="144"/>
   <icon src="res/icon/ios/icon-152.png" gap:platform="ios" width="152" height="152"/>
   <icon src="res/icon/webos/icon-64.png" gap:platform="webos"/>
-  <gap:splash src="res/screen/android/screen-ldpi-portrait.png" gap:platform="android" gap:qualifier="port-ldpi"/>
-  <gap:splash src="res/screen/android/screen-mdpi-portrait.png" gap:platform="android" gap:qualifier="port-mdpi"/>
-  <gap:splash src="res/screen/android/screen-hdpi-portrait.png" gap:platform="android" gap:qualifier="port-hdpi"/>
-  <gap:splash src="res/screen/android/screen-xhdpi-portrait.png" gap:platform="android" gap:qualifier="port-xhdpi"/>
   <gap:splash src="res/screen/ios/screen-iphone-portrait.png" gap:platform="ios" width="320" height="480"/>
   <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png" gap:platform="ios" width="640" height="960"/>
   <gap:splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios" width="640" height="1136"/>
