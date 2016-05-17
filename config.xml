@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.dportes.app" version="2.0.5">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.dportes.app" version="2.0.6">
   <name>Dportes</name>
   <description>Dportes Version: Release</description>
   <author href="http://phonegap.com" email="support@phonegap.com">PhoneGap Team</author>
@@ -43,11 +43,25 @@
   <plugin name="org.apache.cordova.media" source="pgb" spec="0.2.16" />
   <plugin name="org.apache.cordova.media-capture" source="pgb" spec="0.3.6" />
   <plugin name="org.apache.cordova.network-information" source="pgb" spec="0.2.15" />
-
+  <plugin name="org.apache.cordova.splashscreen" source="pgb" spec="1.0.0" />
   <plugin name="org.apache.cordova.statusbar" spec="0.1.4" source="pgb" />
   <plugin name="org.apache.cordova.vibration" source="pgb" spec="0.3.13" />
 
+  <platform name="android">
+    <splash src="res/screen/android/screen-ldpi-portrait.png" platform="android" density="port-ldpi"/>
+    <splash src="res/screen/android/screen-mdpi-portrait.png" platform="android" density="port-mdpi"/>
+    <splash src="res/screen/android/screen-hdpi-portrait.png" platform="android" density="port-hdpi"/>
+    <splash src="res/screen/android/screen-xhdpi-portrait.png" platform="android" density="port-xhdpi"/>
+  </platform>
 
+  <plataform name="ios">
+    <splash src="res/screen/ios/screen-iphone-portrait.png" platform="ios" width="320" height="480"/>
+    <splash src="res/screen/ios/screen-iphone-portrait-2x.png" platform="ios" width="640" height="960"/>
+    <splash src="res/screen/ios/screen-iphone-portrait-568h-2x.png" platform="ios" width="640" height="1136"/>
+    <splash src="res/screen/ios/screen-ipad-portrait.png" platform="ios" width="768" height="1024"/>
+    <splash src="res/screen/ios/screen-ipad-landscape.png" platform="ios" width="1024" height="768"/>
+  </plataform>
+  
   <icon src="icon.png" />
   <icon src="res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
   <icon src="res/icon/android/icon-48-mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
