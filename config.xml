@@ -24,6 +24,9 @@
     <preference name="StatusBarOverlaysWebView" value="false"/>
     <preference name="StatusBarBackgroundColor" value="#000000"/>
     <preference name="StatusBarStyle" value="lightcontent" />
+
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="0"/>
   </platform>
 
   <plugin name="phonegap-plugin-push" source="npm" spec="~1.5.0" />
