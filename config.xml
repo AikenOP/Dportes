@@ -21,7 +21,6 @@
   <platform name="ios">
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreenDelay" value="0" />
-    <preference name="FadeSplashScreen" value="false"/>
     <preference name="FadeSplashScreenDuration" value="0"/>
     <preference name="ShowSplashScreenSpinner" value="false"/>
     <preference name="StatusBarOverlaysWebView" value="false"/>
