@@ -19,10 +19,10 @@
   <preference name="android-installLocation" value="auto"/>
   <preference name="android-build-tool" value="gradle" />
   <platform name="ios">
-    <preference name="AutoHideSplashScreen" value="false" />
-    <preference name="SplashScreenDelay" value="1000" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="0" />
     <preference name="FadeSplashScreen" value="false"/>
-    <preference name="FadeSplashScreenDuration" value="500"/>
+    <preference name="FadeSplashScreenDuration" value="0"/>
     <preference name="ShowSplashScreenSpinner" value="false"/>
     <preference name="StatusBarOverlaysWebView" value="false"/>
     <preference name="StatusBarBackgroundColor" value="#000000"/>
