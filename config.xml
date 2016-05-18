@@ -48,13 +48,6 @@
   <plugin name="org.apache.cordova.splashscreen" source="pgb" spec="1.0.0" />
   <plugin name="org.apache.cordova.statusbar" spec="0.1.4" source="pgb" />
   <plugin name="org.apache.cordova.vibration" source="pgb" spec="0.3.13" />
-
-  <platform name="android">
-    <splash src="res/screen/android/screen-ldpi-portrait.png" platform="android" density="port-ldpi"/>
-    <splash src="res/screen/android/screen-mdpi-portrait.png" platform="android" density="port-mdpi"/>
-    <splash src="res/screen/android/screen-hdpi-portrait.png" platform="android" density="port-hdpi"/>
-    <splash src="res/screen/android/screen-xhdpi-portrait.png" platform="android" density="port-xhdpi"/>
-  </platform>
   
   <icon src="icon.png" />
   <icon src="res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
