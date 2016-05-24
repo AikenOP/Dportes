@@ -61,8 +61,8 @@
                     <div class="ancho-botones">
                         <a href="#registro-usuario" class="color-boton"><button class="ui-btn btn-input">Registrarse</button></a>
                     </div>
-                    <div style="display:block; text-align:center">
-                        <!--<a href="recuperar_contrasena.html" class="olvidemiclave" data-transition="fade">Olvidó su Contraseña</a>-->
+                    <div style="display:block; text-align:center; margin-top:15px;">
+                        <a href="#olvido-contrasena" class="olvidemiclave" data-transition="fade">¿Olvido su contraseña?</a>
                     </div>
                 </form>
             </div>
@@ -173,6 +173,43 @@
                 </div>
             </form>
         </div>
+    </div>
+
+    <!-- ————— PAGINA RECUPERAR CONTRASEÑA ————— -->
+    <div data-role="page" id="olvido-contrasena" class="jqm-demos" data-title="Dportes" data-theme="a">
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="index.html" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Recuperar Contraseña</h1>
+        </div>
+        
+        <div class="content">
+
+            <form action="" method="post">
+                <div style="padding:20px;">
+                    <p>Escribe la dirección de e-mail usada en el momento de registrarte y te enviaremos una nueva contraseña a dicha dirección.</p>
+                    <input name="olv-correo" id="olv-correo" value="" placeholder="mi-correo@correo.cl" data-theme="a" type="text">
+                    <!--<button type="submit" class="ui-btn ui-shadow ui-btn-icon-left ui-icon-check">ENTRAR</button>-->
+                    <a id="olv-send" class="ui-btn ui-icon-check ui-btn-icon-left ui-shadow-icon color-boton">Enviar al Correo</a>
+                    <div id="olv-correcto" style="display:none;">
+                        <img src="jquerymobile/img-dportes/iconos/ok.svg" align="left"><p class="nombre-disponible">La clave fue enviada con exito a su correo.</p>
+                    </div>
+                    <div id="olv-no-existe" style="display:none;">
+                        <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion">Correo No Existe</a>
+                    </div>
+                    <div id="olv-formato-error" style="display:none;">
+                        <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion">El formato del email no es correcto.</a>
+                    </div>
+                    <p>Si el problema continúa, favor contacta a soporte con: <strong>savendano@ilia.cl</strong></p>
+                </div>
+            </form>
+        </div>
+
+        <div data-role="footer" class="footer-background" data-position="fixed">
+            <p class="footer-login">
+                <!--<a href="#" class="enlace_footer">Acerca de Dportes</a> - <a href="#" class="enlace_footer">Términos y Privacidad</a> - <a href="#" class="enlace_footer">Términos y Privacidad</a>-->
+            </p>
+        </div>
+        
     </div>
 
     <!-- ———— CAMBIAR CONTRASEÑA PRIMER LOGIN ————— -->

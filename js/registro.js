@@ -106,6 +106,33 @@ function registro(){
         }
     }
 
+    this.olvidoContrasena = function(){
+        if(validaEmail(this.email)){
+            document.getElementById('olv-formato-error').style.display = 'none';
+            document.getElementById('olv-no-existe').style.display = 'none';
+            document.getElementById('olv-correcto').style.display = 'none';
+            var xhr = new XMLHttpRequest();
+            var send = new FormData();
+            send.append('correo',this.email);
+            xhr.open('POST', path + 'auth/olvidoContrasena');
+            xhr.setRequestHeader('Cache-Control', 'no-cache');
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            xhr.send(send);
+            xhr.onload = function(e){
+                if(this.status == 200){
+                    if(this.response == 1){
+                        document.getElementById('olv-correcto').style.display = 'block';
+                    } else {
+                        document.getElementById('olv-no-existe').style.display = 'block';
+                    }
+                }
+            }
+
+        } else {
+            document.getElementById('olv-formato-error').style.display = 'block';
+        }
+    }
+
     this.validar = function(){
     	var bNombre 	= false;
     	var bApellido 	= false;
@@ -249,9 +276,17 @@ document.getElementById('registrar-equipo').addEventListener('click',function(){
     reg.comuna      = document.getElementById('reg-eq-comuna').value;
     reg.condiciones = document.getElementById('reg-condiciones').checked;
     reg.registrarEquipo();
+    delete reg;
 
 });
 
+document.getElementById('olv-send').addEventListener('click',function(){
+    event.preventDefault();
+    var reg = new registro();
+    reg.email = document.getElementById('olv-correo').value;
+    reg.olvidoContrasena();
+    delete reg;
+});
 
 document.getElementById('reg-nequipo').addEventListener('change', checkEquipo, false);
 
