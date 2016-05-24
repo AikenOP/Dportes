@@ -107,10 +107,10 @@ function registro(){
     }
 
     this.olvidoContrasena = function(){
-        if(validaEmail(this.email)){
-            document.getElementById('olv-formato-error').style.display = 'none';
-            document.getElementById('olv-no-existe').style.display = 'none';
-            document.getElementById('olv-correcto').style.display = 'none';
+        document.getElementById('olv-formato-error').style.display = 'none';
+        document.getElementById('olv-no-existe').style.display = 'none';
+        document.getElementById('olv-correcto').style.display = 'none';
+        if(!validaEmail(this.email)){
             var xhr = new XMLHttpRequest();
             var send = new FormData();
             send.append('correo',this.email);
