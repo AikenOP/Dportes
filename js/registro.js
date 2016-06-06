@@ -49,21 +49,27 @@ function registro(){
     this.registrar = function(){
     	if(this.validar()){
 	      	var xhr = new XMLHttpRequest();
-	        var registro = new FormData(document.getElementById('form-registro-usuario'));
-	        xhr.open('POST', path + 'auth/validaUsuario');
+	        var registro = new FormData();
+            registro.append('nombre_usuario',document.getElementById('reg-nombre').value);
+            registro.append('apellido_usuario',document.getElementById('reg-apellido').value);
+            registro.append('email_usuario',document.getElementById('reg-email').value);
+            registro.append('password_usuario',document.getElementById('reg-password').value);
+	        xhr.open('POST', path + 'auth/registrar');
 	        xhr.setRequestHeader('Cache-Control', 'no-cache');
 	        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 	        xhr.send(registro);
 	        xhr.onload = function(e){
-	            if(this.status == 200){
-                    if(this.response){
-                        document.getElementById('reg-email-duplicate-error').style.display = "block";
+                if(this.status == 200){
+                    if(this.response && JSON.parse(this.response)){
+                        //alert(this.response);
+                        var json =  JSON.parse(this.response);
+                        localStorage.setItem("id", json.usuario);
+                        localStorage.setItem("login", json.login);
+                        $.mobile.navigate("#home", {transition: "fade"});
                     } else {
-                        //alert('formulario correcto, puede proceder.');
-                        //window.location.href = window.location.href + '#registrar';
-                        $.mobile.navigate("#registro-equipo", {transition: "slide"});
+                        document.getElementById('reg-email-duplicate-error').style.display = "block";
                     }
-	            }
+                }
 	        }
 	    }
     }
