@@ -205,8 +205,7 @@
             <p class="footer-login">
                 <!--<a href="#" class="enlace_footer">Acerca de Dportes</a> - <a href="#" class="enlace_footer">Términos y Privacidad</a> - <a href="#" class="enlace_footer">Términos y Privacidad</a>-->
             </p>
-        </div>
-        
+        </div>        
     </div>
 
     <!-- ———— CAMBIAR CONTRASEÑA PRIMER LOGIN ————— -->
@@ -326,6 +325,37 @@
                 </div>
             </ul>
         </div>
+    </div>
+
+    <!-- ————— PAGINA CONFIGURACIONES ————— -->
+    <div data-role="page" id="configuraciones" data-title="Dportes" data-theme="a">
+    
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#home" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Configuración</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a>
+        </div>
+        
+        <div class="content" style="margin:20px">
+            <form action="" method="post">
+                    
+                    <label id="1">Ingresar Nueva Clave</label>
+                    <input name="password" id="conf-password" type="password">
+                    <div id="conf-error-pass" style="margin-bottom:10px; display:none;"><img src="jquerymobile/img-dportes/iconos/error.svg" align="left"><p class="falta-campo">Ingrese un mínimo de 5 caracteres.</p></div>
+                    
+                    <label id="2">Ingrese Nuevamente la Clave</label>
+                    <input name="matches" id="conf-matches" type="password">
+                    <div id="conf-error-matches" style="margin-bottom:10px; display:none;"><img src="jquerymobile/img-dportes/iconos/error.svg" align="left"><p class="falta-campo">Las claves no coinciden, por favor ingrese correctamente la clave.</p></div>
+                        
+                    <a class="color-boton" data-transition="fade"><button id="conf-save" class="ui-btn btn-input">Guardar</button></a>
+                    
+            </form>
+            <div id="conf-correcto" style="display:none;">
+                <img src="jquerymobile/img-dportes/iconos/ok.svg" align="left"><p class="nombre-disponible"><strong>Sus Datos han sido Actualizados.</strong></p>
+            </div>
+            
+        </div>
+
     </div>
 
     <!-- ———— INGRESO EQUIPO ————— -->
@@ -2211,6 +2241,7 @@
             <!--<li data-icon="tag" class="ui-state-disabled"><a href="politica.html">Unirme a otros Equipos</a></li>-->
             <li data-icon="info"><a href="#como-usar">Como se Usa</a></li>
             <li data-icon="eye"><a href="#acerca">Acerca de Dportes</a></li>
+            <li data-icon="gear"><a href="#configuraciones">Configuraciones</a></li>
             <li data-icon="power"><a id="logout" href="#">Salir de Dportes</a></li>
             <!-- pruebas -->
             <!--<li data-icon="star"><a href="#estadisticas-nuevas" data-transition="fade">Estadisticas de Prueba</a></li>
