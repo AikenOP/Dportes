@@ -5,6 +5,8 @@ function usuarios(){
     this.correo
     this.fecha
     this.sexo
+    this.pass
+    this.match
 
     this.getUsuario = function(){
     	var xhr = new XMLHttpRequest();
@@ -79,6 +81,45 @@ function usuarios(){
             }
         };
     }
+
+    this.setPassword = function(){
+        var pass = this.pass;
+        var match = this.match;
+        $("#conf-correcto").css('display','none');
+        if(match.length > 4 && pass.length > 4){
+            $("#conf-error-pass").css('display','none');
+            if(pass === match){
+                $("#conf-error-matches").css('display','none');
+                var xhr = new XMLHttpRequest();
+                var send = new FormData();
+                send.append('id_usuario',localStorage.getItem('id'));
+                send.append('password',pass);
+                xhr.open('POST', path + 'auth/setPassword');
+                xhr.setRequestHeader('Cache-Control', 'no-cache');
+                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                xhr.send(send);
+                xhr.timeout = 10000;
+                xhr.ontimeout = function () {
+                    $.mobile.loading('hide');
+                    navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+                };
+                xhr.onerror = function(e){
+                    navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+                };
+                xhr.onload = function(e){
+                    if(this.status == 200){
+                        if(this.response){
+                            $("#conf-correcto").css('display','block');
+                        }
+                    }
+                };
+            } else {
+                $("#conf-error-matches").css('display','block');
+            }
+        } else {
+            $("#conf-error-pass").css('display','block');
+        }
+    }
 }
 
 document.getElementById('perfil-save').addEventListener('click',function(){
@@ -91,6 +132,15 @@ document.getElementById('perfil-save').addEventListener('click',function(){
     user.fecha = document.getElementById('perfil-fecha').value;
     user.sexo = document.getElementById('perfil-sexo').value;
     user.setUsuarioPerfil();  
+    delete user;
+});
+
+document.getElementById('conf-save').addEventListener('click',function(){
+    event.preventDefault();
+    var user = new usuarios();
+    user.pass = document.getElementById('conf-password').value;
+    user.match = document.getElementById('conf-matches').value;
+    user.setPassword();
     delete user;
 });
 
