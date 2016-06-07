@@ -95,6 +95,10 @@
             swipe('#mi-perfil','#menu_perfil','right');
         }
 
+        if(activePage === 'configuraciones'){
+            swipe('#mi-perfil','#menu_perfil','right');
+        }
+
         if(activePage === 'registro-equipo'){
             var dp = new dportes();
             dp.getDportes();

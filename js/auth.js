@@ -140,11 +140,13 @@ document.getElementById('logout').addEventListener('click', function(){
     localStorage.removeItem('equipo');
     localStorage.removeItem('id');
     localStorage.removeItem('nombre_equipo');
+    localStorage.removeItem('rol_equipo');
     sessionStorage.removeItem('evento');
     sessionStorage.removeItem('periodo');
     sessionStorage.removeItem('nPeriodo');
     sessionStorage.removeItem('accIDTitular');
     sessionStorage.removeItem('periodosJugados');
+    sessionStorage.removeItem('eq_session');
     $.mobile.navigate("#login", {transition: "fade"});
 });
 
