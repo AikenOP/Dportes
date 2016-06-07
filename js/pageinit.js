@@ -96,7 +96,7 @@
         }
 
         if(activePage === 'configuraciones'){
-            swipe('#mi-perfil','#menu_perfil','right');
+            swipe('#configuraciones','#menu_perfil','right');
         }
 
         if(activePage === 'registro-equipo'){
