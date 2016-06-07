@@ -220,6 +220,7 @@ function jugadores(){
         send.append('correo',this.email);
         send.append('posicion',this.posicion)
         send.append('rol',this.rol_usuario);
+        alert(this.rol_usuario);
         xhr.open('POST', path + 'app/setJugador');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
