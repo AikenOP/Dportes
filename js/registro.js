@@ -117,7 +117,6 @@ function registro(){
         document.getElementById('olv-no-existe').style.display = 'none';
         document.getElementById('olv-correcto').style.display = 'none';
         if(!validaEmail(this.email)){
-            alert('sds');
             var xhr = new XMLHttpRequest();
             var send = new FormData();
             send.append('correo',this.email);
@@ -126,7 +125,6 @@ function registro(){
             xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
             xhr.send(send);
             xhr.onload = function(e){
-                alert(this.response);
                 if(this.status == 200){
                     if(this.response == 1){
                         document.getElementById('olv-correcto').style.display = 'block';
@@ -137,7 +135,6 @@ function registro(){
             }
 
         } else {
-            alert('dd');
             document.getElementById('olv-formato-error').style.display = 'block';
         }
     }
