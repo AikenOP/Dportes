@@ -100,7 +100,7 @@
         }
 
         if(activePage === 'cambio-clave'){
-            swipe('#configuraciones','#menu_perfil','right');
+            swipe('#cambio-clave','#menu_perfil','right');
         }
 
         if(activePage === 'registro-equipo'){
