@@ -289,14 +289,13 @@ document.getElementById('registrar-equipo').addEventListener('click',function(){
 
 });
 
-document.getElementById('olv-send').addEventListener('click',function(){
+function cambiarPasswordOlvidada(){
     event.preventDefault();
-    alert('ovlid');
     var reg = new registro();
     reg.email = document.getElementById('olv-correo').value;
     reg.olvidoContrasena();
     delete reg;
-});
+};
 
 document.getElementById('reg-nequipo').addEventListener('change', checkEquipo, false);
 
