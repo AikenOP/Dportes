@@ -291,6 +291,7 @@ document.getElementById('registrar-equipo').addEventListener('click',function(){
 
 document.getElementById('olv-send').addEventListener('click',function(){
     event.preventDefault();
+    alert('ovlid');
     var reg = new registro();
     reg.email = document.getElementById('olv-correo').value;
     reg.olvidoContrasena();
