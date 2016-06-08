@@ -117,6 +117,7 @@ function registro(){
         document.getElementById('olv-no-existe').style.display = 'none';
         document.getElementById('olv-correcto').style.display = 'none';
         if(!validaEmail(this.email)){
+            alert('sds');
             var xhr = new XMLHttpRequest();
             var send = new FormData();
             send.append('correo',this.email);
@@ -136,6 +137,7 @@ function registro(){
             }
 
         } else {
+            alert('dd');
             document.getElementById('olv-formato-error').style.display = 'block';
         }
     }
