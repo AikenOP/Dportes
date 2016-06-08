@@ -52,7 +52,7 @@ function registro(){
 	        var registro = new FormData();
             registro.append('nombre_usuario',document.getElementById('reg-nombre').value);
             registro.append('apellido_usuario',document.getElementById('reg-apellido').value);
-            registro.append('email_usuario',document.getElementById('reg-email').value);
+            registro.append('email',document.getElementById('reg-email').value);
             registro.append('password_usuario',document.getElementById('reg-password').value);
 	        xhr.open('POST', path + 'auth/registrar');
 	        xhr.setRequestHeader('Cache-Control', 'no-cache');

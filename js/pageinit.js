@@ -99,6 +99,10 @@
             swipe('#configuraciones','#menu_perfil','right');
         }
 
+        if(activePage === 'cambio-clave'){
+            swipe('#configuraciones','#menu_perfil','right');
+        }
+
         if(activePage === 'registro-equipo'){
             var dp = new dportes();
             dp.getDportes();
