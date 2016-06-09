@@ -109,7 +109,6 @@ function usuarios(){
                 xhr.onload = function(e){
                     if(this.status == 200){
                         if(this.response){
-                            alert(this.response);
                             $("#conf-correcto").css('display','block');
                         }
                     }
