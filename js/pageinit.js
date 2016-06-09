@@ -24,6 +24,9 @@
         if(activePage === 'home'){
             //alert(localStorage.getItem('nombre_usuario'));
             //alert(localStorage.getItem('equipo'));
+            var au = new ausencias()
+            au.getTiposAusencias();
+            
             if(localStorage.getItem("rol_equipo") != 1){
                 $('#home-pg').addClass('ui-state-disabled');
             } else {
