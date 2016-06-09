@@ -59,7 +59,6 @@ function registro(){
 	        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 	        xhr.send(registro);
 	        xhr.onload = function(e){
-                alert(this.response);
                 if(this.status == 200){
                     if(this.response && JSON.parse(this.response)){
                         //alert(this.response);
@@ -248,7 +247,6 @@ function registro(){
 document.getElementById('registrar-usuario').addEventListener('click',function(){
     
     event.preventDefault();
-    alert('click');
 	var reg = new registro();
 	reg.nombre 		      = document.getElementById('reg-nombre').value;
     reg.apellido 	      = document.getElementById('reg-apellido').value;
