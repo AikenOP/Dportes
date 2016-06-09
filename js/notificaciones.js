@@ -307,7 +307,8 @@ function setAsistencia(tipo,notifica,id){
                 $("#notifica-no"+notifica).slideUp(500);
             } else {
                 $("#notifica-no"+notifica).slideDown(500);
-                $("#notifica-con"+notifica).slideUp(500);                
+                $("#notifica-con"+notifica).slideUp(500);
+                $.mobile.navigate("#justificacion", {transition: "fade"});                
             }
             $.mobile.loading('hide');
         };
