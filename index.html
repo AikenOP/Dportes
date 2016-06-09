@@ -2203,6 +2203,56 @@
         </div>
     </div>
 
+    <!-- ————— PAGINA JUSTIFICACION ————— -->
+    <div data-role="page" id="justificacion" class="jqm-demos" data-title="Dportes" data-theme="a">
+    
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="#notificaciones" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Justificación</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
+        </div>
+        
+        <div class="content" style="margin:20px">
+        <p class="text-center"><strong>Elija el motivo de su ausencia:</strong></p>
+            <form action="" method="post">
+                <ul data-role="listview" data-inset="true">
+                    <li data-icon="false" class="ui-state-disabled">
+                        <a href="#">
+                            <img src="jquerymobile/img-dportes/justificacion/lesion.jpg">
+                            <h2>Lesión</h2>
+                            <p>rodilla, desgarro, etc.</p>
+                        </a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#">
+                            <img src="jquerymobile/img-dportes/justificacion/viaje.jpg">
+                            <h2>Viaje</h2>
+                            <p>vacaciones, percance, etc.</p>
+                        </a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#">
+                            <img src="jquerymobile/img-dportes/justificacion/trabajo.jpg">
+                            <h2>Trabajo</h2>
+                            <p>horas extras, percance, etc.</p>
+                        </a>
+                    </li>
+                    <li data-icon="false">
+                        <a href="#">
+                            <img src="jquerymobile/img-dportes/justificacion/familia.jpg">
+                            <h2>Familia</h2>
+                            <p>personal, percance, etc.</p>
+                        </a>
+                    </li>
+                </ul>
+            </form>
+            
+            <div style="display:none; height:20px; margin-top:10px;">
+                <img src="jquerymobile/img-dportes/iconos/ok.svg" align="left"><p class="nombre-disponible"><strong>Su motivo ha sido enviado al equipo, Gracias.</strong></p>
+            </div>
+        </div>
+    </div>
+
     <!-- asistencia -->
     <div data-role="page" id="asistencia" class="jqm-demos" data-title="Dportes" data-theme="a">
         <div data-role="header" data-position="fixed" class="color-encabezado">
@@ -2254,6 +2304,7 @@
             <li data-icon="info"><a href="#como-usar">Como se Usa</a></li>
             <li data-icon="eye"><a href="#acerca">Acerca de Dportes</a></li>
             <li data-icon="gear"><a href="#configuraciones">Configuraciones</a></li>
+            <li data-icon="gear"><a href="#justificacion">Justificaciones</a></li>
             <li data-icon="power"><a id="logout" href="#">Salir de Dportes</a></li>
             <!-- pruebas -->
             <!--<li data-icon="star"><a href="#estadisticas-nuevas" data-transition="fade">Estadisticas de Prueba</a></li>
