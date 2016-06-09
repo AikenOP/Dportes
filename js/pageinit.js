@@ -100,8 +100,8 @@
         }
 
         if(activePage === 'cambio-clave'){
-            document.getElementById('conf-password').value('');
-            document.getElementById('conf-matches').value('');
+            document.getElementById('conf-password').value = '';
+            document.getElementById('conf-matches').value = '';
             document.getElementById('conf-error-pass').style.display = "none";
             document.getElementById('conf-error-matches').style.display = "none";
             document.getElementById('conf-correcto').style.display = "none";
