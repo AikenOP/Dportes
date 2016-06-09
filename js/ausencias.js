@@ -21,7 +21,23 @@ function ausencias(){
         }
         xhr.onload = function(e){
         	$.mobile.loading('hide');
-        	alert(this.response);
+        	if(this.status == 200){
+                if(this.response && JSON.parse(this.response)){
+                	var json = JSON.parse(this.response);
+                    var now = +(new Date);
+                    var inc = '';
+                    for(var i = 0; i < json.length; i++ ){
+                    	inc += "<li data-icon='false'>";
+                    	inc += "<a href='#'>";
+                    	inc += "<img src='jquerymobile/img-dportes/justificacion/"+json[i].foto+'?timestamp=' + now + "'>";
+                    	inc += "<h2>"+json[i].nombre+"</h2>";
+                    	inc += "<p>"+json[i].descripcion+"</p>";
+                    	inc += "</a>";
+                    	inc += "</li>";
+                    }
+                    $("#just-content").html(inc).listview('refresh');
+                }
+            }
         }
 	}
 }
