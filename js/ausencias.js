@@ -7,6 +7,7 @@ function ausencias(){
 
 
 	this.getTiposAusencias = function(){
+        alert(sessionStorage.getItem('id_notificacion'));
 		var xhr = new XMLHttpRequest();
 		xhr.open('POST', path + 'app/getTiposAusencias');
 	    xhr.setRequestHeader('Cache-Control', 'no-cache');
