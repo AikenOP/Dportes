@@ -192,14 +192,14 @@ function notificaciones(){
             navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
         };
 
-        xhr.onload = function(e){ 
-            alert(this.response);
+        xhr.onload = function(e){
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var inc = '';
                     var tipo = '';
                     var foto = '';
+                    var au = '';
                     var now = +(new Date);
                     for(var i = 0; i < json.length; i++ ){
                         if(json[i].id_tipo_asistencia == 1){
@@ -210,6 +210,12 @@ function notificaciones(){
                             tipo = "asistencia-sin-responder";
                         }
 
+                        if(json[i].nombre_au != null){
+                            au = ' - ' +json[i].nombre_au;
+                        } else {
+                            au = '';
+                        }
+
                         if(json[i].foto != null){
                             foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto + '?timestamp=' + now;
                         } else {
@@ -218,7 +224,7 @@ function notificaciones(){
 
                         inc += "<li data-icon='false'>";                        
                         inc +=  "<a href='#' class='color-boton-equipo'><img src='"+foto+"'>";
-                        inc +=  "<h2>"+ json[i].nombre + "</h2>";
+                        inc +=  "<h2>"+ json[i].nombre + au + "</h2>";
                         inc +=  "<p></p>";
                         inc +=  "<span class='ui-li-count "+tipo+"'>"+ json[i].nombre_asistencia +"</span>";
                         inc +=  "</a>";
