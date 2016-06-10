@@ -64,7 +64,7 @@ function ausencias(){
             alert(this.response);
             $.mobile.loading('hide');
             if(this.status == 200){
-                $.mobile.navigate("#asistencias", {transition: "fade"});    
+                $.mobile.navigate("#asistencia", {transition: "fade"});    
             }
         }
     }
