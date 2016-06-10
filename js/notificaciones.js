@@ -193,7 +193,7 @@ function notificaciones(){
         };
 
         xhr.onload = function(e){ 
-        
+            alert(this.response);
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
