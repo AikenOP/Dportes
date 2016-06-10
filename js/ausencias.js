@@ -29,7 +29,7 @@ function ausencias(){
                     var now = +(new Date);
                     var inc = '';
                     for(var i = 0; i < json.length; i++ ){
-                    	inc += "<li data-icon='false' onclick='setAusencia("+json[i].id_tipo_ausencia+","+sessionStorage.getItem('id_notificacion')+","+localStorage.getItem('id')+");'>";
+                    	inc += "<li data-icon='false' onclick='setAusencia("+json[i].id_tipo_ausencia+","+sessionStorage.getItem('id_notifica')+","+localStorage.getItem('id')+");'>";
                     	inc += "<a href='#'>";
                     	inc += "<img src='jquerymobile/img-dportes/justificacion/"+json[i].foto+'?timestamp=' + now + "'>";
                     	inc += "<h2>"+json[i].nombre+"</h2>";
@@ -49,6 +49,7 @@ function ausencias(){
         add.append('id_tipo',this.id_tipo);
         add.append('id_notificacion',this.id_notificacion);
         add.append('id_usuario',this.id_usuario);
+
         xhr.open('POST', path + 'app/setAusencia');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');

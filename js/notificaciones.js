@@ -314,7 +314,7 @@ function setAsistencia(tipo,notifica,id){
             } else {
                 $("#notifica-no"+notifica).slideDown(500);
                 $("#notifica-con"+notifica).slideUp(500);
-                sessionStorage.setItem('id_notificacion',notifica);
+                sessionStorage.setItem('id_notifica',notifica);
                 $.mobile.navigate("#justificacion", {transition: "fade"});                
             }
             $.mobile.loading('hide');
