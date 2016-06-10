@@ -61,6 +61,7 @@ function ausencias(){
             navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
         }
         xhr.onload = function(e){
+            alert(this.response);
             $.mobile.loading('hide');
             if(this.status == 200){
                 $.mobile.navigate("#asistencias", {transition: "fade"});    
