@@ -224,9 +224,9 @@ function notificaciones(){
 
                         inc += "<li data-icon='false'>";                        
                         inc +=  "<a href='#' class='color-boton-equipo'><img src='"+foto+"'>";
-                        inc +=  "<h2>"+ json[i].nombre + au + "</h2>";
+                        inc +=  "<h2>"+ json[i].nombre +"</h2>";
                         inc +=  "<p></p>";
-                        inc +=  "<span class='ui-li-count "+tipo+"'>"+ json[i].nombre_asistencia +"</span>";
+                        inc +=  "<span class='ui-li-count "+tipo+"'>"+ json[i].nombre_asistencia + au + "</span>";
                         inc +=  "</a>";
                         inc +=  "</li>";
                     }
