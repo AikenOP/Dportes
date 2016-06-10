@@ -126,6 +126,7 @@ function equipos(){
 	        	$.mobile.loading('hide');
 	        	if(this.status == 200){
 		    		if(this.response){
+		    			alert(this.response);
 		    			localStorage.setItem('equipo',this.response);
 		    			localStorage.setItem('nombre_equipo',nombre);
 		    			localStorage.setItem('rol_equipo',1);
