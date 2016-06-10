@@ -106,6 +106,7 @@ function equipos(){
 		if(this.validarEquipo()){
 			var xhr = new XMLHttpRequest();
 			var send = new FormData();
+			var nombre = this.nombre;
 			send.append('id',localStorage.getItem('id'));
 			send.append('nombre_equipo',this.nombre);
 			send.append('comuna',this.comuna);
@@ -125,6 +126,9 @@ function equipos(){
 	        	$.mobile.loading('hide');
 	        	if(this.status == 200){
 		    		if(this.response){
+		    			localStorage.setItem('equipo',this.response);
+		    			localStorage.setItem('nombre_equipo',nombre);
+		    			localStorage.setItem('rol_equipo',1);
 		    			$.mobile.navigate("#mis-equipos", {transition: "fade"});
 		    		}
 		    	}
