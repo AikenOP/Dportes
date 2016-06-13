@@ -417,7 +417,7 @@ a.fechas, a.fechas:hover, a.fechas:visited {
 /* Alineamiento de avatar cuando se sube una foto del jugador nuevo jugadores AGREGAR_JUGADORES.HTML */
 .avatar {text-align:center; display:block;}
 /* Alineamiento cuando se escoge el jugador en los titulares, SELECCIONAR_TITULARES_NUEVO_JUEGO.HTML */
-.imagen_jugador { float:left; margin-right:10px; height:80px;}
+.imagen_jugador { float:left; margin-right:10px; height:80px; margin-left:10px;}
 .imagen_jugador img { max-width:68px;}
 .li-padding {padding:0 !important; border-top:hidden !important;} /*este aplica tambien a SELECCIONAR_RESERVAS.HTML*/
 li.li-padding div.ui-checkbox { margin:0 !important;}
@@ -1276,6 +1276,12 @@ a.color-boton-presionado {
     width: 70px;
     cursor: pointer;
     height: 5.063em; }
+.ui-listview > li.li-padding span.administrador {
+    background-color: #33801e; width: 200px; }
+.ui-listview > li.li-padding span.quitar-administrador {
+    background-color: #820f0f; width: 200px; }
+.ui-listview > li.li-padding span.dejar-administrador {
+    background-color: #296134; width: 200px; }
 .ui-listview > li.li-padding span.delete {
     background-color: #FF3B30; }
 .ui-listview > li.li-padding span.flag {
@@ -1297,6 +1303,17 @@ a.color-boton-presionado {
   background-size: cover; }
 .saca_elemento {display: none !important;}
 .centra_texto {
+	text-align: center;
+    vertical-align: middle;
+    font-size: 1em;
+    text-shadow: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-rendering: optimizeLegibility;
+    text-overflow: clip;
+    display: table-cell;
+	width: 100%; }
+.centra_texto_administrador {
 	text-align: center;
     vertical-align: middle;
     font-size: 1em;

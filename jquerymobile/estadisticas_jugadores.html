@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+        <title>Desarrollo APP</title>
+        <meta charset="utf-8">
+            <link rel="stylesheet" href="jquerymobile/jquery.mobile-1.4.5.css" />
+            <link rel="stylesheet" href="jquerymobile/dportes.css" />
+            <script src="jquerymobile/jquery.min.js"></script>
+            <script src="jquerymobile/jquery.mobile-1.4.5.js"></script>
+            
+    </head>
+    
+<body>
+
+<script>
+/*$( document ).on( "pagecreate", "#estadisticas_jugadores", function() {*/
+
+$(document).on("click", "ul li span.delete", function () {
+
+    var listview = $(this).closest("ul");
+    $(".ui-content").css({
+      overflow: "hidden"
+    });
+    $(this).parent().css({
+      display: "block"
+    }).animate({
+      opacity: 0
+    }, {
+      duration: 400,
+      queue: false
+    }).animate({
+      height: 0
+    }, 300, function () {
+      $(this).remove();
+      listview.listview("refresh");
+      $(".ui-content").removeAttr("style");
+    });
+  }).on("click", "ul li span.flag", function () {
+    var text = $("p", this),
+      button = $(this).siblings("a"),
+      flagged = button.find(".flagged").hasClass("ui-screen-hidden") ? false : true;
+    if (!flagged) {
+      button.find(".flagged").removeClass("ui-screen-hidden");
+      text.text("Unflag");
+    } else {
+      button.find(".flagged").addClass("ui-screen-hidden");
+      text.text("Flag");
+    }
+  }).on("click", "ul li span.more", function () {
+    alert("nothing");
+  }).on("swipeleft", "ul li a", function (e) {
+    $(this).prevAll("span").addClass("show");
+    $(this).off("click").blur();
+    $(this).css({
+      transform: "translateX(-271px)"
+    }).one("transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd", function () {
+      $(this).one("swiperight", function () {
+        $(this).prevAll("span").removeClass("show");
+        $(this).css({
+          transform: "translateX(0)"
+        }).blur();
+      });
+    });
+  });
+
+
+/*});*/
+</script>
+<style>
+  .quita_margen_para_check {
+    padding: 0px 0px 0px 0px !important; }
+  .esconder:after {opacity: 0;}
+</style>
+
+
+
+	<!-- ————— PAGINA LISTA DE ESTADISTICAS DE JUGADORES EQUIPO TITULAR ————— -->
+    <div data-role="page" data-url="estadisticas_jugadores" id="estadisticas_jugadores" class="jqm-demos" data-title="Dportes" data-theme="a">
+    
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="perfil.html" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Equipo Real Madrid</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
+            <div class="tarro-basura"><a href="#" id="tarro"><img src="jquerymobile/img-dportes/iconos/borrar.png"></a></div>
+            
+        </div>
+        
+        <div role="main" class="ui-content">
+
+            <ul data-role="listview"  data-inset="false">
+            
+                <li class="li-padding" data-icon="false">
+                    <span class="delete">
+                        <div class="centra_texto">Borrar</div>
+                      </span>
+                    <span class="administrador">
+                        <div class="centra_texto">Elegir Administrador</div>
+                      </span>
+                    
+                    <a href="perfil_jugador.html" id="3-jugador" draggable="false" class="quita_margenes_para_check">
+                    <input name="jugador1" id="1" type="checkbox">
+                    <label for="1" class="quita_margenes_para_check_2 quita_margen_para_check esconder">
+                    <div class="imagen_jugador"><img src="jquerymobile/img-dportes/reserva2.jpg">
+                    <div><img src="jquerymobile/img-dportes/delegados/administrador-creador.png" style="margin-left: 42px;margin-top: -39px;position: absolute; z-index: 5; width:35px; height:35px"></div>
+                    </div>
+                    <h2>KEYLOR NAVAS</h2>
+                    <p>Portero</p>
+                    </label>
+                      <span class="flagged ui-screen-hidden">
+                      </span>
+                      </a>
+                    
+                </li>
+                
+                <li class="li-padding" data-icon="false">
+                    <span class="delete">
+                        <div class="centra_texto">Borrar</div>
+                      </span>
+                    <span class="quitar-administrador">
+                        <div class="centra_texto">Quitar Administrador</div>
+                      </span>
+                    
+                    <a href="perfil_jugador.html" id="4-jugador" draggable="false" class="quita_margenes_para_check">
+                    <input name="jugador2" id="2" type="checkbox">
+                    <label for="2" class="quita_margenes_para_check_2 quita_margen_para_check esconder">
+                    <div class="imagen_jugador"><img src="jquerymobile/img-dportes/reserva2.jpg">
+                    <div><img src="jquerymobile/img-dportes/delegados/administrador.png" width="30" height="30" style="margin-left: 42px;margin-top: -39px;position: absolute; z-index: 5; width:35px; height:35px"></div>
+                    </div>
+                    <h2>KEYLOR NAVAS</h2>
+                    <p>Portero</p>
+                    </label>
+                      <span class="flagged ui-screen-hidden">
+                      </span>
+                      </a>
+                    
+                </li>
+
+                <li class="li-padding" data-icon="false">
+                    <span class="delete">
+                        <div class="centra_texto">Borrar</div>
+                      </span>
+                    <span class="dejar-administrador">
+                        <div class="centra_texto">Ya no ser Administrador</div>
+                      </span>
+                    <a href="perfil_jugador.html" id="4-jugador" draggable="false" class="quita_margenes_para_check">
+                    <input name="jugador3" id="3" type="checkbox">
+                    <label for="3" class="quita_margenes_para_check_2 quita_margen_para_check esconder">
+                    <div class="imagen_jugador"><img src="jquerymobile/img-dportes/reserva2.jpg"></div>
+                    <h2>SERGIO RAMOS</h2>
+                    <p>Defensa</p>
+                    </label>
+                      <span class="flagged ui-screen-hidden">
+                      </span>
+                      </a>
+                </li>
+      
+            </ul>
+		</div><!--CIERRE DE CONTENIDO-->
+        
+        <!--<div id="confirm" class="ui-content" data-role="popup" data-theme="a">
+            <p id="question">¿Seguro que lo quieres borrar de tu Equipo?</p>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a id="yes" class="ui-btn ui-corner-all ui-mini ui-btn-a" data-rel="back">Aceptar</a>
+                </div>
+                <div class="ui-block-b">
+                    <a id="cancel" class="ui-btn ui-corner-all ui-mini ui-btn-a" data-rel="back">Cancelar</a>
+                </div>
+            </div>
+        </div>--><!-- /popup -->
+        
+        <!-- PANEL MENU -->
+		<div data-role="panel" data-position="right" data-display="overlay" data-theme="b" id="menu_perfil">
+            <ul data-role="listview">
+                    <li data-icon="home"><a href="perfil.html">Home</a></li>
+                    <li data-icon="user"><a href="mi_perfil.html">Mi Perfil</a></li>
+	                <li data-icon="star"><a href="estadisticas_jugadores.html">Mis Jugadores</a></li>
+                    <li data-icon="grid"><a href="mis_equipos.html">Mis Equipos</a></li>
+                    <li data-icon="clock"><a href="fechas_jugadas.html">Estadisticas</a></li>
+                    <li data-icon="clock"><a href="notificaciones.html">Notificaciones</a></li>
+                    <li data-icon="user" class="ui-state-disabled"><a href="reservas.html">Ligas</a></li>
+                    <li data-icon="tag" class="ui-state-disabled"><a href="politica.html">Unirme a otros Equipos</a></li>
+                    <li data-icon="info"><a href="como_se_usa.html">Como se Usa</a></li>
+                    <li data-icon="info"><a href="como_se_usa.html">Terminos y Condiciones</a></li>
+                    <li data-icon="eye"><a href="acerca.html">Acerca de Dportes</a></li>
+                    <li data-icon="mail"><a href="faq.html" >FAQ</a></li>
+                    <li data-icon="power"><a href="index.html">Salir de Dportes</a></li>
+            </ul>
+		</div>
+        <!-- CIERRE PANEL MENU -->
+    </div>
+	<!-- ————— CIERRE PAGINA LISTA DE ESTADISTICAS DE JUGADORES EQUIPO TITULAR ————— -->
+
+</body>
+</html>

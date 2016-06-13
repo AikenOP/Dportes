@@ -2258,7 +2258,88 @@
         <div id="dd-drag" data-role="main">
         </div>
     </div>
+
+    <div data-role="page" data-url="estadisticas_jugadores" id="prueba1" class="jqm-demos" data-title="Dportes" data-theme="a">
     
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="perfil.html" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Equipo Real Madrid</h1>
+            <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a><!--ABRE MENU-->
+            <div class="tarro-basura"><a href="#" id="tarro"><img src="jquerymobile/img-dportes/iconos/borrar.png"></a></div>
+            
+        </div>
+        
+        <div role="main" class="ui-content">
+
+            <ul data-role="listview"  data-inset="false">
+            
+                <li class="li-padding" data-icon="false">
+                    <span class="delete">
+                        <div class="centra_texto">Borrar</div>
+                      </span>
+                    <span class="administrador">
+                        <div class="centra_texto">Elegir Administrador</div>
+                      </span>
+                    
+                    <a href="perfil_jugador.html" id="3-jugador" draggable="false" class="quita_margenes_para_check">
+                    <input name="jugador1" id="1" type="checkbox">
+                    <label for="1" class="quita_margenes_para_check_2 quita_margen_para_check esconder">
+                    <div class="imagen_jugador"><img src="jquerymobile/img-dportes/reserva2.jpg">
+                    <div><img src="jquerymobile/img-dportes/delegados/administrador-creador.png" style="margin-left: 42px;margin-top: -39px;position: absolute; z-index: 5; width:35px; height:35px"></div>
+                    </div>
+                    <h2>KEYLOR NAVAS</h2>
+                    <p>Portero</p>
+                    </label>
+                      <span class="flagged ui-screen-hidden">
+                      </span>
+                      </a>
+                    
+                </li>
+                
+                <li class="li-padding" data-icon="false">
+                    <span class="delete">
+                        <div class="centra_texto">Borrar</div>
+                      </span>
+                    <span class="quitar-administrador">
+                        <div class="centra_texto">Quitar Administrador</div>
+                      </span>
+                    
+                    <a href="perfil_jugador.html" id="4-jugador" draggable="false" class="quita_margenes_para_check">
+                    <input name="jugador2" id="2" type="checkbox">
+                    <label for="2" class="quita_margenes_para_check_2 quita_margen_para_check esconder">
+                    <div class="imagen_jugador"><img src="jquerymobile/img-dportes/reserva2.jpg">
+                    <div><img src="jquerymobile/img-dportes/delegados/administrador.png" width="30" height="30" style="margin-left: 42px;margin-top: -39px;position: absolute; z-index: 5; width:35px; height:35px"></div>
+                    </div>
+                    <h2>KEYLOR NAVAS</h2>
+                    <p>Portero</p>
+                    </label>
+                      <span class="flagged ui-screen-hidden">
+                      </span>
+                      </a>
+                    
+                </li>
+
+                <li class="li-padding" data-icon="false">
+                    <span class="delete">
+                        <div class="centra_texto">Borrar</div>
+                      </span>
+                    <span class="dejar-administrador">
+                        <div class="centra_texto">Ya no ser Administrador</div>
+                      </span>
+                    <a href="perfil_jugador.html" id="4-jugador" draggable="false" class="quita_margenes_para_check">
+                    <input name="jugador3" id="3" type="checkbox">
+                    <label for="3" class="quita_margenes_para_check_2 quita_margen_para_check esconder">
+                    <div class="imagen_jugador"><img src="jquerymobile/img-dportes/reserva2.jpg"></div>
+                    <h2>SERGIO RAMOS</h2>
+                    <p>Defensa</p>
+                    </label>
+                      <span class="flagged ui-screen-hidden">
+                      </span>
+                      </a>
+                </li>
+      
+            </ul>
+        </div><  
     <!-- PANEL MENU -->
     <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="b" id="menu_perfil">
         <ul data-role="listview">
@@ -2273,6 +2354,7 @@
             <li data-icon="info"><a href="#como-usar">Como se Usa</a></li>
             <li data-icon="eye"><a href="#acerca">Acerca de Dportes</a></li>
             <li data-icon="gear"><a href="#configuraciones">Configuraciones</a></li>
+            <li data-icon="gear"><a href="#prueba1">prueba</a></li>
             <li data-icon="power"><a id="logout" href="#">Salir de Dportes</a></li>
             <!-- pruebas -->
             <!--<li data-icon="star"><a href="#estadisticas-nuevas" data-transition="fade">Estadisticas de Prueba</a></li>
