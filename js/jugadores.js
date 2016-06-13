@@ -139,7 +139,7 @@ function jugadores(){
                         inc = "<li data-icon='false' class='li-padding'>";
                         inc += "<input name='jg-titular[]' id='st"+json[i].id_usuario+"' type='checkbox' "+checked+" onclick='setTitular("+json[i].id_usuario+")'>";
                         inc += "<label for='st"+json[i].id_usuario+"'>";
-                        inc += "<div class='imagen_jugador'><img src='"+foto+"'><div><img src='jquerymobile/img-dportes/delegados/administrador-creador.png' style='margin-left: 42px;margin-top: -39px;position: absolute; z-index: 5; width:35px; height:35px'></div></div>";
+                        inc += "<div class='imagen_jugador'><img src='"+foto+"'></div>";
                         inc += "<h2>"+json[i].nombre+"</h2>";
                         inc += "<p>"+json[i].posicion+"</p></label></li>";
                         $("#set-titulares").append(inc).trigger('create');
@@ -377,7 +377,7 @@ function jugadores(){
                         inc += "More"
                         inc += "</p>";
                         inc += "</span>";*/
-                        inc += "<a href='#' "+click+" draggable='false'><img src='"+foto+"'>";
+                        inc += "<a href='#' "+click+" draggable='false'><img src='"+foto+"'><div><img src='jquerymobile/img-dportes/delegados/administrador-creador.png' style='margin-left: 42px;margin-top: -39px;position: absolute; z-index: 5; width:35px; height:35px'></div>";
                         inc += "<h2>"+json[i].nombre+"</h2>";
                         inc += "<p>"+json[i].posicion+"</p>";
                         inc += "<span class='flagged ui-screen-hidden'>";
