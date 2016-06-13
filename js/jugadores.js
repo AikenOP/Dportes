@@ -377,7 +377,7 @@ function jugadores(){
                         inc += "More"
                         inc += "</p>";
                         inc += "</span>";*/
-                        inc += "<a href='#' "+click+" draggable='false'><img src='"+foto+"'><div><img src='jquerymobile/img-dportes/delegados/administrador-creador.png' style='margin-left: 42px;margin-top: -39px;position: absolute; z-index: 5; width:35px; height:35px'></div>";
+                        inc += "<a href='#' "+click+" draggable='false'><img src='"+foto+"'><div><img src='jquerymobile/img-dportes/delegados/administrador-creador.png' style='margin-left: 0px;margin-top: -39px;position: absolute; z-index: 5; width:35px; height:35px'></div>";
                         inc += "<h2>"+json[i].nombre+"</h2>";
                         inc += "<p>"+json[i].posicion+"</p>";
                         inc += "<span class='flagged ui-screen-hidden'>";
