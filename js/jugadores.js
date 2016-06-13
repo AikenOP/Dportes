@@ -369,7 +369,7 @@ function jugadores(){
                             foto = "jquerymobile/img-dportes/foto.png";
                         }
 
-                        if(json[i].rol == 1){
+                        if(json[i].rol == 1 || json[i].rol == 4){
                             alert(json[i].rol + ' ' +json[i].nombre);
                         }
                         inc += "<li value='"+json[i].id_usuario+"' class='li-padding'>";
