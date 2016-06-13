@@ -368,6 +368,9 @@ function jugadores(){
                         } else {
                             foto = "jquerymobile/img-dportes/foto.png";
                         }
+                        if(json[i].rol == 1){
+                            alert(json[i].rol + ' ' +json[i].nombre);
+                        }
                         inc += "<li value='"+json[i].id_usuario+"' class='li-padding'>";
                         inc += "<span class='delete "+disabled+"'>";
                         inc += "<div class='centra_texto'>Borrar</div>";
@@ -377,7 +380,7 @@ function jugadores(){
                         inc += "More"
                         inc += "</p>";
                         inc += "</span>";*/
-                        inc += "<a href='#' "+click+" draggable='false'><img src='"+foto+"'><div><img src='jquerymobile/img-dportes/delegados/administrador-creador.png' style='margin-left: 0px;margin-top: -39px;position: absolute; z-index: 5; width:35px; height:35px'></div>";
+                        inc += "<a href='#' "+click+" draggable='false'><img src='"+foto+"'>";
                         inc += "<h2>"+json[i].nombre+"</h2>";
                         inc += "<p>"+json[i].posicion+"</p>";
                         inc += "<span class='flagged ui-screen-hidden'>";
