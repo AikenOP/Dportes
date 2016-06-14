@@ -376,9 +376,9 @@ function jugadores(){
                         }
 
                         if(json[i].rol == 1){
-                            img = "<div><img src='jquerymobile/img-dportes/delegados/administrador-creador.png' style='margin-left: -37px;margin-top: -39px;position: absolute; z-index: 5; width:35px; height:35px'></div>";
+                            img = "<div><img src='jquerymobile/img-dportes/delegados/administrador-creador.png' style='margin-left: -37px;margin-top: 10px;position: absolute; z-index: 5; width:35px; height:35px'></div>";
                         } else if(json[i].rol == 4){
-                            img = "<div><img src='jquerymobile/img-dportes/delegados/administrador.png' style='margin-left: -37px;margin-top: -39px;position: absolute; z-index: 5; width:35px; height:35px'></div>";
+                            img = "<div><img src='jquerymobile/img-dportes/delegados/administrador.png' style='margin-left: -37px;margin-top: 10px;position: absolute; z-index: 5; width:35px; height:35px'></div>";
                         } else {
                             img = "";
                         }
