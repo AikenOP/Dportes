@@ -269,7 +269,7 @@
             jg.rol_usuario = sessionStorage.getItem('rol_session');
             jg.id_equipo = localStorage.getItem('equipo');
             jg.getJugador();
-            localStorage.getItem('rol_equipo');
+            alert(localStorage.getItem('rol_equipo'));
             delete jg;
         }
 
