@@ -935,6 +935,10 @@ document.getElementById('edit-jg-save').addEventListener('click',function(){
     delete jg;
 });
 
+document.getElementById('slider-asignado').addEventListener('change',function(){
+    alert(this.value);
+});
+
 function backAcciones(id){
     var xhr = new XMLHttpRequest();
     var send = new FormData();
