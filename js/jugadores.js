@@ -936,6 +936,7 @@ document.getElementById('edit-jg-save').addEventListener('click',function(){
 });
 
 $("#slider-asignado").on( "change", function() {
+   alert(this.value);
    //alert('sadsad');
 });
 
