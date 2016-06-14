@@ -936,8 +936,34 @@ document.getElementById('edit-jg-save').addEventListener('click',function(){
 });
 
 $("#slider-asignado").on( "change", function() {
-   alert(this.value);
-   //alert('sadsad');
+    //alert(this.value);
+    var xhr = new XMLHttpRequest();
+    var send = new FormData();
+    send.append('id_equipo',localStorage.getItem('equipo'));
+    send.append('id_usuario',sessionStorage.getItem('jg_session'));
+    xhr.open('POST', path + 'app/setAdministradorAsignado');
+    xhr.setRequestHeader('Cache-Control', 'no-cache');
+    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    xhr.send(send);
+    xhr.timeout = 10000;
+    xhr.onprogress = function(e){
+        $.mobile.loading('show');
+    }
+    xhr.ontimeout = function(e){
+        navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
+    }
+
+    xhr.onload = function(e){
+        //alert(this.response);
+        if(this.status == 200){
+            if(this.response == 1){
+                alert('se agrego el administador');
+            } else {
+                alert('solo se pueden asignar un maximo de 2 administradores');
+                //Volver a dejar no en select
+            }
+        }
+    }
 });
 
 function backAcciones(id){
