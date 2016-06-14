@@ -186,7 +186,7 @@ function jugadores(){
                     var fullname = checkName(json.nombre,json.apellido_paterno);
                     var now = +(new Date);
 
-                    if(localStorage.getItem('rol_equipo') == 1 && json.rol_usuario == 2){
+                    if(localStorage.getItem('rol_equipo') == 1 && json.rol_usuario == 2 && json.rol == 2){
                         document.getElementById('jg-asignado').style.display = "block";
                     } else {
                         document.getElementById('jg-asignado').style.display = "none";
