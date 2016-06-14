@@ -370,7 +370,7 @@ function jugadores(){
                         }
 
                         if(json[i].rol == 1 || json[i].rol == 4){
-                            alert(json[i].rol + ' ' +json[i].nombre);
+                            //alert(json[i].rol + ' ' +json[i].nombre);
                         }
                         inc += "<li value='"+json[i].id_usuario+"' class='li-padding'>";
                         inc += "<span class='delete "+disabled+"'>";
@@ -936,7 +936,7 @@ document.getElementById('edit-jg-save').addEventListener('click',function(){
 });
 
 document.getElementById('slider-asignado').addEventListener('change',function(){
-    alert(this.value);
+    alert('sadsad');
 });
 
 function backAcciones(id){
