@@ -211,6 +211,11 @@ function jugadores(){
                     document.getElementById('edit-jg-posicion').innerHTML = 'Posición: ' + json.nombre_p;
                     document.getElementById('edit-jg-nombre').value = fullname;
                     document.getElementById('edit-jg-correo').value = json.email;
+                    if(json.rol == 2){
+                        $('#jg-asignado').val(0).slider('refresh');
+                    } else if(json.rol == 4){
+                        $('#jg-asignado').val(1).slider('refresh');
+                    }
                 }
             }
             $.mobile.loading('hide');
