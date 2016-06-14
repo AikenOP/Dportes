@@ -941,6 +941,7 @@ $("#slider-asignado").on( "change", function() {
     var send = new FormData();
     send.append('id_equipo',localStorage.getItem('equipo'));
     send.append('id_usuario',sessionStorage.getItem('jg_session'));
+    send.append('estado',this.value);
     xhr.open('POST', path + 'app/setAdministradorAsignado');
     xhr.setRequestHeader('Cache-Control', 'no-cache');
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
@@ -955,10 +956,11 @@ $("#slider-asignado").on( "change", function() {
 
     xhr.onload = function(e){
         //alert(this.response);
+        $.mobile.loading('hide');
         if(this.status == 200){
             if(this.response == 1){
                 alert('se agrego el administador');
-            } else {
+            } else if(this.response == 2) {
                 alert('solo se pueden asignar un maximo de 2 administradores');
                 //Volver a dejar no en select
             }
