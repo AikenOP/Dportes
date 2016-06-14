@@ -185,7 +185,12 @@ function jugadores(){
                     var json = JSON.parse(this.response);
                     var fullname = checkName(json.nombre,json.apellido_paterno);
                     var now = +(new Date);
-                    //alert(json.id_posicion);
+                    if(json.rol == 1){
+                        document.getElementById('jg-asignado').style.display = "block";
+                    } else {
+                        document.getElementById('jg-asignado').style.display = "none";
+                    }
+                   
                     try{
                         var jg = new jugadores();
                         jg.id_posicion = json.id_posicion;
@@ -345,6 +350,7 @@ function jugadores(){
                     var foto = '';
                     var disabled = '';
                     var now = +(new Date);
+                    var img = '';
 
                     if(json.length != 0){
                         inc = "<ul id='jug-list' class='touch' data-role='listview' data-icon='false' data-split-icon='delete' data-inset='false' style='margin-bottom:70px;'>";
@@ -369,9 +375,14 @@ function jugadores(){
                             foto = "jquerymobile/img-dportes/foto.png";
                         }
 
-                        if(json[i].rol == 1 || json[i].rol == 4){
-                            //alert(json[i].rol + ' ' +json[i].nombre);
+                        if(json[i].rol == 1){
+                            img = "<div><img src='jquerymobile/img-dportes/delegados/administrador-creador.png' style='margin-left: -37px;margin-top: -39px;position: absolute; z-index: 5; width:35px; height:35px'></div>";
+                        } else if(json[i].rol == 4){
+                            img = "<div><img src='jquerymobile/img-dportes/delegados/administrador.png' style='margin-left: -37px;margin-top: -39px;position: absolute; z-index: 5; width:35px; height:35px'></div>";
+                        } else {
+                            img = "";
                         }
+
                         inc += "<li value='"+json[i].id_usuario+"' class='li-padding'>";
                         inc += "<span class='delete "+disabled+"'>";
                         inc += "<div class='centra_texto'>Borrar</div>";
@@ -381,7 +392,7 @@ function jugadores(){
                         inc += "More"
                         inc += "</p>";
                         inc += "</span>";*/
-                        inc += "<a href='#' "+click+" draggable='false'><img src='"+foto+"'><div><img src='jquerymobile/img-dportes/delegados/administrador-creador.png' style='margin-left: -37px;margin-top: -39px;position: absolute; z-index: 5; width:35px; height:35px'></div>";
+                        inc += "<a href='#' "+click+" draggable='false'><img src='"+foto+"'>"+img;
                         inc += "<h2>"+json[i].nombre+"</h2>";
                         inc += "<p>"+json[i].posicion+"</p>";
                         inc += "<span class='flagged ui-screen-hidden'>";
