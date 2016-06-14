@@ -23,11 +23,11 @@
 
         if(activePage === 'home'){
             //alert(localStorage.getItem('nombre_usuario'));
-            //alert(localStorage.getItem('equipo'));
-            if(localStorage.getItem("rol_equipo") != 1 ||localStorage.getItem("rol_equipo") != 4){
-                $('#home-pg').addClass('ui-state-disabled');
+            alert(localStorage.getItem('equipo'));
+            if(localStorage.getItem("rol_equipo") == 1 || localStorage.getItem("rol_equipo") == 4){
+                $('#home-pg').removeClass('ui-state-disabled');
             } else {
-                $('#home-pg').removeClass('ui-state-disabled');           
+                $('#home-pg').addClass('ui-state-disabled');           
             }
 
             if(localStorage.getItem('equipo')){
