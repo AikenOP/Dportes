@@ -69,6 +69,11 @@ function equipos(){
 	    			document.getElementById('edit-eq-nombre').value = json.nombre;
 	    			$("#mi-eq-region").val(json.id_region);
 	    			$('#mi-eq-region').selectmenu('refresh');
+	    			if(sessionStorage.getItem("rol_session") == 2){
+	    				$('#edit-eq-nombre').addClass('ui-state-disabled');
+	    			} else {
+	    				$('#edit-eq-nombre').removeClass('ui-state-disabled');
+	    			}
 	    			document.getElementById('edir-eq-region').value = 'No Disponible';
 	    			document.getElementById('edit-eq-comuna').value = 'No Disponible';
 	    		}
@@ -171,7 +176,6 @@ function equipos(){
             			inc = '';
 	    				
 		    			for(var i = 0; i < json.length; i++ ){
-		    				alert(json[i].rol);
 		    				if(json[i].id_equipo == localStorage.getItem('equipo')){
 		    					flagged = '';
 		    					disabled = 'ui-state-disabled';
@@ -184,7 +188,7 @@ function equipos(){
 		    				} else {
 		    					deleteDisabled = '';
 		    				}
-		    				click = "onclick='redirectEquipo("+json[i].id_equipo+")'";
+		    				click = "onclick='redirectEquipo("+json[i].id_equipo+","+json[i].rol+")'";
 		    				if(json[i].logo != null){
 		    					logo = path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo;
 		    				} else {
@@ -379,8 +383,9 @@ function setEquipo(){
 	delete eq;
 }
 
-function redirectEquipo(eq){
+function redirectEquipo(eq,rol){
 	sessionStorage.setItem("eq_session",eq);
+	sessionStorage.setItem("rol_session",rol);
 	$.mobile.navigate("#editar-equipo", {transition: "fade"});
 }
 
