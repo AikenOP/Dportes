@@ -53,6 +53,7 @@ function equipos(){
         	//alert(this.response);
         	$.mobile.loading('hide');
         	if(this.status == 200){
+        		alert(localStorage.getItem('rol_equipo'));
 	    		if(this.response && JSON.parse(this.response)){
 	    			var json = JSON.parse(this.response);
 	    			var photo = document.getElementById('photo2');
@@ -62,6 +63,7 @@ function equipos(){
                 	} else {
                 		photo.src = "jquerymobile/img-dportes/logo-encuentro.png";
                 	}
+
                 	setCiudades(json.id_region,json.id_ciudad);
                 	setComunas(json.id_ciudad,json.id_comuna);
 	    			document.getElementById('edit-equipo').innerHTML = json.nombre;
@@ -179,11 +181,10 @@ function equipos(){
 		    				}
 		    				if(json[i].rol == 1){
 		    					deleteDisabled = 'ui-state-disabled';
-		    					click = "onclick='redirectEquipo("+json[i].id_equipo+")'";
 		    				} else {
-		    					click = '';
 		    					deleteDisabled = '';
 		    				}
+		    				click = "onclick='redirectEquipo("+json[i].id_equipo+")'";
 		    				if(json[i].logo != null){
 		    					logo = path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo;
 		    				} else {
