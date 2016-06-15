@@ -69,11 +69,18 @@ function equipos(){
 	    			document.getElementById('edit-eq-nombre').value = json.nombre;
 	    			$("#mi-eq-region").val(json.id_region);
 	    			$('#mi-eq-region').selectmenu('refresh');
-	    			alert(sessionStorage.getItem("rol_session"));
 	    			if(sessionStorage.getItem("rol_session") == 2){
 	    				$('#edit-eq-nombre').addClass('ui-state-disabled');
+	    				$('#mi-eq-region').addClass('ui-state-disabled');
+	    				$('#mi-eq-ciudad').addClass('ui-state-disabled');
+	    				$('#mi-eq-comuna').addClass('ui-state-disabled');
+	    				$('#mi-eq-tipo').addClass('ui-state-disabled');
 	    			} else {
 	    				$('#edit-eq-nombre').removeClass('ui-state-disabled');
+	    				$('#mi-eq-region').removeClass('ui-state-disabled');
+	    				$('#mi-eq-ciudad').removeClass('ui-state-disabled');
+	    				$('#mi-eq-comuna').removeClass('ui-state-disabled');
+	    				$('#mi-eq-tipo').removeClass('ui-state-disabled');
 	    			}
 	    			document.getElementById('edir-eq-region').value = 'No Disponible';
 	    			document.getElementById('edit-eq-comuna').value = 'No Disponible';
