@@ -19,18 +19,20 @@ document.getElementById('takePhoto').addEventListener('click',function(){
 });
 document.getElementById('takePhoto2').addEventListener('click',function(){
     event.preventDefault();
-    navigator.notification.confirm(
-        'Seleccione el origen de la imagen',
-            function(button){
-                if(button == 1){
-                    navigator.camera.getPicture(onPhotoDataSuccess2, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, destinationType: navigator.camera.DestinationType.FILE_URI });
-                } else {
-                    navigator.camera.getPicture(onPhotoDataSuccess2, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, sourceType: 0, destinationType: navigator.camera.DestinationType.FILE_URI });
-                }
-            },
-        'Insertar Imagen',
-        'Camara,Galeria'
-    );
+    if(sessionStorage.getItem("rol_session") == 4 || sessionStorage.getItem("rol_session") == 1){
+        navigator.notification.confirm(
+            'Seleccione el origen de la imagen',
+                function(button){
+                    if(button == 1){
+                        navigator.camera.getPicture(onPhotoDataSuccess2, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, destinationType: navigator.camera.DestinationType.FILE_URI });
+                    } else {
+                        navigator.camera.getPicture(onPhotoDataSuccess2, onFail, { quality: 20, allowEdit: true, targetWidth: 500, targetHeight: 500, sourceType: 0, destinationType: navigator.camera.DestinationType.FILE_URI });
+                    }
+                },
+            'Insertar Imagen',
+            'Camara,Galeria'
+        );
+    }
 });
 //document.getElementById('sendPhoto').addEventListener('click',function(){
     //var sendPhoto = document.getElementById('sendPhoto');
