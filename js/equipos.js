@@ -75,14 +75,14 @@ function equipos(){
 	    				$('#mi-eq-ciudad').addClass('ui-state-disabled');
 	    				$('#mi-eq-comuna').addClass('ui-state-disabled');
 	    				$('#mi-eq-tipo').addClass('ui-state-disabled');
-	    				$('#photo2').addClass('ui-state-disabled');
+	    				$('#takePhoto2').addClass('ui-state-disabled');
 	    			} else {
 	    				$('#edit-eq-nombre').removeClass('ui-state-disabled');
 	    				$('#mi-eq-region').removeClass('ui-state-disabled');
 	    				$('#mi-eq-ciudad').removeClass('ui-state-disabled');
 	    				$('#mi-eq-comuna').removeClass('ui-state-disabled');
 	    				$('#mi-eq-tipo').removeClass('ui-state-disabled');
-	    				$('#photo2').removeClass('ui-state-disabled');
+	    				$('#takePhoto2').removeClass('ui-state-disabled');
 	    			}
 	    			document.getElementById('edir-eq-region').value = 'No Disponible';
 	    			document.getElementById('edit-eq-comuna').value = 'No Disponible';
