@@ -75,7 +75,6 @@ function equipos(){
 	    				$('#mi-eq-ciudad').addClass('ui-state-disabled');
 	    				$('#mi-eq-comuna').addClass('ui-state-disabled');
 	    				$('#mi-eq-tipo').addClass('ui-state-disabled');
-	    				$('#mi-eq-save').addClass('ui-state-disabled');
 	    				$('#mi-input-save').addClass('ui-state-disabled');
 	    			} else {
 	    				$('#edit-eq-nombre').removeClass('ui-state-disabled');
@@ -83,7 +82,6 @@ function equipos(){
 	    				$('#mi-eq-ciudad').removeClass('ui-state-disabled');
 	    				$('#mi-eq-comuna').removeClass('ui-state-disabled');
 	    				$('#mi-eq-tipo').removeClass('ui-state-disabled');
-	    				$('#mi-eq-save').removeClass('ui-state-disabled');
 	    				$('#mi-input-save').removeClass('ui-state-disabled');
 	    			}
 	    			document.getElementById('edir-eq-region').value = 'No Disponible';
@@ -387,6 +385,12 @@ function deleteEquipo(eq){
 		}
 	}*/
 }
+document.getElementById('mi-input-save').addEventListener('click',function(){
+	var eq = new equipos();
+	eq.nombre = document.getElementById('edit-eq-nombre').value;
+	eq.setEquipo();
+	delete eq;
+});
 
 function setEquipo(){
 	var eq = new equipos();
