@@ -69,6 +69,7 @@ function equipos(){
 	    			document.getElementById('edit-eq-nombre').value = json.nombre;
 	    			$("#mi-eq-region").val(json.id_region);
 	    			$('#mi-eq-region').selectmenu('refresh');
+	    			alert(sessionStorage.getItem("rol_session"));
 	    			if(sessionStorage.getItem("rol_session") == 2){
 	    				$('#edit-eq-nombre').addClass('ui-state-disabled');
 	    			} else {
