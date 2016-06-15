@@ -53,7 +53,6 @@ function equipos(){
         	//alert(this.response);
         	$.mobile.loading('hide');
         	if(this.status == 200){
-        		alert(localStorage.getItem('rol_equipo'));
 	    		if(this.response && JSON.parse(this.response)){
 	    			var json = JSON.parse(this.response);
 	    			var photo = document.getElementById('photo2');
@@ -172,6 +171,7 @@ function equipos(){
             			inc = '';
 	    				
 		    			for(var i = 0; i < json.length; i++ ){
+		    				alert(json[i].rol);
 		    				if(json[i].id_equipo == localStorage.getItem('equipo')){
 		    					flagged = '';
 		    					disabled = 'ui-state-disabled';
