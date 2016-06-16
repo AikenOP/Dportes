@@ -865,6 +865,32 @@ function jugadores(){
         }
     }
 
+    this.setRolEquipo = function(){
+        var xhr = new XMLHttpRequest();
+        var send = new FormData();
+        send.append('id_usuario',localStorage.getItem('id'));
+        send.append('id_equipo',localStorage.getItem('equipo'));
+        xhr.open('POST', path + 'app/getRolEquipo');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send(send);
+        $.mobile.loading('show');
+        xhr.timeout = 10000;
+        xhr.onprogress = function(e){
+            $.mobile.loading('show');
+        }
+        xhr.ontimeout = function(e){
+            $.mobile.loading('hide');
+            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');   
+        }
+        xhr.onload = function(e){
+            $.mobile.loading('hide');
+            if(this.status == 200){ 
+                alert(this.response);
+            }
+        }
+    }
+
 
 }
 
@@ -976,9 +1002,9 @@ $("#slider-asignado").on( "change", function() {
         $.mobile.loading('hide');
         if(this.status == 200){
             if(this.response == 1){
-                alert('se agrego el administador');
+                anavigator.notification.alert('Se agrego el administrador',function(){},'Atención','OK'); 
             } else if(this.response == 2) {
-                alert('solo se pueden asignar un maximo de 2 administradores');
+                navigator.notification.alert('Solo se pueden asignar un maximo de 2 administradores',function(){},'Atención','OK'); 
                 //Volver a dejar no en select
             }
         }
