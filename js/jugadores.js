@@ -1002,7 +1002,7 @@ $("#slider-asignado").on( "change", function() {
         $.mobile.loading('hide');
         if(this.status == 200){
             if(this.response == 1){
-                anavigator.notification.alert('Se agrego el administrador',function(){},'Atención','OK'); 
+                navigator.notification.alert('Se agrego el administrador',function(){},'Atención','OK'); 
             } else if(this.response == 2) {
                 navigator.notification.alert('Solo se pueden asignar un maximo de 2 administradores',function(){},'Atención','OK'); 
                 //Volver a dejar no en select
