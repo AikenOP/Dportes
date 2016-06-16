@@ -886,7 +886,7 @@ function jugadores(){
         xhr.onload = function(e){
             $.mobile.loading('hide');
             if(this.status == 200){ 
-                alert(this.response);
+                localStorage.setItem('rol_equipo',this.response)
             }
         }
     }
