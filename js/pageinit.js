@@ -35,8 +35,8 @@
                 $('#nav-jg').removeClass('ui-state-disabled');
                 $('#home-stat').removeClass('ui-state-disabled');
                 $('#nav-stat').removeClass('ui-state-disabled');
-                var jugadores = new jugadores();
-                jugadores.setRolEquipo();
+                var jg = new jugadores();
+                jg.setRolEquipo();
             } else {
                 $('#home-add-jg').addClass('ui-state-disabled');
                 $('#nav-jg').addClass('ui-state-disabled');
