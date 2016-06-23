@@ -419,6 +419,24 @@ a.fechas, a.fechas:hover, a.fechas:visited {
 /* Alineamiento cuando se escoge el jugador en los titulares, SELECCIONAR_TITULARES_NUEVO_JUEGO.HTML */
 .imagen_jugador { float:left; margin-right:10px; height:80px; margin-left:10px;}
 .imagen_jugador img { max-width:68px;}
+.imagen_jugador_basket { margin:10px;}
+.imagen_jugador_basket img { 
+	border-radius: 150px !important;
+	-moz-border-radius: 150px !important;
+	-webkit-border-radius: 150px !important;
+	-khtml-border-radius: 150px !important;
+	overflow: hidden;
+	max-width:200px;
+	max-height:200px;
+}
+
+area, map {
+    background:#000;
+}
+area:hover, map:hover {
+    opacity:0.2;
+}
+
 .li-padding {padding:0 !important; border-top:hidden !important;} /*este aplica tambien a SELECCIONAR_RESERVAS.HTML*/
 li.li-padding div.ui-checkbox { margin:0 !important;}
 li.li-padding div.ui-checkbox label { border-top:hidden; border-left:hidden; border-right:hidden;}
@@ -468,6 +486,7 @@ li.li-padding div.ui-radio label { border-top:hidden; border-left:hidden; border
 /* Iconos personalizados para botones con iconos */
 .ui-icon-camapana:after {background-image:url(img-dportes/iconos/campana-icon.svg);}
 .ui-icon-gol-encontra:after {background-image:url(img-dportes/iconos/gol-encontra.png);}
+.ui-icon-basket:after {background-image:url(img-dportes/iconos/basket.png);}
 .ui-icon-fin-tiempo:after {background-image:url(img-dportes/iconos/tiempo.png);}
 .ui-icon-borrar:after {background-image:url(img-dportes/iconos/mala.png);}
 /* Iconos pertenecientes al resumen del partido RESUMEN_1_TIEMPO.HTML, RESUMEN_2_TIEMPO.HTML ...etc */
@@ -1072,6 +1091,81 @@ div.boton-participar a {margin-top:0px; margin-bottom:0px;}
 .nombre-equipo-notificacion {margin: 5px 0 5px 0;font-size:12px; font-weight:bold; text-align:center;}
 .nombre-equipo-notificacion-con {margin: 5px 0 5px 0;font-size:18px; font-weight:bold; text-align:center; color: royalblue;}
 .nombre-equipo-notificacion-in {margin: 5px 0 5px 0;font-size:18px; font-weight:bold; text-align:center; color: tomato;}
+
+/* Cancha de Basketaball*/
+#area-circulo-1 {
+    width: 32%;
+    height: 46%;
+    background-color:transparent;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+    left: 5%;
+    top: 2%;
+}
+
+#area-circulo-2 {
+    width: 32%;
+    height: 46%;
+    background-color:transparent;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+    left: 34%;
+    top: 36%;
+}
+
+#area-circulo-3 {
+    width: 32%;
+    height: 46%;
+    background-color:transparent;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+    left: 62%;
+    top: 2%;
+}
+
+
+#area-circulo-1-cancha2 {
+    width: 27%;
+    height: 55%;
+    background-color:transparent;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+    left: 0%;
+    top: 1%;
+}
+
+#area-circulo-2-cancha2  {
+    width: 51%;
+    height: 33%;
+    background-color:transparent;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+    left: 24%;
+    top: 47%;
+}
+
+#area-circulo-3-cancha2 {
+	width: 26%;
+    height: 56%;
+    background-color:transparent;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    position: absolute;
+    left: 74%;
+    top: 1%;
+}
+/* Cierre de Cancha de Basketball*/
 
 /* === #5C5C5C === */
 .fecha-notificacion { font-size: 12px;text-align: center;font-weight: bold;color: #FFF; padding:5px; text-shadow:none;}

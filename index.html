@@ -599,6 +599,216 @@
         </div>
     </div>
 
+    <!-- ————— PAGINA ACCION DE JUGADOR - JUGADAS REALIZADAS POR EL JUGADOR ————— -->
+    <div data-role="page" id="acciones-basket" class="jqm-demos" data-title="Dportes" data-theme="a">
+        
+        <div class="content">
+    
+        <div class="contenedor-fechas">
+            <div class="row centrado-fechas">
+                    <div class="small-4 columns block"><p class="marcador">1</p><p class="nombre-equipo">R. Madrid arredondo</p></div>
+                    <div class="small-4 columns vs">VS</div>
+                    <div class="small-4 columns block"><p class="marcador">3</p><p class="nombre-equipo">Barcelona arredondo</p></div>
+            </div>
+        </div>
+          
+          
+        <div class="ui-grid-b"><!--PRIMERA FILA-->
+                
+           <!--Primer Jugador-->
+           <div class="ui-block-a centrar_jugador">
+                    <div style="position:relative;">
+                        <a href="#jugada_partido" class="ancho_grilla">
+                            <div class="imagen_jugador_basket"><img src="jquerymobile/img-dportes/jugador3.jpg"></div>
+                            <div class="contenedor_iconos_jugadas">
+                                <img src="jquerymobile/img-dportes/iconos/icono_basketball.png"><div class="marcador-personal-goles">11</div>
+                                <div style="width:26px"><img src="jquerymobile/img-dportes/iconos/icono_cambio.png"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <span class="nombre-jugador-accion">Francisco quezada arredondo</map></span>
+           </div>
+           <!--Cierre-->
+                   
+           <!--Segundo Jugador-->
+            <div class="ui-block-b centrar_jugador">
+                <div style="position:relative;">
+                    <a href="#jugada_partido" class="ancho_grilla">
+                            <div class="imagen_jugador_basket"><img src="jquerymobile/img-dportes/iconos/foto.svg"></div>
+                            <div class="contenedor_iconos_jugadas">
+                                <img src="jquerymobile/img-dportes/iconos/icono_basketball.png"><div class="marcador-personal-goles">11</div>
+                                <div style="width:26px"><img src="jquerymobile/img-dportes/iconos/icono_cambio.png"></div>
+                            </div>
+                    </a>
+                </div>
+                 <span class="nombre-jugador-accion">Francisco quezada arredondo</span>
+            </div>
+            <!--Cierre-->
+                    
+            <!--Tercer Jugador-->
+            <div class="ui-block-c centrar_jugador">
+                <div style="position:relative;">
+                    <a href="#jugada_partido" class="ancho_grilla">
+                            <div class="imagen_jugador_basket"><img src="jquerymobile/img-dportes/iconos/foto.svg"></div>
+                            <div class="contenedor_iconos_jugadas">
+                                <img src="jquerymobile/img-dportes/iconos/icono_basketball.png"><div class="marcador-personal-goles">11</div>
+                                <div style="width:26px"><img src="jquerymobile/img-dportes/iconos/icono_cambio.png"></div>
+                            </div>
+                    </a>
+                </div>
+                 <span class="nombre-jugador-accion">Francisco quezada arredondo</span>
+            </div>
+            <!--Cierre-->
+                    
+        </div><!-- cierre de grid-c -->
+    
+
+        <div class="ui-grid-b"><!--SEGUNDA FILA-->
+                    
+           <!--Primer Jugador-->
+           <div class="ui-block-a centrar_jugador">
+                <div style="position:relative;">
+                    <a href="#jugada_partido" class="ancho_grilla">
+                            <div class="imagen_jugador_basket"><img src="jquerymobile/img-dportes/iconos/foto.svg"></div>
+                            <div class="contenedor_iconos_jugadas">
+                                <img src="jquerymobile/img-dportes/iconos/icono_basketball.png"><div class="marcador-personal-goles">11</div>
+                                <div style="width:26px"><img src="jquerymobile/img-dportes/iconos/icono_cambio.png"></div>
+                            </div>
+                    </a>
+                 </div>
+                 <span class="nombre-jugador-accion">Francisco quezada arredondo</span>
+           </div>
+           <!--Cierre-->
+                   
+           <!--Segundo Jugador-->
+            <div class="ui-block-b centrar_jugador">
+                <div style="position:relative;">
+                    <a href="#jugada_partido" class="ancho_grilla">
+                            <div class="imagen_jugador_basket"><img src="jquerymobile/img-dportes/iconos/foto.svg"></div>
+                            <div class="contenedor_iconos_jugadas">
+                                <img src="jquerymobile/img-dportes/iconos/icono_basketball.png"><div class="marcador-personal-goles">11</div>
+                                <div style="width:26px"><img src="jquerymobile/img-dportes/iconos/icono_cambio.png"></div>
+                            </div>
+                    </a>
+                </div>
+                <span class="nombre-jugador-accion">Francisco quezada arredondo</span>
+            </div>
+            <!--Cierre-->
+                   
+        </div><!-- cierre grid-b -->
+
+
+        <div data-role="popup" id="cancha1" data-overlay-theme="b" data-theme="b" data-dismissible="false">
+            <a href="#" class="cancha-basket-hover-1" data-rel="back"><div id="area-circulo-1"></div></a>
+            <a href="#" class="cancha-basket-hover-2" data-rel="back"><div id="area-circulo-2"></div></a>
+            <a href="#" class="cancha-basket-hover-3" data-rel="back"><div id="area-circulo-3"></div></a>
+            <img src="jquerymobile/img-dportes/canchas_basketball/cancha_1.jpg" width="100%" id="imagencancha1">
+
+        </div>
+        
+       
+        <div data-role="popup" id="cancha2" data-overlay-theme="b" data-theme="b" data-dismissible="false">
+                <a href="#" class="cancha2-basket-hover-1" data-rel="back"><div id="area-circulo-1-cancha2"></div></a>
+                <a href="#" class="cancha2-basket-hover-2" data-rel="back"><div id="area-circulo-2-cancha2"></div></a>
+                <a href="#" class="cancha2-basket-hover-3" data-rel="back"><div id="area-circulo-3-cancha2"></div></a>
+                <img src="jquerymobile/img-dportes/canchas_basketball/cancha_2.jpg" width="100%" id="imagencancha2">
+        </div>
+         
+         
+         <div style="text-align:center">
+            <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-mini ui-btn-inline ui-icon-fin-tiempo ui-btn-icon-left">Fin del Tiempo</a>
+            <div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
+                <div data-role="header" data-theme="a">
+                <h1>Finalizar el tiempo del partido</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <h4 class="ui-title">¿Seguro que quieres terminar el Tiempo?</h4>
+                    <a href="#" class="ui-btn ui-mini ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancelar</a>
+                    <a href="resumen_1_tiempo.html" class="ui-btn ui-mini ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-transition="fade">Confirmar</a>
+                </div>
+            </div>
+            
+            <a href="#popupDialog2" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-mini ui-btn-inline ui-icon-basket ui-btn-icon-left">Puntos encontra</a>
+            <div data-role="popup" id="popupDialog2" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
+                <div data-role="header" data-theme="a">
+                <h1>Gol del Equipo Contrario</h1>
+                </div>
+                <div role="main" class="ui-content">
+                    <h4 class="ui-title">Marcar Gol encontra</h4>
+                    <a href="#" class="ui-btn ui-mini ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancelar</a>
+                    <a href="#" class="ui-btn ui-mini ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">Confirmar</a>
+                </div>
+            </div>
+            
+            <a href="#" id="gol_buena" class="ui-btn ui-mini ui-btn-inline ui-icon-back ui-btn-icon-left">Deshacer Jugada</a>
+            <a href="#" class="ui-btn ui-mini ui-btn-inline ui-icon-check ui-btn-icon-left">Resumen</a>
+         </div>
+                        
+            
+            <!-- PANEL JUGADAS -->
+            <div data-role="panel" data-position="right" data-display="overlay" data-theme="a" id="jugada_partido">
+    
+                <ul data-role="listview">
+                
+                
+                    <div class="jugadas"><span class="texto_jugada">Bandeja</span>
+                                <a href="#cancha1" data-rel="popup" data-position-to="window" data-transition="pop"><div class="jugada_buena"></div></a>
+                                <a href="#cancha1" data-rel="popup" data-position-to="window" data-transition="pop"><div class="jugada_mala"></div></a>
+                    </div>
+                    
+                    <div class="jugadas"><span class="texto_jugada">Doble</span>
+                                <a href="#cancha1" data-rel="popup" data-position-to="window" data-transition="pop"><div class="jugada_buena"></div></a>
+                                <a href="#cancha1" data-rel="popup" data-position-to="window" data-transition="pop"><div class="jugada_mala"></div></a>
+                    </div>
+                    
+                    <div class="jugadas"><span class="texto_jugada">Triple</span>
+                                <a href="#cancha2" data-rel="popup" data-position-to="window" data-transition="pop"><div class="jugada_buena"></div></a>
+                                <a href="#cancha2" data-rel="popup" data-position-to="window" data-transition="pop"><div class="jugada_mala"></div></a>
+                    </div>
+                    
+                    <div class="jugadas"><span class="texto_jugada">Clavada</span>
+                                <a href="#cancha1" data-rel="popup" data-position-to="window" data-transition="pop"><div class="jugada_buena"></div></a>
+                                <a href="#cancha1" data-rel="popup" data-position-to="window" data-transition="pop"><div class="jugada_mala"></div></a>
+                    </div>
+                    
+                    <div class="jugadas"><span class="texto_jugada">Tiro Libre</span>
+                                <a href="#cancha1" data-rel="close"><div class="jugada_buena"></div></a>
+                                <a href="#cancha1" data-rel="close"><div class="jugada_mala"></div></a>
+                    </div>
+                    
+                    <div class="jugadas"><span class="texto_jugada">Asistencia</span>
+                                <a href="#" data-rel="close"><div class="jugada_buena"></div></a>
+                                <a href="#" data-rel="close"><div class="jugada_mala"></div></a>
+                    </div>
+                    
+                    <div class="jugadas"><span class="texto_jugada">Tapón</span>
+                                <a href="#cancha1" data-rel="close"><div class="jugada_buena"></div></a>
+                                <a href="#cancha1" data-rel="close"><div class="jugada_mala"></div></a>
+                    </div>
+                    
+                    <div class="jugadas"><span class="texto_jugada">Robo</span>
+                                <a href="#" data-rel="close"><div class="jugada_buena"></div></a>
+                                <a href="#" data-rel="close"><div class="jugada_mala"></div></a>
+                    </div>
+                    
+                    <div class="jugadas"><span class="texto_jugada">Rebote</span>
+                                <a href="#cancha1" data-rel="close"><div class="jugada_buena"></div></a>
+                                <a href="#cancha1" data-rel="close"><div class="jugada_mala"></div></a>
+                    </div>
+                    
+                    <div class="jugadas"><span class="texto_jugada">Falta</span>
+                                <a href="#" data-rel="close"><div class="jugada_buena"></div></a>
+                                <a href="#" data-rel="close"><div class="jugada_mala"></div></a>
+                    </div>
+                
+                </ul>
+    
+            </div>
+            <!-- CIERRE PANEL JUGADAS -->
+
+        </div>
+    </div>
+
     <!-- Estadisticas -->
     <div data-role="page" id="estadisticas" class="jqm-demos" data-title="Dportes" data-theme="a">
         <div data-role="header" data-position="fixed" class="color-encabezado" data-tab-toggle="false">
@@ -2403,6 +2613,7 @@
             <!--<li data-icon="tag" class="ui-state-disabled"><a href="politica.html">Unirme a otros Equipos</a></li>-->
             <li data-icon="info"><a href="#como-usar">Como se Usa</a></li>
             <li data-icon="eye"><a href="#acerca">Acerca de Dportes</a></li>
+            <li data-icon="gear"><a href="#acciones-basket">Basket</a></li>
             <li data-icon="gear"><a href="#configuraciones">Configuraciones</a></li>
             <li data-icon="power"><a id="logout" href="#">Salir de Dportes</a></li>
             <!-- pruebas -->

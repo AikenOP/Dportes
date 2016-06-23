@@ -118,7 +118,7 @@ function equipos(){
 	}
 
 	this.addEquipo = function(){
-		this.dporte = 1;
+		//this.dporte = 1;
 		if(this.validarEquipo()){
 			var xhr = new XMLHttpRequest();
 			var send = new FormData();
@@ -126,7 +126,7 @@ function equipos(){
 			send.append('id',localStorage.getItem('id'));
 			send.append('nombre_equipo',this.nombre);
 			send.append('comuna',this.comuna);
-			send.append('dporte_equipo',1);
+			send.append('dporte_equipo',this.dporte);
 		    xhr.open('POST', path + 'app/addEquipo');
 		    xhr.setRequestHeader('Cache-Control', 'no-cache');
 		    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
@@ -279,7 +279,14 @@ function equipos(){
         	bTipo = true;
         }
 
-        if(bEquipo && bRegion && bCiudad && bComuna && bTipo){
+        if(this.dporte == 0){
+        	document.getElementById('eq-dporte-error').style.display = "block";
+        } else {
+        	document.getElementById('eq-dporte-error').style.display = "none";
+        	bDporte = true;
+        }
+
+        if(bEquipo && bRegion && bCiudad && bComuna && bTipo && bDporte){
             return true;
         } else {
             return false;
@@ -426,6 +433,7 @@ document.getElementById('btn-reg-equipo').addEventListener('click',function(){
 	eq.ciudad = document.getElementById('eq-ciudad').value;
 	eq.comuna = document.getElementById('eq-comuna').value;
 	eq.tipo = document.getElementById('eq-tipo').value;
+	eq.dporte = document.getElementById('eq-dporte').value;
 	eq.addEquipo();
 	delete eq;
 });
