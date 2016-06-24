@@ -475,15 +475,17 @@
                 <a id="pg-fecha-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none">Ingrese una Fecha</a>
 
 
-                <label for="select-choice-a" class="select">Cuantos tiempos tendra el encuentro:</label>
-                <select id="pg-periodo" name="select-choice-a">
-                    <option value="1">Tiempo unico</option>
-                    <option value="2">2 Tiempos</option>
-                    <!--<option value="3">1 Tiempo Extra</option>
-                    <option value="4">2 Tiempo Extra</option> -->                       
-                    <!--<option value="5">Penales</option>-->
-                </select>
-                <a id="pg-periodo-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none">Seleccione un Periodo</a>
+                <div id="pg-periodo-display">
+                    <label for="select-choice-a" class="select">Cuantos tiempos tendra el encuentro:</label>
+                    <select id="pg-periodo" name="select-choice-a">
+                        <option value="1">Tiempo unico</option>
+                        <option value="2">2 Tiempos</option>
+                        <!--<option value="3">1 Tiempo Extra</option>
+                        <option value="4">2 Tiempo Extra</option> -->                       
+                        <!--<option value="5">Penales</option>-->
+                    </select>
+                    <a id="pg-periodo-error" href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion" style="display:none">Seleccione un Periodo</a>
+                </div>
                 <div id="pg-boton-continuar" class="ui-input-btn ui-btn btn-input">
                     Continuar
                     <input id="pg-registro" data-enhanced="true" type="submit">

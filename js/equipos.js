@@ -207,6 +207,7 @@ function equipos(){
 
 		                    inc += "<li value='"+json[i].id_equipo+"' class='li-padding'>";
 		                    inc += "<input id='eq_r"+json[i].id_equipo+"' type='hidden' value='"+json[i].rol+"'>";
+		                    inc += "<input id='eq_dp"+json[i].id_equipo+"' type='hidden' value='"+json[i].id_deporte+"'>";
 		                    inc += "<span class='delete "+deleteDisabled+"'>";
 		                    inc += "<div class='centra_texto' onclick='deleteEquipo("+json[i].id_equipo+");'>Salir</div>";
 		                    inc += "</span>";
@@ -319,6 +320,7 @@ function equipos(){
 		        button.find(".flagged").removeClass("ui-screen-hidden");
 		        localStorage.setItem('equipo',$(this).parent().val());
 		        localStorage.setItem('rol_equipo',$("#eq_r"+$(this).parent().val()).val());
+		        localStorage.setItem('dporte',$("#eq_dp"+$(this).parent().val()).val());
 		        localStorage.setItem('nombre_equipo',$(this).parent().find("h2").html());
 		        //text.text("");
 		    }
