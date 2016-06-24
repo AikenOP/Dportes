@@ -123,7 +123,8 @@ function equipos(){
 			var xhr = new XMLHttpRequest();
 			var send = new FormData();
 			var nombre = this.nombre;
-			send.append('id',localStorage.getItem('id'));
+			alert(this.dporte);
+			/*send.append('id',localStorage.getItem('id'));
 			send.append('nombre_equipo',this.nombre);
 			send.append('comuna',this.comuna);
 			send.append('dporte_equipo',this.dporte);
@@ -148,7 +149,7 @@ function equipos(){
 		    			$.mobile.navigate("#mis-equipos", {transition: "fade"});
 		    		}
 		    	}
-		    }
+		    }*/
 		}	
 	}
 
