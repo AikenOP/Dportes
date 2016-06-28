@@ -126,6 +126,7 @@ function equipos(){
 			send.append('id',localStorage.getItem('id'));
 			send.append('nombre_equipo',this.nombre);
 			send.append('comuna',this.comuna);
+			send.append('tipo',this.tipo);
 			send.append('dporte_equipo',this.dporte);
 		    xhr.open('POST', path + 'app/addEquipo');
 		    xhr.setRequestHeader('Cache-Control', 'no-cache');
