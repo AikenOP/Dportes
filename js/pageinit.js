@@ -23,7 +23,7 @@
 
         if(activePage === 'home'){
             //alert(localStorage.getItem('nombre_usuario'));
-            alert(localStorage.getItem('dporte'));
+            //alert(localStorage.getItem('dporte'));
             if(localStorage.getItem("rol_equipo") == 1 || localStorage.getItem("rol_equipo") == 4){
                 $('#home-pg').removeClass('ui-state-disabled');
             } else {
@@ -181,6 +181,12 @@
                 document.getElementById('suspender-partido').style.display = "none";
                 document.getElementById('pg-registro-next').style.display = "none";
                 document.getElementById('pg-boton-continuar').style.display = "block";
+            }
+
+            if(localStorage.getItem('dporte') == 1){
+                document.getElementById('pg-periodo-display').style.display = "block";
+            } else if(localStorage.getItem('dporte') == 2){
+                document.getElementById('pg-periodo-display').style.display = "none";
             }
             document.getElementById('pg-nombre-error').style.display = "none";
             document.getElementById('pg-ubicacion-error').style.display = "none";

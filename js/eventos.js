@@ -402,18 +402,21 @@ function eventos(){
     		bHora = true;
     	}
 
-    	if(this.periodo.trim().length <= 0){
-            document.getElementById('pg-periodo-error').style.display = "block";
-    	} else {
-            document.getElementById('pg-periodo-error').style.display = "none";
-    		bPeriodo = true;
-    	}
-
-    	if(bNombre && bUbicacion && bFecha && bHora && bPeriodo){
-    		return true;
-    	} else {
-    		return false;
-    	}
+        if(localStorage.getItem('dporte') == 1){
+            if(this.periodo.trim().length <= 0){
+                document.getElementById('pg-periodo-error').style.display = "block";
+            } else {
+                document.getElementById('pg-periodo-error').style.display = "none";
+                bPeriodo = true;
+            }
+        } else if(localStorage.getItem('dporte') == 2){
+            bPeriodo = true;
+        }
+        if(bNombre && bUbicacion && bFecha && bHora && bPeriodo){
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
