@@ -527,7 +527,7 @@
         <div data-role="main" class="content">
             <ul id="set-titulares" data-role="listview" data-inset="false"></ul>
         </div>
-        <a href="#drag-drop"><div class="orden_cancha"></div></a>
+        <a id="drag-drop-futbol" href="#drag-drop"><div class="orden_cancha"></div></a>
     </div>
 
     <!-- ———— SELECCIONAR EL TIEMPO DEL JUEGO ————— -->
@@ -2451,6 +2451,32 @@
         </div>
     </div>
 
+    <!-- ————— PAGINA CREAR AVISO ————— -->
+    <div data-role="page" id="crear-aviso" class="jqm-demos" data-title="Dportes" data-theme="a">
+    
+        <div data-role="header" data-position="fixed" class="color-encabezado">
+            <a href="index.html" data-transition="fade" class="saca-estilo-boton"><div class="fl-izquierda"></div></a>
+            <h1>Justificacion</h1>
+        </div>
+        
+        <div class="content">
+
+            <form action="" method="post">
+                <div style="padding:20px;">
+                    <p style="margin-top:0px; text-align:center;">Por favor ingrese el titulo y el campo de texto de su justificación o cancelación del partido (máximo 200 caracteres)</p>
+                    <input name="user" id="" value="" placeholder="Ejemplo: Falta de Poleras" data-theme="a" type="text">
+                    <textarea id="taComentario" rows="10" cols=""></textarea>
+                    <div style="color:#999; font-size:12px; display:inline-block" id="">200</div>
+                    <a href="perfil.html" class="ui-btn ui-icon-check ui-btn-icon-left ui-shadow-icon color-boton">Enviar Justificación</a>
+                    <img src="jquerymobile/img-dportes/iconos/ok.svg" align="left"><p class="nombre-disponible">La justificación fue enviada a los jugadores.</p>
+                    <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion">Rellene el campo Faltante</a>
+                    <a href="#" class="ui-btn ui-icon-delete ui-btn-icon-left ui-shadow-icon color-boton-error-validacion">Excedio mas x caracteres.</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
     <!-- ————— PAGINA JUSTIFICACION ————— -->
     <div data-role="page" id="justificacion" class="jqm-demos" data-title="Dportes" data-theme="a">
     
@@ -2615,7 +2641,7 @@
             <!--<li data-icon="tag" class="ui-state-disabled"><a href="politica.html">Unirme a otros Equipos</a></li>-->
             <li data-icon="info"><a href="#como-usar">Como se Usa</a></li>
             <li data-icon="eye"><a href="#acerca">Acerca de Dportes</a></li>
-            <li data-icon="gear"><a href="#acciones-basket">Basket</a></li>
+            <li data-icon="gear"><a href="#crear-aviso">AVISO</a></li>
             <li data-icon="gear"><a href="#configuraciones">Configuraciones</a></li>
             <li data-icon="power"><a id="logout" href="#">Salir de Dportes</a></li>
             <!-- pruebas -->

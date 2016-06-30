@@ -82,11 +82,22 @@ function notificaciones(){
                                 logo = "jquerymobile/img-dportes/logo-encuentro.png";
                             }
 
-                        	inc += "<div class='contenedor-general-notificaciones' id='contenedor-notificacion'>";    
-    		                inc += "<div id='notificacion_"+json[i].id_notificacion+"' class='fecha-notificacion "+clase+"'>Aviso de Encuentro</div>";
-    		                inc += "<a onclick='redirectAsistencia("+json[i].id_notificacion+")' class='link-color'>";
-    		                inc += "<div class='contenedor-fechas-notificacion'>";
-    		                inc += "<div class='centrado-fechas-notificacion'>";
+                            if(json[i].tipos_notificaciones_id_tipo_notificacion == 1){
+                                inc += "<div class='contenedor-general-notificaciones' id='contenedor-notificacion'>";    
+                                inc += "<div id='notificacion_"+json[i].id_notificacion+"' class='fecha-notificacion "+clase+"'>Aviso de Encuentro</div>";
+                                inc += "<a onclick='redirectAsistencia("+json[i].id_notificacion+")' class='link-color'>";
+                                inc += "<div class='contenedor-fechas-notificacion'>";
+                                inc += "<div class='centrado-fechas-notificacion'>";
+                            } else if(json[i].tipos_notificaciones_id_tipo_notificacion == 2){
+                                inc += "<div class='contenedor-general-notificaciones' id='contenedor-notificacion'>";
+                                inc += "<div class='fecha-notificacion leido'>Aviso de Notificación</div>";
+                                inc += "<div class='contenedor-fechas-notificacion'>";
+                                inc += "<p style='margin:0; text-align:center; font-weight:bold; font-size:18px;'>Falta de Jugadores</h3>";
+                                inc += "<p style='margin:10px;'>También puede copiar y pegar bloques de texto de un documento que tengas ya escrito. Solo pegue el texto dentro de la caja del contador y rápidamente se mostrara la cantidad de caracteres y palabras q</p>";
+                                inc += "</div>";
+                                inc += "</div>";
+                            }
+
                             if(json[i].tipo_evento == 4){
                                 inc += "<div style='position: relative;'>";
                                 inc += "<div class='suspension'></div>";
