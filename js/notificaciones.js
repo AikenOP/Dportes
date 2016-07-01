@@ -51,8 +51,9 @@ function notificaciones(){
                     var logo = '';
                     var now = +(new Date);
                     //alert(offset);
-                    alert(json.length);
+                    //alert(json.length);
                     if(json.length != 0){
+                        try{
                         for(var i = 0; i < json.length; i++ ){
                         	fecha = getFecha(json[i].fecha_evento);
                             hora = getHora(json[i].fecha_evento);
@@ -123,7 +124,9 @@ function notificaciones(){
                                 inc += "</div>";
                             }
                         }
-                        alert(inc);
+                        } catch(e){
+                            alert(e);
+                        }
                         $('#notificaciones-evt').append(inc).trigger('create');
                         if(json.length >= 5){
                             document.getElementById('not-more').style.display = "block";
