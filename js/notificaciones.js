@@ -1,6 +1,8 @@
 
 function notificaciones(){
 	this.id_notifica
+    this.titulo
+    this.comentario
     this.bool = true;
 
 
@@ -284,10 +286,23 @@ function notificaciones(){
             }
         }     
     }
+
+    this.setAviso = function(){
+        alert('ok');
+    }
 }
 
 document.getElementById('av-comentario').addEventListener('change',function(){
-    alert(document.getElementById('av-comentario').value.length);
+    var contador = 200 - document.getElementById('av-comentario').value.length;
+    document.getElementById('av-contador').innerHTML = contador;
+});
+
+document.getElementById('av-submit').addEventListener('click',function(){
+    var notifica = new notificaciones('av-titulo');
+    notifica.titulo = document.getElementById().value;
+    notifica.comentario = document.getElementById('av-comentario').value;
+    notifica.setAviso();
+    delete notifica;
 });
 
 
