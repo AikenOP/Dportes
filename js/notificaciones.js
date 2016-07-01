@@ -36,7 +36,7 @@ function notificaciones(){
         };
 
         xhr.onload = function(e){
-            //alert(this.response);
+            alert(this.response);
         	//alert(localStorage.getItem('id'));
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
