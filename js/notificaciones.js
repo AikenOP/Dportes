@@ -119,8 +119,8 @@ function notificaciones(){
                                 inc += "<div class='contenedor-general-notificaciones' id='contenedor-notificacion'>";
                                 inc += "<div class='fecha-notificacion leido'>Aviso de Notificación</div>";
                                 inc += "<div class='contenedor-fechas-notificacion'>";
-                                inc += "<p style='margin:0; text-align:center; font-weight:bold; font-size:18px;'>Falta de Jugadores</h3>";
-                                inc += "<p style='margin:10px;'>También puede copiar y pegar bloques de texto de un documento que tengas ya escrito. Solo pegue el texto dentro de la caja del contador y rápidamente se mostrara la cantidad de caracteres y palabras q</p>";
+                                inc += "<p style='margin:0; text-align:center; font-weight:bold; font-size:18px;'>"+json[i].param+"</h3>";
+                                inc += "<p style='margin:10px;'>"+json[i].param2+"</p>";
                                 inc += "</div>";
                                 inc += "</div>";
                             }
