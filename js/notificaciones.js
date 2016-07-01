@@ -286,6 +286,11 @@ function notificaciones(){
     }
 }
 
+document.getElementById('av-comentario').addEventListener('change',function(){
+    alert(document.getElementById('av-comentario').value.length);
+});
+
+
 function redirectAsistencia(id){
     sessionStorage.setItem('id_notifica',id);
     $.mobile.navigate("#asistencia", {transition: "fade"});   
