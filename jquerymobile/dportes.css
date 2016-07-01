@@ -1561,6 +1561,15 @@ a.color-boton-presionado {
     height: 51px;
     background-image:url("img-dportes/iconos/icono_nuevo_equipo.svg");
     z-index: 3; }
+.justificacion-cancelacion {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 51px;
+    height: 51px;
+    background-image:url("img-dportes/iconos/icono_justificacion_cancelacion.png");
+                background-repeat:no-repeat;
+    z-index: 3; }
 .deporte-baloncesto { 
 	background-image:url(img-dportes/iconos_de_deportes/baloncesto-copia.svg); 
 	width:40px; 
