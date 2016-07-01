@@ -298,8 +298,8 @@ document.getElementById('av-comentario').addEventListener('change',function(){
 });
 
 document.getElementById('av-submit').addEventListener('click',function(){
-    var notifica = new notificaciones('av-titulo');
-    notifica.titulo = document.getElementById().value;
+    var notifica = new notificaciones();
+    notifica.titulo = document.getElementById('av-titulo').value;
     notifica.comentario = document.getElementById('av-comentario').value;
     notifica.setAviso();
     delete notifica;
