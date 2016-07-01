@@ -36,7 +36,7 @@ function notificaciones(){
         };
 
         xhr.onload = function(e){
-            //alert(this.response);
+            alert(this.response);
         	//alert(localStorage.getItem('id'));
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
@@ -123,6 +123,7 @@ function notificaciones(){
                                 inc += "</div>";
                             }
                         }
+                        alert(inc);
                         $('#notificaciones-evt').append(inc).trigger('create');
                         if(json.length >= 5){
                             document.getElementById('not-more').style.display = "block";
