@@ -36,7 +36,7 @@ function notificaciones(){
         };
 
         xhr.onload = function(e){
-            alert(this.response);
+            //alert(this.response);
         	//alert(localStorage.getItem('id'));
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
@@ -55,37 +55,38 @@ function notificaciones(){
                     if(json.length != 0){
                         try{
                         for(var i = 0; i < json.length; i++ ){
-                        	fecha = getFecha(json[i].fecha_evento);
-                            hora = getHora(json[i].fecha_evento);
-                            if(json[i].tipos_asistencias_id_tipo_asistencia == 1){
-                                asistir = 'block;';
-                                no_asistir = 'none;';
-                                no_confirma = 'none;';
-                            } else if(json[i].tipos_asistencias_id_tipo_asistencia == 2){
-                                no_asistir = 'block;';
-                                asistir = 'none;';
-                                no_confirma = 'none;';
-                            } else if(json[i].tipos_asistencias_id_tipo_asistencia == 3 && json[i].bool_fecha == 1){
-                                no_asistir = 'none;';
-                                asistir = 'none;';
-                                no_confirma = 'block;';
-                            } else {
-                                no_asistir = 'none;';
-                                asistir = 'none;';
-                            }
-                            if(json[i].visto == 0){
-                                clase = 'no-leido';
-                            } else {
-                                clase = 'leido';
-                            }
-
-                            if(json[i].logo != null){
-                                logo =  path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo + '?timestamp=' + now;
-                            } else {
-                                logo = "jquerymobile/img-dportes/logo-encuentro.png";
-                            }
-
                             if(json[i].tipos_notificaciones_id_tipo_notificacion == 1){
+                            	fecha = getFecha(json[i].fecha_evento);
+                                hora = getHora(json[i].fecha_evento);
+                                if(json[i].tipos_asistencias_id_tipo_asistencia == 1){
+                                    asistir = 'block;';
+                                    no_asistir = 'none;';
+                                    no_confirma = 'none;';
+                                } else if(json[i].tipos_asistencias_id_tipo_asistencia == 2){
+                                    no_asistir = 'block;';
+                                    asistir = 'none;';
+                                    no_confirma = 'none;';
+                                } else if(json[i].tipos_asistencias_id_tipo_asistencia == 3 && json[i].bool_fecha == 1){
+                                    no_asistir = 'none;';
+                                    asistir = 'none;';
+                                    no_confirma = 'block;';
+                                } else {
+                                    no_asistir = 'none;';
+                                    asistir = 'none;';
+                                }
+                                if(json[i].visto == 0){
+                                    clase = 'no-leido';
+                                } else {
+                                    clase = 'leido';
+                                }
+
+                                if(json[i].logo != null){
+                                    logo =  path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo + '?timestamp=' + now;
+                                } else {
+                                    logo = "jquerymobile/img-dportes/logo-encuentro.png";
+                                }
+
+                            
                                 inc += "<div class='contenedor-general-notificaciones' id='contenedor-notificacion'>";    
                                 inc += "<div id='notificacion_"+json[i].id_notificacion+"' class='fecha-notificacion "+clase+"'>Aviso de Encuentro</div>";
                                 inc += "<a onclick='redirectAsistencia("+json[i].id_notificacion+")' class='link-color'>";
