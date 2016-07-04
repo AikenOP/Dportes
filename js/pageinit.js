@@ -553,6 +553,7 @@
         if(activePage === 'notificaciones'){
             var notifica = new notificaciones();
             notifica.getNotificaciones();
+            notifica.setVistoAvisos();
             delete notifica;
         }
 
