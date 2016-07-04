@@ -1659,7 +1659,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbc01', end
 .seccion-exponente{ display:block}              
 .texto-mejor-exponente {display:block; color: #FFF; font-size: 18px; text-shadow: 0px 0px 1px #BABABA; text-align:center}
 .mejor-exponente {display:block; color: #FFF; font-size: 20px; text-shadow: 0px 0px 1px #BABABA; text-align:center; padding:10px 10px 0 10px}
-
+.foo {
+	height: auto !important; /* !important is used to force override. */
+}
 .contenedor-secciones {
 	display:block; 
 	-webkit-border-radius: 0px 10px 10px 10px;
