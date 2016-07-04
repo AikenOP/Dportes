@@ -325,9 +325,26 @@ function notificaciones(){
     }
 
     this.validaAviso = function(){
-        alert(this.titulo);
-        alert(this.comentario);
-        return false;
+        var bTitulo         = false;
+        var bComentario     = false;
+        if(this.titulo.trim().length <= 0){
+            document.getElementById('av-faltante').style.display = "block";
+        } else {
+            document.getElementById('av-faltante').style.display = "none";
+            bTitulo         = true;
+        }
+        if(this.comentario.trim().length <= 0 || this.comentario.trim().length > 200){
+            document.getElementById('av-excedio').style.display = "block";
+        } else {
+            document.getElementById('av-excedio').style.display = "none";
+            bComentario         = true;
+        }
+
+        if(bComentario && bTitulo){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     this.setVistoAvisos = function(){
