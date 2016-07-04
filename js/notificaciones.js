@@ -293,33 +293,41 @@ function notificaciones(){
     }
 
     this.setAviso = function(){
-        var xhr = new XMLHttpRequest();
-        var send = new FormData();
+        if(this.validaAviso()){
+            var xhr = new XMLHttpRequest();
+            var send = new FormData();
 
-        send.append('titulo',this.titulo);
-        send.append('comentario',this.comentario);
-        send.append('id_equipo',localStorage.getItem('equipo'));
-        send.append('id_usuario',localStorage.getItem('id'));
+            send.append('titulo',this.titulo);
+            send.append('comentario',this.comentario);
+            send.append('id_equipo',localStorage.getItem('equipo'));
+            send.append('id_usuario',localStorage.getItem('id'));
 
-        xhr.open('POST', path + 'app/setAviso');
-        xhr.setRequestHeader('Cache-Control', 'no-cache');
-        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.send(send);
-        $.mobile.loading('show');
-        xhr.timeout = 10000;
-        xhr.ontimeout = function () {
-            $.mobile.loading('hide');
-            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
-        };
-        xhr.onerror = function(e){
-            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
-        };
-
-        xhr.onload = function(e){
-            if(this.status == 200){
+            xhr.open('POST', path + 'app/setAviso');
+            xhr.setRequestHeader('Cache-Control', 'no-cache');
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            xhr.send(send);
+            $.mobile.loading('show');
+            xhr.timeout = 10000;
+            xhr.ontimeout = function () {
                 $.mobile.loading('hide');
+                navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+            };
+            xhr.onerror = function(e){
+                navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+            };
+
+            xhr.onload = function(e){
+                if(this.status == 200){
+                    $.mobile.loading('hide');
+                }
             }
         }
+    }
+
+    this.validaAviso = function(){
+        alert(this.titulo);
+        alert(this.comentario);
+        return false;
     }
 
     this.setVistoAvisos = function(){
@@ -343,7 +351,7 @@ function notificaciones(){
 
         xhr.onload = function(e){
             if(this.status == 200){
-                alert(this.response);
+                $.mobile.loading('hide');
             }
         }
     }
