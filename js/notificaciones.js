@@ -299,6 +299,7 @@ function notificaciones(){
         send.append('titulo',this.titulo);
         send.append('comentario',this.comentario);
         send.append('id_equipo',localStorage.getItem('equipo'));
+        send.append('id_usuario',localStorage.getItem('id'));
 
         xhr.open('POST', path + 'app/setAviso');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
