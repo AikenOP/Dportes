@@ -317,8 +317,9 @@ function notificaciones(){
             };
 
             xhr.onload = function(e){
+                $.mobile.loading('hide');
                 if(this.status == 200){
-                    $.mobile.loading('hide');
+                    $.mobile.navigate("#notificaciones", {transition: "fade"}); 
                 }
             }
         }
