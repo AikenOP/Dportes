@@ -107,6 +107,7 @@ table tr:nth-child(even) {background:#FFF;}*/
 .block img { display: :inline-block; max-width: 74px;}
 .vs { font-size:18px; margin-left:15px; margin-right:15px; font-weight:bold; display:inline-block; vertical-align: top; margin-top:35px; width: 20%; }
 .fecha-partido {text-align:center;font-size:11px;}
+.vs-blanco { font-size:18px; margin-left:15px; margin-right:15px; font-weight:bold; display:inline-block; vertical-align: top; margin-top:35px; width: 9%; color:#FFF }
 /* Afecta a los textos de las fechas de encuentros o el versus*/
 a.fechas, a.fechas:hover, a.fechas:visited {
 	color:#333 !important;
