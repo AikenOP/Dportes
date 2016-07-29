@@ -576,4 +576,11 @@
             delete jg;
         }
 
+        if(activePage == 'pg-votaciones'){
+            var vc = new votaciones();
+            vc.id_equipo = localStorage.getItem('equipo');
+            vc.getVotaciones();
+            delete vc;
+        }
+
     });
