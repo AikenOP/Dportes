@@ -54,7 +54,7 @@ function eventos(){
                 //alert(this.response);
                 //alert('asdasd' + this.status);
                 if(this.status == 200){
-                    alert(this.response);
+                    //alert(this.response);
                     if(isNumeric(this.response)){
                         if(!sessionStorage.getItem('evento')){
                             $.mobile.navigate("#p-pro", {transition: "fade"});       
