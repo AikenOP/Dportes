@@ -74,12 +74,12 @@ function votaciones(){
             navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
         };
         xhr.onload = function(e){
-            alert(this.response);
             try{
             if(this.status == 200){
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var foto = '';
+                    var now = +(new Date);
                     var inc = "<li style='background:#333; border:0px'><h4 style='color:#FFF; text-align:center; text-shadow:none'>Tienes un periodo de 24 horas para votar</h4></li>";
                     for(var i = 0; i < json.length; i++ ){
                         if(json[i].foto != null){
