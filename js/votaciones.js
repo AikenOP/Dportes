@@ -50,7 +50,7 @@ function votaciones(){
         				inc += "</li>";
         			}
 
-        			$('#votaciones-list').append(inc).listview('refresh');
+        			$('#votaciones-list').html(inc).listview('refresh');
         		}
         	}          
         };
@@ -76,7 +76,25 @@ function votaciones(){
         };
         xhr.onload = function(e){
             if(this.status == 200){
-                alert(this.response);
+                if(this.response && JSON.parse(this.response)){
+                    var json = JSON.parse(this.response);
+                    var foto = '';
+                    var inc = "<li style='background:#333; border:0px'><h4 style='color:#FFF; text-align:center; text-shadow:none'>Tienes un periodo de 24 horas para votar</h4></li>";
+                    for(var i = 0; i < json.length; i++ ){
+                        if(json[i].foto != null){
+                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto + '?timestamp=' + now;
+                        } else {
+                            foto = "jquerymobile/img-dportes/foto.png";
+                        }   
+                        inc += "<li class='li-padding' data-icon='false'>";
+                        inc += "<a href='#' data-rel='popup' data-position-to='window' data-transition='pop' id='4-jugador' class='quita_margenes_para_check hola'>";
+                        inc += "<div class='imagen_jugador'><img src='"+foto+"'></div>";
+                        inc += "<h2>"+json[i].nombre+" "+json[i].apellido_paterno+"</h2>";
+                        inc += "<p></p>";
+                        inc += "</a></li> ";
+                    }
+                    $('#votaciones-jg-list').html(inc).listview('refresh');
+                }  
             }
         };    
     }
