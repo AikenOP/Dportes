@@ -55,6 +55,57 @@ function votaciones(){
         };
 	}
 
+    this.getJugadoresVotaciones = function(){
+        var xhr = new XMLHttpRequest();
+        var send = new FormData();
+        send.append('id_equipo',this.id_equipo);
+        send.append('id_evento',this.id_evento);
+        xhr.open('POST', path + 'app/getJugadoresVotaciones');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send(send);
+        $.mobile.loading('show');
+        xhr.timeout = 10000;
+        xhr.ontimeout = function () {
+            $.mobile.loading('hide');
+            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+        };
+        xhr.onerror = function(e){
+            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+        };
+        xhr.onload = function(e){
+            if(this.status == 200){
+                alert(this.response);
+            }
+        };    
+    }
+
+    this.setVotaciones = function(){
+        var xhr = new XMLHttpRequest();
+        var send = new FormData();
+        send.append('id_equipo',this.id_equipo);
+        send.append('id_evento',this.id_evento);
+        send.append('id_usuario',this.id_usuario);
+        xhr.open('POST', path + 'app/setVotaciones');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send(send);
+        $.mobile.loading('show');
+        xhr.timeout = 10000;
+        xhr.ontimeout = function () {
+            $.mobile.loading('hide');
+            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+        };
+        xhr.onerror = function(e){
+            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+        };
+        xhr.onload = function(e){
+            if(this.status == 200){
+                alert(this.response);
+            }
+        }; 
+    }
+
 	this.getPodio = function(){
 		var xhr = new XMLHttpRequest();
         var send = new FormData();
@@ -100,5 +151,6 @@ function votaciones(){
 
 function setParametrosPodio(evento){
     sessionStorage.evento = evento;
-    $.mobile.navigate("#podio", {transition: "fade"});
+    //$.mobile.navigate("#podio", {transition: "fade"});
+    $.mobile.navigate("#votaciones", {transition: "fade"});
 }

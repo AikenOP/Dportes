@@ -583,6 +583,14 @@
             delete vc;
         }
 
+        if(activePage === 'votaciones'){
+            var vc = new votaciones();
+            vc.id_equipo = localStorage.getItem('equipo');
+            vc.id_evento = sessionStorage.getItem('evento');
+            vc.getJugadoresVotaciones();
+            delete vc;
+        }
+
         if(activePage === 'podio'){
             var vc = new votaciones();
             vc.id_equipo = localStorage.getItem('equipo');
