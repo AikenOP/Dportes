@@ -90,7 +90,7 @@ function votaciones(){
                         inc += "<li class='li-padding' data-icon='false'>";
                         inc += "<a href='#' data-rel='popup' data-position-to='window' data-transition='pop' id='4-jugador' class='quita_margenes_para_check hola'>";
                         inc += "<div class='imagen_jugador'><img src='"+foto+"'></div>";
-                        inc += "<h2>"+json[i].nombre+" "+json[i].apellido_paterno+"</h2>";
+                        inc += "<h2>"+json[i].nombre+"</h2>";
                         inc += "<p></p>";
                         inc += "</a></li> ";
                     }
