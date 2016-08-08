@@ -44,7 +44,7 @@ function votaciones(){
         				inc += "<div class='vs-blanco'>VS</div>";
         				inc += "<div class='block'><img src='jquerymobile/img-dportes/logo-encuentro.png' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>"+json[i].nombre+"</p></div>";
         				inc += "</div>";
-        				inc += "</div>";
+        				inc += "</div>"; 
         				inc += "</a>";
         				inc += "</li>";
         			}

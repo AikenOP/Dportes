@@ -49,7 +49,7 @@ function eventos(){
                 navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
             };
             xhr.onload = function(e){
-                //alert(this.response);
+                alert(this.response);
                 $.mobile.loading('hide');
                 //alert(this.response);
                 //alert('asdasd' + this.status);
