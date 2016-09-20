@@ -92,7 +92,7 @@ function votaciones(){
                         inc += "<div class='imagen_jugador'><img src='"+foto+"'></div>";
                         inc += "<h2>"+json[i].nombre+"</h2>";
                         inc += "<p></p>";
-                        inc += "</a></li> ";
+                        inc += "</a></li>";
                     }
                     $('#votaciones-jg-list').html(inc).listview('refresh');
                 }  
