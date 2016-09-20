@@ -30,24 +30,24 @@
 
   <plugin name="phonegap-plugin-push" source="npm" spec="~1.5.0" />
   <plugin name="org.apache.cordova.battery-status" source="pgb" spec="0.2.12" />
-  <plugin name="org.apache.cordova.camera" source="pgb" />
-  <plugin name="org.apache.cordova.console" source="pgb"/>
-  <plugin name="org.apache.cordova.contacts" source="pgb"/>
-  <plugin name="org.apache.cordova.device" source="pgb"/>
-  <plugin name="org.apache.cordova.device-motion" source="pgb"/>
-  <plugin name="org.apache.cordova.device-orientation" source="pgb"/>
-  <plugin name="org.apache.cordova.dialogs" source="pgb" />
-  <plugin name="org.apache.cordova.file" source="pgb" />
-  <plugin name="org.apache.cordova.file-transfer" source="pgb" />
-  <plugin name="org.apache.cordova.geolocation" source="pgb" />
-  <plugin name="org.apache.cordova.globalization" source="pgb" />
-  <plugin name="org.apache.cordova.inappbrowser" source="pgb" />
-  <plugin name="org.apache.cordova.media" source="pgb" />
-  <plugin name="org.apache.cordova.media-capture" source="pgb" />
-  <plugin name="org.apache.cordova.network-information" source="pgb" />
-  <plugin name="org.apache.cordova.splashscreen" source="pgb" />
-  <plugin name="org.apache.cordova.statusbar"  source="pgb" />
-  <plugin name="org.apache.cordova.vibration" source="pgb" />
+  <plugin name="org.apache.cordova.camera" source="pgb" spec="0.3.6" />
+  <plugin name="org.apache.cordova.console" source="pgb" spec="0.2.13" />
+  <plugin name="org.apache.cordova.contacts" source="pgb" spec="0.2.16" />
+  <plugin name="org.apache.cordova.device" source="pgb" spec="0.3.0" />
+  <plugin name="org.apache.cordova.device-motion" source="pgb" spec="0.2.11" />
+  <plugin name="org.apache.cordova.device-orientation" source="pgb" spec="0.3.11" />
+  <plugin name="org.apache.cordova.dialogs" source="pgb" spec="0.3.0" />
+  <plugin name="cordova-plugin-file" spec="3.0.0" source="pgb" />
+  <plugin name="org.apache.cordova.file-transfer" source="pgb" spec="0.5.0" />
+  <plugin name="org.apache.cordova.geolocation" source="pgb" spec="0.3.12" />
+  <plugin name="cordova-plugin-globalization" spec="1.0.1" source="pgb" />
+  <plugin name="org.apache.cordova.inappbrowser" source="pgb" spec="0.6.0" />
+  <plugin name="org.apache.cordova.media" source="pgb" spec="0.2.16" />
+  <plugin name="org.apache.cordova.media-capture" source="pgb" spec="0.3.6" />
+  <plugin name="org.apache.cordova.network-information" source="pgb" spec="0.2.15" />
+  <plugin name="org.apache.cordova.splashscreen" source="pgb" spec="1.0.0" />
+  <plugin name="org.apache.cordova.statusbar" spec="0.1.4" source="pgb" />
+  <plugin name="org.apache.cordova.vibration" source="pgb" spec="0.3.13" />
   
   <icon src="icon.png" />
   <icon src="res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
