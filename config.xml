@@ -42,7 +42,7 @@
   <plugin name="org.apache.cordova.geolocation" source="pgb" spec="0.3.12" />
   <plugin name="cordova-plugin-globalization" spec="1.0.1" source="pgb" />
   <plugin name="org.apache.cordova.inappbrowser" source="pgb" spec="0.6.0" />
-  <plugin name="org.apache.cordova.media" source="pgb" spec="0.2.16" />
+  <plugin name="cordova-plugin-media" spec="1.0.1" source="pgb" />
   <plugin name="org.apache.cordova.media-capture" source="pgb" spec="0.3.6" />
   <plugin name="org.apache.cordova.network-information" source="pgb" spec="0.2.15" />
   <plugin name="org.apache.cordova.splashscreen" source="pgb" spec="1.0.0" />
