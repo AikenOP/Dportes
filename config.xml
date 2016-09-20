@@ -40,7 +40,7 @@
   <plugin name="org.apache.cordova.file" source="pgb" />
   <plugin name="org.apache.cordova.file-transfer" source="pgb" />
   <plugin name="org.apache.cordova.geolocation" source="pgb" />
-  <plugin name="org.apache.cordova.globalization" source="npm" />
+  <plugin name="org.apache.cordova.globalization" source="pgb" />
   <plugin name="org.apache.cordova.inappbrowser" source="pgb" />
   <plugin name="org.apache.cordova.media" source="pgb" />
   <plugin name="org.apache.cordova.media-capture" source="pgb" />
