@@ -57,7 +57,13 @@ function votaciones(){
         				inc += "</li>";
         			}
 
-        			$('#votaciones-list').html(inc).listview('refresh');
+        			$('#votaciones-list').append(inc).listview('refresh');
+
+                    if(json.length >= 5){
+                        document.getElementById('vot-more').style.display = "block";
+                    } else {
+                        document.getElementById('vot-more').style.display = "none";
+                    }
         		}
         	}          
         };
