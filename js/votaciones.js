@@ -15,8 +15,6 @@ function votaciones(){
             $('#votaciones-list').html('').listview('refresh');
         }
 
-        alert(offset);
-
 		var xhr = new XMLHttpRequest();
         var send = new FormData();
         send.append('id_equipo',this.id_equipo);
