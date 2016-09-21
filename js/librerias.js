@@ -327,6 +327,7 @@ function setMoreNot(){
 function setMoreVot(){
 	var vota = new votaciones();
 	vota.id_equipo = localStorage.getItem('equipo');
+	vota.bool = false;
 	vota.getVotaciones();
 	delete vota;
 }

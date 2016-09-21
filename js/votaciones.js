@@ -3,6 +3,7 @@ function votaciones(){
 	this.id_equipo
 	this.id_evento
 	this.fecha
+    this.bool = true
 
 
 
