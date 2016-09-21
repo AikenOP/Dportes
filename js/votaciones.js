@@ -7,9 +7,17 @@ function votaciones(){
 
 
 	this.getVotaciones = function(){
+        var offset = 0;
+        if ( $('#votaciones-list li').length > 0 && this.bool == false) {
+            offset = $('#votaciones-list li').length;
+        } else {
+            $('#votaciones-list').html('').listview('refresh');
+        }
+
 		var xhr = new XMLHttpRequest();
         var send = new FormData();
         send.append('id_equipo',this.id_equipo);
+        send.append('offset',offset);
 		xhr.open('POST', path + 'app/getVotaciones');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
