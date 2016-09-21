@@ -105,9 +105,9 @@ table tr:nth-child(even) {background:#FFF;}*/
 /* Contenedores de logo de equipo, el versus y la fecha */
 .block { display:inline-block; width: 40%; vertical-align: top;}
 .block img { display: :inline-block; max-width: 74px;}
-.vs { font-size:18px; margin-left:15px; margin-right:15px; font-weight:bold; display:inline-block; vertical-align: top; margin-top:35px; width: 20%; }
-.fecha-partido {text-align:center;font-size:11px;}
+.vs { font-size:18px; margin-left:15px; margin-right:15px; font-weight:bold; display:inline-block; vertical-align: top; margin-top:35px; width: 20% }
 .vs-blanco { font-size:18px; margin-left:15px; margin-right:15px; font-weight:bold; display:inline-block; vertical-align: top; margin-top:35px; width: 9%; color:#FFF }
+.fecha-partido {text-align:center;font-size:11px;}
 /* Afecta a los textos de las fechas de encuentros o el versus*/
 a.fechas, a.fechas:hover, a.fechas:visited {
 	color:#333 !important;
@@ -123,6 +123,26 @@ a.fechas, a.fechas:hover, a.fechas:visited {
 	white-space:normal !important;
 	color:#595959;
 	font-weight:bold !important; }
+.nombre-equipo-blanco {
+	margin: 5px 0 5px 0;
+	font-size:12px;
+	text-align:center;
+	overflow:inherit !important;
+    text-overflow: string!important;
+	white-space:normal !important;
+	color:#595959;
+	font-weight:bold !important;
+	color:#FFF; }
+.estado-votaciones {
+	margin: 0 !important;
+	font-size:14px !important;
+	text-align:center;
+	overflow:inherit !important;
+    text-overflow: string!important;
+	white-space:normal !important;
+	color:#595959;
+	font-weight:bold !important;
+	color:#FFF; }
 /*este es para el nombre del equipo en notificaciones*/
 .nombre-equipo-notificaciones {
 	margin: 5px 0 5px 0;
@@ -420,24 +440,6 @@ a.fechas, a.fechas:hover, a.fechas:visited {
 /* Alineamiento cuando se escoge el jugador en los titulares, SELECCIONAR_TITULARES_NUEVO_JUEGO.HTML */
 .imagen_jugador { float:left; margin-right:10px; height:80px; margin-left:10px;}
 .imagen_jugador img { max-width:68px;}
-.imagen_jugador_basket { margin:10px;}
-.imagen_jugador_basket img { 
-	border-radius: 150px !important;
-	-moz-border-radius: 150px !important;
-	-webkit-border-radius: 150px !important;
-	-khtml-border-radius: 150px !important;
-	overflow: hidden;
-	max-width:200px;
-	max-height:200px;
-}
-
-area, map {
-    background:#000;
-}
-area:hover, map:hover {
-    opacity:0.2;
-}
-
 .li-padding {padding:0 !important; border-top:hidden !important;} /*este aplica tambien a SELECCIONAR_RESERVAS.HTML*/
 li.li-padding div.ui-checkbox { margin:0 !important;}
 li.li-padding div.ui-checkbox label { border-top:hidden; border-left:hidden; border-right:hidden;}
@@ -487,17 +489,15 @@ li.li-padding div.ui-radio label { border-top:hidden; border-left:hidden; border
 /* Iconos personalizados para botones con iconos */
 .ui-icon-camapana:after {background-image:url(img-dportes/iconos/campana-icon.svg);}
 .ui-icon-gol-encontra:after {background-image:url(img-dportes/iconos/gol-encontra.png);}
-.ui-icon-basket:after {background-image:url(img-dportes/iconos/basket.png);}
 .ui-icon-fin-tiempo:after {background-image:url(img-dportes/iconos/tiempo.png);}
 .ui-icon-borrar:after {background-image:url(img-dportes/iconos/mala.png);}
+.ui-icon-basket:after {background-image:url(img-dportes/iconos/basket.png);}
 /* Iconos pertenecientes al resumen del partido RESUMEN_1_TIEMPO.HTML, RESUMEN_2_TIEMPO.HTML ...etc */
 .contenedor-gol {display:block; width:100%}
 .icono-gol {background-image:url(img-dportes/iconos/gol.png); width:22px; height:22px; display:inline-block;}
 .icono-fallado {background-image:url(img-dportes/iconos/fallado.png); width:22px; height:22px; display:inline-block;}
 .jugador {display: inline-block; vertical-align: top; margin-left: 4px;}
 .detalle { margin:10px auto;}
-
-
 
 /*Este aplica para todos que sigan esta estructura para dejar imagenes en circulo*/
 li a img {
@@ -525,38 +525,38 @@ li a img {
 
 /* PAGINA DE YA VOTADOS O ELEGIDOS POR EL EQUIPO*/
 .mascara-podio {
-                width: 85px;
-                height: 85px;
-                border-radius: 70px !important;
-                -moz-border-radius: 70px !important;
-                -webkit-border-radius: 70px !important;
-                -khtml-border-radius: 70px !important;
-                overflow: hidden;
+	width: 85px;
+	height: 85px;
+	border-radius: 70px !important;
+	-moz-border-radius: 70px !important;
+	-webkit-border-radius: 70px !important;
+	-khtml-border-radius: 70px !important;
+	overflow: hidden;
 }
- 
+
 /* CINTA DE ORO */
 #cinta-de-oro {
-position: relative;
-background: rgba(247,234,45,1);
-background: -moz-linear-gradient(top, rgba(247,234,45,1) 0%, rgba(254,179,67,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(247,234,45,1)), color-stop(100%, rgba(254,179,67,1)));
-background: -webkit-linear-gradient(top, rgba(247,234,45,1) 0%, rgba(254,179,67,1) 100%);
-background: -o-linear-gradient(top, rgba(247,234,45,1) 0%, rgba(254,179,67,1) 100%);
-background: -ms-linear-gradient(top, rgba(247,234,45,1) 0%, rgba(254,179,67,1) 100%);
-background: linear-gradient(to bottom, rgba(247,234,45,1) 0%, rgba(254,179,67,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7ea2d', endColorstr='#feb343', GradientType=0 );
-height: 100px;
-width: 100px;
--moz-border-radius:    50px;
--webkit-border-radius: 50px;
-border-radius:         50px;
+ position: relative;
+background: rgba(229,250,73,1);
+background: -moz-linear-gradient(top, rgba(229,250,73,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(229,250,73,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(229,250,73,1)), color-stop(50%, rgba(252,205,77,1)), color-stop(51%, rgba(248,181,0,1)), color-stop(100%, rgba(229,250,73,1)));
+background: -webkit-linear-gradient(top, rgba(229,250,73,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(229,250,73,1) 100%);
+background: -o-linear-gradient(top, rgba(229,250,73,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(229,250,73,1) 100%);
+background: -ms-linear-gradient(top, rgba(229,250,73,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(229,250,73,1) 100%);
+background: linear-gradient(to bottom, rgba(229,250,73,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(229,250,73,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5fa49', endColorstr='#e5fa49', GradientType=0 );
+ height: 100px;
+ width: 100px;
+ -moz-border-radius:    50px;
+ -webkit-border-radius: 50px;
+ border-radius:         50px;
 }
- 
+
 #cinta-de-oro:before,
 #cinta-de-oro:after {
   content: '';
   position: absolute;
-  border-bottom: 70px solid rgba(254,179,67,1);
+  border-bottom: 70px solid rgb(233, 248, 0);
   border-left: 40px solid transparent;
   border-right: 40px solid transparent;
   top: 70px;
@@ -566,7 +566,7 @@ border-radius:         50px;
   -ms-transform:     rotate(-140deg);
   -o-transform:      rotate(-140deg);
 }
- 
+
 #cinta-de-oro:after {
   left: auto;
   right: -10px;
@@ -575,31 +575,31 @@ border-radius:         50px;
   -ms-transform:     rotate(140deg);
   -o-transform:      rotate(140deg);
 }
- 
- 
+
+
 /* CINTA DE PLATA */
 #cinta-de-plata {
-position: relative;
-background: rgba(212,228,239,1);
-background: -moz-linear-gradient(top, rgba(212,228,239,1) 0%, rgba(150,150,150,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(212,228,239,1)), color-stop(100%, rgba(150,150,150,1)));
-background: -webkit-linear-gradient(top, rgba(212,228,239,1) 0%, rgba(150,150,150,1) 100%);
-background: -o-linear-gradient(top, rgba(212,228,239,1) 0%, rgba(150,150,150,1) 100%);
-background: -ms-linear-gradient(top, rgba(212,228,239,1) 0%, rgba(150,150,150,1) 100%);
-background: linear-gradient(to bottom, rgba(212,228,239,1) 0%, rgba(150,150,150,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#969696', GradientType=0 );
-height: 100px;
-width: 100px;
--moz-border-radius:    50px;
--webkit-border-radius: 50px;
-border-radius:         50px;
+ position: relative;
+background: rgba(227,229,230,1);
+background: -moz-linear-gradient(top, rgba(227,229,230,1) 0%, rgba(216,225,231,1) 48%, rgba(173,177,179,1) 50%, rgba(224,239,249,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(227,229,230,1)), color-stop(48%, rgba(216,225,231,1)), color-stop(50%, rgba(173,177,179,1)), color-stop(100%, rgba(224,239,249,1)));
+background: -webkit-linear-gradient(top, rgba(227,229,230,1) 0%, rgba(216,225,231,1) 48%, rgba(173,177,179,1) 50%, rgba(224,239,249,1) 100%);
+background: -o-linear-gradient(top, rgba(227,229,230,1) 0%, rgba(216,225,231,1) 48%, rgba(173,177,179,1) 50%, rgba(224,239,249,1) 100%);
+background: -ms-linear-gradient(top, rgba(227,229,230,1) 0%, rgba(216,225,231,1) 48%, rgba(173,177,179,1) 50%, rgba(224,239,249,1) 100%);
+background: linear-gradient(to bottom, rgba(227,229,230,1) 0%, rgba(216,225,231,1) 48%, rgba(173,177,179,1) 50%, rgba(224,239,249,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e3e5e6', endColorstr='#e0eff9', GradientType=0 );
+ height: 100px;
+ width: 100px;
+ -moz-border-radius:    50px;
+ -webkit-border-radius: 50px;
+ border-radius:         50px;
 }
- 
+
 #cinta-de-plata:before,
 #cinta-de-plata:after {
   content: '';
   position: absolute;
-  border-bottom: 70px solid rgba(150,150,150,1);
+  border-bottom: 70px solid rgb(206, 206, 206);
   border-left: 40px solid transparent;
   border-right: 40px solid transparent;
   top: 70px;
@@ -609,7 +609,7 @@ border-radius:         50px;
   -ms-transform:     rotate(-140deg);
   -o-transform:      rotate(-140deg);
 }
- 
+
 #cinta-de-plata:after {
   left: auto;
   right: -10px;
@@ -618,31 +618,31 @@ border-radius:         50px;
   -ms-transform:     rotate(140deg);
   -o-transform:      rotate(140deg);
 }
- 
- 
+
+
 /* CINTA DE BRONCE */
 #cinta-de-bronce {
-position: relative;
-background: rgba(255,175,75,1);
-background: -moz-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(179,101,6,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,175,75,1)), color-stop(100%, rgba(179,101,6,1)));
-background: -webkit-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(179,101,6,1) 100%);
-background: -o-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(179,101,6,1) 100%);
-background: -ms-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(179,101,6,1) 100%);
-background: linear-gradient(to bottom, rgba(255,175,75,1) 0%, rgba(179,101,6,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#b36506', GradientType=0 );
-height: 100px;
-width: 100px;
--moz-border-radius:    50px;
--webkit-border-radius: 50px;
-border-radius:         50px;
+ position: relative;
+background: rgba(247,190,140,1);
+background: -moz-linear-gradient(top, rgba(247,190,140,1) 0%, rgba(250,187,77,1) 49%, rgba(219,122,37,1) 51%, rgba(251,223,147,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(247,190,140,1)), color-stop(49%, rgba(250,187,77,1)), color-stop(51%, rgba(219,122,37,1)), color-stop(100%, rgba(251,223,147,1)));
+background: -webkit-linear-gradient(top, rgba(247,190,140,1) 0%, rgba(250,187,77,1) 49%, rgba(219,122,37,1) 51%, rgba(251,223,147,1) 100%);
+background: -o-linear-gradient(top, rgba(247,190,140,1) 0%, rgba(250,187,77,1) 49%, rgba(219,122,37,1) 51%, rgba(251,223,147,1) 100%);
+background: -ms-linear-gradient(top, rgba(247,190,140,1) 0%, rgba(250,187,77,1) 49%, rgba(219,122,37,1) 51%, rgba(251,223,147,1) 100%);
+background: linear-gradient(to bottom, rgba(247,190,140,1) 0%, rgba(250,187,77,1) 49%, rgba(219,122,37,1) 51%, rgba(251,223,147,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7be8c', endColorstr='#fbdf93', GradientType=0 );
+ height: 100px;
+ width: 100px;
+ -moz-border-radius:    50px;
+ -webkit-border-radius: 50px;
+ border-radius:         50px;
 }
- 
+
 #cinta-de-bronce:before,
 #cinta-de-bronce:after {
   content: '';
   position: absolute;
-  border-bottom: 70px solid rgba(179,101,6,1);
+  border-bottom: 70px solid rgb(243, 176, 95);
   border-left: 40px solid transparent;
   border-right: 40px solid transparent;
   top: 70px;
@@ -652,7 +652,7 @@ border-radius:         50px;
   -ms-transform:     rotate(-140deg);
   -o-transform:      rotate(-140deg);
 }
- 
+
 #cinta-de-bronce:after {
   left: auto;
   right: -10px;
@@ -661,59 +661,59 @@ border-radius:         50px;
   -ms-transform:     rotate(140deg);
   -o-transform:      rotate(140deg);
 }
- 
+
 .div-general {
-                padding: 15px 10px 30px 10px;
-                position: inherit;
-                display:inline-block;
-                max-width:768px
+	padding: 15px 10px 30px 10px; 
+	position: inherit; 
+	display:inline-block; 
+	max-width:768px
 }
-               
+	
 .contenedor-img-posicion {
-                margin-top: -93px;
-                position: inherit;
-                margin-left: 7px;
-                display:flex
+	margin-top: -93px;
+	position: inherit; 
+	margin-left: 7px; 
+	display:flex
 }
-               
+	
 .contenedor-posicion {
-                position: inherit;
-                margin-left: 20px;
-                font-size: 60px;
-                margin-top: -14px;
-                text-shadow:1px 1px 0px rgba(0, 0, 0, 1);
-                color:#FFF
+	position: inherit;
+	margin-left: 20px;
+	font-size: 60px;
+	margin-top: -14px; 
+	text-shadow:1px 1px 0px rgba(0, 0, 0, 1);
+	color:#FFF
 }
- 
+
 .contenedor-posicion-2-3 {
-                position: inherit;
-                margin-left: 27px;
-                font-size: 60px;
-                margin-top: -14px;
-                text-shadow:1px 1px 0px rgba(0, 0, 0, 1);
-                color:#FFF
+	position: inherit;
+	margin-left: 27px;
+	font-size: 60px;
+	margin-top: -14px; 
+	text-shadow:1px 1px 0px rgba(0, 0, 0, 1);
+	color:#FFF
 }
-               
+	
 .contenedor-votos {
-                color: #333;font-size: 19px;
-                margin-left: 186px;
-                margin-top: -85px; max-width:
-                183px; position: absolute;
-                text-shadow:1px 1px 0px rgba(0, 0, 0, 1);
-                color:#FFF
+	color: #333;font-size: 19px;
+	margin-left: 186px;
+	margin-top: -85px; max-width: 
+	183px; position: absolute;
+	text-shadow:1px 1px 0px rgba(0, 0, 0, 1); 
+	color:#FFF
 }
-               
+	
 .contenedor-jugador-posicion {
-                color: #333;
-                font-size: 18px;
-                margin-left: 121px;
-                margin-top: -25px;
-                max-width: 183px;
-                text-align:left;
-                text-shadow:1px 1px 0px rgba(0, 0, 0, 1);
-                color:#FFF
+	color: #333;
+	font-size: 18px; 
+	margin-left: 121px; 
+	margin-top: -25px;
+	max-width: 183px; 
+	text-align:left;
+	text-shadow:1px 1px 0px rgba(0, 0, 0, 1); 
+	color:#FFF
 }
-               
+	
 /*CIERRE*/
 
 /*este es para la lista de jugadores y jugadas que aparecen en la seccion de estadisticas grupales para el tema de mascara circular */
@@ -1288,81 +1288,6 @@ div.boton-participar a {margin-top:0px; margin-bottom:0px;}
 .nombre-equipo-notificacion-con {margin: 5px 0 5px 0;font-size:18px; font-weight:bold; text-align:center; color: royalblue;}
 .nombre-equipo-notificacion-in {margin: 5px 0 5px 0;font-size:18px; font-weight:bold; text-align:center; color: tomato;}
 
-/* Cancha de Basketaball*/
-#area-circulo-1 {
-    width: 32%;
-    height: 46%;
-    background-color:transparent;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
-    position: absolute;
-    left: 5%;
-    top: 2%;
-}
-
-#area-circulo-2 {
-    width: 32%;
-    height: 46%;
-    background-color:transparent;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
-    position: absolute;
-    left: 34%;
-    top: 36%;
-}
-
-#area-circulo-3 {
-    width: 32%;
-    height: 46%;
-    background-color:transparent;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
-    position: absolute;
-    left: 62%;
-    top: 2%;
-}
-
-
-#area-circulo-1-cancha2 {
-    width: 27%;
-    height: 55%;
-    background-color:transparent;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
-    position: absolute;
-    left: 0%;
-    top: 1%;
-}
-
-#area-circulo-2-cancha2  {
-    width: 51%;
-    height: 33%;
-    background-color:transparent;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
-    position: absolute;
-    left: 24%;
-    top: 47%;
-}
-
-#area-circulo-3-cancha2 {
-	width: 26%;
-    height: 56%;
-    background-color:transparent;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
-    position: absolute;
-    left: 74%;
-    top: 1%;
-}
-/* Cierre de Cancha de Basketball*/
-
 /* === #5C5C5C === */
 .fecha-notificacion { font-size: 12px;text-align: center;font-weight: bold;color: #FFF; padding:5px; text-shadow:none;}
 .fecha-notificacion.leido { background:#5C5C5C; }
@@ -1764,8 +1689,9 @@ a.color-boton-presionado {
     width: 51px;
     height: 51px;
     background-image:url("img-dportes/iconos/icono_justificacion_cancelacion.png");
-                background-repeat:no-repeat;
+	background-repeat:no-repeat;
     z-index: 3; }
+	
 .deporte-baloncesto { 
 	background-image:url(img-dportes/iconos_de_deportes/baloncesto-copia.svg); 
 	width:40px; 
@@ -1855,9 +1781,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbc01', end
 .seccion-exponente{ display:block}              
 .texto-mejor-exponente {display:block; color: #FFF; font-size: 18px; text-shadow: 0px 0px 1px #BABABA; text-align:center}
 .mejor-exponente {display:block; color: #FFF; font-size: 20px; text-shadow: 0px 0px 1px #BABABA; text-align:center; padding:10px 10px 0 10px}
-.foo {
-	height: auto !important; /* !important is used to force override. */
-}
+
 .contenedor-secciones {
 	display:block; 
 	-webkit-border-radius: 0px 10px 10px 10px;
