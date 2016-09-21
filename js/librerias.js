@@ -324,3 +324,10 @@ function setMoreNot(){
     delete notifica;
 }
 
+function setMoreVot(){
+	var vota = new votaciones();
+	vota.id_equipo = localStorage.getItem('equipo');
+	vota.getVotaciones();
+	delete vota;
+}
+
