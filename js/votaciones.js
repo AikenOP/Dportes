@@ -45,7 +45,7 @@ function votaciones(){
                         } else {
                             logo = "jquerymobile/img-dportes/logo-encuentro.png";
                         }
-        				inc += "<li data-icon='false'>";
+        				/*inc += "<li data-icon='false'>";
         				inc += "<a href='#' data-transition='fade' class='fechas' id='contenedor-fechas' onclick='setParametrosPodio("+json[i].id_evento+")' style='background-color:transparent;'>";
         				inc += "<div class='contenedor-fechas'>";
         				inc += "<div class='centrado-fechas'>";
@@ -55,7 +55,19 @@ function votaciones(){
         				inc += "</div>";
         				inc += "</div>"; 
         				inc += "</a>";
-        				inc += "</li>";
+        				inc += "</li>";*/
+                        inc += "<li data-icon='false' style='background:#093'>";
+                        inc += "<a href='#' data-transition='fade' class='fechas' id='contenedor-fechas' style='background-color:transparent;'>";
+                        inc += "<div class='contenedor-fechas'>";
+                        inc += "<div class='centrado-fechas'>";
+                        inc += "<p class='estado-votaciones'>ABIERTA</p>";
+                        inc += "<div class='block'><img src='jquerymobile/img-dportes/realmadrid.png' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>Real Madrid de la nueva portugal de españa de santiago</p></div>";
+                        inc += "<div class='vs-blanco'>VS</div>";
+                        inc += "<div class='block'><img src='jquerymobile/img-dportes/barcelona.png' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>Barcelona de la nueva españa</p></div>";
+                        inc += "</div>";
+                        inc += "</div>";
+                        inc += "</a>";
+                        inc += "</li>";
         			}
 
         			$('#votaciones-list').append(inc).listview('refresh');
