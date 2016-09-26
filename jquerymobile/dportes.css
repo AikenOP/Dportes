@@ -521,6 +521,17 @@ li a img {
     background-position: 50%;
                 top:-15px;
 }
+
+li div.imagen_jugador img {
+	width: 70px;
+	height: 70px;
+	border-radius: 40px !important;
+	-moz-border-radius: 40px !important;
+	-webkit-border-radius: 40px !important;
+	-khtml-border-radius: 40px !important;
+	overflow: hidden;
+	margin-top:5px;
+}
 /*cierre*/
 
 /* PAGINA DE YA VOTADOS O ELEGIDOS POR EL EQUIPO*/
