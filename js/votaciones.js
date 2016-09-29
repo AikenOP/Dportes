@@ -44,12 +44,6 @@ function votaciones(){
                         var date = new Date();
                         var estado = '';
                         date = getFormattedDate(date);
-                            
-                        if(date <= json[i].date_final){
-                            estado = 'Abierto';
-                        } else {
-                            estado = 'Cerrado';
-                        }
 
                         if(json[i].logo != null){
                             logo = path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo;
@@ -67,7 +61,14 @@ function votaciones(){
         				inc += "</div>"; 
         				inc += "</a>";
         				inc += "</li>";*/
-                        inc += "<li data-icon='false' style='background:#093'>";
+                        if(date <= json[i].date_final){
+                            inc += "<li data-icon='false' style='background:#093'>";
+                            estado = 'Abierto';
+                        } else {
+                            inc += "<li data-icon='false'>";
+                            estado = 'Cerrado';
+                        }
+                        
                         inc += "<a href='#' data-transition='fade' class='fechas' onclick='setParametrosPodio("+json[i].id_evento+")' id='contenedor-fechas' style='background-color:transparent;'>";
                         inc += "<div class='contenedor-fechas'>";
                         inc += "<div class='centrado-fechas'>";
