@@ -35,7 +35,7 @@ function votaciones(){
         xhr.onload = function(e){
             //alert(this.response);
             var date = Date();
-            alert(date.toLocaleString());
+            alert(date);
         	$.mobile.loading('hide');
         	if(this.status == 200){
         		if(this.response && JSON.parse(this.response)){
