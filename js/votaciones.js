@@ -34,8 +34,12 @@ function votaciones(){
         };
         xhr.onload = function(e){
             //alert(this.response);
+            try{
             var date = Date();
             alert(getFormattedDate(date));
+            } catch(e){
+                alert(e);
+            }
         	$.mobile.loading('hide');
         	if(this.status == 200){
         		if(this.response && JSON.parse(this.response)){
