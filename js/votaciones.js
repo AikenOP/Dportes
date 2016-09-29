@@ -64,12 +64,14 @@ function votaciones(){
                         if(date <= json[i].date_final){
                             inc += "<li data-icon='false' style='background:#093'>";
                             estado = 'Abierto';
+                            redirect = 1;
                         } else {
                             inc += "<li data-icon='false' style='background:#06675f'>";
                             estado = 'Cerrado';
+                            redirect = 2;
                         }
                         
-                        inc += "<a href='#' data-transition='fade' class='fechas' onclick='setParametrosPodio("+json[i].id_evento+",'"+estado+"')' id='contenedor-fechas' style='background-color:transparent;'>";
+                        inc += "<a href='#' data-transition='fade' class='fechas' onclick='setParametrosPodio("+json[i].id_evento+","+redirect+")' id='contenedor-fechas' style='background-color:transparent;'>";
                         inc += "<div class='contenedor-fechas'>";
                         inc += "<div class='centrado-fechas'>";
                         inc += "<p class='estado-votaciones'>"+estado+"</p>";
@@ -211,9 +213,9 @@ function votaciones(){
 	}
 }
 
-function setParametrosPodio(evento,estado){
+function setParametrosPodio(evento,redirect){
     sessionStorage.evento = evento;
-    if(estado == 'Abierto'){
+    if(redirect == 1){
         $.mobile.navigate("#votaciones", {transition: "fade"});
     } else {
        $.mobile.navigate("#podio", {transition: "fade"}); 
