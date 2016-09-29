@@ -35,7 +35,7 @@ function votaciones(){
         xhr.onload = function(e){
             //alert(this.response);
             try{
-            var date = Date();
+            var date = new Date();
             alert(getFormattedDate(date));
             } catch(e){
                 alert(e);
