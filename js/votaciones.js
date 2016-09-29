@@ -34,12 +34,6 @@ function votaciones(){
         };
         xhr.onload = function(e){
             //alert(this.response);
-            try{
-            var date = new Date();
-            alert(getFormattedDate(date));
-            } catch(e){
-                alert(e);
-            }
         	$.mobile.loading('hide');
         	if(this.status == 200){
         		if(this.response && JSON.parse(this.response)){
@@ -47,6 +41,17 @@ function votaciones(){
         			var inc = '';
         			var logo = '';
         			for(var i = 0; i < json.length; i++ ){
+                        try{
+                            var date = new Date();
+                            date = getFormattedDate(date);
+                            if(date > json[i].fecha_final){
+                                alert('si');
+                            } else {
+                                alert('no');
+                            }
+                        } catch(e){
+                            alert(e);
+                        }
                         if(json[i].logo != null){
                             logo = path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo;
                         } else {
