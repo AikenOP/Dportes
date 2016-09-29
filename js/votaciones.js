@@ -41,18 +41,16 @@ function votaciones(){
         			var inc = '';
         			var logo = '';
         			for(var i = 0; i < json.length; i++ ){
-                        try{
-                            var date = new Date();
-                            date = getFormattedDate(date);
-                            alert(date +'<='+json[i].date_final);
-                            if(date <= json[i].date_final){
-                                alert('si');
-                            } else {
-                                alert('no');
-                            }
-                        } catch(e){
-                            alert(e);
+                        var date = new Date();
+                        var estado = '';
+                        date = getFormattedDate(date);
+                            
+                        if(date <= json[i].date_final){
+                            estado = 'Abierto';
+                        } else {
+                            estado = 'Cerrado';
                         }
+
                         if(json[i].logo != null){
                             logo = path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo;
                         } else {
@@ -73,7 +71,7 @@ function votaciones(){
                         inc += "<a href='#' data-transition='fade' class='fechas' onclick='setParametrosPodio("+json[i].id_evento+")' id='contenedor-fechas' style='background-color:transparent;'>";
                         inc += "<div class='contenedor-fechas'>";
                         inc += "<div class='centrado-fechas'>";
-                        inc += "<p class='estado-votaciones'>ABIERTA</p>";
+                        inc += "<p class='estado-votaciones'>"+estado+"</p>";
                         inc += "<div class='block'><img src='"+logo+"' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>"+localStorage.getItem('nombre_equipo')+"</p></div>";
                         inc += "<div class='vs-blanco'>VS</div>";
                         inc += "<div class='block'><img src='jquerymobile/img-dportes/logo-encuentro.png' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>"+json[i].nombre+"</p></div>";
