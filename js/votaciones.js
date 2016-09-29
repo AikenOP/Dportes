@@ -189,7 +189,6 @@ function votaciones(){
             navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
         };
         xhr.onload = function(e){
-            alert(this.response);
         	$.mobile.loading('hide');
         	if(this.status == 200){
         		if(this.response && JSON.parse(this.response)){
@@ -203,7 +202,7 @@ function votaciones(){
         				inc += "<img src='jquerymobile/img-dportes/reserva2.jpg' class='mascara-podio'>";
         				inc += "<div class='contenedor-posicion'>1º</div>";
         				inc += "</div>";
-        				inc += "<div class='contenedor-jugador-posicion'>Nombre de Prueba alvarez</div>";
+        				inc += "<div class='contenedor-jugador-posicion'>"+json[i].nombre+"</div>";
         				inc += "</div>";
         				inc += "<hr style='border-color: #3aa535;'>";
         			}
