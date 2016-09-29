@@ -69,7 +69,7 @@ function votaciones(){
                             estado = 'Cerrado';
                         }
                         
-                        inc += "<a href='#' data-transition='fade' class='fechas' onclick='setParametrosPodio("+json[i].id_evento+","+estado+")' id='contenedor-fechas' style='background-color:transparent;'>";
+                        inc += "<a href='#' data-transition='fade' class='fechas' onclick='setParametrosPodio("+json[i].id_evento+",'"+estado+"')' id='contenedor-fechas' style='background-color:transparent;'>";
                         inc += "<div class='contenedor-fechas'>";
                         inc += "<div class='centrado-fechas'>";
                         inc += "<p class='estado-votaciones'>"+estado+"</p>";
