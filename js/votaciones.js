@@ -65,7 +65,7 @@ function votaciones(){
                             inc += "<li data-icon='false' style='background:#093'>";
                             estado = 'Abierto';
                         } else {
-                            inc += "<li data-icon='false'>";
+                            inc += "<li data-icon='false' style='background:#06675f'>";
                             estado = 'Cerrado';
                         }
                         
