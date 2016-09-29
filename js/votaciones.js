@@ -44,7 +44,7 @@ function votaciones(){
                         try{
                             var date = new Date();
                             date = getFormattedDate(date);
-                            if(date > json[i].fecha_final){
+                            if(date <= json[i].fecha_final){
                                 alert('si');
                             } else {
                                 alert('no');
