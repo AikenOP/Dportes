@@ -214,7 +214,7 @@ function votaciones(){
 }
 
 function setVotacion(id,nombre){
-    alert('dsds');
+    alert(id +" "+nombre);
 }
 
 function setParametrosPodio(evento,redirect){
