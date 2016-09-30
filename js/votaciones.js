@@ -145,13 +145,14 @@ function votaciones(){
         };    
     }
 
-    this.setVotaciones = function(){
+    this.setVotacionUsuario = function(){
         var xhr = new XMLHttpRequest();
         var send = new FormData();
         send.append('id_equipo',this.id_equipo);
         send.append('id_evento',this.id_evento);
         send.append('id_usuario',this.id_usuario);
-        xhr.open('POST', path + 'app/setVotaciones');
+        send.append('id_votante',localStorage.getItem('id'));
+        xhr.open('POST', path + 'app/setVotacionUsuario');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
@@ -168,7 +169,7 @@ function votaciones(){
             if(this.status == 200){
                 alert(this.response);
             }
-        }; 
+        };        
     }
 
 	this.getPodio = function(){
@@ -218,10 +219,15 @@ function setVotacion(id,nombre){
         '¿Desea votar por '+nombre+'?',
         function(button){
             if(button == 1){
-                alert('acepto');
+                var vot = new votaciones();
+                vot.id_usuario = id;
+                vot.id_evento = sessionStorage.getItem('evento');
+                vot.id_equipo = localStorage.getItem('equipo');
+                vot.setVotacionUsuario();
+                delete vot;
             }
         },
-        'Advertencia',
+        'Aviso',
         'Si,No'
     )
 }
