@@ -129,8 +129,8 @@ function votaciones(){
                         } else {
                             foto = "jquerymobile/img-dportes/foto.png";
                         }   
-                        inc += "<li class='li-padding' data-icon='false'>";
-                        inc += "<a onclick='setVotacion('aaa')' href='#' data-rel='popup' data-position-to='window' data-transition='pop' id='4-jugador' class='quita_margenes_para_check hola'>";
+                        inc += "<li onclick='setVotacion('abbaa');' class='li-padding' data-icon='false'>";
+                        inc += "<a onclick='setVotacion('aaa');' href='#' data-rel='popup' data-position-to='window' data-transition='pop' id='4-jugador' class='quita_margenes_para_check hola'>";
                         inc += "<div class='imagen_jugador'><img src='"+foto+"'></div>";
                         inc += "<h2>"+json[i].nombre+"</h2>";
                         inc += "<p></p>";
