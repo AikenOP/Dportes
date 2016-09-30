@@ -214,16 +214,7 @@ function votaciones(){
 }
 
 function setVotacion(id,nombre){
-    navigator.notification.confirm(
-        '¿Desea realmente votar por '+nombre+'? (una vez aceptado, no podra volver a votar para este evento)',
-        function(button){
-            if(button == 1){
-                alert('agregar votacion');
-            }
-        },
-        'Advertencia',
-        'Si,No'
-    )
+    alert('dsds');
 }
 
 function setParametrosPodio(evento,redirect){
