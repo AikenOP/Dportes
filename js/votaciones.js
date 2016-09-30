@@ -101,6 +101,7 @@ function votaciones(){
         var send = new FormData();
         send.append('id_equipo',this.id_equipo);
         send.append('id_evento',this.id_evento);
+        send.append('id_usuario',this.id_usuario);
         xhr.open('POST', path + 'app/getJugadoresVotaciones');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');

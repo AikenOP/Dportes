@@ -587,6 +587,7 @@
             var vc = new votaciones();
             vc.id_equipo = localStorage.getItem('equipo');
             vc.id_evento = sessionStorage.getItem('evento');
+            vc.id_usuario = localStorage.getItem('id');
             vc.getJugadoresVotaciones();
             delete vc;
         }
