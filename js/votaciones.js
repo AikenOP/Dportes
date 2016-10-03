@@ -124,7 +124,7 @@ function votaciones(){
                     navigator.notification.alert('Usted ya voto',function(){$.mobile.navigate("#pg-votaciones", {transition: "fade"});},'Atención','OK');
                 } else {
                     if(this.response && JSON.parse(this.response)){
-                        alert(this.response);
+                        //alert(this.response);
                         var arr = JSON.parse(this.response);
                         var fecha = arr.fecha_evento;
                         var json = arr.jugadores;

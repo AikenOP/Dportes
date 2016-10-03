@@ -154,7 +154,7 @@ function countdown(id,fecha){
         diferencia=diferencia-(60*minutos)
         segundos=Math.floor(diferencia)
 
-        document.getElementById(id).innerHTML='Cierre: ' + horas + ':' + minutos + ':' + segundos
+        document.getElementById(id).innerHTML='Las votaciones cierran en: ' + horas + ':' + minutos + ':' + segundos
 
         if (dias>0 || horas>0 || minutos>0 || segundos>0){
             setTimeout("countdown(\"" + id + "\",\""+fecha+"\")",1000)
