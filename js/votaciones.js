@@ -102,6 +102,7 @@ function votaciones(){
         send.append('id_equipo',this.id_equipo);
         send.append('id_evento',this.id_evento);
         send.append('id_usuario',this.id_usuario);
+        send.append('votante',localStorage.getItem('id'));
         xhr.open('POST', path + 'app/getJugadoresVotaciones');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
@@ -118,25 +119,29 @@ function votaciones(){
         xhr.onload = function(e){
             try{
             if(this.status == 200){
-                if(this.response && JSON.parse(this.response)){
-                    var json = JSON.parse(this.response);
-                    var foto = '';
-                    var now = +(new Date);
-                    var inc = "<li style='background:#333; border:0px'><h4 style='color:#FFF; text-align:center; text-shadow:none'>Tienes un periodo de 24 horas para votar</h4></li>";
-                    for(var i = 0; i < json.length; i++ ){
-                        if(json[i].foto != null){
-                            foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto + '?timestamp=' + now;
-                        } else {
-                            foto = "jquerymobile/img-dportes/foto.png";
-                        }   
-                        inc += "<li class='li-padding' data-icon='false'>";
-                        inc += "<a onclick='setVotacion("+json[i].id_usuario+",\""+json[i].nombre+"\")' href='#' data-rel='popup' data-position-to='window' data-transition='pop' id='4-jugador' class='quita_margenes_para_check hola'>";
-                        inc += "<div class='imagen_jugador'><img src='"+foto+"'></div>";
-                        inc += "<h2>"+json[i].nombre+"</h2>";
-                        inc += "<p></p>";
-                        inc += "</a></li>";
+                if(this.response == true){
+                    alert(this.response);
+                } else {
+                    if(this.response && JSON.parse(this.response)){
+                        var json = JSON.parse(this.response);
+                        var foto = '';
+                        var now = +(new Date);
+                        var inc = "<li style='background:#333; border:0px'><h4 style='color:#FFF; text-align:center; text-shadow:none'>Tienes un periodo de 24 horas para votar</h4></li>";
+                        for(var i = 0; i < json.length; i++ ){
+                            if(json[i].foto != null){
+                                foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto + '?timestamp=' + now;
+                            } else {
+                                foto = "jquerymobile/img-dportes/foto.png";
+                            }   
+                            inc += "<li class='li-padding' data-icon='false'>";
+                            inc += "<a onclick='setVotacion("+json[i].id_usuario+",\""+json[i].nombre+"\")' href='#' data-rel='popup' data-position-to='window' data-transition='pop' id='4-jugador' class='quita_margenes_para_check hola'>";
+                            inc += "<div class='imagen_jugador'><img src='"+foto+"'></div>";
+                            inc += "<h2>"+json[i].nombre+"</h2>";
+                            inc += "<p></p>";
+                            inc += "</a></li>";
+                        }
+                        $('#votaciones-jg-list').html(inc).listview('refresh');
                     }
-                    $('#votaciones-jg-list').html(inc).listview('refresh');
                 }  
             }
             } catch(e){
