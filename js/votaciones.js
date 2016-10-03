@@ -124,13 +124,13 @@ function votaciones(){
                     navigator.notification.alert('Usted ya voto',function(){$.mobile.navigate("#pg-votaciones", {transition: "fade"});},'Atención','OK');
                 } else {
                     if(this.response && JSON.parse(this.response)){
-                        alert(this.response);
+                        //alert(this.response);
                         var arr = JSON.parse(this.response);
                         var fecha = arr.fecha_evento;
                         var json = arr.jugadores;
                         var foto = '';
                         var now = +(new Date);
-                        var inc = "<li style='background:#333; border:0px'><h4 style='color:#FFF; text-align:center; text-shadow:none'>Tienes un periodo de 24 horas para votar</h4></li>";
+                        var inc = "<li id='countdown' style='background:#333; border:0px'><h4 style='color:#FFF; text-align:center; text-shadow:none'></h4></li>";
                         for(var i = 0; i < json.length; i++ ){
                             if(json[i].foto != null){
                                 foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto + '?timestamp=' + now;
@@ -145,6 +145,7 @@ function votaciones(){
                             inc += "</a></li>";
                         }
                         $('#votaciones-jg-list').html(inc).listview('refresh');
+                        countdown('countdown');
                     }
                 }  
             }

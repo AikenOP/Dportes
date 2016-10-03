@@ -137,7 +137,7 @@ function getFormattedDate(d){
 }
 
 function countdown(id){
-    var fecha=new Date('2012','1','10','21','00','00')
+    var fecha=new Date('2016','10','4','10','00','00')
     var hoy=new Date()
     var dias=0
     var horas=0
