@@ -137,7 +137,7 @@ function getFormattedDate(d){
 }
 
 function countdown(id,fecha){
-    var fecha= fecha
+    var fecha= getFormattedDate(fecha);
     var hoy=new Date()
     var dias=0
     var horas=0
