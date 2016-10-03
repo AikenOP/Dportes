@@ -124,7 +124,8 @@ function votaciones(){
                     navigator.notification.alert('Usted ya voto',function(){$.mobile.navigate("#pg-votaciones", {transition: "fade"});},'Atención','OK');
                 } else {
                     if(this.response && JSON.parse(this.response)){
-                        var json = JSON.parse(this.response);
+                        alert(this.response);
+                        /*var json = JSON.parse(this.response);
                         var foto = '';
                         var now = +(new Date);
                         var inc = "<li style='background:#333; border:0px'><h4 style='color:#FFF; text-align:center; text-shadow:none'>Tienes un periodo de 24 horas para votar</h4></li>";
@@ -141,7 +142,7 @@ function votaciones(){
                             inc += "<p></p>";
                             inc += "</a></li>";
                         }
-                        $('#votaciones-jg-list').html(inc).listview('refresh');
+                        $('#votaciones-jg-list').html(inc).listview('refresh');*/
                     }
                 }  
             }
