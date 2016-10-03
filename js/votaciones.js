@@ -125,7 +125,9 @@ function votaciones(){
                 } else {
                     if(this.response && JSON.parse(this.response)){
                         alert(this.response);
-                        /*var json = JSON.parse(this.response);
+                        var arr = JSON.parse(this.response);
+                        var fecha = arr.fecha_evento;
+                        var json = arr.jugadores;
                         var foto = '';
                         var now = +(new Date);
                         var inc = "<li style='background:#333; border:0px'><h4 style='color:#FFF; text-align:center; text-shadow:none'>Tienes un periodo de 24 horas para votar</h4></li>";
@@ -142,7 +144,7 @@ function votaciones(){
                             inc += "<p></p>";
                             inc += "</a></li>";
                         }
-                        $('#votaciones-jg-list').html(inc).listview('refresh');*/
+                        $('#votaciones-jg-list').html(inc).listview('refresh');
                     }
                 }  
             }
