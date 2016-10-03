@@ -130,7 +130,7 @@ function votaciones(){
                         var json = arr.jugadores;
                         var foto = '';
                         var now = +(new Date);
-                        var inc = "<li id='countdown' style='background:#333; border:0px'><h4 style='color:#FFF; text-align:center; text-shadow:none'></h4></li>";
+                        var inc = "<li style='background:#333; border:0px'><h4 id='countdown' style='color:#FFF; text-align:center; text-shadow:none'></h4></li>";
                         for(var i = 0; i < json.length; i++ ){
                             if(json[i].foto != null){
                                 foto = path + 'perfiles/' + json[i].id_usuario + '/' + json[i].foto + '?timestamp=' + now;
@@ -145,7 +145,7 @@ function votaciones(){
                             inc += "</a></li>";
                         }
                         $('#votaciones-jg-list').html(inc).listview('refresh');
-                        countdown('countdown');
+                        countdown('countdown',fecha);
                     }
                 }  
             }

@@ -136,8 +136,8 @@ function getFormattedDate(d){
     return d;
 }
 
-function countdown(id){
-    var fecha=new Date('2016','10','4','10','00','00')
+function countdown(id,fecha){
+    var fecha= fecha
     var hoy=new Date()
     var dias=0
     var horas=0
@@ -157,11 +157,10 @@ function countdown(id){
         document.getElementById(id).innerHTML='Quedan ' + dias + ' D&iacute;as, ' + horas + ' Horas, ' + minutos + ' Minutos, ' + segundos + ' Segundos'
 
         if (dias>0 || horas>0 || minutos>0 || segundos>0){
-            setTimeout("countdown(\"" + id + "\")",1000)
+            setTimeout("countdown(\"" + id + "\",\""+fecha+"\")",1000)
         }
-    }
-    else{
-        document.getElementById('restante').innerHTML='Quedan ' + dias + ' D&iacute;as, ' + horas + ' Horas, ' + minutos + ' Minutos, ' + segundos + ' Segundos'
+    } else {
+        //document.getElementById('restante').innerHTML='Quedan ' + dias + ' D&iacute;as, ' + horas + ' Horas, ' + minutos + ' Minutos, ' + segundos + ' Segundos'
     }
 }
 
