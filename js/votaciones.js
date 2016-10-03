@@ -120,7 +120,8 @@ function votaciones(){
             try{
             if(this.status == 200){
                 if(this.response == true){
-                    alert(this.response);
+                    $('#votaciones-jg-list').html('');
+                    navigator.notification.alert('Usted ya voto',function(){$.mobile.navigate("#pg-votaciones", {transition: "fade"});},'Atención','OK');
                 } else {
                     if(this.response && JSON.parse(this.response)){
                         var json = JSON.parse(this.response);
