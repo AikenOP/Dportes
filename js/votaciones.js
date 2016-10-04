@@ -212,20 +212,28 @@ function votaciones(){
         			var inc = '';
         			var foto = '';
                     var now = +(new Date);
+                    var apellido = '';
                     // ORO
         			for(var i = 0; i < oro.length; i++ ){
                         if(oro[i].foto != null){
                             foto = path + 'perfiles/' + oro[i].id_usuario + '/' + oro[i].foto + '?timestamp=' + now;
                         } else {
                             foto = "jquerymobile/img-dportes/foto.png";
-                        }   
+                        }
+
+                        if(oro[i].apellido != null){
+                            apellido = oro[i].apellido;
+                        }  else {
+                            apellido = '';
+                        }
+
         				inc += "<div class='div-general'>";
         				inc += "<div id='cinta-de-oro'></div>";
         				inc += "<div class='contenedor-img-posicion'>";
-        				inc += "<img src='jquerymobile/img-dportes/reserva2.jpg' class='mascara-podio'>";
+        				inc += "<img src='"+foto+"' class='mascara-podio'>";
         				inc += "<div class='contenedor-posicion'>1º</div>";
         				inc += "</div>";
-        				inc += "<div class='contenedor-jugador-posicion'>"+oro[i].nombre+" "+oro[i].apellido+"</div>";
+        				inc += "<div class='contenedor-jugador-posicion'>"+oro[i].nombre+" "+apellido+"</div>";
         				inc += "</div>";
         				inc += "<hr style='border-color: #3aa535;'>";
         			}
@@ -238,13 +246,20 @@ function votaciones(){
                         } else {
                             foto = "jquerymobile/img-dportes/foto.png";
                         }   
+
+                        if(plata[i].apellido != null){
+                            apellido = plata[i].apellido;
+                        }  else {
+                            apellido = '';
+                        }
+
                         inc += "<div class='div-general'>";
                         inc += "<div id='cinta-de-plata'></div>";
                         inc += "<div class='contenedor-img-posicion'>";
-                        inc += "<img src='jquerymobile/img-dportes/reserva2.jpg' class='mascara-podio'>";
+                        inc += "<img src='"+foto+"' class='mascara-podio'>";
                         inc += "<div class='contenedor-posicion'>2º</div>";
                         inc += "</div>";
-                        inc += "<div class='contenedor-jugador-posicion'>"+plata[i].nombre+" "+plata[i].apellido+"</div>";
+                        inc += "<div class='contenedor-jugador-posicion'>"+plata[i].nombre+" "+apellido+"</div>";
                         inc += "</div>";
                         inc += "<hr style='border-color: #3aa535;'>";
                     }
@@ -256,14 +271,20 @@ function votaciones(){
                             foto = path + 'perfiles/' + bronce[i].id_usuario + '/' + bronce[i].foto + '?timestamp=' + now;
                         } else {
                             foto = "jquerymobile/img-dportes/foto.png";
-                        }   
+                        }
+
+                        if(bronce[i].apellido != null){
+                            apellido = bronce[i].apellido;
+                        }  else {
+                            apellido = '';
+                        }
                         inc += "<div class='div-general'>";
                         inc += "<div id='cinta-de-bronce'></div>";
                         inc += "<div class='contenedor-img-posicion'>";
-                        inc += "<img src='jquerymobile/img-dportes/reserva2.jpg' class='mascara-podio'>";
+                        inc += "<img src='"+foto+"' class='mascara-podio'>";
                         inc += "<div class='contenedor-posicion'>3º</div>";
                         inc += "</div>";
-                        inc += "<div class='contenedor-jugador-posicion'>"+bronce[i].nombre+" "+bronce[i].apellido+"</div>";
+                        inc += "<div class='contenedor-jugador-posicion'>"+bronce[i].nombre+" "+apellido+"</div>";
                         inc += "</div>";
                         inc += "<hr style='border-color: #3aa535;'>";
                     }
