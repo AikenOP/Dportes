@@ -218,7 +218,7 @@ function votaciones(){
                         if(oro[i].foto != null){
                             foto = path + 'perfiles/' + oro[i].id_usuario + '/' + oro[i].foto + '?timestamp=' + now;
                         } else {
-                            foto = "jquerymobile/img-dportes/foto.png";
+                            foto = "jquerymobile/img-dportes/foto-con-fondo-blanco.jpg";
                         }
 
                         if(oro[i].apellido != null){
@@ -235,7 +235,7 @@ function votaciones(){
         				inc += "</div>";
         				inc += "<div class='contenedor-jugador-posicion'>"+oro[i].nombre+" "+apellido+"</div>";
         				inc += "</div>";
-        				inc += "<hr style='border-color: #3aa535;'>";
+        				inc += "<hr style='border-color: #3aa535; margin-top:30px;'>";
         			}
 
                     //PLATA
@@ -244,7 +244,7 @@ function votaciones(){
                         if(plata[i].foto != null){
                             foto = path + 'perfiles/' + plata[i].id_usuario + '/' + plata[i].foto + '?timestamp=' + now;
                         } else {
-                            foto = "jquerymobile/img-dportes/foto.png";
+                            foto = "jquerymobile/img-dportes/foto-con-fondo-blanco.jpg";
                         }   
 
                         if(plata[i].apellido != null){
@@ -261,7 +261,7 @@ function votaciones(){
                         inc += "</div>";
                         inc += "<div class='contenedor-jugador-posicion'>"+plata[i].nombre+" "+apellido+"</div>";
                         inc += "</div>";
-                        inc += "<hr style='border-color: #3aa535;'>";
+                        inc += "<hr style='border-color: #3aa535; margin-top:30px;'>";
                     }
 
                     //BRONCE 
@@ -270,7 +270,7 @@ function votaciones(){
                         if(bronce[i].foto != null){
                             foto = path + 'perfiles/' + bronce[i].id_usuario + '/' + bronce[i].foto + '?timestamp=' + now;
                         } else {
-                            foto = "jquerymobile/img-dportes/foto.png";
+                            foto = "jquerymobile/img-dportes/foto-con-fondo-blanco.jpg";
                         }
 
                         if(bronce[i].apellido != null){
@@ -286,7 +286,7 @@ function votaciones(){
                         inc += "</div>";
                         inc += "<div class='contenedor-jugador-posicion'>"+bronce[i].nombre+" "+apellido+"</div>";
                         inc += "</div>";
-                        inc += "<hr style='border-color: #3aa535;'>";
+                        inc += "<hr style='border-color: #3aa535; margin-top:30px;'>";
                     }
 
                     $("#content-podio").html(inc).trigger('create');
