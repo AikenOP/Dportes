@@ -219,7 +219,7 @@ function votaciones(){
         				inc += "<img src='jquerymobile/img-dportes/reserva2.jpg' class='mascara-podio'>";
         				inc += "<div class='contenedor-posicion'>1º</div>";
         				inc += "</div>";
-        				inc += "<div class='contenedor-jugador-posicion'>"+oro[i].nombre+"</div>";
+        				inc += "<div class='contenedor-jugador-posicion'>"+oro[i].nombre+" "+oro[i].apellido+"</div>";
         				inc += "</div>";
         				inc += "<hr style='border-color: #3aa535;'>";
         			}
@@ -233,7 +233,7 @@ function votaciones(){
                         inc += "<img src='jquerymobile/img-dportes/reserva2.jpg' class='mascara-podio'>";
                         inc += "<div class='contenedor-posicion'>2º</div>";
                         inc += "</div>";
-                        inc += "<div class='contenedor-jugador-posicion'>"+plata[i].nombre+"</div>";
+                        inc += "<div class='contenedor-jugador-posicion'>"+plata[i].nombre+" "+plata[i].apellido+"</div>";
                         inc += "</div>";
                         inc += "<hr style='border-color: #3aa535;'>";
                     }
@@ -247,7 +247,7 @@ function votaciones(){
                         inc += "<img src='jquerymobile/img-dportes/reserva2.jpg' class='mascara-podio'>";
                         inc += "<div class='contenedor-posicion'>3º</div>";
                         inc += "</div>";
-                        inc += "<div class='contenedor-jugador-posicion'>"+bronce[i].nombre+"</div>";
+                        inc += "<div class='contenedor-jugador-posicion'>"+bronce[i].nombre+" "+bronce[i].apellido+"</div>";
                         inc += "</div>";
                         inc += "<hr style='border-color: #3aa535;'>";
                     }
