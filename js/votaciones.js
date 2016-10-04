@@ -177,7 +177,8 @@ function votaciones(){
         };
         xhr.onload = function(e){
             if(this.status == 200){
-                alert(this.response);
+                $.mobile.loading('hide');
+                $.mobile.navigate("#votaciones", {transition: "fade"});
             }
         };        
     }
