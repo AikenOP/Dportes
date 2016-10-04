@@ -202,13 +202,17 @@ function votaciones(){
         };
         xhr.onload = function(e){
         	$.mobile.loading('hide');
-            alert(this.response);
+            //alert(this.response);
         	if(this.status == 200){
         		if(this.response && JSON.parse(this.response)){
         			var json = JSON.parse(this.response);
+                    var oro = json.oro;
+                    var plata = json.plata;
+                    var bronce = json.bronce;
         			var inc = '';
         			var foto = '';
-        			for(var i = 0; i < json.length; i++ ){
+                    // ORO
+        			for(var i = 0; i < oro.length; i++ ){
         				inc += "<div class='div-general'>";
         				inc += "<div id='cinta-de-oro'></div>";
         				inc += "<div class='contenedor-img-posicion'>";
@@ -219,6 +223,37 @@ function votaciones(){
         				inc += "</div>";
         				inc += "<hr style='border-color: #3aa535;'>";
         			}
+
+                    //PLATA
+
+                    for(var i = 0; i < oro.length; i++ ){
+                        inc += "<div class='div-general'>";
+                        inc += "<div id='cinta-de-plata'></div>";
+                        inc += "<div class='contenedor-img-posicion'>";
+                        inc += "<img src='jquerymobile/img-dportes/reserva2.jpg' class='mascara-podio'>";
+                        inc += "<div class='contenedor-posicion'>2º</div>";
+                        inc += "</div>";
+                        inc += "<div class='contenedor-jugador-posicion'>"+json[i].nombre+"</div>";
+                        inc += "</div>";
+                        inc += "<hr style='border-color: #3aa535;'>";
+                    }
+
+                    //BRONCE 
+
+                    for(var i = 0; i < oro.length; i++ ){
+                        inc += "<div class='div-general'>";
+                        inc += "<div id='cinta-de-bronce'></div>";
+                        inc += "<div class='contenedor-img-posicion'>";
+                        inc += "<img src='jquerymobile/img-dportes/reserva2.jpg' class='mascara-podio'>";
+                        inc += "<div class='contenedor-posicion'>3º</div>";
+                        inc += "</div>";
+                        inc += "<div class='contenedor-jugador-posicion'>"+json[i].nombre+"</div>";
+                        inc += "</div>";
+                        inc += "<hr style='border-color: #3aa535;'>";
+                    }
+
+                    $("#content-podio").html(inc).trigger('create');
+                    
         		}
         	}
         };	
