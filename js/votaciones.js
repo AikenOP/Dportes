@@ -219,35 +219,35 @@ function votaciones(){
         				inc += "<img src='jquerymobile/img-dportes/reserva2.jpg' class='mascara-podio'>";
         				inc += "<div class='contenedor-posicion'>1º</div>";
         				inc += "</div>";
-        				inc += "<div class='contenedor-jugador-posicion'>"+json[i].nombre+"</div>";
+        				inc += "<div class='contenedor-jugador-posicion'>"+oro[i].nombre+"</div>";
         				inc += "</div>";
         				inc += "<hr style='border-color: #3aa535;'>";
         			}
 
                     //PLATA
 
-                    for(var i = 0; i < oro.length; i++ ){
+                    for(var i = 0; i < plata.length; i++ ){
                         inc += "<div class='div-general'>";
                         inc += "<div id='cinta-de-plata'></div>";
                         inc += "<div class='contenedor-img-posicion'>";
                         inc += "<img src='jquerymobile/img-dportes/reserva2.jpg' class='mascara-podio'>";
                         inc += "<div class='contenedor-posicion'>2º</div>";
                         inc += "</div>";
-                        inc += "<div class='contenedor-jugador-posicion'>"+json[i].nombre+"</div>";
+                        inc += "<div class='contenedor-jugador-posicion'>"+plata[i].nombre+"</div>";
                         inc += "</div>";
                         inc += "<hr style='border-color: #3aa535;'>";
                     }
 
                     //BRONCE 
 
-                    for(var i = 0; i < oro.length; i++ ){
+                    for(var i = 0; i < bronce.length; i++ ){
                         inc += "<div class='div-general'>";
                         inc += "<div id='cinta-de-bronce'></div>";
                         inc += "<div class='contenedor-img-posicion'>";
                         inc += "<img src='jquerymobile/img-dportes/reserva2.jpg' class='mascara-podio'>";
                         inc += "<div class='contenedor-posicion'>3º</div>";
                         inc += "</div>";
-                        inc += "<div class='contenedor-jugador-posicion'>"+json[i].nombre+"</div>";
+                        inc += "<div class='contenedor-jugador-posicion'>"+bronce[i].nombre+"</div>";
                         inc += "</div>";
                         inc += "<hr style='border-color: #3aa535;'>";
                     }
