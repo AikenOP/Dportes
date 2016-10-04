@@ -187,6 +187,8 @@ function votaciones(){
         var send = new FormData();
         send.append('id_equipo',this.id_equipo);
         send.append('id_evento',this.id_evento);
+        alert(this.id_evento);
+        alert(this.id_equipo);
 		xhr.open('POST', path + 'app/getPodio');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
