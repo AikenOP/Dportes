@@ -282,7 +282,7 @@ function eventos(){
         }
         xhr.onload = function(){
             if(this.status == 200){
-                alert(this.response);
+                //alert(this.response);
                 if(this.response && JSON.parse(this.response)){
                     var json = JSON.parse(this.response);
                     var inc = '';
