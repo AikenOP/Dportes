@@ -178,7 +178,7 @@ function votaciones(){
         xhr.onload = function(e){
             if(this.status == 200){
                 $.mobile.loading('hide');
-                $.mobile.navigate("#votaciones", {transition: "fade"});
+                $.mobile.navigate("#pg-votaciones", {transition: "fade"});
             }
         };        
     }
