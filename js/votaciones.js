@@ -211,8 +211,14 @@ function votaciones(){
                     var bronce = json.bronce;
         			var inc = '';
         			var foto = '';
+                    var now = +(new Date);
                     // ORO
         			for(var i = 0; i < oro.length; i++ ){
+                        if(oro[i].foto != null){
+                            foto = path + 'perfiles/' + oro[i].id_usuario + '/' + oro[i].foto + '?timestamp=' + now;
+                        } else {
+                            foto = "jquerymobile/img-dportes/foto.png";
+                        }   
         				inc += "<div class='div-general'>";
         				inc += "<div id='cinta-de-oro'></div>";
         				inc += "<div class='contenedor-img-posicion'>";
@@ -227,6 +233,11 @@ function votaciones(){
                     //PLATA
 
                     for(var i = 0; i < plata.length; i++ ){
+                        if(plata[i].foto != null){
+                            foto = path + 'perfiles/' + plata[i].id_usuario + '/' + plata[i].foto + '?timestamp=' + now;
+                        } else {
+                            foto = "jquerymobile/img-dportes/foto.png";
+                        }   
                         inc += "<div class='div-general'>";
                         inc += "<div id='cinta-de-plata'></div>";
                         inc += "<div class='contenedor-img-posicion'>";
@@ -241,6 +252,11 @@ function votaciones(){
                     //BRONCE 
 
                     for(var i = 0; i < bronce.length; i++ ){
+                        if(bronce[i].foto != null){
+                            foto = path + 'perfiles/' + bronce[i].id_usuario + '/' + bronce[i].foto + '?timestamp=' + now;
+                        } else {
+                            foto = "jquerymobile/img-dportes/foto.png";
+                        }   
                         inc += "<div class='div-general'>";
                         inc += "<div id='cinta-de-bronce'></div>";
                         inc += "<div class='contenedor-img-posicion'>";
