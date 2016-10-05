@@ -296,6 +296,32 @@ function votaciones(){
         	}
         };	
 	}
+
+    this.getTotalVotacionesAbiertas = function(){
+        var xhr = new XMLHttpRequest();
+        var send = new FormData();
+        send.append('id_equipo',this.id_equipo);
+        xhr.open('POST', path + 'app/getTotalVotacionesAbiertas');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send(send);
+        $.mobile.loading('show');
+        xhr.timeout = 10000;
+        xhr.ontimeout = function () {
+            $.mobile.loading('hide');
+            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+        };
+        xhr.onerror = function(e){
+            navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
+        };
+        xhr.onload = function(e){
+            $.mobile.loading('hide');
+            alert(this.response);
+            if(this.status == 200){
+
+            }
+        }
+    }
 }
 
 function setVotacion(id,nombre){

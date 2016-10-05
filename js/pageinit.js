@@ -48,9 +48,17 @@
             swipe('#home','#menu_perfil','right');
             clearGame();
             closeSessionEvents();
+
+            //GLOBOS
             var notifica = new notificaciones();
             notifica.getTotalNotificacionesByUsuario();
             delete notifica;
+
+            var vota = new votaciones();
+            vota.id_equipo = localStorage.getItem('id_equipo');
+            vota.getTotalVotacionesAbiertas();
+            delete vota;
+
             document.getElementById('tyc-back').href = '#'+activePage;
             document.getElementById('jg-rel-back').href = "#home";
             try{
