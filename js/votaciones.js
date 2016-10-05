@@ -89,9 +89,8 @@ function votaciones(){
                             inc += "<li>";
                             inc += "<div style='text-align:center;'>";
                             inc += "<img src='jquerymobile/img-dportes/imagen-sin-datos.png' width='138'>";
-                            inc += "<h2>No se detectaron votaciones.</h2>";
+                            inc += "<h2>No se detectaron votaciones</h2>";
                             inc += "</div>";
-                            
                             inc += "</li>";
                         //inc += "<li><h2 class='mensaje'>No se detectaron votaciones</h2></li>";
                     }
