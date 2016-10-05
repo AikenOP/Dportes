@@ -55,7 +55,7 @@
             delete notifica;
 
             var vota = new votaciones();
-            vota.id_equipo = localStorage.getItem('id_equipo');
+            vota.id_equipo = localStorage.getItem('equipo');
             vota.getTotalVotacionesAbiertas();
             delete vota;
 
