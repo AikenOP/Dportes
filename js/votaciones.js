@@ -40,49 +40,54 @@ function votaciones(){
         			var json = JSON.parse(this.response);
         			var inc = '';
         			var logo = '';
-        			for(var i = 0; i < json.length; i++ ){
-                        var date = new Date();
-                        var estado = '';
-                        date = getFormattedDate(date);
+                    if(json.length != 0){
+            			for(var i = 0; i < json.length; i++ ){
+                            var date = new Date();
+                            var estado = '';
+                            date = getFormattedDate(date);
 
-                        if(json[i].logo != null){
-                            logo = path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo;
-                        } else {
-                            logo = "jquerymobile/img-dportes/logo-encuentro.png";
-                        }
-        				/*inc += "<li data-icon='false'>";
-        				inc += "<a href='#' data-transition='fade' class='fechas' id='contenedor-fechas' onclick='setParametrosPodio("+json[i].id_evento+")' style='background-color:transparent;'>";
-        				inc += "<div class='contenedor-fechas'>";
-        				inc += "<div class='centrado-fechas'>";
-        				inc += "<div class='block'><img src='"+logo+"' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>"+localStorage.getItem('nombre_equipo')+"</p></div>";
-        				inc += "<div class='vs-blanco'>VS</div>";
-        				inc += "<div class='block'><img src='jquerymobile/img-dportes/logo-encuentro.png' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>"+json[i].nombre+"</p></div>";
-        				inc += "</div>";
-        				inc += "</div>"; 
-        				inc += "</a>";
-        				inc += "</li>";*/
-                        if(date <= json[i].date_final){
-                            inc += "<li data-icon='false' style='background:#093'>";
-                            estado = 'Abierto';
-                            redirect = 1;
-                        } else {
-                            inc += "<li data-icon='false' style='background:#06675f'>";
-                            estado = 'Cerrado';
-                            redirect = 2;
-                        }
-                        
-                        inc += "<a href='#' data-transition='fade' class='fechas' onclick='setParametrosPodio("+json[i].id_evento+","+redirect+")' id='contenedor-fechas' style='background-color:transparent;'>";
-                        inc += "<div class='contenedor-fechas'>";
-                        inc += "<div class='centrado-fechas'>";
-                        inc += "<p class='estado-votaciones'>"+estado+"</p>";
-                        inc += "<div class='block'><img src='"+logo+"' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>"+localStorage.getItem('nombre_equipo')+"</p></div>";
-                        inc += "<div class='vs-blanco'>VS</div>";
-                        inc += "<div class='block'><img src='jquerymobile/img-dportes/logo-encuentro.png' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>"+json[i].nombre+"</p></div>";
-                        inc += "</div>";
-                        inc += "</div>";
-                        inc += "</a>";
-                        inc += "</li>";
-        			}
+                            if(json[i].logo != null){
+                                logo = path + 'equipos/' + json[i].id_equipo + '/logos/' + json[i].logo;
+                            } else {
+                                logo = "jquerymobile/img-dportes/logo-encuentro.png";
+                            }
+            				/*inc += "<li data-icon='false'>";
+            				inc += "<a href='#' data-transition='fade' class='fechas' id='contenedor-fechas' onclick='setParametrosPodio("+json[i].id_evento+")' style='background-color:transparent;'>";
+            				inc += "<div class='contenedor-fechas'>";
+            				inc += "<div class='centrado-fechas'>";
+            				inc += "<div class='block'><img src='"+logo+"' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>"+localStorage.getItem('nombre_equipo')+"</p></div>";
+            				inc += "<div class='vs-blanco'>VS</div>";
+            				inc += "<div class='block'><img src='jquerymobile/img-dportes/logo-encuentro.png' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>"+json[i].nombre+"</p></div>";
+            				inc += "</div>";
+            				inc += "</div>"; 
+            				inc += "</a>";
+            				inc += "</li>";*/
+                            if(date <= json[i].date_final){
+                                inc += "<li data-icon='false' style='background:#093'>";
+                                estado = 'Abierto';
+                                redirect = 1;
+                            } else {
+                                inc += "<li data-icon='false' style='background:#06675f'>";
+                                estado = 'Cerrado';
+                                redirect = 2;
+                            }
+                            
+                            inc += "<a href='#' data-transition='fade' class='fechas' onclick='setParametrosPodio("+json[i].id_evento+","+redirect+")' id='contenedor-fechas' style='background-color:transparent;'>";
+                            inc += "<div class='contenedor-fechas'>";
+                            inc += "<div class='centrado-fechas'>";
+                            inc += "<p class='estado-votaciones'>"+estado+"</p>";
+                            inc += "<div class='block'><img src='"+logo+"' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>"+localStorage.getItem('nombre_equipo')+"</p></div>";
+                            inc += "<div class='vs-blanco'>VS</div>";
+                            inc += "<div class='block'><img src='jquerymobile/img-dportes/logo-encuentro.png' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>"+json[i].nombre+"</p></div>";
+                            inc += "</div>";
+                            inc += "</div>";
+                            inc += "</a>";
+                            inc += "</li>";
+            			}
+
+                    } else {
+                        inc += "<li><h2 class='mensaje'>No se detectaron votaciones</h2></li>";
+                    }
 
         			$('#votaciones-list').append(inc).listview('refresh');
 
