@@ -86,7 +86,13 @@ function votaciones(){
             			}
 
                     } else {
-                        inc += "<li><h2 class='mensaje'>No se detectaron votaciones</h2></li>";
+                            inc += "<li>";
+                            inc += "<div style='text-align:center;'>";
+                            inc += "<img src='jquerymobile/img-dportes/imagen-sin-datos.png' width='138'>";
+                            inc += "</div>";
+                            inc += "<p style='text-align:center; color:#FFF; font-size:17px; text-shadow:none;'>No se detectaron votaciones.</p>";
+                            inc += "</li>";
+                        //inc += "<li><h2 class='mensaje'>No se detectaron votaciones</h2></li>";
                     }
 
         			$('#votaciones-list').append(inc).listview('refresh');
