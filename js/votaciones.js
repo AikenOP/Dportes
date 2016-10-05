@@ -317,8 +317,8 @@ function votaciones(){
         xhr.onload = function(e){
             $.mobile.loading('hide');
             if(this.status == 200){
-                if(this.response){
-                    $('#globo-votaciones').html(this.response).trigger('create');
+                if(this.response > 0){
+                    document.getElementById('globo-votaciones').innerHTML = this.response;
                 }
             }
         }
