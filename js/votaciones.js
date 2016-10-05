@@ -316,9 +316,10 @@ function votaciones(){
         };
         xhr.onload = function(e){
             $.mobile.loading('hide');
-            alert(this.response);
             if(this.status == 200){
-
+                if(this.response){
+                    $('#globo-votaciones').html(this.response).trigger('create');
+                }
             }
         }
     }
