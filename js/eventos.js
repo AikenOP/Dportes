@@ -562,6 +562,11 @@ document.getElementById('stat-extra').addEventListener('click',function(){
 
 });
 
+document.getElementById('pg-contact').addEventListener('click',function(){
+    alert('contact');
+});
+
+
 function checkProgramados(){
     $.mobile.loading('show');
     event.preventDefault();
