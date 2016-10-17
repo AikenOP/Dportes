@@ -1151,7 +1151,8 @@
         <div class="content" style="margin:20px">
             <div data-role="collapsibleset" data-theme="a" data-content-theme="a">
                 <div data-role="collapsible">
-
+                    <h3>Administrar Jugadores</h3>
+                    
                     <p style="font-weight:bold; margin-bottom:0">Agregar Jugadores</p>
                     <p>Ingresa todos los jugadores de tu equipo e identifica sus puestos de juego.</p>
                     <ul>
@@ -1174,8 +1175,6 @@
                         <li><p style="margin-bottom:0">Haz clic sobre el jugador que quieres modificar.</p></li>
                         <li><p style="margin-bottom:0">Aparecerá el formulario con la información que se ingresó en el registro. <strong>Importante:</strong> Si el jugador ya confirmó su email, éste no lo podrás modificar, sólo podrás cambiar el resto de la información.</p></li>
                     </ul>
-                    
-                    <h3>Administrar Jugadores</h3>
                     
                     <p style="font-weight:bold; margin-bottom:0">Asignar Administradores</p>
                     <p>Existe en Dportes dos tipos de administradores, el principal, quien creó el equipo, se identifica con el ícono <img src="jquerymobile/img-dportes/delegados/administrador-creador-comoseusa.png" style="vertical-align:middle;width:35px; height:35px"> y los administradores asignados, se identifican con el ícono <img src="jquerymobile/img-dportes/delegados/administrador-comoseusa.png" style="vertical-align:middle;width:35px; height:35px">.</p>
@@ -1251,7 +1250,7 @@
                         <li><p style="margin-bottom:0">Para enviar una notificación directa, en la Home, presiona el ícono <img src="jquerymobile/img-dportes/iconos/notificacion.svg" width="30px" style="vertical-align:middle"></p></li>
                         <li><p style="margin-bottom:0">Al ser administrador te aparecerá en la parte inferior de la pantalla el ícono <img src="jquerymobile/img-dportes/iconos/icono_justificacion_cancelacion2.png" width="30px" style="vertical-align:middle">, dale clic para entrar a la sección mensajes.</p></li>
                         <li><p style="margin-bottom:0">Ahora agregas un título al mensaje y en seguida el contenido, tienes hasta 200 caracteres para comunicar lo deseado.</p></li>
-                        <li><p style="margin-bottom:0">Presiona luego el botón <img src="jquerymobile/img-dportes/iconos/enviarnotoficacion.png" width="160px" style="vertical-align:middle"></p></li>
+                        <li><p style="margin-bottom:0">Presiona luego el botón <img src="jquerymobile/img-dportes/iconos/enviarjustificacion.png" width="160px" style="vertical-align:middle"></p></li>
                         <li><p style="margin-bottom:0">Enviado el mensaje todos los jugadores recibirán la notificación en su teléfono.</p></li>
                     </ul>
                 </div>
@@ -1317,9 +1316,20 @@
                     <h5>TERMINO DEL TIEMPO</h5>
                     <p>Dependiendo si elegiste un tiempo o dos, al presionar <img src="jquerymobile/img-dportes/iconos/cronometro.png" width="30px" style="vertical-align:middle">, obtendrás las estadísticas detalladas del tiempo que acabas de cerrar. Si el partido es de dos tiempos, se bloqueará el primero y mantendrá habilitado el segundo tiempo para que ingreses el registro.</p>
                 </div>
-                
-                
-
+                <div data-role="collapsible">
+                    <h3>Votaciones</h3>
+                    <p>Cada equipo que programe una actividad, podrá realizar una votación para elegir al "Jugador del Partido". Todo el equipo puede votar, independiente de haber participado del encuentro. Una vez finalizado el período de votación, las tres primeras votaciones son las que ganarán la votación.</p>
+                    <p><strong>¿Cómo funcionan las votaciones?</strong></p>
+                    <ol>
+                        <li><p>La votación se activará después de cada partido, para acceder a ella y votar debes ir al Home y seleccionar el ícono <img src="jquerymobile/img-dportes/iconos/icono-votacion.svg" width="30px" style="vertical-align:middle"></p></li>
+                        <li><p>Se te presentará en pantalla la lista de todos los partidos que se han realizado, desde el más reciente al más antiguo.</p></li>
+                        <li><p>En la lista se te mostrará aquellos en donde las votaciones están abiertas y los que las votaciones ya han sido cerradas.</p></li>
+                        <li><p>Para votar, seleccionas el partido con las votaciones abiertas. Se te presentará en seguida todos los jugadores que estuvieron en el partido. Seleccionas al que crees fue el que destacó entre los demás, y listo. Ya has votado.</p></li>
+                        <li><p>Sólo puedes votar una sola vez y no lo puedes hacer por ti mismo, es la única regla.</p></li>
+                        <li><p>Para ver los resultados finales, estos estarán disponibles después de 12 horas, para darle tiempo a todos de votar.</p></li>
+                        <li><p>Cerrado el plazo de las votaciones se te presentará los elegidos con sus correspondientes medallas <img src="jquerymobile/img-dportes/iconos/icono-medallas.png" style="vertical-align:middle"></p></li>
+                    </ol>
+                </div>
             </div>
         </div>
     </div>
@@ -2725,10 +2735,10 @@
             <li><a href="#notificaciones" class="ui-icon-camapana" data-transition="fade">Notificaciones</a></li>
             <!--<li data-icon="user" class="ui-state-disabled"><a href="reservas.html">Ligas</a></li>-->
             <!--<li data-icon="tag" class="ui-state-disabled"><a href="politica.html">Unirme a otros Equipos</a></li>-->
+            <li data-icon="navigation"><a href="#pg-votaciones">Votaciones</a></li>
             <li data-icon="info"><a href="#como-usar">Como se Usa</a></li>
             <li data-icon="eye"><a href="#acerca">Acerca de Dportes</a></li>
-            <li data-icon="navigation"><a href="#pg-votaciones">Votaciones</a></li>
-            <li data-icon="gear"><a href="#contacts">Contactos</a></li>
+            <!--<li data-icon="gear"><a href="#contacts">Contactos</a></li>-->
             <li data-icon="gear"><a href="#configuraciones">Configuraciones</a></li>
             <li data-icon="power"><a id="logout" href="#">Salir de Dportes</a></li>
             <!-- pruebas -->

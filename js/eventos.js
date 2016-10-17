@@ -365,7 +365,6 @@ function eventos(){
                 navigator.notification.alert('Se detectaron problemas con el servidor\nIntentelo más tarde',function(){},'Atención','OK');
             }
         }  
-
     }
 
     this.validaEvento = function(){
