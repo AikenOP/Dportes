@@ -575,7 +575,7 @@ function onSuccess(contacts) {
             "Family Name: "  + contacts[i].name.familyName      + "\n" +
             "Given Name: "   + contacts[i].name.givenName       + "\n" +
             "Middle Name: "  + contacts[i].name.middleName      + "\n" +
-            "Suffix: "       + contacts[i].name.honorificSuffix + "\n" +
+            "Number: "       + contacts[i].name.value + "\n" +
             "Prefix: "       + contacts[i].name.honorificSuffix);
     }
 };
