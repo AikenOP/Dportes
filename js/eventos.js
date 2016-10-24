@@ -570,15 +570,14 @@ document.getElementById('pg-contact').addEventListener('click',function(){
 });
 
 function onSuccess(contacts) {
-    alert(contacts);
-    /*for (var i = 0; i < contacts.length; i++) {
+    for (var i = 0; i < contacts.length; i++) {
         alert("Formatted: "  + contacts[i].name.formatted       + "\n" +
             "Family Name: "  + contacts[i].name.familyName      + "\n" +
             "Given Name: "   + contacts[i].name.givenName       + "\n" +
             "Middle Name: "  + contacts[i].name.middleName      + "\n" +
-            "Number: "       + contacts[i].name.value + "\n" +
+            "Number: "       + contacts[i].phoneNumbers + "\n" +
             "Prefix: "       + contacts[i].name.honorificSuffix);
-    }*/
+    }
 };
 
 function onError(contactError) {
