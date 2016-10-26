@@ -24,7 +24,7 @@ function votaciones(){
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
         $.mobile.loading('show');
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.ontimeout = function () {
             $.mobile.loading('hide');
             navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
@@ -119,7 +119,7 @@ function votaciones(){
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
         $.mobile.loading('show');
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.ontimeout = function () {
             $.mobile.loading('hide');
             navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
@@ -178,7 +178,7 @@ function votaciones(){
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
         $.mobile.loading('show');
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.ontimeout = function () {
             $.mobile.loading('hide');
             navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
@@ -204,7 +204,7 @@ function votaciones(){
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
         $.mobile.loading('show');
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.ontimeout = function () {
             $.mobile.loading('hide');
             navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
@@ -317,7 +317,7 @@ function votaciones(){
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
         $.mobile.loading('show');
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.ontimeout = function () {
             $.mobile.loading('hide');
             navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');

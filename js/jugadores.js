@@ -71,7 +71,7 @@ function jugadores(){
                                     xhr.open('POST', path + 'app/refundJugador');
                                     xhr.setRequestHeader('Cache-Control', 'no-cache');
                                     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-                                    xhr.timeout = 10000;
+                                    xhr.timeout = time;
                                     xhr.send(send);
                                     xhr.onprogress = function(e){
                                         $.mobile.loading('show');
@@ -105,7 +105,7 @@ function jugadores(){
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.onprogress = function(e){
             $.mobile.loading('show');
         }
@@ -171,7 +171,7 @@ function jugadores(){
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
         $.mobile.loading('show');
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.onprogress = function(e){
             $.mobile.loading('show');
         }
@@ -235,7 +235,7 @@ function jugadores(){
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.onprogress = function(e){
             $.mobile.loading('show');
         }
@@ -279,7 +279,7 @@ function jugadores(){
             send.append('equipo',localStorage.getItem('equipo'));
             send.append('usuario',$(this).parent().val());
             xhr.open('POST', path + 'app/dropJugadorEquipo');
-            xhr.timeout = 10000;
+            xhr.timeout = time;
             xhr.setRequestHeader('Cache-Control', 'no-cache');
             xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
             xhr.send(send);
@@ -341,7 +341,7 @@ function jugadores(){
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.onprogress = function(e){
             $.mobile.loading('show');
         }
@@ -692,7 +692,7 @@ function jugadores(){
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.onprogress = function(e){
             $.mobile.loading('show');
             var inc = '';
@@ -875,7 +875,7 @@ function jugadores(){
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
         $.mobile.loading('show');
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.onprogress = function(e){
             $.mobile.loading('show');
         }
@@ -989,7 +989,7 @@ $("#slider-asignado").on( "change", function() {
     xhr.setRequestHeader('Cache-Control', 'no-cache');
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.send(send);
-    xhr.timeout = 10000;
+    xhr.timeout = time;
     xhr.onprogress = function(e){
         $.mobile.loading('show');
     }
@@ -1022,7 +1022,7 @@ function backAcciones(id){
     xhr.setRequestHeader('Cache-Control', 'no-cache');
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.send(send);
-    xhr.timeout = 10000;
+    xhr.timeout = time;
     xhr.onprogress = function(e){
         $.mobile.loading('show');
     }

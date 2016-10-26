@@ -37,7 +37,7 @@ function eventos(){
             xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
             xhr.send(add);
             $.mobile.loading('show');
-            xhr.timeout = 10000;
+            xhr.timeout = time;
             xhr.ontimeout = function () {
                 $.mobile.loading('hide');
                 navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
@@ -82,7 +82,7 @@ function eventos(){
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
         $.mobile.loading('show');
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.ontimeout = function () {
             $.mobile.loading('hide');
             navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
@@ -169,7 +169,7 @@ function eventos(){
         xhr.open('POST', path + 'app/getHistorial');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.send(send);
         xhr.ontimeout = function(e) {
             $.mobile.loading('hide');
@@ -271,7 +271,7 @@ function eventos(){
         xhr.open('POST', path + 'app/getProgramados');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.send(send);   
         xhr.ontimeout = function(e) {
             $.mobile.loading('hide');
@@ -333,7 +333,7 @@ function eventos(){
         xhr.open('POST', path + 'app/cambioTipoEvento');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.send(send);
     }
 
@@ -344,7 +344,7 @@ function eventos(){
         xhr.open('POST', path + 'app/checkProgramados');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.send(send);
         xhr.ontimeout = function(e) {
             $.mobile.loading('hide');

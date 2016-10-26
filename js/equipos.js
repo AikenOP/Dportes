@@ -42,7 +42,7 @@ function equipos(){
 	    xhr.setRequestHeader('Cache-Control', 'no-cache');
 	    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 	    xhr.send(send);
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.onprogress = function(e){
             $.mobile.loading('show');
         }	
@@ -100,7 +100,7 @@ function equipos(){
 	    xhr.setRequestHeader('Cache-Control', 'no-cache');
 	    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 	    xhr.send(send);
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.onprogress = function(e){
             $.mobile.loading('show');
         }
@@ -132,7 +132,7 @@ function equipos(){
 		    xhr.setRequestHeader('Cache-Control', 'no-cache');
 		    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 		    xhr.send(send);
-	        xhr.timeout = 10000;
+	        xhr.timeout = time;
 	        xhr.onprogress = function(e){
 	            $.mobile.loading('show');
 	        }
@@ -161,7 +161,7 @@ function equipos(){
 	    xhr.setRequestHeader('Cache-Control', 'no-cache');
 	    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 	    xhr.send(send);
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.onprogress = function(e){
             $.mobile.loading('show');
         }
@@ -336,7 +336,7 @@ function equipos(){
 		xhr.setRequestHeader('Cache-Control', 'no-cache');
 		xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 		xhr.send(send);
-	    xhr.timeout = 10000;
+	    xhr.timeout = time;
 	    xhr.onprogress = function(e){
 	        $.mobile.loading('show');
 	    }
@@ -382,7 +382,7 @@ function deleteEquipo(eq){
 	xhr.setRequestHeader('Cache-Control', 'no-cache');
 	xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 	xhr.send(send);
-    xhr.timeout = 10000;
+    xhr.timeout = time;
     xhr.onprogress = function(e){
         $.mobile.loading('show');
     }

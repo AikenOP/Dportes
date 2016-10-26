@@ -14,7 +14,7 @@ function ausencias(){
 	    xhr.setRequestHeader('Cache-Control', 'no-cache');
 	    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send();
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.onprogress = function(e){
             $.mobile.loading('show');
         }
@@ -54,7 +54,7 @@ function ausencias(){
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(add);
-        xhr.timeout = 10000;
+        xhr.timeout = time;
         xhr.onprogress = function(e){
             $.mobile.loading('show');
         }

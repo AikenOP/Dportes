@@ -22,7 +22,7 @@ function authentication(){
             xhr.open('POST', path + 'auth/login');
             xhr.setRequestHeader('Cache-Control', 'no-cache');
             xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-            xhr.timeout = 5000;
+            xhr.timeout = time;
             xhr.send(login);
             $.mobile.loading('show');
             xhr.ontimeout = function(e) {
@@ -99,7 +99,7 @@ function authentication(){
         xhr.open('POST', path + 'auth/changePass');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.timeout = 5000;
+        xhr.timeout = time;
         xhr.send(pass);
         $.mobile.loading('show');
         xhr.ontimeout = function(e) {

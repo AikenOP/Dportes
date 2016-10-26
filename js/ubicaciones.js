@@ -7,7 +7,7 @@ document.getElementById("eq-region").addEventListener('change', function(){
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.send(send);
     $.mobile.loading('show');
-    xhr.timeout = 10000;
+    xhr.timeout = time;
 
     xhr.ontimeout = function () {
         $.mobile.loading('hide');
@@ -45,7 +45,7 @@ document.getElementById("eq-ciudad").addEventListener('change', function(){
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.send(send);
     $.mobile.loading('show');
-    xhr.timeout = 10000;
+    xhr.timeout = time;
 
     xhr.ontimeout = function () {
         $.mobile.loading('hide');
@@ -84,7 +84,7 @@ document.getElementById("mi-eq-region").addEventListener('change', function(){
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.send(send);
     $.mobile.loading('show');
-    xhr.timeout = 10000;
+    xhr.timeout = time;
 
     xhr.ontimeout = function () {
         $.mobile.loading('hide');
@@ -122,7 +122,7 @@ document.getElementById("mi-eq-ciudad").addEventListener('change', function(){
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.send(send);
     $.mobile.loading('show');
-    xhr.timeout = 10000;
+    xhr.timeout = time;
 
     xhr.ontimeout = function () {
         $.mobile.loading('hide');
@@ -160,7 +160,7 @@ document.getElementById("reg-eq-region").addEventListener('change', function(){
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.send(send);
     $.mobile.loading('show');
-    xhr.timeout = 10000;
+    xhr.timeout = time;
 
     xhr.ontimeout = function () {
         $.mobile.loading('hide');
@@ -198,7 +198,7 @@ document.getElementById("reg-eq-ciudad").addEventListener('change', function(){
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.send(send);
     $.mobile.loading('show');
-    xhr.timeout = 10000;
+    xhr.timeout = time;
 
     xhr.ontimeout = function () {
         $.mobile.loading('hide');
@@ -237,7 +237,7 @@ function setCiudades(region,ciudad){
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.send(send);
     $.mobile.loading('show');
-    xhr.timeout = 10000;
+    xhr.timeout = time;
 
     xhr.ontimeout = function () {
         $.mobile.loading('hide');
@@ -276,7 +276,7 @@ function setComunas(ciudad,comuna){
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.send(send);
     $.mobile.loading('show');
-    xhr.timeout = 10000;
+    xhr.timeout = time;
 
     xhr.ontimeout = function () {
         $.mobile.loading('hide');

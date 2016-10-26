@@ -1,3 +1,4 @@
+var time = 30000;
 var path = 'http://sandbox.dportes.cl/';
 //var path = 'http://dportes.cl/';
 
