@@ -64,11 +64,11 @@ function votaciones(){
             				inc += "</li>";*/
                             if(date <= json[i].date_final){
                                 inc += "<li data-icon='false' style='background:#093'>";
-                                estado = 'Abierto';
+                                estado = 'Votaciones Abiertas';
                                 redirect = 1;
                             } else {
                                 inc += "<li data-icon='false' style='background:#06675f'>";
-                                estado = 'Cerrado';
+                                estado = 'Votación Lista';
                                 redirect = 2;
                             }
                             
@@ -312,6 +312,7 @@ function votaciones(){
         var xhr = new XMLHttpRequest();
         var send = new FormData();
         send.append('id_equipo',this.id_equipo);
+        send.append('id_usuario',localStorage.getItem('id'));
         xhr.open('POST', path + 'app/getTotalVotacionesAbiertas');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
