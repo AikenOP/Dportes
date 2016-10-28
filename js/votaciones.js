@@ -78,7 +78,7 @@ function votaciones(){
                             inc += "<div class='block'><img src='"+logo+"' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>"+localStorage.getItem('nombre_equipo')+"</p></div>";
                             inc += "<div class='vs-blanco'>VS</div>";
                             inc += "<div class='block'><img src='jquerymobile/img-dportes/logo-encuentro.png' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>"+json[i].nombre+"</p></div>";
-                            inc += "<p id='count"+json[i].id_evento+"' class='nombre-equipo-blanco'>Votación cierra el: 15:30:15</p>";
+                            inc += "<p id='count"+json[i].id_evento+"' class='nombre-equipo-blanco'></p>";
                             inc += "</div>";
                             inc += "</div>";
                             inc += "</a>";
