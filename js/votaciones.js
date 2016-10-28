@@ -78,6 +78,7 @@ function votaciones(){
                             inc += "<div class='block'><img src='"+logo+"' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>"+localStorage.getItem('nombre_equipo')+"</p></div>";
                             inc += "<div class='vs-blanco'>VS</div>";
                             inc += "<div class='block'><img src='jquerymobile/img-dportes/logo-encuentro.png' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>"+json[i].nombre+"</p></div>";
+                            inc += " <p class='nombre-equipo-blanco'>Votación cierra el: 15:30:15</p>";
                             inc += "</div>";
                             inc += "</div>";
                             inc += "</a>";
@@ -151,7 +152,7 @@ function votaciones(){
                             inc += "<a onclick='setVotacion("+json[i].id_usuario+",\""+json[i].nombre+"\")' href='#' data-rel='popup' data-position-to='window' data-transition='pop' id='4-jugador' class='quita_margenes_para_check hola'>";
                             inc += "<div class='imagen_jugador'><img src='"+foto+"'></div>";
                             inc += "<h2>"+json[i].nombre+"</h2>";
-                            inc += " <p class='nombre-equipo-blanco'>Votación cierra el: 15:30:15</p>";
+                            inc += "<p></p>";
                             inc += "</a></li>";
                         }
                         $('#votaciones-jg-list').html(inc).listview('refresh');
