@@ -33,6 +33,7 @@ function votaciones(){
             navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
         };
         xhr.onload = function(e){
+            alert(this.response);
         	$.mobile.loading('hide');
         	if(this.status == 200){
         		if(this.response && JSON.parse(this.response)){
@@ -78,7 +79,7 @@ function votaciones(){
                             inc += "<div class='block'><img src='"+logo+"' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>"+localStorage.getItem('nombre_equipo')+"</p></div>";
                             inc += "<div class='vs-blanco'>VS</div>";
                             inc += "<div class='block'><img src='jquerymobile/img-dportes/logo-encuentro.png' style='border:solid 1px #25421d;'><p class='nombre-equipo-blanco'>"+json[i].nombre+"</p></div>";
-                            inc += " <p class='nombre-equipo-blanco'>Votación cierra el: 15:30:15</p>";
+                            inc += "<p id='count"+json[i].id_evento+"' class='nombre-equipo-blanco'>Votación cierra el: 15:30:15</p>";
                             inc += "</div>";
                             inc += "</div>";
                             inc += "</a>";
@@ -96,6 +97,7 @@ function votaciones(){
                     }
 
         			$('#votaciones-list').append(inc).listview('refresh');
+                    countdown('countdown',fecha);
 
                     if(json.length >= 5){
                         document.getElementById('vot-more').style.display = "block";
