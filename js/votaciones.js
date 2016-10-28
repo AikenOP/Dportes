@@ -33,7 +33,6 @@ function votaciones(){
             navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
         };
         xhr.onload = function(e){
-            alert(this.response);
         	$.mobile.loading('hide');
         	if(this.status == 200){
         		if(this.response && JSON.parse(this.response)){
@@ -152,7 +151,7 @@ function votaciones(){
                             inc += "<a onclick='setVotacion("+json[i].id_usuario+",\""+json[i].nombre+"\")' href='#' data-rel='popup' data-position-to='window' data-transition='pop' id='4-jugador' class='quita_margenes_para_check hola'>";
                             inc += "<div class='imagen_jugador'><img src='"+foto+"'></div>";
                             inc += "<h2>"+json[i].nombre+"</h2>";
-                            inc += "<p></p>";
+                            inc += " <p class='nombre-equipo-blanco'>Votación cierra el: 15:30:15</p>";
                             inc += "</a></li>";
                         }
                         $('#votaciones-jg-list').html(inc).listview('refresh');
