@@ -97,6 +97,7 @@ function votaciones(){
 
         			$('#votaciones-list').append(inc).listview('refresh');
                     for(var i = 0; i < json.length; i++ ){
+                        var date = new Date();
                         date = getFormattedDate(date);
                         if(date <= json[i].date_final){
                             alert('count'+json[i].id_evento);
