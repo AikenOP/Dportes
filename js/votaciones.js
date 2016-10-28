@@ -99,6 +99,7 @@ function votaciones(){
                     for(var i = 0; i < json.length; i++ ){
                         date = getFormattedDate(date);
                         if(date <= json[i].date_final){
+                            alert('count'+json[i].id_evento);
                             countdown('count'+json[i].id_evento,json[i].fecha_cierre);
                         }
                     }
