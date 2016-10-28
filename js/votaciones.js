@@ -33,7 +33,6 @@ function votaciones(){
             navigator.notification.alert('Se detecto un problema, intentelo nuevamente',function(){},'Atención','OK');
         };
         xhr.onload = function(e){
-            alert(this.response);
         	$.mobile.loading('hide');
         	if(this.status == 200){
         		if(this.response && JSON.parse(this.response)){
@@ -97,7 +96,12 @@ function votaciones(){
                     }
 
         			$('#votaciones-list').append(inc).listview('refresh');
-                    countdown('countdown',fecha);
+                    for(var i = 0; i < json.length; i++ ){
+                        date = getFormattedDate(date);
+                        if(date <= json[i].date_final){
+                            countdown('count'+json[i].id_evento,json[i].fecha_cierre);
+                        }
+                    }
 
                     if(json.length >= 5){
                         document.getElementById('vot-more').style.display = "block";
