@@ -104,7 +104,7 @@ function votaciones(){
                             countdown('count'+json[i].id_evento,json[i].fecha_cierre);
                         } else {
                             var d = new Date(json[i].date_final.replace(/-/g,"/"));
-                            document.getElementById('count'+json[i].id_evento).innerHTML='Las votaciones cerradas el: ' + d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear();
+                            document.getElementById('count'+json[i].id_evento).innerHTML='Votación cerrada el: ' + d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear();
                         }
                     }
 
