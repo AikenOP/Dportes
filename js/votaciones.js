@@ -100,8 +100,10 @@ function votaciones(){
                         var date = new Date();
                         date = getFormattedDate(date);
                         if(date <= json[i].date_final){
-                            alert('count'+json[i].id_evento);
+                            //alert('count'+json[i].id_evento);
                             countdown('count'+json[i].id_evento,json[i].fecha_cierre);
+                        } else {
+                             document.getElementById('count'+json[i].id_evento).innerHTML='Las votaciones cerradas el: ' +json[i].date_final;
                         }
                     }
 
