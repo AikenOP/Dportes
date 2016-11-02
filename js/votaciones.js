@@ -103,7 +103,8 @@ function votaciones(){
                             //alert('count'+json[i].id_evento);
                             countdown('count'+json[i].id_evento,json[i].fecha_cierre);
                         } else {
-                             document.getElementById('count'+json[i].id_evento).innerHTML='Las votaciones cerradas el: ' +json[i].date_final;
+                            var date = new Date(json[i].date_final.replace(/-/g,"/"));
+                            document.getElementById('count'+json[i].id_evento).innerHTML='Las votaciones cerradas el: ' + date;
                         }
                     }
 
