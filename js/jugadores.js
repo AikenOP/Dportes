@@ -200,11 +200,14 @@ function jugadores(){
                     } catch(e){
                     }
                     var photo = document.getElementById('edit-jg-foto');
+                    var photoPop = document.getElementById('popupImg');
                     photo.style.display = 'block';
                     if(json.foto != null){
                         photo.src =  path + 'perfiles/' + json.id_usuario + '/' + json.foto + '?timestamp=' + now;
+                        photoPop.src =  path + 'perfiles/' + json.id_usuario + '/' + json.foto + '?timestamp=' + now;
                     } else {
                         photo.src = "jquerymobile/img-dportes/foto.png";
+                        photoPop.src = "jquerymobile/img-dportes/foto.png";
                     }
                     $("input[name=jg-radio-posicion][value=" + json.id_posicion + "]").prop('checked', true);
                     document.getElementById('edit-jg').innerHTML = fullname;
@@ -891,7 +894,6 @@ function jugadores(){
         }
     }
 
-
 }
 
 function setHistorialJG(id,nombre,posicion){
@@ -977,6 +979,7 @@ document.getElementById('edit-jg-save').addEventListener('click',function(){
     jg.setJugador();
     delete jg;
 });
+
 
 $("#slider-asignado").on( "change", function() {
     //alert(this.value);
