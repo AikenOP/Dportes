@@ -982,10 +982,10 @@ document.getElementById('edit-jg-save').addEventListener('click',function(){
 
 document.getElementById('pop-thumb').addEventListener('click',function(){
     var imgbig = "jquerymobile/img-dportes/foto.png";
-    $("#imgbig").attr("src", imgbig);
+    $("#popupImg").attr("src", imgbig);
     setTimeout(function(){
         $("#popupLogin").popup("open");
-    }, 100); 
+    }, 500); 
 });
 
 
