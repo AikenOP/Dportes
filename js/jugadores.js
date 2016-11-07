@@ -985,12 +985,6 @@ document.getElementById('pop-thumb').addEventListener('click',function(){
     //$("#popupImg").attr("src", imgbig);
     setTimeout(function(){
         $("#popupLogin").popup("open")
-        .on("popupafteropen", function () {
-            $(this)
-            .popup("reposition", {
-            "positionTo": "window"
-            });
-        });
     }, 500); 
 });
 
