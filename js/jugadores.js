@@ -984,7 +984,7 @@ document.getElementById('pop-thumb').addEventListener('click',function(){
     //var imgbig = "http://www.dportes.cl/perfiles/5/perfil.jpg";
     //$("#popupImg").attr("src", imgbig);
     setTimeout(function(){
-        $("#popupLogin").popup("open")
+        $("#popupLogin").popup("open").trigger('create')
     }, 500); 
 });
 
