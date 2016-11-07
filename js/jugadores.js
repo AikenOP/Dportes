@@ -980,6 +980,12 @@ document.getElementById('edit-jg-save').addEventListener('click',function(){
     delete jg;
 });
 
+document.getElementById('pop-thumb').addEventListener('click',function(){
+    setTimeout(function(){
+        $("#popupLogin").popup("open");
+    }, 100); 
+});
+
 
 $("#slider-asignado").on( "change", function() {
     //alert(this.value);
