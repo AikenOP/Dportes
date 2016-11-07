@@ -202,6 +202,7 @@ function jugadores(){
                     var photo = document.getElementById('edit-jg-foto');
                     var photoPop = document.getElementById('popupImg');
                     photo.style.display = 'block';
+                    photoPop.style.display = 'block';
                     if(json.foto != null){
                         photo.src =  path + 'perfiles/' + json.id_usuario + '/' + json.foto + '?timestamp=' + now;
                         photoPop.src =  path + 'perfiles/' + json.id_usuario + '/' + json.foto + '?timestamp=' + now;
@@ -984,7 +985,7 @@ document.getElementById('pop-thumb').addEventListener('click',function(){
     //var imgbig = "http://www.dportes.cl/perfiles/5/perfil.jpg";
     //$("#popupImg").attr("src", imgbig);
     setTimeout(function(){
-        $("#popupLogin").popup("open").trigger('create')
+        $("#popupLogin").popup("open")
     }, 500); 
 });
 
