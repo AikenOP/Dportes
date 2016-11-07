@@ -981,13 +981,13 @@ document.getElementById('edit-jg-save').addEventListener('click',function(){
     delete jg;
 });
 
-document.getElementById('pop-thumb').addEventListener('click',function(){
+/*document.getElementById('pop-thumb').addEventListener('click',function(){
     //var imgbig = "http://www.dportes.cl/perfiles/5/perfil.jpg";
     //$("#popupImg").attr("src", imgbig);
     setTimeout(function(){
         $("#popupLogin").popup("open")
     }, 500); 
-});
+});*/
 
 
 $("#slider-asignado").on( "change", function() {
