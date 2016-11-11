@@ -639,7 +639,7 @@ function jugadores(){
                         inc = "<div id='jgActivo"+json[i].id_usuario+"' class='ui-block-"+clase+" centrar_jugador "+disabled+"'>";
                         inc += "<div style='position:relative;'>";
                         inc += "<a onclick='setIDTitular("+json[i].id_usuario+")' href='#' class='ancho_grilla'>";
-                        inc += "<img src='"+foto+"'>";
+                        inc += "<img src='"+foto+"' class='mascara-juego-envivo'>";
                         inc += "<div class='contenedor_iconos_jugadas'>";
                         //inc += "<img id='jugImg"+json[i].id_usuario+"' src='jquerymobile/img-dportes/iconos/icono_gol.png' style='"+goles+"'>";
                         inc += "<div id='jugGoles"+json[i].id_usuario+"' class='marcador-personal-goles-2' style='"+goles+"'>"+json[i].goles+"</div>";

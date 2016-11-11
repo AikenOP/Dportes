@@ -512,6 +512,18 @@ li a img {
 	margin-top:5px;
 }
 
+/*este es para cuando se esté en juego en vivo o acción de jugador, es una mascara para la foto de los jugadores*/
+.mascara-juego-envivo {
+	width: 87px !important;
+	height: 87px !important;
+	border-radius: 94px !important;
+	-moz-border-radius: 94px !important;
+	-webkit-border-radius: 94px !important;
+	-khtml-border-radius: 94px !important;
+	overflow: hidden;
+/*	margin-top:5px;*/
+}
+/*cierre*/
 .suspension {
     background: url(img-dportes/suspendido.png) no-repeat;
     margin: auto;
