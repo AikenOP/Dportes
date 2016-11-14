@@ -10,7 +10,7 @@
   <preference name="target-device" value="portrait"/>
   <preference name="fullscreen" value="false"/>
   <preference name="webviewbounce" value="true"/>
-  <preference name="prerendered-icon" value="false"/>
+  <preference name="prerendered-icon" value="true"/>
   <preference name="stay-in-webview" value="false"/>
   <preference name="detect-data-types" value="true"/>
   <preference name="exit-on-suspend" value="false"/>
