@@ -238,9 +238,9 @@ function votaciones(){
                     var apellido = '';
                     // ORO
                     if(oro.length == 0 && plata.length == 0 && bronce.length == 0){
-                        inc += "<div style='text-align:center; background-color:#FFF'>";
-                        inc += "<img src='jquerymobile/img-dportes/imagen-sin-datos.png' width='138'>";
-                        inc += "<h2>No se detectaron votaciones</h2>";
+                        inc += "<div style='text-align:center;margin-top:30px; color:#FFF;'>";
+                        inc += "<img src='jquerymobile/img-dportes/imagen-sin-datos-votaciones.png' style='max-width:200px;'>";
+                        inc += "<p>No se registraron votaciones</p>";
                         inc += "</div>"; 
                     } else {
             			for(var i = 0; i < oro.length; i++ ){
