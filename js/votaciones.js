@@ -238,7 +238,7 @@ function votaciones(){
                     var apellido = '';
                     // ORO
                     if(oro.length == 0 && plata.length == 0 && bronce.length == 0){
-                        inc += "<div style='text-align:center;'>";
+                        inc += "<div style='text-align:center; background-color:#FFF'>";
                         inc += "<img src='jquerymobile/img-dportes/imagen-sin-datos.png' width='138'>";
                         inc += "<h2>No se detectaron votaciones</h2>";
                         inc += "</div>"; 
