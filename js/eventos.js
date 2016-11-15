@@ -330,6 +330,8 @@ function eventos(){
         var send = new FormData();
         send.append('id_evento',this.id_evento);
         send.append('id_tipo',this.tipo);
+        send.append('id_equipo',localStorage.getItem('equipo'));
+        send.append('id_usuario',localStorage.getItem('id'));
         xhr.open('POST', path + 'app/cambioTipoEvento');
         xhr.setRequestHeader('Cache-Control', 'no-cache');
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
