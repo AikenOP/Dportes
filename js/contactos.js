@@ -10,7 +10,7 @@ function contactos(){
 	}
 }
 
-	function onSuccess(){
+	function onSuccess(contacts){
 		alert(contacts.length);
 	    for (var i = 0; i < contacts.length; i++) {
 	        alert("Formatted: "  + contacts[i].name.formatted       + "\n" +
@@ -22,7 +22,7 @@ function contactos(){
 	    }
 	}
 
-	function onError(){
+	function onError(contactError){
 		alert('error');
 	}
 
