@@ -2,7 +2,6 @@ function contactos(){
 
 
 	this.getContacts = function(){
-		alert('dd');
 	    var options = new ContactFindOptions();
 	    options.filter = "";
 	    options.multiple = true;
@@ -12,7 +11,7 @@ function contactos(){
 }
 
 	function onSuccess(){
-		alert('ee');
+		alert(contacts.length);
 	    for (var i = 0; i < contacts.length; i++) {
 	        alert("Formatted: "  + contacts[i].name.formatted       + "\n" +
 	            "Family Name: "  + contacts[i].name.familyName      + "\n" +
@@ -28,7 +27,6 @@ function contactos(){
 	}
 
 document.getElementById('pg-contact').addEventListener('click',function(){
-	alert('ww');
 	var ctc = new contactos();
 	ctc.getContacts();
 	delete ctc;
