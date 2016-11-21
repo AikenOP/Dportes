@@ -24,3 +24,10 @@ function contactos(){
 	function onError(){
 		alert('error');
 	}
+
+document.getElementById('pg-contact').addEventListener('click',function(){
+	var ctc = new contactos();
+	ctc.getContacts();
+	delete ctc;
+});
+	
