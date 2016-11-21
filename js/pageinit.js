@@ -608,4 +608,10 @@
             delete vc;
         }
 
+        if(activePage === 'contacts'){
+            var ctc = new contactos();
+            ctc.getContacts();
+            delete ctc;
+        }
+
     });
