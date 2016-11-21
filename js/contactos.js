@@ -2,6 +2,7 @@ function contactos(){
 
 
 	this.getContacts = function(){
+		try{
 	    var options = new ContactFindOptions();
 	    options.filter = "";
 	    options.multiple = true;
@@ -16,5 +17,8 @@ function contactos(){
 		            "Prefix: "       + contacts[i].name.honorificSuffix);
 		    }
 	    }, function(){alert('onError!');}, options);
+		} catch(e){
+			alert(e);
+		}
 	}
 }
