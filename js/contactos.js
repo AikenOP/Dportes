@@ -6,12 +6,11 @@ function contactos(){
 	    options.filter = "";
 	    options.multiple = true;
 	    filter = ["displayName", "name"];
-	    navigator.contacts.find(filter, onSuccess, onError, options);
+	    navigator.contacts.find(filter, this.onSuccess, this.onError, options);
 	}
-}
 
-	function onSuccess(contacts){
-		alert(contacts.length);
+
+	this.onSuccess = function(contacts){
 	    for (var i = 0; i < contacts.length; i++) {
 	        alert("Formatted: "  + contacts[i].name.formatted       + "\n" +
 	            "Family Name: "  + contacts[i].name.familyName      + "\n" +
@@ -19,16 +18,11 @@ function contactos(){
 	            "Middle Name: "  + contacts[i].name.middleName      + "\n" +
 	            "Number: "       + contacts[i].phoneNumbers[0].value + "\n" +
 	            "Prefix: "       + contacts[i].name.honorificSuffix);
-	    }
+	    }		
 	}
 
-	function onError(contactError){
+	this.onError = function(contactError){
 		alert('error');
 	}
-
-document.getElementById('pg-contact').addEventListener('click',function(){
-	var ctc = new contactos();
-	ctc.getContacts();
-	delete ctc;
-});
+}
 	
