@@ -2,6 +2,7 @@ function contactos(){
 
 
 	this.getContacts = function(){
+		alert('ere');
 		try{
 	    var options = new ContactFindOptions();
 	    options.filter = "";
