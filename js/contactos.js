@@ -14,7 +14,7 @@ function contactos(){
 		var inc = '';
 		var logo = '';
 	    for (var i = 0; i < contacts.length; i++) {
-	    	inc += "<li data-icon='false'>";
+	    	inc += "<li data-icon='false' onclick='getNumeroFono("+phoneNumbers[0].value+","+contacts[i].name.formatted+")'>";
             inc += "<div class='imagen_jugador'><img src='jquerymobile/img-dportes/foto.png'></div>";
             inc += "<h2>"+contacts[i].name.formatted+"</h2>";
             inc += "</li>";
@@ -32,5 +32,10 @@ function contactos(){
 	this.onError = function(contactError){
 		alert('error');
 	}
+}
+
+
+function getNumeroFono(fono,nombre){
+	alert(nombre + " " + fono);
 }
 	
