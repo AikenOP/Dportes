@@ -9,6 +9,7 @@ function jugadores(){
     this.email
     this.posicion = 1
     this.rol_usuario
+    this.fono
 
     this.addJugador = function(){
     	if(this.validarJugador()){
@@ -94,6 +95,25 @@ function jugadores(){
 	            }
 	        }
     	}
+    }
+
+    this.addJugadorContacto = function(){
+        var xhr = new XMLHttpRequest();
+        var add = new FormData();
+        add.append('nombre_usuario',this.nombre);
+        add.append('fono',this.fono);
+        add.append('nombre_invita',localStorage.getItem('nombre_usuario'));
+        add.append('equipo',localStorage.getItem('equipo'));
+        xhr.open('POST', path + 'app/addJugadorContacto');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send(add);
+        xhr.onprogress = function(e){
+            $.mobile.loading('show');
+        }
+        xhr.onload = function(e){
+            alert(this.response);
+        }
     }
 
     this.getJugadores = function(){

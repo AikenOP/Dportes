@@ -36,6 +36,11 @@ function contactos(){
 
 
 function getNumeroFono(fono,nombre){
-	alert(nombre + " " + fono);
+	var jg = new jugadores();
+	jg.nombre = nombre;
+	jg.fono = fono;
+	jg.addJugadorContacto();
+	delete jg;
+	//alert(nombre + " " + fono);
 }
 	
