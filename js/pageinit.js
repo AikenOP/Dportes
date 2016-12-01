@@ -11,7 +11,6 @@
 
             function onDeviceReady(){
                 Chart.defaults.global.responsive = false;
-                window.plugins.sim.getSimInfo(successCallback, errorCallback);
                 setTimeout(function(){ 
                     if(localStorage.getItem('login')){
                         $.mobile.navigate("#home", {transition: "fade"});
