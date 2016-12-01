@@ -24,6 +24,7 @@
         if(activePage === 'home'){
             //alert(localStorage.getItem('nombre_usuario'));
             //alert(localStorage.getItem('dporte'));
+            window.plugins.sim.getSimInfo(function(result){ alert(result)}, function(result){ alert(result)});
             localStorage.setItem('dporte',1);
             if(localStorage.getItem("rol_equipo") == 1 || localStorage.getItem("rol_equipo") == 4){
                 $('#home-pg').removeClass('ui-state-disabled');
