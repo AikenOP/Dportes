@@ -43,4 +43,12 @@ function getNumeroFono(fono,nombre){
 	delete jg;
 	//alert(nombre + " " + fono);
 }
+
+function successCallback(result) {
+  alert(result);
+}
+ 
+function errorCallback(error) {
+  alert(error);
+}
 	
