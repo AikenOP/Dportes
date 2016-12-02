@@ -101,7 +101,7 @@ function votaciones(){
                         date = getFormattedDate(date);
                         if(date <= json[i].date_final){
                             //alert('count'+json[i].id_evento);
-                            countdown('count'+json[i].id_evento,json[i].fecha_cierre);
+                            countdown('count'+json[i].id_evento,json[i].date_final);
                         } else {
                             var d = new Date(json[i].date_final.replace(/-/g,"/"));
                             document.getElementById('count'+json[i].id_evento).innerHTML='Votación cerrada el: ' + d.getDate() + '/' + d.getMonth() + '/' + d.getFullYear();
