@@ -348,6 +348,7 @@ function votaciones(){
             $.mobile.loading('hide');
             if(this.status == 200){
                 if(this.response > 0){
+                    alert(this.response);
                    document.getElementById('globo-votaciones').innerHTML = this.response;
                    document.getElementById('globo-votaciones').style.display = "block";
                 } else {
