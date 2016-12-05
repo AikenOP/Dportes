@@ -10,8 +10,10 @@
             document.addEventListener("deviceready", onDeviceReady, false);
 
             function onDeviceReady(){
+                if(device.platform == 'Android'){
+                    cordova.plugins.notification.badge.set(10);
+                }
                 Chart.defaults.global.responsive = false;
-                 cordova.plugins.notification.badge.set(10);
                 setTimeout(function(){ 
                     if(localStorage.getItem('login')){
                         $.mobile.navigate("#home", {transition: "fade"});
