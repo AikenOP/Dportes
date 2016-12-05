@@ -11,6 +11,7 @@
 
             function onDeviceReady(){
                 Chart.defaults.global.responsive = false;
+                 cordova.plugins.notification.badge.set(10);
                 setTimeout(function(){ 
                     if(localStorage.getItem('login')){
                         $.mobile.navigate("#home", {transition: "fade"});
