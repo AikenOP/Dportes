@@ -50,7 +50,7 @@
   <plugin name="cordova-plugin-splashscreen" source="npm" spec="4.0.0" />
   <plugin name="cordova-plugin-statusbar" spec="2.2.0" source="npm" />
   <plugin name="cordova-plugin-vibration" source="npm" spec="2.1.2" />
-  <gap:plugin name="cordova-plugin-badge" source="npm" />
+  <gap:plugin name="de.appplant.cordova.plugin.badge" source="npm" />
   
   <icon src="icon.png" />
   <icon src="res/icon/android/icon-36-ldpi.png" platform="android" qualifier="ldpi"/>
