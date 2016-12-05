@@ -11,7 +11,7 @@
 
             function onDeviceReady(){
                 if(device.platform == 'Android'){
-                    cordova.plugins.notification.badge.set(10);
+                    //cordova.plugins.notification.badge.set(10);
                 }
                 Chart.defaults.global.responsive = false;
                 setTimeout(function(){ 
