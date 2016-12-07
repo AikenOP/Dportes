@@ -246,10 +246,10 @@
         <div class="content" style="margin:10px;">
             <div id="numero-login">
                 <p style="text-align:center; font-size:16px; color:#666; text-shadow:none;">Hola, Bienvenido a Dportes, si un amigo tuyo te agrego a su equipo puedes ingresar a esta aplicacion ingresando tu numero telefonico.</p>
-                    <input name="numero" id="fono-log" value="" placeholder="ej: 81234567" data-theme="a" type="text">
+                    <input name="numero" id="fono-log" value="" placeholder="ej: 81234567" data-theme="a" type="text" onchange="validarNumero();">
             </div>
 
-            <div id="cambio-fono-datos">
+            <div id="cambio-fono-datos" style="display: none;">
                 <p style="text-align:center; font-size:16px; color:#666; text-shadow:none;">Por favor actualiza tu correo electronico y la contraseña para activar tu cuenta como usuario. La clave necesita un minimo de 5 caracteres para cambiarla.</p>
                 <input name="clave" id="cambio-correo-fono" value="" placeholder="Correo electrónico" data-theme="a" type="email">
                 <input name="clave" id="cambio-pass-fono" value="" placeholder="Nueva Contraseña" data-theme="a" type="password" onchange="checkMatches();">

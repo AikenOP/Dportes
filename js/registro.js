@@ -294,6 +294,17 @@ function cambiarPasswordOlvidada(){
     delete reg;
 };
 
+function validarNumero(){
+    event.preventDefault();
+    var numero = document.getElementById('fono-log').value;
+    if(numero.length > 0){
+        alert("ok");
+    } else {
+        alert("no existe");
+    }
+
+}
+
 document.getElementById('reg-nequipo').addEventListener('change', checkEquipo, false);
 
 function checkEquipo(){
