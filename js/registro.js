@@ -313,13 +313,18 @@ function validarMovil(n){
     } else {
         var sbs = n.substring(0,3);
         if(sbs == '+56'){
-            alert('si, lo es');
+            var number = n.substring(3)  
         } else {
-            alert(sbs);
+            var number = n;
+        }
+
+        alert(number);
+        if(isNaN(number)){
+            return true;
+        } else {
+            return false;
         }
     }
-
-    return false;
 }
 
 document.getElementById('reg-nequipo').addEventListener('change', checkEquipo, false);
