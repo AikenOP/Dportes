@@ -318,7 +318,7 @@ function validarMovil(n){
             var number = n;
         }
 
-        number = number.replace(/^\s+|\s+$/g, "");
+        number = number.replace(/\s/g,"");
         alert(number);
         if(isNaN(number)){
             return true;
