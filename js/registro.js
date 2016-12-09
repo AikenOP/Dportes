@@ -297,10 +297,11 @@ function cambiarPasswordOlvidada(){
 function validarNumero(){
     event.preventDefault();
     var numero = document.getElementById('fono-log').value;
-    if(numero.length > 0){
-        alert("ok");
+    if(numero.length < 8){
+        navigator.notification.alert('Ingrese un número de teléfono valido',function(){},'Atención','OK');
     } else {
-        alert("no existe");
+        document.getElementById('numero-login').style.display = "none";
+        document.getElementById('cambio-fono-datos').style.display = "block";
     }
 
 }
