@@ -311,7 +311,7 @@ function validarMovil(n){
     if(ln < 8){
         return true;
     } else {
-        var sbs = ln.substring(0,3);
+        var sbs = n.substring(0,3);
         if(sbs == '+56'){
             alert('si, lo es');
         } else {
