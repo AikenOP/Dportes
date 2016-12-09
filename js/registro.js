@@ -297,13 +297,29 @@ function cambiarPasswordOlvidada(){
 function validarNumero(){
     event.preventDefault();
     var numero = document.getElementById('fono-log').value;
-    if(numero.length < 8){
+    if(validarMovil(numero)){
         navigator.notification.alert('Ingrese un número de teléfono valido',function(){},'Atención','OK');
     } else {
         document.getElementById('numero-login').style.display = "none";
         document.getElementById('cambio-fono-datos').style.display = "block";
     }
 
+}
+
+function validarMovil(n){
+    var ln = n.length;
+    if(ln < 8){
+        return true;
+    } else {
+        var sbs = ln.substring(0,3);
+        if(sbs == '+56'){
+            alert('si, lo es');
+        } else {
+            alert(sbs);
+        }
+    }
+
+    return false;
 }
 
 document.getElementById('reg-nequipo').addEventListener('change', checkEquipo, false);
