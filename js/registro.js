@@ -300,6 +300,7 @@ function validarNumero(){
     if(validarMovil(numero)){
         navigator.notification.alert('Ingrese un número de teléfono valido',function(){},'Atención','OK');
     } else {
+        
         document.getElementById('numero-login').style.display = "none";
         document.getElementById('cambio-fono-datos').style.display = "block";
     }
@@ -319,7 +320,7 @@ function validarMovil(n){
         }
 
         number = number.replace(/\s/g,"");
-        alert(number);
+
         if(isNaN(number)){
             return true;
         } else {
