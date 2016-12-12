@@ -300,9 +300,23 @@ function validarNumero(){
     if(validarMovil(numero)){
         navigator.notification.alert('Ingrese un número de teléfono valido',function(){},'Atención','OK');
     } else {
-        
-        document.getElementById('numero-login').style.display = "none";
-        document.getElementById('cambio-fono-datos').style.display = "block";
+        var xhr = new XMLHttpRequest();
+        var send = new FormData();
+        send.append('numero',numero);
+        xhr.open('POST', path + 'auth/checkTelefono');
+        xhr.setRequestHeader('Cache-Control', 'no-cache');
+        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        xhr.send(send);
+        xhr.onload = function(e){
+            if(this.status == 200){
+                if(this.response == 1){
+                    document.getElementById('numero-login').style.display = "none";
+                    document.getElementById('cambio-fono-datos').style.display = "block";
+                } else {
+                    //ALGO
+                }
+            }
+        }
     }
 
 }
