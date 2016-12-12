@@ -308,13 +308,14 @@ function validarNumero(){
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
         xhr.onload = function(e){
+            alert(this.response);
             if(this.status == 200){
-                if(this.response == 1){
+                /*if(this.response == 1){
                     document.getElementById('numero-login').style.display = "none";
                     document.getElementById('cambio-fono-datos').style.display = "block";
                 } else {
                     //ALGO
-                }
+                }*/
             }
         }
     }
