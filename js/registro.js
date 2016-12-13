@@ -308,22 +308,20 @@ function validarNumero(){
         xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
         xhr.send(send);
         xhr.onload = function(e){
-            alert(this.response);
+            //alert(this.response);
             if(this.status == 200){
-                if(this.response){
-                    if(this.response == 1){
-                        navigator.notification.alert('Ingrese un número de teléfono valido',function(){},'Atención','OK');
-                    } else if(this.response == 2){
-                        navigator.notification.alert('Este número no se encuentra registrado o ya esta siendo utilizado por un usuario',function(){},'Atención','OK');
-                    }
+                if(this.response == 'error'){
+                    navigator.notification.alert('Ingrese un número de teléfono valido',function(){},'Atención','OK');
+                } else if(this.response == 'err'){
+                    navigator.notification.alert('Este número no se encuentra registrado o ya esta siendo utilizado por un usuario',function(){},'Atención','OK');
                 } else {
+                    sessionStorage.id_fono = this.response;
                     document.getElementById('numero-login').style.display = "none";
                     document.getElementById('cambio-fono-datos').style.display = "block";
                 }
             }
         }
     }
-
 }
 
 function validarMovil(n){
