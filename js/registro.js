@@ -315,9 +315,13 @@ function validarNumero(){
                 } else if(this.response == 'err'){
                     navigator.notification.alert('Este número no se encuentra registrado o ya esta siendo utilizado por un usuario',function(){},'Atención','OK');
                 } else {
-                    sessionStorage.id_fono = this.response;
-                    document.getElementById('numero-login').style.display = "none";
-                    document.getElementById('cambio-fono-datos').style.display = "block";
+                    if(!isNaN(this.response)){
+                        sessionStorage.id_fono = this.response;
+                        document.getElementById('numero-login').style.display = "none";
+                        document.getElementById('cambio-fono-datos').style.display = "block";
+                    } else {
+                       navigator.notification.alert('Ocurrio un error inesperado, intentelo mas tarde',function(){},'Atención','OK'); 
+                    }
                 }
             }
         }
