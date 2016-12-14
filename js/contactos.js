@@ -45,10 +45,14 @@ function getNumeroFono(fono,nombre){
 }
 
 function successCallback(result) {
-  alert(result);
+  //alert(result);
 }
  
 function errorCallback(error) {
-  alert(error);
+  //alert(error);
 }
-	
+
+document.getElementById('add-contact').addEventListener('click',function(){
+    $.mobile.navigate("#contacts", {transition: "fade"});
+});
+

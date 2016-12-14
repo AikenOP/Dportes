@@ -112,7 +112,7 @@ function jugadores(){
             $.mobile.loading('show');
         }
         xhr.onload = function(e){
-            alert(this.response);
+            navigator.notification.alert('El Jugador se agrego correctamente',function(){},'Atención','OK');
         }
     }
 
