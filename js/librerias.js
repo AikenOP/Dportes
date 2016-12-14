@@ -1,6 +1,6 @@
 var time = 30000;
-var path = 'http://sandbox.dportes.cl/';
-//var path = 'http://dportes.cl/';
+//var path = 'http://sandbox.dportes.cl/';
+var path = 'http://dportes.cl/';
 
 function checkMatches(){
 	var pass = document.getElementById('cambio-pass').value;
