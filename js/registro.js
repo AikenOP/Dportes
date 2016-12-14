@@ -367,7 +367,11 @@ function setUsuarioFono(){
             xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
             xhr.send(send);
             xhr.onload = function(e){
-                alert(this.response);
+                if(this.response){
+                    alert('ds');
+                } else {
+                    alert('nn');
+                }
             }
         }
     } else {
