@@ -368,9 +368,9 @@ function setUsuarioFono(){
             xhr.send(send);
             xhr.onload = function(e){
                 if(this.response){
-                    alert('ds');
+                    //$.mobile.navigate("#home", {transition: "fade"});
                 } else {
-                    alert('nn');
+                    $("#mensaje-registro-email-fono").css('display','block')
                 }
             }
         }
