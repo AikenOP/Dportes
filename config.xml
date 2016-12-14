@@ -28,6 +28,13 @@
     <preference name="StatusBarOverlaysWebView" value="false"/>
     <preference name="StatusBarBackgroundColor" value="#000000"/>
     <preference name="StatusBarStyle" value="lightcontent" />
+
+    <config-file parent="NSPhotoLibraryUsageDescription" platform="ios" target="*-Info.plist">
+        <string>Esta aplicación nesecita acceso a la libreria para cambiar la foto de perfil</string>
+    </config-file>
+    <config-file parent="NSCameraUsageDescription" platform="ios" target="*-Info.plist">
+        <string>Permite cambiar la foto de perfil</string>
+    </config-file>
   </platform>
 
   <plugin name="phonegap-plugin-push" source="npm" spec="~1.5.0" />
