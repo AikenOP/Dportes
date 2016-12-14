@@ -10,9 +10,6 @@
             document.addEventListener("deviceready", onDeviceReady, false);
 
             function onDeviceReady(){
-                if(device.platform == 'Android'){
-                    //cordova.plugins.notification.badge.set(10);
-                }
                 Chart.defaults.global.responsive = false;
                 setTimeout(function(){ 
                     if(localStorage.getItem('login')){
