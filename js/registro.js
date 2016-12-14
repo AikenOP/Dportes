@@ -350,6 +350,31 @@ function validarMovil(n){
     }
 }
 
+function setUsuarioFono(){
+    var id = sessionStorage.id_fono;
+    var email = document.getElementById('cambio-correo-fono').value;
+    var pass = document.getElementById('cambio-match-fono').value;
+    if(!validaEmail(email)){
+        $("#mensaje-formato-email-fono").css('display','none');
+        if(!checkMatchesFono()){
+            var xhr = new XMLHttpRequest();
+            var send = new FormData();
+            send.append('id',id);
+            send.append('email',email);
+            send.append('pass',pass);
+            xhr.open('POST', path + 'auth/setUsuarioFono');
+            xhr.setRequestHeader('Cache-Control', 'no-cache');
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            xhr.send(send);
+            xhr.onload = function(e){
+                alert(this.response);
+            }
+        }
+    } else {
+        $("#mensaje-formato-email-fono").css('display','block');
+    }
+}
+
 document.getElementById('reg-nequipo').addEventListener('change', checkEquipo, false);
 
 function checkEquipo(){

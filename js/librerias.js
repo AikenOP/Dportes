@@ -23,6 +23,24 @@ function checkMatches(){
 	}
 }
 
+function checkMatchesFono(){
+	var pass = document.getElementById('cambio-pass-fono').value;
+	var match = document.getElementById('cambio-match-fono').value;
+	if(match.length > 4 && pass.length > 4){
+		$("#mensaje-caracteres-fono").css('display','none');
+		if(pass === match){
+			$("#mensaje-match-fono").css('display','none');
+			return false;
+		} else {
+			$("#mensaje-match-fono").css('display','block');
+			return true;
+		}
+	} else {
+		$("#mensaje-caracteres-fono").css('display','block');
+		return true;
+	}
+}
+
 function swipe(id,nav,position){
     var startLoc = null; 
     $(id).on( "touchstart", function(e){ 
