@@ -368,7 +368,7 @@ function setUsuarioFono(){
             xhr.send(send);
             xhr.onload = function(e){
                 if(this.response){
-                    $.mobile.navigate("#home", {transition: "fade"});
+                    $.mobile.navigate("#login", {transition: "fade"});
                 } else {
                     $("#mensaje-registro-email-fono").css('display','block')
                 }
