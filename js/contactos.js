@@ -53,6 +53,7 @@ function errorCallback(error) {
 }
 
 document.getElementById('add-contact').addEventListener('click',function(){
+	event.preventDefault();
     $.mobile.navigate("#contacts", {transition: "fade"});
 });
 
