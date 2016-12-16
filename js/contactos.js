@@ -11,7 +11,7 @@ function contactos(){
 
 
 	this.onSuccess = function(contacts){
-		alert(contacts[0]);
+		alert(contacts[0].name);
 		var inc = '';
 		var logo = '';
 	    for (var i = 0; i < contacts.length; i++) {
