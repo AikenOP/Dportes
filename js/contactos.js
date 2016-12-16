@@ -5,7 +5,7 @@ function contactos(){
 	    var options = new ContactFindOptions();
 	    options.filter = "";
 	    options.multiple = true;
-	    filter = ["displayName", "name"];
+	    var filter = ["*"];
 	    navigator.contacts.find(filter, this.onSuccess, this.onError, options);
 	}
 
