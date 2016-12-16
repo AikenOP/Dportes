@@ -11,10 +11,11 @@ function contactos(){
 
 
 	this.onSuccess = function(contacts){
-		alert(contacts[0].name);
+
 		var inc = '';
 		var logo = '';
 	    for (var i = 0; i < contacts.length; i++) {
+	    	alert(contacts[i].name.formatted);
 	    	inc += "<li data-icon='false' onclick='getNumeroFono(\""+contacts[i].phoneNumbers[0].value+"\",\""+contacts[i].name.formatted+"\")'>";
             inc += "<div class='imagen_jugador'><img src='jquerymobile/img-dportes/foto.png'></div>";
             inc += "<h2>"+contacts[i].name.formatted+"</h2>";
