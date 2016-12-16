@@ -468,7 +468,7 @@
             <h1>Agregar Jugadores</h1>
             <a href="#menu_perfil" data-transition="fade" class="saca-estilo-boton"><div class="icono-menu-right"></div></a>
         </div>
-        <div data-rol="main" class="content" style="margin:20px">  
+        <div class="content" style="margin:20px; position:relative;"> 
         <form method="post">
             <ul data-role="listview" data-inset="true">
                 <li class="ui-field-contain">
@@ -491,10 +491,10 @@
                         <button id="add-jg" type="submit" class="ui-btn ui-corner-all ui-btn-a">Guardar</button>
                     </div>
                 </li>
-                <li class="ui-grid-solo">
-                    <div class="ui-block-a"><button id="add-contact" type="submit" class="ui-btn ui-btn-a">Agregar Contacto</button></div>
-                </li>
             </ul>
+            <div style="position: absolute !important;top: auto !important; margin-top: 20px; width:100%;">
+                <a href="#" id="add-contact" class="ui-btn color-boton" style="margin-top:8px;">AGREGAR DESDE MI CONTACTOS</a>
+            </div>
         </form>
         </div>
         <!--<div data-position="fixed">
