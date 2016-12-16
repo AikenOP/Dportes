@@ -2,15 +2,20 @@ function contactos(){
 
 
 	this.getContacts = function(){
+		try{
 	    var options = new ContactFindOptions();
 	    options.filter = "";
 	    options.multiple = true;
 	    var filter = ["*"];
 	    navigator.contacts.find(filter, this.onSuccess, this.onError, options);
+		} catch(e){
+			alert(e);
+		}
 	}
 
 
 	this.onSuccess = function(contacts){
+		alert('dsds');
 		var inc = '';
 		var logo = '';
 	    for (var i = 0; i < contacts.length; i++) {
