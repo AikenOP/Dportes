@@ -15,7 +15,7 @@ function contactos(){
 
 
 	this.onSuccess = function(contacts){
-		alert('dsds');
+		alert(contacts);
 		var inc = '';
 		var logo = '';
 	    for (var i = 0; i < contacts.length; i++) {
