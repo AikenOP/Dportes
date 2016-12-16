@@ -15,11 +15,13 @@ function contactos(){
 		var inc = '';
 		var logo = '';
 	    for (var i = 0; i < contacts.length; i++) {
-	    	alert(contacts[i].displayName);
-	    	inc += "<li data-icon='false' onclick='getNumeroFono(\""+contacts[i].phoneNumbers[0].value+"\",\""+contacts[i].name.formatted+"\")'>";
-            inc += "<div class='imagen_jugador'><img src='jquerymobile/img-dportes/foto.png'></div>";
-            inc += "<h2>"+contacts[i].name.formatted+"</h2>";
-            inc += "</li>";
+
+	    	if(contacts[i].phoneNumbers != null){
+	    		inc += "<li data-icon='false' onclick='getNumeroFono(\""+contacts[i].phoneNumbers[0].value+"\",\""+contacts[i].name.formatted+"\")'>";
+            	inc += "<div class='imagen_jugador'><img src='jquerymobile/img-dportes/foto.png'></div>";
+            	inc += "<h2>"+contacts[i].name.formatted+"</h2>";
+            	inc += "</li>";
+        	}
 	        /*alert("Formatted: "  + contacts[i].name.formatted       + "\n" +
 	            "Family Name: "  + contacts[i].name.familyName      + "\n" +
 	            "Given Name: "   + contacts[i].name.givenName       + "\n" +
