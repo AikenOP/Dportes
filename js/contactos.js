@@ -11,7 +11,7 @@ function contactos(){
 
 
 	this.onSuccess = function(contacts){
-		alert( $.toJSON(contacts) );
+		alert(JSON.stringify(contacts));
 		var inc = '';
 		var logo = '';
 	    for (var i = 0; i < contacts.length; i++) {
