@@ -2,21 +2,16 @@ function contactos(){
 
 
 	this.getContacts = function(){
-		try{
 	    var options = new ContactFindOptions();
 	    options.filter = "";
 	    options.multiple = true;
-	    var filter = ["*"];
+	    var filter = ["displayName", "name"];
 	    navigator.contacts.find(filter, this.onSuccess, this.onError, options);
-		} catch(e){
-			alert(e);
-		}
 	}
 
 
 	this.onSuccess = function(contacts){
-		alert(contacts.length);
-		alert(contacts[0].phoneNumbers[0].value);
+		alert(contacts[0]);
 		var inc = '';
 		var logo = '';
 	    for (var i = 0; i < contacts.length; i++) {
