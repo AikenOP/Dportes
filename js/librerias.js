@@ -195,8 +195,8 @@ function cronometro(){
     $("#minute").text("00");
     $("#second").text("00");
 
-    var tiempo_corriendo = null;
-    clearInterval(tiempo_corriendo);                   
+    clearInterval(tiempo_corriendo); 
+    var tiempo_corriendo = null;                  
             tiempo_corriendo = setInterval(function(){
                 // Segundos
                 tiempo.segundo++;
