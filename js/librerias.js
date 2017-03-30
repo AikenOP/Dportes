@@ -191,6 +191,10 @@ function cronometro(){
         segundo: 0
     };
 
+    $("#hour").text("00");
+    $("#minute").text("00");
+    $("#second").text("00");
+
     var tiempo_corriendo = null;
     clearInterval(tiempo_corriendo);                   
             tiempo_corriendo = setInterval(function(){
