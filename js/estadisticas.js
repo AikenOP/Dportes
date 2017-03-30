@@ -41,7 +41,7 @@ function estadisticas(){
         			}
                     inc += "<li data-icon='back'><a href='#cambio-jugador' class='ui-icon-user' data-transition='fade'>Cambio de Jugador</a></li>";
                     inc += "<li data-icon='info'><a href='#como-usar' class='ui-icon-info' data-transition='fade'>Ayuda</a></li>";
-                    inc += "<li data-icon='clock'><a class='ui-icon-info'>Tiempo</a> <a id='hour'>00</a>:<a id='minute'>00</a>:<a id='second'>00</a></li>";
+                    inc += "<li data-icon='clock'><a class='ui-icon-info'>Tiempo <div id='hour'>00</div>:<div id='minute'>00</div>:<div id='second'>00</div></a></li>";
                     $('#acc-tipo-stat').append(inc).trigger('create');
                     $('#acc-tipo-stat').listview('refresh');
         		}
