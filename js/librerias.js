@@ -198,7 +198,6 @@ function cronometro(page){
 
     if(page != 'cambio-jugador'){
     	clearInterval(tiempo_corriendo); 
-	}
                       
             tiempo_corriendo = setInterval(function(){
                 // Segundos
@@ -220,6 +219,7 @@ function cronometro(page){
                 $("#minute").text(tiempo.minuto < 10 ? '0' + tiempo.minuto : tiempo.minuto);
                 $("#second").text(tiempo.segundo < 10 ? '0' + tiempo.segundo : tiempo.segundo);
             }, 1000);
+    }
 }
 
 function getHora(hora){
