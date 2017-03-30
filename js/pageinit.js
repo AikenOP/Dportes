@@ -298,6 +298,7 @@
             document.getElementById('stat-back-rel').style.display = "none"; 
             document.getElementById('stat-forward-rel').innerHTML = "<div class='fl-derecha'></div>";
             document.getElementById('stat-forward-rel').href = '#panel-juego';
+            cronometro();
         }
 
         if(activePage === 'seleccionar-titulares'){
