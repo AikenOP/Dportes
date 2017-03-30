@@ -185,7 +185,7 @@ function countdown(id,fecha){
 }
 
 
-function cronometro(){
+function cronometro(page){
     var tiempo = {
         hora: 0,
         minuto: 0,
@@ -196,7 +196,9 @@ function cronometro(){
     $("#minute").text("00");
     $("#second").text("00");
 
-    clearInterval(tiempo_corriendo); 
+    if(page != 'cambio-jugador'){
+    	clearInterval(tiempo_corriendo); 
+	}
                       
             tiempo_corriendo = setInterval(function(){
                 // Segundos
