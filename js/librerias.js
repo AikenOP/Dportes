@@ -1,6 +1,7 @@
 var time = 30000;
 //var path = 'http://sandbox.dportes.cl/';
 var path = 'http://dportes.cl/';
+var tiempo_corriendo = null;
 
 function checkMatches(){
 	var pass = document.getElementById('cambio-pass').value;
@@ -196,7 +197,7 @@ function cronometro(){
     $("#second").text("00");
 
     clearInterval(tiempo_corriendo); 
-    var tiempo_corriendo = null;                  
+                      
             tiempo_corriendo = setInterval(function(){
                 // Segundos
                 tiempo.segundo++;
