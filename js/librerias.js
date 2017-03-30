@@ -191,7 +191,8 @@ function cronometro(){
         segundo: 0
     };
 
-    var tiempo_corriendo = null;                      
+    var tiempo_corriendo = null;
+    clearInterval(tiempo_corriendo);                   
             tiempo_corriendo = setInterval(function(){
                 // Segundos
                 tiempo.segundo++;
