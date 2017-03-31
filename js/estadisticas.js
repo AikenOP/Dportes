@@ -41,7 +41,7 @@ function estadisticas(){
         			}
                     inc += "<li data-icon='back'><a href='#cambio-jugador' class='ui-icon-user' data-transition='fade'>Cambio de Jugador</a></li>";
                     inc += "<li data-icon='info'><a href='#como-usar' class='ui-icon-info' data-transition='fade'>Ayuda</a></li>";
-                    inc += "<li data-icon='clock'><a href='#' class='ui-icon-clock'><div style='float:left;font-weight:bold;'>Tiempo &nbsp;&nbsp;</div><div id='hour' style='float:left;font-weight:bold;'>00</div><div style='float:left;font-weight:bold;'>:</div><div id='minute' style='float:left;font-weight:bold;'>00</div><div style='float:left;font-weight:bold;'>:</div><div id='second' style='font-weight:bold;'>00</div></a></li>";
+                    //inc += "<li data-icon='clock'><a href='#' class='ui-icon-clock'><div style='float:left;font-weight:bold;'>Tiempo &nbsp;&nbsp;</div><div id='hour' style='float:left;font-weight:bold;'>00</div><div style='float:left;font-weight:bold;'>:</div><div id='minute' style='float:left;font-weight:bold;'>00</div><div style='float:left;font-weight:bold;'>:</div><div id='second' style='font-weight:bold;'>00</div></a></li>";
                     $('#acc-tipo-stat').append(inc).trigger('create');
                     $('#acc-tipo-stat').listview('refresh');
         		}
