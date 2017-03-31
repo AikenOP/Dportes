@@ -148,7 +148,7 @@ function votaciones(){
                     if(this.response && JSON.parse(this.response)){
                         //alert(this.response);
                         var arr = JSON.parse(this.response);
-                        var fecha = arr.fecha_evento;
+                        var fecha = arr.fecha_cierre;
                         var json = arr.jugadores;
                         var foto = '';
                         var now = +(new Date);
