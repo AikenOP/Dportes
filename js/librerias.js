@@ -228,7 +228,7 @@ function clearCronometro(page){
 		$('#hour').text('00');
 		$('#minute').text('00');
 		$('#second').text('00');
-		$('#acc-iniciar').css('display','block');
+		//$('#acc-iniciar').css('display','block');
 	}
 }
 
