@@ -2,7 +2,7 @@ var pag;
     $(document).on('pagecontainerbeforeshow', function (e, ui) {
 
         var activePage = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
-        var pag = ui;
+        pag = ui;
 
         if(activePage === 'login'){
             //alert(localStorage.getItem('equipo'));
