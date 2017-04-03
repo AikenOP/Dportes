@@ -1,6 +1,8 @@
+var pag;   
     $(document).on('pagecontainerbeforeshow', function (e, ui) {
 
         var activePage = $(':mobile-pagecontainer').pagecontainer('getActivePage').attr('id');
+        var pag = ui;
 
         if(activePage === 'login'){
             //alert(localStorage.getItem('equipo'));
@@ -298,7 +300,7 @@
             document.getElementById('stat-back-rel').style.display = "none"; 
             document.getElementById('stat-forward-rel').innerHTML = "<div class='fl-derecha'></div>";
             document.getElementById('stat-forward-rel').href = '#panel-juego';
-            cronometro(ui.prevPage.attr('id'));
+            //cronometro(ui.prevPage.attr('id'));
         }
 
         if(activePage === 'seleccionar-titulares'){

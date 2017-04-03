@@ -333,6 +333,10 @@ function periodoConf(button){
     }
 }
 
+document.getElementById('acc-iniciar').addEventListener('click',function(){
+    cronometro(pag.prevPage.attr('id'));
+});
+
 document.getElementById('acc-deshacer').addEventListener('click',function(){
     navigator.notification.confirm(
         '¿Realmente desea eliminar la última jugada?',
