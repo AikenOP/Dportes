@@ -225,6 +225,10 @@ function cronometro(page){
 function clearCronometro(page){
 	if(page != 'cambio-jugador'){
 		clearInterval(tiempo_corriendo);
+		$('#hour').text('00');
+		$('#minute').text('00');
+		$('#second').text('00');
+		$('#acc-iniciar').css('display','block');
 	}
 }
 

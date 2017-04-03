@@ -336,6 +336,7 @@ function periodoConf(button){
 document.getElementById('acc-iniciar').addEventListener('click',function(){
     //alert(pag.prevPage.attr('id'));
     cronometro(pag.prevPage.attr('id'));
+    $('#acc-iniciar').css('display','none');
 });
 
 document.getElementById('acc-deshacer').addEventListener('click',function(){
