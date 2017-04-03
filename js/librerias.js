@@ -222,6 +222,12 @@ function cronometro(page){
     }
 }
 
+function clearCronometro(page){
+	if(page != 'cambio-jugador'){
+		clearInterval(tiempo_corriendo);
+	}
+}
+
 function getHora(hora){
 	var hor = hora.split(" ");
 	var arr = hor[1].split(":");
